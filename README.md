@@ -35,3 +35,8 @@ I've been learning coding for 5 years. Started out on Arduinos and python, now l
 <a href="http://www.github.com/Toomas633"><img src="https://activity-graph.herokuapp.com/graph?username=Toomas633&bg_color=1c1917&color=ffffff&line=0891b2&point=ffffff&area_color=1c1917&area=true&hide_border=true&custom_title=GitHub%20Commits%20Graph" alt="GitHub Commits Graph" /></a>
 
 <a href="https://github.com/Toomas633" align="left"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toomas633&langs_count=10&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&locale=en&custom_title=Top%20%Languages" alt="Top Languages" /></a>
+
+### Donate:
+* Monero: `8Ajf5M6meNpL9TaHuDRbXjAH31LcQ9ge5BEiwMZjLaoiMDZRxaVy19FgbP4tbUKpKoeq1kqCvjyaTdmCMQGhekWoQ2KgVeV`
+* Bitcoin: `3NPFV9ivECdSgyCXeNk4h5Gm3q1xiDRnPV`
+* More options on https://toomas633.com/donate
