@@ -1,5 +1,10 @@
 ## Hey 👋, I'm Toomas
-  
+<div align="right">
+<img src="https://komarev.com/ghpvc/?username=Toomas633&&style=flat" align="right" />
+</div>  
+<a href="https://toomas633.com" target="_blank" rel="noreferrer">
+<img src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/home.png" alt="Home page" width="32" height="32" />
+</a>
 <a href="https://discord.com/users/8140" target="_blank" rel="noreferrer">
 <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg" alt=Discord width="32" height="32" />
 </a>
@@ -17,6 +22,9 @@
 </a>  
 <a href="https://paypal.me/ToomasK" target="_blank">
 <image src="https://upload.wikimedia.org/wikipedia/commons/3/31/PayPal_Logo2014.svg" alt=PayPal width="32" height="32" />
+</a>
+<a href="https://toomas633.com/donate.html" target="_blank" rel="noreferrer">
+<img src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/Donate.png" alt=Donate width="32" height="32" />
 </a>
 
 <br/>  
@@ -63,23 +71,8 @@
 
 ## Github Stats
 
-<table><tr><td valign="top" width="50%" border=none>
-
-<img src="https://github-readme-stats.vercel.app/api?username=Toomas633&show_icons=true&count_private=true&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" align="left" style="width: 100%" />
-
-</td><td valign="top" width="50%">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toomas633&&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true&layout=compact" align="right" style="width: 100%" />
-
-</td></tr></table>  
-
+<p float="left">
+  <img src="https://github-readme-stats.vercel.app/api?username=Toomas633&show_icons=true&count_private=true&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" style="width: 50%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toomas633&&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true&layout=compact" style="width: 46%" />
+</p>
 <br/>
-
-- Monero:
-`8Ajf5M6meNpL9TaHuDRbXjAH31LcQ9ge5BEiwMZjLaoiMDZRxaVy19FgbP4tbUKpKoeq1kqCvjyaTdmCMQGhekWoQ2KgVeV`  
-  
-
-- Bitcoin: `3NPFV9ivECdSgyCXeNk4h5Gm3q1xiDRnPV`  
-  
-
-- More options on [toomas633.com/donate](https://toomas633.com/donate.html)  
