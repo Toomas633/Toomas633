@@ -91,7 +91,7 @@
 ## Github Stats
 
 <p float="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=Toomas633&show_icons=true&count_private=true&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" style="width: 50%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toomas633&&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true&layout=compact" style="width: 40%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Toomas633&show_icons=true&count_private=true&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" style="height:250px" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toomas633&&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true&layout=compact" style="height:250px" />
 </p>
 <br/>
