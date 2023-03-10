@@ -83,6 +83,8 @@
 </a>
 <a href="https://cloud.google.com/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/google_cloud.png" alt="Google Cloud" height="75" />
 </a> 
+<a href="https://www.php.net/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/php8.png" alt="PHP" height="75" />
+</a> 
 </div>
 
 <br/>  
@@ -91,7 +93,12 @@
 ## Github Stats
 
 <p float="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=Toomas633&show_icons=true&count_private=true&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" style="height:200px" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toomas633&&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true&layout=compact" style="height:200px" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Toomas633&theme=dark&hide_border=true&include_all_commits=true&count_private=true" style="height:200px" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Toomas633&theme=dark&hide_border=true" style="height:200px" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toomas633&theme=dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact" style="height:200px" />
 </p>
+
 <br/>
+
+## GitHub Trophies
+![](https://github-profile-trophy.vercel.app/?username=Toomas633&theme=darkhub&no-frame=true&no-bg=false&margin-w=4)
