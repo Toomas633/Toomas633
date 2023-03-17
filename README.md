@@ -8,18 +8,9 @@
 <a href="https://discord.com/users/8140" target="_blank" rel="noreferrer">
 <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg" alt=Discord width="32" height="32" />
 </a>
-<a href="https://github.com/Toomas633" target="_blank">
-<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" alt=GitHub width="32" height="32" />
-</a>
 <a href="https://twitter.com/Toomas633" target="_blank">
 <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter.svg" alt=Twitter width="32" height="32" />
 </a>
-<a href="https://www.facebook.com/toomas.kirsing" target="_blank">
-<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/facebook.svg" alt=Facebook width="32" height="32" />
-</a>
-<a href="https://instagram.com/toomas633" target="_blank">
-<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg" alt=Instagram width="32" height="32" />
-</a>  
 <a href="https://paypal.me/ToomasK" target="_blank">
 <image src="https://upload.wikimedia.org/wikipedia/commons/3/31/PayPal_Logo2014.svg" alt=PayPal width="32" height="32" />
 </a>
