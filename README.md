@@ -14,7 +14,7 @@
 <a href="https://paypal.me/ToomasK" target="_blank">
 <image src="https://upload.wikimedia.org/wikipedia/commons/3/31/PayPal_Logo2014.svg" alt=PayPal width="32" height="32" />
 </a>
-<a href="https://toomas633.com/donate.html" target="_blank" rel="noreferrer">
+<a href="https://toomas633.com/donate/" target="_blank" rel="noreferrer">
 <img src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/Donate.png" alt=Donate width="32" height="32" />
 </a>
 
