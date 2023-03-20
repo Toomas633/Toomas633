@@ -36,14 +36,14 @@
 
 ## Languages and Tools  
 <div align="center">  
-<a href="https://www.cplusplus.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/cplusplus-original.svg" alt="C++" height="75" />
+<a href="https://www.cplusplus.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/cplusplus-original.svg" alt="C++" height="75"/>
 </a>  
 <a href="https://www.cprogramming.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/c-original.svg" alt="C" height="75" />
 </a>  
 <a href="https://aws.amazon.com/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/icon-cloud-aws.png" alt="AWS" height="75" />
 </a>  
-<a href="https://www.docker.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/docker-original-wordmark.svg" alt="Docker" height="75" /
-></a>  
+<a href="https://www.docker.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/docker-original-wordmark.svg" alt="Docker" height="75" />
+</a>  
 <a href="https://www.mysql.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/mysql-original-wordmark.svg" alt="MySQL" height="75" />
 </a>  
 <a href="https://www.python.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/python-original.svg" alt="Python" height="75" /></a>  
@@ -62,11 +62,11 @@
 </a>  
 <a href="https://grafana.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/grafana.png" alt="Grafana" height="75" />
 </a>  
-<a href="https://www.java.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/java-original-wordmark.svg" alt="Java" height="75" />
+<a href="https://www.java.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/java-original-wordmark.svg" alt="Java" height="75"/>
 </a>  
 <a href="https://www.oracle.com/in/index.html" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/Oracle.png" alt="Oracle" height="75" />
 </a>  
-<a href="https://unity.com/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/Unity.png" alt="Unity" height="75" />
+<a href="https://unity.com/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/Unity.png" alt="Unity" height="75"/>
 </a>  
 <a href="https://azure.microsoft.com/en-in/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/microsoft_azure-icon.svg" alt="Azure" height="75" />
 </a>  
@@ -74,8 +74,10 @@
 </a>
 <a href="https://cloud.google.com/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/google_cloud.png" alt="Google Cloud" height="75" />
 </a> 
-<a href="https://www.php.net/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/php8.png" alt="PHP" height="75" />
-</a> 
+<a href="https://www.php.net/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/php8.png" alt="PHP" height="75"/>
+</a>
+<a href="https://wordpress.com/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/WordPress_blue_logo.svg.png" alt="Wordpress" height="75"/>
+</a>
 </div>
 
 <br/>  
