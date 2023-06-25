@@ -101,6 +101,7 @@
 ### Version control
 <div align="left">
 <a href="https://git-scm.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git" height="75" /></a>
+<a href="https://maven.apache.org/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/maven.svg" alt="Maven" height="75" /></a>
 </div>
 
 <br/>
