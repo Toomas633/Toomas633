@@ -108,9 +108,9 @@
 
 ## Github Stats
 <p float="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=Toomas633&theme=dark&hide_border=true&include_all_commits=true&count_private=false" style="height:180px" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toomas633&theme=dark&hide_border=true&include_all_commits=true&count_private=false&layout=compact" style="height:180px" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Toomas633&theme=dark&hide_border=true" style="height:180px" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Toomas633&theme=dark&hide_border=true&include_all_commits=true&count_private=false" style="height:175px" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toomas633&theme=dark&hide_border=true&include_all_commits=true&count_private=false&layout=compact" style="height:175px" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Toomas633&theme=dark&hide_border=true" style="height:175px" />
 </p>
 
 <br/>
