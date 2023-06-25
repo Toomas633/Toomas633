@@ -51,7 +51,7 @@
 <a href="https://wordpress.com/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/WordPress_blue_logo.svg.png" alt="Wordpress" height="75"/></a>
 <a href="https://en.wikipedia.org/wiki/HTML" target="_blank"><img style="margin: 10px" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="HTML" height="75" /></a>
 <a href="https://en.wikipedia.org/wiki/CSS" target="_blank"><img style="margin: 10px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png" alt="CSS" height="75" /></a>
-<a href="https://www.javascript.com/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/js.svg.png" alt="JS" height="75" /></a>
+<a href="https://www.javascript.com/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/js.svg" alt="JS" height="75" /></a>
 </div>
 
 ### Multipurpose
