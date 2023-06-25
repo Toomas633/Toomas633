@@ -43,10 +43,9 @@
 <a href="https://www.java.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/java-original-wordmark.svg" alt="Java" height="75"/></a>
 <a href="https://www.php.net/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/php8.png" alt="PHP" height="75"/></a>
 <a href="https://www.nginx.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/nginx-original.svg" alt="Nginx" height="75" /></a>
-<a href="https://git-scm.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git" height="75" /></a>
 </div>
 
-### Front end
+### Frontend
 <div align="left">
 <a href="https://grafana.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/grafana.png" alt="Grafana" height="75" /></a>
 <a href="https://wordpress.com/" target="_blank"><img style="margin: 10px" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/WordPress_blue_logo.svg.png" alt="Wordpress" height="75"/></a>
@@ -96,6 +95,11 @@
 <a href="https://www.microsoft.com/en-us/windows-server" target="_blank"><img style="margin: 10px" src="https://microsoft.techstarters.com/wp-content/uploads/2019/09/windows-server-icon-01.png" alt="Windows Server" height="75" /></a>
 <a href="https://www.debian.org/" target="_blank"><img style="margin: 10px" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/debian_original_logo_icon_146566.png" alt="Debian" height="75" /></a>
 <a href="https://ubuntu.com/" target="_blank"><img style="margin: 10px" src="https://1000logos.net/wp-content/uploads/2017/06/Ubuntu-Logo.png" alt="Ubuntu" height="75" /></a>
+</div>
+
+### Version control
+<div align="left">
+<a href="https://git-scm.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git" height="75" /></a>
 </div>
 
 <br/>
