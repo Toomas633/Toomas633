@@ -25,7 +25,7 @@
 - 🌍  I'm based in Estonia  
 - 🧠  I'm learning Cyber-physical systems at Taltech
 - 💼  Currently interning as a full time developer (Vue & Java)
-- ✉️  You can contact me at [info@toomas633.com](mailto:info@toomas633.com)  
+- ✉️  You can contact me at [toomas@toomas633.com](mailto:toomas@toomas633.com)  
   
 
 <br/>  
