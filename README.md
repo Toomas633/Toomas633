@@ -23,11 +23,8 @@
 
 ## Rapidfire  
 - 🌍  I'm based in Estonia  
-  
-
-- 🧠  I'm learning Cyber-physical systems at Taltech  
-  
-
+- 🧠  I'm learning Cyber-physical systems at Taltech
+- 💼  Currently interning as a full time developer (Vue & Java)
 - ✉️  You can contact me at [info@toomas633.com](mailto:info@toomas633.com)  
   
 
