@@ -1,0 +1,13 @@
+{
+	"sonarlint.connectedMode.project": {
+		"connectionId": "toomas633",
+		"projectKey": "Toomas633_XMRig-Proxy"
+	},
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"prettier.configPath": ".prettierrc",
+	"livePreview.defaultPreviewPath": "/web/pages/Footer.html"
+}
