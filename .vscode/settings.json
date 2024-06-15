@@ -1,13 +1,45 @@
 {
 	"sonarlint.connectedMode.project": {
 		"connectionId": "toomas633",
-		"projectKey": "Toomas633_XMRig-Proxy"
+		"projectKey": "Toomas633_Toomas633"
 	},
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  	},
+  	"[vue]": {
+    	"editor.defaultFormatter": "esbenp.prettier-vscode"
+  	},
 	"[html]": {
 		"editor.defaultFormatter": "vscode.html-language-features"
 	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.suggest.insertMode": "replace"
+	},
+	"vetur.format.defaultFormatter.html": "prettier",
+  	"vetur.format.defaultFormatter.js": "prettier",
+  	"vetur.format.defaultFormatter.ts": "prettier",
+  	"vetur.format.defaultFormatterOptions": {
+    	"prettier": {
+      		"tabWidth": 2,
+			"useTabs": true,
+			"singleQuote": true,
+			"trailingComma": "es5",
+			"bracketSpacing": true,
+			"bracketSameLine": true,
+			"jsxSingleQuote": true,
+			"jsxBracketSameLine": true,
+			"semi": false,
+			"printWidth": 80,
+			"endOfLine": "lf"
+    	}
+  	},
+  "prettier.useEditorConfig": false,
+  "prettier.requireConfig": true,
 	"prettier.configPath": ".prettierrc",
-	"livePreview.defaultPreviewPath": "/web/pages/Footer.html"
 }
