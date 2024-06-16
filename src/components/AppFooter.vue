@@ -1,5 +1,5 @@
 <template>
-	<v-footer class="d-flex flex-column">
+	<v-footer class="d-flex flex-column bg-black">
 		<div class="d-flex w-100 align-center px-4 pa-1">
 			<v-spacer></v-spacer>
 			<v-btn

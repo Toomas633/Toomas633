@@ -9,7 +9,7 @@ const myTheme = {
 	dark: true,
 	colors: {
 		background: '#353535',
-		surface: '#000000',
+		surface: '#f44336',
 		primary: '#f44336',
 		'primary-darken-1': '#f44336',
 		secondary: '#353535',
