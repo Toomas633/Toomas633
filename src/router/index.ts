@@ -15,6 +15,21 @@ const routes: Array<RouteRecordRaw> = [
 		component: HomeView,
 	},
 	{
+		path: '/projects/robotic-arm',
+		name: 'T6 Drone',
+		component: HomeView,
+	},
+	{
+		path: '/projects/file-organizer',
+		name: 'T6 Drone',
+		component: HomeView,
+	},
+	{
+		path: '/projects/fileshare',
+		name: 'T6 Drone',
+		component: HomeView,
+	},
+	{
 		path: '/contact',
 		name: 'Contact',
 		component: ContactView,

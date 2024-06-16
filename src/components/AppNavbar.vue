@@ -23,7 +23,8 @@
 					v-else
 					:class="index === menuItems.length - 1 ? 'mr-2' : ''"
 					:href="item.href">
-					<v-icon :icon="item.icon" class="mr-1"></v-icon>{{ item.label }}
+					<v-icon v-if="item.icon" :icon="item.icon" class="mr-1"></v-icon
+					>{{ item.label }}
 				</v-btn>
 			</template>
 		</div>
@@ -34,7 +35,7 @@
 					v-bind="attrs"
 					v-on="on"></v-app-bar-nav-icon>
 			</template>
-			<v-list class="mt-2">
+			<v-list class="mt-3">
 				<template v-for="(item, index) in menuItems" :key="index">
 					<v-list-item v-if="item.type === 'menu'" class="pr-0 pl-0">
 						<DropdownMenu
@@ -46,7 +47,8 @@
 					</v-list-item>
 					<v-list-item v-else class="pr-0 pl-0">
 						<v-btn class="elevation-0" :href="item.href">
-							<v-icon :icon="item.icon" class="mr-1"></v-icon>{{ item.label }}
+							<v-icon v-if="item.icon" :icon="item.icon" class="mr-1"></v-icon
+							>{{ item.label }}
 						</v-btn>
 					</v-list-item>
 				</template>
@@ -69,26 +71,52 @@ export default defineComponent({
 					type: 'menu',
 					icon: 'mdi-toolbox',
 					label: 'Projects',
-					options: [{ label: 'Option 1' }, { label: 'Option 2' }],
-					href: undefined,
+					options: [
+						{
+							label: 'T6 Drone',
+							href: '/projects/t6-drone',
+							icon: 'mdi-quadcopter',
+						},
+						{
+							label: 'Robotic Arm',
+							href: '/projects/robotic-arm',
+							icon: 'mdi-robot-industrial',
+						},
+						{
+							label: 'File Organizer',
+							href: '/projects/file-organizer',
+							icon: 'mdi-file-document-arrow-right',
+						},
+						{
+							label: 'FileShare',
+							href: '/projects/fileshare',
+							icon: 'mdi-share-variant',
+						},
+					],
 				},
 				{
 					type: 'menu',
 					icon: 'mdi-controller',
 					label: 'Game servers',
-					options: [{ label: 'Option 1' }, { label: 'Option 2' }],
+					options: [
+						{
+							label: 'Minecraft Vanilla Server',
+							href: 'https://servers.toomas633.com/',
+							icon: 'mdi-minecraft',
+						},
+					],
 				},
 				{
 					type: 'button',
 					icon: 'mdi-card-account-mail',
 					label: 'Contact',
-					href: 'contact',
+					href: '/contact',
 				},
 				{
 					type: 'button',
 					icon: 'mdi-hand-coin',
 					label: 'Donate',
-					href: 'donate',
+					href: '/donate',
 				},
 			],
 		}
