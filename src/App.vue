@@ -24,3 +24,9 @@ export default defineComponent({
 	},
 })
 </script>
+
+<style>
+h1 {
+	color: rgb(var(--v-theme-primary));
+}
+</style>

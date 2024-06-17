@@ -6,11 +6,10 @@
 				alt="Logo"
 				max-height="40"
 				max-width="40"
-				contain>
-			</v-img>
+				contain />
 			<v-toolbar-title class="ml-2">Toomas633's Dungeon</v-toolbar-title>
 		</router-link>
-		<v-spacer></v-spacer>
+		<v-spacer />
 		<div class="d-none d-md-flex">
 			<template v-for="(item, index) in menuItems" :key="index">
 				<DropdownMenu
@@ -23,17 +22,15 @@
 					v-else
 					:class="index === menuItems.length - 1 ? 'mr-2' : ''"
 					:href="item.href">
-					<v-icon v-if="item.icon" :icon="item.icon" class="mr-1"></v-icon
-					>{{ item.label }}
+					<v-icon v-if="item.icon" :icon="item.icon" class="mr-1" />{{
+						item.label
+					}}
 				</v-btn>
 			</template>
 		</div>
 		<v-menu offset-y>
 			<template v-slot:activator="{ isActive: on, props: attrs }">
-				<v-app-bar-nav-icon
-					class="d-md-none"
-					v-bind="attrs"
-					v-on="on"></v-app-bar-nav-icon>
+				<v-app-bar-nav-icon class="d-md-none" v-bind="attrs" v-on="on" />
 			</template>
 			<v-list class="mt-3">
 				<template v-for="(item, index) in menuItems" :key="index">
@@ -47,8 +44,9 @@
 					</v-list-item>
 					<v-list-item v-else class="pr-0 pl-0">
 						<v-btn class="elevation-0" :href="item.href">
-							<v-icon v-if="item.icon" :icon="item.icon" class="mr-1"></v-icon
-							>{{ item.label }}
+							<v-icon v-if="item.icon" :icon="item.icon" class="mr-1" />{{
+								item.label
+							}}
 						</v-btn>
 					</v-list-item>
 				</template>

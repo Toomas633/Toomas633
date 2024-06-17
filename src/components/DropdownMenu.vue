@@ -2,7 +2,7 @@
 	<v-menu offset-y :location="isMobile ? 'start' : undefined">
 		<template v-slot:activator="{ isActive: on, props: attrs }">
 			<v-btn v-bind="attrs" v-on="on" :href="href" class="elevation-0">
-				<v-icon v-if="icon" :icon="icon" class="mr-1"></v-icon>{{ label }}
+				<v-icon v-if="icon" :icon="icon" class="mr-1" />{{ label }}
 			</v-btn>
 		</template>
 		<v-list :class="isMobile ? 'mr-1' : ''">
@@ -12,8 +12,9 @@
 				:href="option.href"
 				class="pr-0 pl-0">
 				<v-btn class="elevation-0" :href="option.href">
-					<v-icon v-if="option.icon" :icon="option.icon" class="mr-1"></v-icon
-					>{{ option.label }}
+					<v-icon v-if="option.icon" :icon="option.icon" class="mr-1" />{{
+						option.label
+					}}
 				</v-btn>
 			</v-list-item>
 		</v-list>
