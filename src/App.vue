@@ -29,4 +29,7 @@ export default defineComponent({
 h1 {
 	color: rgb(var(--v-theme-primary));
 }
+.v-autocomplete__content .v-list {
+	background: rgb(var(--v-theme-secondary)) !important;
+}
 </style>
