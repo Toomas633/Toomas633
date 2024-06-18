@@ -50,6 +50,7 @@
 						v-model="form.message"
 						:rules="textRules"
 						prepend-inner-icon="mdi-format-align-left"
+						counter="250"
 						required />
 					<v-btn :disabled="!valid" :loading="loading" @click="submit"
 						><v-icon icon="mdi-email-fast" class="mr-1" />Send</v-btn
@@ -107,6 +108,8 @@ export default defineComponent({
 			return [
 				(value: string) => !!value || 'Required.',
 				(value: string) => (value && value.length >= 3) || 'Min 3 characters',
+				(value: string) =>
+					(value && value.length < 250) || 'Max 250 characters',
 			]
 		},
 		autocompleteRules() {

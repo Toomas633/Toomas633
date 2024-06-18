@@ -46,8 +46,5 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-export default defineComponent({
-	name: 'DonateView',
-	components: {},
-})
+export default defineComponent({ name: 'DonateView' })
 </script>
