@@ -29,8 +29,8 @@
 			</template>
 		</div>
 		<v-menu offset-y>
-			<template v-slot:activator="{ isActive: on, props: attrs }">
-				<v-app-bar-nav-icon class="d-md-none" v-bind="attrs" v-on="on" />
+			<template v-slot:activator="{ props }">
+				<v-app-bar-nav-icon class="d-md-none" v-bind="props" />
 			</template>
 			<v-list class="mt-3">
 				<template v-for="(item, index) in menuItems" :key="index">

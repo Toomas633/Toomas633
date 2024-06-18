@@ -1,7 +1,7 @@
 <template>
 	<v-menu offset-y :location="isMobile ? 'start' : undefined">
-		<template v-slot:activator="{ isActive: on, props: attrs }">
-			<v-btn v-bind="attrs" v-on="on" :href="href" class="elevation-0">
+		<template v-slot:activator="{ props }">
+			<v-btn v-bind="props" :href="href" class="elevation-0">
 				<v-icon v-if="icon" :icon="icon" class="mr-1" />{{ label }}
 			</v-btn>
 		</template>

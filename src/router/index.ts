@@ -2,6 +2,10 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import ContactView from '@/views/ContactView.vue'
 import DonateView from '@/views/DonateView.vue'
+import T6DroneView from '@/views/projects/T6DroneView.vue'
+import RoboticArmView from '@/views/projects/RoboticArmView.vue'
+import FileOrganizerView from '@/views/projects/FileOrganizerView.vue'
+import FileShareView from '@/views/projects/FileShareView.vue'
 
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -12,22 +16,22 @@ const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/projects/t6-drone',
 		name: 'T6 Drone',
-		component: HomeView,
+		component: T6DroneView,
 	},
 	{
 		path: '/projects/robotic-arm',
-		name: 'T6 Drone',
-		component: HomeView,
+		name: 'Robotic Arm',
+		component: RoboticArmView,
 	},
 	{
 		path: '/projects/file-organizer',
-		name: 'T6 Drone',
-		component: HomeView,
+		name: 'File Organizer',
+		component: FileOrganizerView,
 	},
 	{
 		path: '/projects/fileshare',
-		name: 'T6 Drone',
-		component: HomeView,
+		name: 'FileShare',
+		component: FileShareView,
 	},
 	{
 		path: '/contact',
