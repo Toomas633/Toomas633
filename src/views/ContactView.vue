@@ -98,7 +98,7 @@ export default defineComponent({
 		emailRules() {
 			return [
 				(v: string) => !!v || 'Required',
-				(v: string) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+				(v: string) => this.validateEmail(v) || 'E-mail must be valid',
 				(v: string) =>
 					this.isKnownDomain(v) === true ||
 					`This email domain (${this.isKnownDomain(v)}) is not allowed, if this is a mistake email info@toomas633.com`,
@@ -117,6 +117,10 @@ export default defineComponent({
 		},
 	},
 	methods: {
+		validateEmail(v: string) {
+			const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+			return emailRegex.test(v)
+		},
 		isKnownDomain(email: string) {
 			const domain = email.split('@')[1]
 			return this.knownDomains.includes(domain) || domain
