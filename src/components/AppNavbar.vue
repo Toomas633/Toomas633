@@ -28,7 +28,7 @@
 				</v-btn>
 			</template>
 		</div>
-		<v-menu offset-y>
+		<v-menu>
 			<template v-slot:activator="{ props }">
 				<v-app-bar-nav-icon class="d-md-none" v-bind="props" />
 			</template>
