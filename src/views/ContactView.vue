@@ -1,8 +1,8 @@
 <template>
 	<v-container class="pa-4"> </v-container>
-	<v-row class="pa-4 d-flex" justify="center">
+	<v-row class="pa-4 d-block d-md-flex" justify="center">
 		<v-col justify="center">
-			<v-card class="bg-black text-center pa-4" min-width="460">
+			<v-card class="bg-black text-center pa-4">
 				<h1 class="text-center">Contact</h1>
 				<p class="text-center">
 					Having trouble? Raise a new Issue on project's GitHub, leave a
@@ -14,7 +14,7 @@
 			</v-card>
 		</v-col>
 		<v-col justify="center">
-			<v-card class="bg-black text-center pa-4" min-width="656">
+			<v-card class="bg-black text-center pa-4">
 				<h1 class="text-center">Contact Form</h1>
 				<v-form ref="form" v-model="valid">
 					<v-row justify="center" class="d-flex">
