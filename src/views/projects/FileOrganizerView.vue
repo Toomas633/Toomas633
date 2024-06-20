@@ -21,7 +21,7 @@
 			<ButtonCard
 				size="100"
 				text="GitHub"
-				href="https://github.com/Toomas633/File-organizer/releases"
+				href="https://github.com/Toomas633/File-organizer"
 				icon="mdi-github" />
 		</v-col>
 	</v-row>
@@ -56,32 +56,31 @@
 					<li>
 						Download with
 						<code>
-							<mark class="bg-secondary">
+							<mark>
 								sudo wget
-								https://raw.githubusercontent.com/Toomas633/File-organizer/main/organizer.py</mark
-							></code
-						>
+								https://raw.githubusercontent.com/Toomas633/File-organizer/main/organizer.py
+							</mark>
+						</code>
 						and place it into the folder you want it to search through (see
 						example below)
 					</li>
 					<li>
 						Run it in the backround while being in the same folder with
-						<code
-							><mark class="bg-secondary"
-								>nohup python3 organizer.py &lt;path_to_folder&gt;</mark
-							></code
-						>
+						<code>
+							<mark>nohup python3 organizer.py &lt;path_to_folder&gt; </mark>
+						</code>
 					</li>
 					<li>
 						Or run it always after reboot with cron job by adding
-						<code
-							><mark class="bg-secondary"
-								>0 * * * * python3 /&lt;path_to_script&gt;/organizer.py
-								&lt;path_to_folder&gt;</mark
-							></code
-						>&nbsp;using&nbsp;<code
-							><mark class="bg-secondary">sudo crontab -e</mark></code
-						>&nbsp;and adding it to the end of the file
+						<code>
+							<mark>
+								0 * * * * python3 /&lt;path_to_script&gt;/organizer.py
+								&lt;path_to_folder&gt;
+							</mark>
+						</code>
+						&nbsp;using&nbsp;
+						<code> <mark> sudo crontab -e </mark> </code> &nbsp;and adding it to
+						the end of the file
 					</li>
 				</ul>
 			</v-card>
@@ -106,11 +105,11 @@
 						</v-icon>
 					</template>
 				</v-treeview>
-			</v-card></v-col
-		>
-		<v-col
-			><v-card class="bg-black ml-8 mr-8 pa-4"
-				><h1 class="text-center pb-2">Returns</h1>
+			</v-card>
+		</v-col>
+		<v-col>
+			<v-card class="bg-black ml-8 mr-8 pa-4">
+				<h1 class="text-center pb-2">Returns</h1>
 				<v-treeview
 					:items="outputItems"
 					item-key="name"

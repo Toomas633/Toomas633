@@ -55,22 +55,24 @@
 				>
 			</v-card>
 			<v-row class="pt-6 d-block d-md-flex" justify="center">
-				<v-col md="8" sm=""
-					><v-img
+				<v-col md="8" sm="">
+					<v-img
 						rounded
 						style="cursor: pointer"
 						src="@/assets/RoboticArm/wiring.png"
 						@click="
 							openImageInNewTab(require('@/assets/RoboticArm/wiring.png'))
-						"
-				/></v-col>
-				<v-col md="4" sm=""
-					><v-img
+						" />
+				</v-col>
+				<v-col md="4" sm="">
+					<v-img
 						rounded
 						style="cursor: pointer"
 						src="@/assets/RoboticArm/list.png"
-						@click="openImageInNewTab(require('@/assets/RoboticArm/list.png'))"
-				/></v-col>
+						@click="
+							openImageInNewTab(require('@/assets/RoboticArm/list.png'))
+						" />
+				</v-col>
 			</v-row>
 		</v-col>
 	</v-row>

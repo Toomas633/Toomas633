@@ -6,10 +6,10 @@
 				<h1 class="text-center">Contact</h1>
 				<p class="text-center">
 					Having trouble? Raise a new Issue on project's GitHub, leave a
-					comment, fill out the contact form.<br /><sup
-						>(Any spam will result in automatic permanent IP ban and
-						reporting)</sup
-					>
+					comment, fill out the contact form. <br />
+					<sup>
+						(Any spam will result in automatic permanent IP ban and reporting)
+					</sup>
 				</p>
 			</v-card>
 		</v-col>
@@ -52,9 +52,9 @@
 						prepend-inner-icon="mdi-format-align-left"
 						counter="250"
 						required />
-					<v-btn :disabled="!valid" :loading="loading" @click="submit"
-						><v-icon icon="mdi-email-fast" class="mr-1" />Send</v-btn
-					>
+					<v-btn :disabled="!valid" :loading="loading" @click="submit">
+						<v-icon icon="mdi-email-fast" class="mr-1" /> Send
+					</v-btn>
 				</v-form>
 			</v-card>
 		</v-col>
