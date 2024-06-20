@@ -1,0 +1,14 @@
+h1 {
+	color: rgb(var(--v-theme-primary));
+}
+.v-autocomplete__content .v-list {
+	background: rgb(var(--v-theme-secondary)) !important;
+}
+code,
+mark {
+	background-color: rgb(var(--v-theme-secondary));
+	color: white;
+}
+a {
+	color: rgb(var(--v-theme-primary));
+}
