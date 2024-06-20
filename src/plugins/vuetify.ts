@@ -14,10 +14,6 @@ const myTheme = {
 		surface: '#f44336',
 		primary: '#f44336',
 		secondary: '#353535',
-		error: '#f44336',
-		info: '#94a3b8',
-		success: '#4CAF50',
-		warning: '#FB8C00',
 	},
 	variables: {
 		'border-color': '#000000',

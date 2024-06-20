@@ -4,10 +4,14 @@ h1 {
 .v-autocomplete__content .v-list {
 	background: rgb(var(--v-theme-secondary)) !important;
 }
-code,
+pre,
 mark {
 	background-color: rgb(var(--v-theme-secondary));
 	color: white;
+	overflow-wrap: break-word;
+	white-space: pre-line;
+	padding-left: 4px;
+	padding-right: 4px;
 }
 a {
 	color: rgb(var(--v-theme-primary));
