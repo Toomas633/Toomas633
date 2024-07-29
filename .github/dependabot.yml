@@ -7,6 +7,8 @@ updates:
     labels:
       - 'dependencies'
       - 'automerge'
+    allow:
+      - dependency-type: 'all'
 
 automerge:
   enabled: true
