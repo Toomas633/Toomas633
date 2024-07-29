@@ -23,10 +23,9 @@ jobs:
               "GitGuardian Security Checks",
               "SonarCloud Code Analysis"
             ];
-            const { context, github } = require('@actions/github');
-            const pr = context.payload.pull_request;
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
+            const pr = github.context.payload.pull_request;
+            const owner = github.context.repo.owner;
+            const repo = github.context.repo.repo;
             
             let allChecksPassed = false;
             while (!allChecksPassed) {
