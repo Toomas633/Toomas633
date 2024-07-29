@@ -1,0 +1,63 @@
+name: Status Check
+
+on:
+  pull_request:
+    types:
+      - labeled
+
+jobs:
+  status-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Wait for status checks
+        id: wait_for_checks
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const requiredChecks = [
+              "CodeQL / Analyze (javascript-typescript) (pull_request)",
+              "Code scanning results / CodeQL",
+              "GitGuardian Security Checks",
+              "SonarCloud Code Analysis"
+            ];
+            const { context, github } = require('@actions/github');
+            const pr = context.payload.pull_request;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            
+            let allChecksPassed = false;
+            while (!allChecksPassed) {
+              await new Promise(resolve => setTimeout(resolve, 30000)); // Wait for 30 seconds
+              const checks = await github.checks.listForRef({
+                owner,
+                repo,
+                ref: pr.head.sha,
+              });
+              
+              const statuses = await github.repos.listCommitStatusesForRef({
+                owner,
+                repo,
+                ref: pr.head.sha,
+              });
+              
+              const combinedChecks = [
+                ...checks.data.check_runs.map(run => ({ name: run.name, conclusion: run.conclusion })),
+                ...statuses.data.map(status => ({ name: status.context, conclusion: status.state }))
+              ];
+              
+              allChecksPassed = requiredChecks.every(check => 
+                combinedChecks.some(run => 
+                  run.name === check && (run.conclusion === 'success' || run.conclusion === 'neutral')
+                )
+              );
+            }
+
+            return allChecksPassed ? 'success' : 'failure';
+          result-encoding: string
+
+      - name: Status Check Result
+        if: steps.wait_for_checks.outputs.result == 'success'
+        run: echo "All required status checks have passed."
