@@ -1,0 +1,50 @@
+name: Check Status
+
+on:
+  pull_request:
+    types:
+      - labeled
+
+jobs:
+  check-status:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && contains(github.event.pull_request.labels.*.name, 'automerge')
+    steps:
+      - name: Check if PR checks have passed
+        id: status
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number
+            });
+
+            const statuses = pr.data.base.repo.required_status_checks.contexts;
+            if (statuses.length === 0) {
+              return 'No status checks configured.';
+            }
+
+            const checks = await github.rest.checks.listForRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: pr.data.head.sha
+            });
+
+            const passedChecks = checks.data.check_runs.filter(check => check.conclusion === 'success');
+            const passedCheckNames = passedChecks.map(check => check.name);
+
+            for (const status of statuses) {
+              if (!passedCheckNames.includes(status)) {
+                return `Required status check '${status}' not passed.`;
+              }
+            }
+
+            return 'All required status checks have passed.';
+
+      - name: Set output
+        run: echo "status=${{ steps.status.outputs.result }}" >> $GITHUB_ENV
+
+    outputs:
+      status: ${{ steps.status.outputs.result }}
