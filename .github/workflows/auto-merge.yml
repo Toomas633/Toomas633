@@ -1,10 +1,9 @@
 name: Auto-merge Dependabot updates
 
 on:
-  workflow_run:
-    workflows: ["Check Status"]
+  pull_request:
     types:
-      - completed
+      - labeled
 
 jobs:
   automerge:
