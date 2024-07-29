@@ -14,6 +14,7 @@ jobs:
         id: status
         uses: actions/github-script@v6
         with:
+          token: ${{ secrets.PAT_TOKEN }}
           script: |
             const pr = await github.rest.pulls.get({
               owner: context.repo.owner,
