@@ -30,21 +30,21 @@ jobs:
             let allChecksPassed = false;
             while (!allChecksPassed) {
               await new Promise(resolve => setTimeout(resolve, 30000)); // Wait for 30 seconds
-              const checks = await github.checks.listForRef({
+              const { data: checks } = await github.rest.checks.listForRef({
                 owner,
                 repo,
                 ref: pr.head.sha,
               });
               
-              const statuses = await github.repos.listCommitStatusesForRef({
+              const { data: statuses } = await github.rest.repos.listCommitStatusesForRef({
                 owner,
                 repo,
                 ref: pr.head.sha,
               });
               
               const combinedChecks = [
-                ...checks.data.check_runs.map(run => ({ name: run.name, conclusion: run.conclusion })),
-                ...statuses.data.map(status => ({ name: status.context, conclusion: status.state }))
+                ...checks.check_runs.map(run => ({ name: run.name, conclusion: run.conclusion })),
+                ...statuses.map(status => ({ name: status.context, conclusion: status.state }))
               ];
               
               allChecksPassed = requiredChecks.every(check => 
@@ -54,7 +54,7 @@ jobs:
               );
             }
 
-            return allChecksPassed ? 'success' : 'failure';
+            core.setOutput('result', allChecksPassed ? 'success' : 'failure');
           result-encoding: string
 
       - name: Status Check Result
