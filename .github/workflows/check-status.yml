@@ -21,21 +21,28 @@ jobs:
               pull_number: context.issue.number
             });
 
-            const statuses = pr.data.base.repo.required_status_checks.contexts;
-            if (statuses.length === 0) {
-              return 'No status checks configured.';
-            }
+            // Get the list of required status checks for the base branch
+            const branchProtection = await github.rest.repos.getBranchProtection({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              branch: pr.data.base.ref
+            });
 
+            const requiredStatusChecks = branchProtection.data.required_status_checks.contexts || [];
+
+            // Get the list of statuses for the PR's head commit
             const checks = await github.rest.checks.listForRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: pr.data.head.sha
             });
 
-            const passedChecks = checks.data.check_runs.filter(check => check.conclusion === 'success');
-            const passedCheckNames = passedChecks.map(check => check.name);
+            const passedCheckNames = checks.data.check_runs
+              .filter(check => check.conclusion === 'success')
+              .map(check => check.name);
 
-            for (const status of statuses) {
+            // Check if all required statuses have passed
+            for (const status of requiredStatusChecks) {
               if (!passedCheckNames.includes(status)) {
                 return `Required status check '${status}' not passed.`;
               }
