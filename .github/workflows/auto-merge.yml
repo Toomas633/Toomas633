@@ -18,12 +18,15 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Install GitHub CLI
+        run: sudo apt-get install gh
+
       - name: Wait and Check PR Status
         id: wait_check
         run: |
           for i in {1..6}; do
             echo "Checking PR status..."
-            PR_STATUS=$(gh pr view ${{ github.event.pull_request.number }} --json mergeableState --jq '.mergeableState')
+            PR_STATUS=$(gh pr view ${{ github.event.pull_request.number }} --json mergeableState --jq '.mergeableState' --token ${{ secrets.GITHUB_TOKEN }})
             if [ "$PR_STATUS" == "MERGEABLE" ]; then
               echo "PR is mergeable"
               echo "mergeable=true" >> $GITHUB_ENV
@@ -33,6 +36,8 @@ jobs:
               sleep 10
             fi
           done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Auto-merge
         if: env.mergeable == 'true'
