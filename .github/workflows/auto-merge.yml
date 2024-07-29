@@ -22,7 +22,7 @@ jobs:
         id: check_mergeable
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
-          RETRY_DELAY=10
+          RETRY_DELAY=30
 
           while true; do
             PR_MERGEABLE=$(gh pr view $PR_NUMBER --json mergeable --jq .mergeable)
