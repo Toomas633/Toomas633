@@ -18,7 +18,30 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Wait and Check PR Status
+        id: wait_check
+        run: |
+          for i in {1..6}; do
+            echo "Checking PR status..."
+            PR_STATUS=$(gh pr view ${{ github.event.pull_request.number }} --json mergeableState --jq '.mergeableState')
+            if [ "$PR_STATUS" == "MERGEABLE" ]; then
+              echo "PR is mergeable"
+              echo "mergeable=true" >> $GITHUB_ENV
+              break
+            else
+              echo "PR is not mergeable yet, retrying..."
+              sleep 10
+            fi
+          done
+
       - name: Auto-merge
+        if: env.mergeable == 'true'
         uses: pascalgn/automerge-action@v0.16.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Handle Non-Mergeable PR
+        if: env.mergeable != 'true'
+        run: |
+          echo "PR not mergeable after retries. Notifying team..."
+          # You can use `actions/github-script` or send notifications here
