@@ -10,8 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.pull_request.labels.*.name, 'automerge')
     steps:
-      - name: Enable auto-merge
-        run: gh pr merge --auto --merge "$PR_URL"
+      - name: Enable auto-merge (Squash and Merge)
+        run: |
+          if [ "$(gh pr view $PR_URL --json commits --jq '.commits | length')" -gt 1 ]; then
+            gh pr merge --squash --auto --repo ${{ github.repository }} "$PR_URL"
+          else
+            gh pr merge --auto --repo ${{ github.repository }} "$PR_URL"
+          fi
         env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PR_URL: ${{ github.event.pull_request.html_url }}
