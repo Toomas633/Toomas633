@@ -78,17 +78,10 @@
 	</v-row>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
-import { defineComponent } from 'vue'
 
-export default defineComponent({
-	name: 'RoboticArmView',
-	components: { ButtonCard },
-	methods: {
-		openImageInNewTab(image: string) {
-			window.open(image, '_blank')
-		},
-	},
-})
+const openImageInNewTab = (image: string) => {
+	window.open(image, '_blank')
+}
 </script>

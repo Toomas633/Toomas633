@@ -16,40 +16,14 @@
 	</v-card>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-	name: 'ButtonCard',
-	props: {
-		title: {
-			type: String,
-			default: undefined,
-		},
-		href: {
-			type: String,
-			default: undefined,
-		},
-		icon: {
-			type: String,
-			default: undefined,
-		},
-		iconColor: {
-			type: String,
-			default: undefined,
-		},
-		text: {
-			type: String,
-			default: undefined,
-		},
-		image: {
-			type: String,
-			default: undefined,
-		},
-		size: {
-			type: String,
-			required: true,
-		},
-	},
-})
+<script setup lang="ts">
+defineProps<{
+	title?: string
+	href?: string
+	icon?: string
+	iconColor?: string
+	text?: string
+	image?: string
+	size: string
+}>()
 </script>

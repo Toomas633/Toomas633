@@ -296,12 +296,6 @@ services:
 	</v-row>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-	name: 'FileShareView',
-	components: { ButtonCard },
-})
 </script>

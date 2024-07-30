@@ -1,0 +1,114 @@
+[
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\App.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\components\\AppFooter.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\components\\AppNavbar.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\components\\ButtonCard.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\components\\DropdownMenu.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\components\\MessagePopup.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\css\\style.scss",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\views\\ContactView.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\views\\DonateView.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\views\\HomeView.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\views\\projects\\FileOrganizerView.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\views\\projects\\FileShareView.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\views\\projects\\RoboticArmView.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	},
+	{
+		"source": "D:\\GitHub\\Toomas633\\src\\views\\projects\\T6DroneView.vue",
+		"deprecations": [],
+		"invalidOptionWarnings": [],
+		"parseErrors": [],
+		"errored": false,
+		"warnings": []
+	}
+]
