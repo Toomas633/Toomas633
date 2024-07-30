@@ -9,8 +9,9 @@ updates:
       - 'automerge'
     allow:
       - dependency-type: 'all'
+    versioning-strategy: increase
     groups:
-      all-dependencies:
+      all-updates:
         patterns:
           - '*'
 
