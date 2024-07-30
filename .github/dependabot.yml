@@ -3,12 +3,9 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     rebase-strategy: 'auto'
+    target-branch: 'develop'
     schedule:
       interval: 'weekly'
     labels:
       - 'dependencies'
       - 'automerge'
-    ignore:
-      - dependency-name: '*'
-        versions: ['*']
-        branch: 'main'
