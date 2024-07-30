@@ -3,6 +3,9 @@ name: Auto Merge
 on:
   pull_request:
     types:
+      - opened
+      - synchronize
+      - reopened
       - labeled
 
 jobs:   
