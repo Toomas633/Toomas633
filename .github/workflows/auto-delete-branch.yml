@@ -1,0 +1,23 @@
+name: Auto Delete Branch
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  delete-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Delete branch
+        run: |
+          if [ "${{ github.event.pull_request.merged }}" = "true" ]; then
+            BRANCH_NAME="${{ github.head_ref }}"
+            echo "Deleting branch: $BRANCH_NAME"
+            git push origin --delete "$BRANCH_NAME"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
