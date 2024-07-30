@@ -25,13 +25,14 @@ jobs:
           RETRY_DELAY=30
 
           while true; do
-            PR_MERGEABLE=$(gh pr view $PR_NUMBER --json mergeStateStatus --jq .mergeStateStatus)
-            if [ "$PR_MERGEABLE" == "CLEAN" ]; then
+            PR_MERGEABLE=$(gh pr view $PR_NUMBER --json mergeable --jq .mergeable)
+            PR_MERGE_STATUS=$(gh pr view $PR_NUMBER --json mergeStateStatus --jq .mergeStateStatus)
+            if [ "$PR_MERGE_STATUS" == "UNSTABLE" && "$PR_MERGEABLE" == "MERGEABLE"]; then
               echo "PR is mergeable"
               echo "mergeable=true" >> $GITHUB_ENV
               exit 0
             fi
-            echo "PR not mergeable. Waiting for $RETRY_DELAY seconds before retrying..."
+            echo "PR not mergeable. Waiting for $RETRY_DELAY seconds before retrying... ("$PR_MERGEABLE" "$PR_MERGE_STATUS")"
             sleep $RETRY_DELAY
           done
         env:
