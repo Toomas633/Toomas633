@@ -15,11 +15,13 @@ jobs:
     steps:
       - name: Enable auto-merge (Squash and Merge)
         run: |
-          if [ "$(gh pr view $PR_URL --json commits --jq '.commits | length')" -gt 1 ]; then
-            gh pr merge --squash --auto --repo ${{ github.repository }} "$PR_URL"
+          PR_URL=${{ github.event.pull_request.html_url }}
+          COMMIT_COUNT=$(gh pr view "$PR_URL" --json commits --jq '.commits | length')
+          
+          if [ "$COMMIT_COUNT" -gt 1 ]; then
+            gh pr merge "$PR_URL" --squash --auto --repo ${{ github.repository }}
           else
-            gh pr merge --auto --repo ${{ github.repository }} "$PR_URL"
+            gh pr merge "$PR_URL" --auto --repo ${{ github.repository }}
           fi
         env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
