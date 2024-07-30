@@ -16,7 +16,7 @@
 		"eslint-plugin-vuetify": "^2.4.0",
 		"roboto-fontface": "*",
 		"sass": "^1.77.8",
-		"sass-loader": "^14.2.1",
+		"sass-loader": "^16.0.0",
 		"vue": "^3.4.34",
 		"vue-class-component": "^8.0.0-0",
 		"vue-router": "^4.4.0",
