@@ -4,10 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    groups:
-      all:
-        patterns:
-        - "*"
     labels:
       - "dependabot"
       - "automerge"
+    reviewers:
+      - "Toomas633"
