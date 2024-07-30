@@ -1,16 +1,10 @@
 version: 2
 updates:
-  - package-ecosystem: 'npm'
-    directory: '/'
+  - package-ecosystem: "npm"
+    directory: "/"
+    rebase-strategy: "auto"
     schedule:
-      interval: 'weekly'
+      interval: "weekly"
     labels:
-      - 'dependencies'
-      - 'automerge'
-
-automerge:
-  enabled: true
-  strategies:
-    - type: 'all'
-      pull-request:
-        merge-method: 'merge'
+      - "dependencies"
+      - "automerge"
