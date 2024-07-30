@@ -7,9 +7,6 @@ updates:
     labels:
       - 'dependencies'
       - 'automerge'
-    allow:
-      - dependency-type: 'all'
-    versioning-strategy: increase
     groups:
       all-updates:
         patterns:
