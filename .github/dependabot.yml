@@ -9,6 +9,10 @@ updates:
       - 'automerge'
     allow:
       - dependency-type: 'all'
+    groups:
+      all-dependencies:
+        patterns:
+          - '*'
 
 automerge:
   enabled: true
