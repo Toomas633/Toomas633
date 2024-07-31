@@ -1,0 +1,411 @@
+[
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\.eslintrc.js",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\.stylelintrc.js",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\App.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\components\\AppFooter.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\components\\AppNavbar.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\components\\ButtonCard.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\components\\DropdownMenu.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\components\\MessagePopup.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\constants\\fileOrganizer.ts",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\enums\\fileType.ts",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\enums\\popupType.ts",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\helpers\\alertMixin.ts",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\helpers\\timerMixin.ts",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\interfaces\\option.ts",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\interfaces\\popup.ts",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\main.ts",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\plugins\\vuetify.ts",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\plugins\\webfontloader.ts",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\router\\index.ts",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\shims-vue.d.ts",
+		"messages": [],
+		"suppressedMessages": [
+			{
+				"ruleId": "@typescript-eslint/ban-types",
+				"severity": 2,
+				"message": "Don't use `{}` as a type. `{}` actually means \"any non-nullish value\".\n- If you want a type meaning \"any object\", you probably want `object` instead.\n- If you want a type meaning \"any value\", you probably want `unknown` instead.\n- If you want a type meaning \"empty object\", you probably want `Record<string, never>` instead.\n- If you really want a type meaning \"any non-nullish value\", you probably want `NonNullable<unknown>` instead.",
+				"line": 4,
+				"column": 35,
+				"nodeType": "TSTypeLiteral",
+				"messageId": "bannedTypeMessage",
+				"endLine": 4,
+				"endColumn": 37,
+				"suggestions": [
+					{
+						"messageId": "bannedTypeReplacement",
+						"data": { "name": "{}", "replacement": "object" },
+						"fix": { "range": [127, 129], "text": "object" },
+						"desc": "Replace `{}` with `object`."
+					},
+					{
+						"messageId": "bannedTypeReplacement",
+						"data": { "name": "{}", "replacement": "unknown" },
+						"fix": { "range": [127, 129], "text": "unknown" },
+						"desc": "Replace `{}` with `unknown`."
+					},
+					{
+						"messageId": "bannedTypeReplacement",
+						"data": { "name": "{}", "replacement": "Record<string, never>" },
+						"fix": { "range": [127, 129], "text": "Record<string, never>" },
+						"desc": "Replace `{}` with `Record<string, never>`."
+					},
+					{
+						"messageId": "bannedTypeReplacement",
+						"data": { "name": "{}", "replacement": "NonNullable<unknown>" },
+						"fix": { "range": [127, 129], "text": "NonNullable<unknown>" },
+						"desc": "Replace `{}` with `NonNullable<unknown>`."
+					}
+				],
+				"suppressions": [{ "kind": "directive", "justification": "" }]
+			},
+			{
+				"ruleId": "@typescript-eslint/ban-types",
+				"severity": 2,
+				"message": "Don't use `{}` as a type. `{}` actually means \"any non-nullish value\".\n- If you want a type meaning \"any object\", you probably want `object` instead.\n- If you want a type meaning \"any value\", you probably want `unknown` instead.\n- If you want a type meaning \"empty object\", you probably want `Record<string, never>` instead.\n- If you really want a type meaning \"any non-nullish value\", you probably want `NonNullable<unknown>` instead.",
+				"line": 4,
+				"column": 39,
+				"nodeType": "TSTypeLiteral",
+				"messageId": "bannedTypeMessage",
+				"endLine": 4,
+				"endColumn": 41,
+				"suggestions": [
+					{
+						"messageId": "bannedTypeReplacement",
+						"data": { "name": "{}", "replacement": "object" },
+						"fix": { "range": [131, 133], "text": "object" },
+						"desc": "Replace `{}` with `object`."
+					},
+					{
+						"messageId": "bannedTypeReplacement",
+						"data": { "name": "{}", "replacement": "unknown" },
+						"fix": { "range": [131, 133], "text": "unknown" },
+						"desc": "Replace `{}` with `unknown`."
+					},
+					{
+						"messageId": "bannedTypeReplacement",
+						"data": { "name": "{}", "replacement": "Record<string, never>" },
+						"fix": { "range": [131, 133], "text": "Record<string, never>" },
+						"desc": "Replace `{}` with `Record<string, never>`."
+					},
+					{
+						"messageId": "bannedTypeReplacement",
+						"data": { "name": "{}", "replacement": "NonNullable<unknown>" },
+						"fix": { "range": [131, 133], "text": "NonNullable<unknown>" },
+						"desc": "Replace `{}` with `NonNullable<unknown>`."
+					}
+				],
+				"suppressions": [{ "kind": "directive", "justification": "" }]
+			},
+			{
+				"ruleId": "@typescript-eslint/no-explicit-any",
+				"severity": 2,
+				"message": "Unexpected any. Specify a different type.",
+				"line": 4,
+				"column": 43,
+				"nodeType": "TSAnyKeyword",
+				"messageId": "unexpectedAny",
+				"endLine": 4,
+				"endColumn": 46,
+				"suggestions": [
+					{
+						"messageId": "suggestUnknown",
+						"fix": { "range": [135, 138], "text": "unknown" },
+						"desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+					},
+					{
+						"messageId": "suggestNever",
+						"fix": { "range": [135, 138], "text": "never" },
+						"desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+					}
+				],
+				"suppressions": [{ "kind": "directive", "justification": "" }]
+			}
+		],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\views\\ContactView.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\views\\DonateView.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\views\\HomeView.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\views\\projects\\FileOrganizerView.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\views\\projects\\FileShareView.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\views\\projects\\RoboticArmView.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\src\\views\\projects\\T6DroneView.vue",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	},
+	{
+		"filePath": "D:\\GitHub\\Toomas633\\vue.config.js",
+		"messages": [],
+		"suppressedMessages": [],
+		"errorCount": 0,
+		"fatalErrorCount": 0,
+		"warningCount": 0,
+		"fixableErrorCount": 0,
+		"fixableWarningCount": 0,
+		"usedDeprecatedRules": []
+	}
+]

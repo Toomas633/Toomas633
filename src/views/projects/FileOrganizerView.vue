@@ -101,7 +101,7 @@
 					activatable>
 					<template v-slot:prepend="{ item }">
 						<v-icon>
-							{{ files[item.file] }}
+							{{ fileIcons[item.file as FileType] }}
 						</v-icon>
 					</template>
 				</v-treeview>
@@ -121,7 +121,7 @@
 					activatable>
 					<template v-slot:prepend="{ item }">
 						<v-icon>
-							{{ files[item.file] }}
+							{{ fileIcons[item.file as FileType] }}
 						</v-icon>
 					</template>
 				</v-treeview>
@@ -130,224 +130,8 @@
 	</v-row>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
-import { defineComponent } from 'vue'
-
-interface Files {
-	[key: string]: string
-}
-
-export default defineComponent({
-	name: 'FileOrganizerView',
-	components: { ButtonCard },
-	data: () => ({
-		files: {
-			txt: 'mdi-file-document-outline',
-			folder: 'mdi-folder',
-			mkv: 'mdi-movie-outline',
-		} as Files,
-		inputItems: [
-			{
-				title: 'your files',
-				file: 'folder',
-			},
-			{
-				title: 'movies',
-				file: 'folder',
-				children: [
-					{
-						title: 'movie folder 1',
-						file: 'folder',
-						children: [
-							{
-								title: 'movie.mkv',
-								file: 'mkv',
-							},
-							{
-								title: 'sub.srt',
-								file: 'txt',
-							},
-							{
-								title: 'other files',
-								file: 'txt',
-							},
-						],
-					},
-					{
-						title: 'movie folder 2',
-						file: 'folder',
-						children: [
-							{
-								title: 'movie.mp4',
-								file: 'mkv',
-							},
-							{
-								title: 'subs',
-								children: [
-									{
-										title: 'sub.srt',
-										file: 'txt',
-									},
-								],
-							},
-							{
-								title: 'other files',
-								file: 'txt',
-							},
-						],
-					},
-				],
-			},
-			{
-				title: 'tv',
-				file: 'folder',
-				children: [
-					{
-						title: 'show folder 1',
-						file: 'folder',
-						children: [
-							{
-								title: 'show.mkv',
-								file: 'mkv',
-							},
-							{
-								title: 'subs',
-								file: 'folder',
-								children: [
-									{
-										title: 'sub.srt',
-										file: 'txt',
-									},
-								],
-							},
-							{
-								title: 'other files',
-								file: 'txt',
-							},
-						],
-					},
-					{
-						title: 'show folder 2',
-						file: 'folder',
-						children: [
-							{
-								title: 'episode or season folder',
-								file: 'folder',
-								children: [
-									{
-										title: 'show.mp4',
-										file: 'mkv',
-									},
-									{
-										title: 'subs',
-										file: 'folder',
-										children: [
-											{
-												title: 'sub.srt',
-												file: 'txt',
-											},
-										],
-									},
-									{
-										title: 'other files',
-										file: 'txt',
-									},
-								],
-							},
-						],
-					},
-				],
-			},
-			{
-				title: 'your files.txt',
-				file: 'txt',
-			},
-		],
-		outputItems: [
-			{
-				title: 'your folders',
-				file: 'folder',
-			},
-			{
-				title: 'movies',
-				file: 'folder',
-				children: [
-					{
-						title: 'movie folder 1',
-						file: 'folder',
-						children: [
-							{
-								title: 'movie.mkv',
-								file: 'mkv',
-							},
-							{
-								title: 'sub.srt',
-								file: 'txt',
-							},
-						],
-					},
-					{
-						title: 'movie folder 2',
-						file: 'folder',
-						children: [
-							{
-								title: 'movie.mp4',
-								file: 'mkv',
-							},
-							{
-								title: 'sub.srt',
-								file: 'txt',
-							},
-						],
-					},
-				],
-			},
-			{
-				title: 'tv',
-				file: 'folder',
-				children: [
-					{
-						title: 'show folder 1',
-						file: 'folder',
-						children: [
-							{
-								title: 'show.mkv',
-								file: 'mkv',
-							},
-							{
-								title: 'sub.srt',
-								file: 'txt',
-							},
-						],
-					},
-					{
-						title: 'show folder 2',
-						file: 'folder',
-						children: [
-							{
-								title: 'episode or season folder',
-								file: 'folder',
-								children: [
-									{
-										title: 'show.mp4',
-										file: 'mkv',
-									},
-									{
-										title: 'sub.srt',
-										file: 'txt',
-									},
-								],
-							},
-						],
-					},
-				],
-			},
-			{
-				title: 'your files.txt',
-				file: 'txt',
-			},
-		],
-	}),
-})
+import { inputItems, outputItems, fileIcons } from '@/constants/fileOrganizer'
+import { FileType } from '@/enums/fileType'
 </script>

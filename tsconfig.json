@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
-		"target": "esnext",
-		"module": "esnext",
+		"target": "ES2020",
+		"module": "ES2020",
 		"strict": true,
 		"jsx": "preserve",
 		"moduleResolution": "node",
@@ -13,18 +13,12 @@
 		"useDefineForClassFields": true,
 		"sourceMap": true,
 		"baseUrl": ".",
-		"types": ["webpack-env"],
+		"types": ["webpack-env", "vuetify"],
 		"paths": {
 			"@/*": ["src/*"]
 		},
-		"lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+		"lib": ["ES2020", "dom", "scripthost"]
 	},
-	"include": [
-		"src/**/*.ts",
-		"src/**/*.tsx",
-		"src/**/*.vue",
-		"tests/**/*.ts",
-		"tests/**/*.tsx"
-	],
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
 	"exclude": ["node_modules"]
 }

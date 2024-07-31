@@ -21,38 +21,14 @@
 	</v-menu>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script setup lang="ts">
+import type { Option } from '@/interfaces/option'
 
-interface Option {
+defineProps<{
+	icon: string
 	label: string
+	options?: Option[]
 	href?: string
-	icon?: string
-}
-
-export default defineComponent({
-	name: 'DropdownMenu',
-	props: {
-		icon: {
-			type: String,
-			required: true,
-		},
-		label: {
-			type: String,
-			required: true,
-		},
-		options: {
-			type: Array as PropType<Option[]>,
-			required: false,
-		},
-		href: {
-			type: String,
-			required: false,
-		},
-		isMobile: {
-			type: Boolean,
-			required: true,
-		},
-	},
-})
+	isMobile: boolean
+}>()
 </script>

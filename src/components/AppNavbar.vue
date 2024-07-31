@@ -55,77 +55,60 @@
 	</v-app-bar>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import DropdownMenu from './DropdownMenu.vue'
 
-export default defineComponent({
-	name: 'AppNavbar',
-	components: { DropdownMenu },
-	data() {
-		return {
-			menuItems: [
-				{
-					type: 'menu',
-					icon: 'mdi-toolbox',
-					label: 'Projects',
-					options: [
-						{
-							label: 'T6 Drone',
-							href: '/projects/t6-drone',
-							icon: 'mdi-quadcopter',
-						},
-						{
-							label: 'Robotic Arm',
-							href: '/projects/robotic-arm',
-							icon: 'mdi-robot-industrial',
-						},
-						{
-							label: 'File Organizer',
-							href: '/projects/file-organizer',
-							icon: 'mdi-file-document-arrow-right',
-						},
-						{
-							label: 'FileShare',
-							href: '/projects/fileshare',
-							icon: 'mdi-share-variant',
-						},
-					],
-				},
-				{
-					type: 'menu',
-					icon: 'mdi-controller',
-					label: 'Game servers',
-					options: [
-						{
-							label: 'Minecraft Vanilla Server',
-							href: 'https://servers.toomas633.com/',
-							icon: 'mdi-minecraft',
-						},
-					],
-				},
-				{
-					type: 'button',
-					icon: 'mdi-card-account-mail',
-					label: 'Contact',
-					href: '/contact',
-				},
-				{
-					type: 'button',
-					icon: 'mdi-hand-coin',
-					label: 'Donate',
-					href: '/donate',
-				},
-			],
-		}
+const menuItems = [
+	{
+		type: 'menu',
+		icon: 'mdi-toolbox',
+		label: 'Projects',
+		options: [
+			{
+				label: 'T6 Drone',
+				href: '/projects/t6-drone',
+				icon: 'mdi-quadcopter',
+			},
+			{
+				label: 'Robotic Arm',
+				href: '/projects/robotic-arm',
+				icon: 'mdi-robot-industrial',
+			},
+			{
+				label: 'File Organizer',
+				href: '/projects/file-organizer',
+				icon: 'mdi-file-document-arrow-right',
+			},
+			{
+				label: 'FileShare',
+				href: '/projects/fileshare',
+				icon: 'mdi-share-variant',
+			},
+		],
 	},
-})
+	{
+		type: 'menu',
+		icon: 'mdi-controller',
+		label: 'Game servers',
+		options: [
+			{
+				label: 'Minecraft Vanilla Server',
+				href: 'https://servers.toomas633.com/',
+				icon: 'mdi-minecraft',
+			},
+		],
+	},
+	{
+		type: 'button',
+		icon: 'mdi-card-account-mail',
+		label: 'Contact',
+		href: '/contact',
+	},
+	{
+		type: 'button',
+		icon: 'mdi-hand-coin',
+		label: 'Donate',
+		href: '/donate',
+	},
+]
 </script>
-
-<style>
-.logo-and-title {
-	color: inherit;
-	text-decoration: none;
-	width: 265px;
-}
-</style>
