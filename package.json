@@ -6,10 +6,11 @@
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
-		"stylelint": "stylelint 'src/**/*.{css,scss,vue}'",
+		"stylelint": "stylelint 'src/**/*.{css,scss,vue}' -c .stylelintrc.js",
 		"prettier": "prettier --write '**/*.{ts,js,jsx,json,css,scss,vue,html}' --config .prettierrc",
-		"scan:lint": "vue-cli-service lint --format json --output-file .reports/eslint-report.json",
-		"scan:stylelint": "stylelint 'src/**/*.{css,scss,vue}' --formatter json --output-file .reports/stylelint-report.json"
+		"scan:lint": "vue-cli-service lint --format json --output-file .reports/eslint-report.json -c .eslintrc.js --no-fix",
+		"scan:stylelint": "stylelint 'src/**/*.{css,scss,vue}' --f json -o .reports/stylelint-report.json -c .stylelintrc.js",
+		"scan:hadolint": ""
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^6.6.0",
@@ -19,6 +20,7 @@
 		"date-fns": "^3.6.0",
 		"dotenv": "^16.4.5",
 		"eslint-plugin-vuetify": "^2.4.0",
+		"homepage": "file:",
 		"nodemailer": "^6.9.14",
 		"roboto-fontface": "*",
 		"sass": "^1.77.8",

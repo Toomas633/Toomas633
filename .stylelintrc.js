@@ -4,9 +4,7 @@ module.exports = {
 		'stylelint-scss',
 		'stylelint-config-recommended-vue',
 	],
-	rules: {
-		// Add or customize rules as needed
-	},
+	rules: {},
 	overrides: [
 		{
 			files: ['*.vue'],

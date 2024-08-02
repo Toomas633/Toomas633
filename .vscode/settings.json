@@ -39,7 +39,7 @@
 			"jsxBracketSameLine": true,
 			"semi": false,
 			"printWidth": 80,
-			"endOfLine": "lf"
+			"endOfLine": "crlf"
 		}
 	},
 	"prettier.useEditorConfig": false,
