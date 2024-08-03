@@ -55,14 +55,14 @@
 				>
 			</v-card>
 			<v-row class="pt-6 d-block d-md-flex" justify="center">
-				<v-col md="8" sm="">
+				<v-col md="8">
 					<v-img
 						rounded
 						style="cursor: pointer"
 						:src="wiring"
 						@click="openImageInNewTab(wiring)" />
 				</v-col>
-				<v-col md="4" sm="">
+				<v-col md="4">
 					<v-img
 						rounded
 						style="cursor: pointer"
