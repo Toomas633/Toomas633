@@ -6,14 +6,25 @@
 			</v-card-title>
 			<v-btn flat icon="mdi-close" @click="emit('close')" />
 		</div>
-		<v-card-text class="pt-0">
+		<v-card-text class="pt-0 pb-0">
 			{{ message.message }}
 		</v-card-text>
+		<div v-if="message.stack">
+			<v-btn flat @click="toggleStackTrace">
+				<v-icon>{{
+					showStack ? 'mdi-chevron-down' : 'mdi-chevron-right'
+				}}</v-icon>
+				<span>Stack Trace</span>
+			</v-btn>
+			<v-card-text v-if="showStack" class="stack-trace pa-2">
+				<pre class="pa-2">{{ formattedStack }}</pre>
+			</v-card-text>
+		</div>
 	</v-card>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { PopupType } from '@/enums/popupType'
 import { PopupMessage } from '@/interfaces/popup'
 
@@ -22,6 +33,12 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits(['close'])
+
+const showStack = ref(false)
+
+const toggleStackTrace = () => {
+	showStack.value = !showStack.value
+}
 
 const title = computed(() => {
 	switch (props.message?.type) {
@@ -67,6 +84,15 @@ const icon = computed(() => {
 			return 'mdi-alert-circle-outline'
 	}
 })
+
+const formattedStack = computed(() => {
+	return (
+		props.message.stack
+			?.split('\n')
+			.map((line) => line.trim())
+			.join('\n') || ''
+	)
+})
 </script>
 
 <style scoped>
@@ -75,6 +101,13 @@ const icon = computed(() => {
 	bottom: 1rem;
 	right: 1rem;
 	min-width: 25rem;
+	max-width: 50rem;
 	min-height: 6.25rem;
+
+	.stack-trace {
+		overflow: auto;
+		max-height: 25rem;
+		font-family: monospace;
+	}
 }
 </style>

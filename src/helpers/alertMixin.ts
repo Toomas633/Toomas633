@@ -18,9 +18,13 @@ export default function useAlertMixin() {
 			type: PopupType.Error,
 			stack: error.stack,
 		}
-		timer((value: boolean) => {
-			showPopup.value = value
-		}, fiveSeconds)
+		if (!popupMessage.value.stack) {
+			timer((value: boolean) => {
+				showPopup.value = value
+			}, fiveSeconds)
+		} else {
+			showPopup.value = true
+		}
 	}
 
 	function showSuccessMessage(
