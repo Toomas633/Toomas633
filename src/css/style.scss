@@ -2,6 +2,7 @@ h1 {
 	color: rgb(var(--v-theme-primary));
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .v-autocomplete__content .v-list {
 	background: rgb(var(--v-theme-secondary)) !important;
 }

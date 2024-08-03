@@ -11,6 +11,4 @@
 <script setup lang="ts">
 import AppNavbar from './components/AppNavbar.vue'
 import AppFooter from './components/AppFooter.vue'
-
-console.log('test')
 </script>
