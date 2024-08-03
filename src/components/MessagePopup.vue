@@ -94,20 +94,3 @@ const formattedStack = computed(() => {
 	)
 })
 </script>
-
-<style scoped>
-.message-popup {
-	position: fixed;
-	bottom: 1rem;
-	right: 1rem;
-	min-width: 25rem;
-	max-width: 50rem;
-	min-height: 6.25rem;
-
-	.stack-trace {
-		overflow: auto;
-		max-height: 25rem;
-		font-family: monospace;
-	}
-}
-</style>
