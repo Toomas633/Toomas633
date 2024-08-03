@@ -40,8 +40,8 @@
 			<v-img
 				rounded
 				style="cursor: pointer"
-				src="@/assets/RoboticArm/arm.jpeg"
-				@click="openImageInNewTab(require('@/assets/RoboticArm/arm.jpeg'))" />
+				:src="arm"
+				@click="openImageInNewTab(arm)" />
 		</v-col>
 		<v-col>
 			<v-card class="bg-black text-center pa-4" min-width="282">
@@ -59,19 +59,15 @@
 					<v-img
 						rounded
 						style="cursor: pointer"
-						src="@/assets/RoboticArm/wiring.png"
-						@click="
-							openImageInNewTab(require('@/assets/RoboticArm/wiring.png'))
-						" />
+						:src="wiring"
+						@click="openImageInNewTab(wiring)" />
 				</v-col>
 				<v-col md="4" sm="">
 					<v-img
 						rounded
 						style="cursor: pointer"
-						src="@/assets/RoboticArm/list.png"
-						@click="
-							openImageInNewTab(require('@/assets/RoboticArm/list.png'))
-						" />
+						:src="list"
+						@click="openImageInNewTab(list)" />
 				</v-col>
 			</v-row>
 		</v-col>
@@ -80,6 +76,9 @@
 
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
+import arm from '@/assets/RoboticArm/arm.jpeg'
+import wiring from '@/assets/RoboticArm/wiring.png'
+import list from '@/assets/RoboticArm/list.png'
 
 const openImageInNewTab = (image: string) => {
 	window.open(image, '_blank')

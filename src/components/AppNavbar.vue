@@ -1,12 +1,7 @@
 <template>
 	<v-app-bar app>
 		<router-link to="/" class="logo-and-title ml-4 align-center d-flex">
-			<v-img
-				src="@/assets/logo.png"
-				alt="Logo"
-				max-height="40"
-				max-width="40"
-				contain />
+			<v-img :src="logo" alt="Logo" max-height="40" max-width="40" contain />
 			<v-toolbar-title class="ml-2">Toomas633's Dungeon</v-toolbar-title>
 		</router-link>
 		<v-spacer />
@@ -57,6 +52,7 @@
 
 <script setup lang="ts">
 import DropdownMenu from './DropdownMenu.vue'
+import logo from '@/assets/logo.png'
 
 const menuItems = [
 	{
