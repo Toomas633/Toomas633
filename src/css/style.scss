@@ -41,3 +41,10 @@ a {
 		font-family: monospace;
 	}
 }
+
+.image-title {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
