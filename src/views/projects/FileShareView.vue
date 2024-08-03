@@ -29,7 +29,20 @@
 				icon-color="blue" />
 		</v-col>
 	</v-row>
-	<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
+	<v-container style="width: 65rem; height: 31.25rem">
+		<v-carousel
+			show-arrows="hover"
+			cycle
+			hide-delimiters
+			progress="primary"
+			interval="5000">
+			<v-carousel-item :src="banner" alt="Banner" cover />
+			<v-carousel-item :src="upload" alt="Upload" cover />
+			<v-carousel-item :src="download" alt="Download" cover />
+			<v-carousel-item :src="settings" alt="Settings" cover />
+		</v-carousel>
+	</v-container>
+	<v-row class="pa-4 mt-4 d-block d-sm-flex" justify="center">
 		<v-col>
 			<v-card class="bg-black ml-8 mr-8 pa-4">
 				<h1 class="text-center">Features</h1>
@@ -71,7 +84,8 @@
 						check this by running the command
 						<code> <mark> php -v </mark> </code>
 						in your terminal. If you don't have PHP installed, you can download
-						it from the <a href="https://www.php.net/">official PHP website</a>
+						it from the
+						<a href="https://www.php.net/">official PHP website</a>
 					</li>
 					<li>
 						Install Python on your Windows machine if it is not already
@@ -191,7 +205,9 @@
 					</li>
 					<li>
 						Start the new service by running the command
-						<code> <mark> sudo systemctl start FileShare.service </mark> </code>
+						<code>
+							<mark> sudo systemctl start FileShare.service </mark>
+						</code>
 					</li>
 					<li>
 						Verify that the service is running properly by checking the status
@@ -261,7 +277,7 @@
 		<v-col>
 			<v-card class="bg-black ml-8 mr-8 pa-4">
 				<h1 class="text-center pb-2">Docker</h1>
-				<p style="padding-top: 0; padding-bottom: 0">
+				<p class="pt-0 pb-0">
 					Create a
 					<code> <mark> docker-compose.yml </mark> </code> , copy the contents
 					under here and run it with
@@ -298,4 +314,8 @@ services:
 
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
+import banner from '@/assets/FileShare/banner.png'
+import download from '@/assets/FileShare/download.png'
+import settings from '@/assets/FileShare/settings.png'
+import upload from '@/assets/FileShare/upload.png'
 </script>
