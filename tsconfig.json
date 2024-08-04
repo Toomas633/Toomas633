@@ -19,6 +19,14 @@
 		},
 		"lib": ["ES2020", "dom", "scripthost"]
 	},
-	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+	"include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "backend/**/*.ts",
+    "backend/**/*.d.ts",
+    "backend/**/*.tsx"
+  ],
 	"exclude": ["node_modules"]
 }

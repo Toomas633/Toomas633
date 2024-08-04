@@ -17,7 +17,7 @@
 					:icon="item.icon"
 					:label="item.label"
 					:options="item.options"
-					:isMobile="false" />
+					:is-mobile="false" />
 				<v-btn
 					v-else
 					:class="index === menuItems.length - 1 ? 'mr-2' : ''"
@@ -29,7 +29,7 @@
 			</template>
 		</div>
 		<v-menu>
-			<template v-slot:activator="{ props }">
+			<template #activator="{ props }">
 				<v-app-bar-nav-icon class="d-md-none" v-bind="props" />
 			</template>
 			<v-list class="mt-3">
@@ -40,7 +40,7 @@
 							:label="item.label"
 							:options="item.options"
 							:href="item.href"
-							:isMobile="true" />
+							:is-mobile="true" />
 					</v-list-item>
 					<v-list-item v-else class="pr-0 pl-0">
 						<v-btn class="elevation-0" :href="item.href">

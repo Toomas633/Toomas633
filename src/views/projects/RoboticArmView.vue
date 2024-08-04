@@ -32,7 +32,7 @@
 				text="Thingiverse"
 				href="https://www.thingiverse.com/thing:5391135"
 				icon="mdi-rocket-launch"
-				iconColor="blue" />
+				icon-color="blue" />
 		</v-col>
 	</v-row>
 	<v-row class="pa-4 d-flex mr-4 ml-4" justify="center">

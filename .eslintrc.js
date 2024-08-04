@@ -5,10 +5,14 @@ module.exports = {
 		browser: true,
 	},
 	extends: [
-		'plugin:vue/vue3-essential',
+		'plugin:vue/vue3-recommended',
 		'eslint:recommended',
 		'@vue/typescript/recommended',
 		'plugin:prettier/recommended',
+	],
+	plugins: [
+		'vue',
+		'@typescript-eslint',
 	],
 	parserOptions: {
 		ecmaVersion: 2020,
@@ -21,11 +25,25 @@ module.exports = {
                 allow: ['warn', 'error']
             }
         ],
-        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn'
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+		'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+		'prettier/prettier': [
+			'error',
+			{
+				singleQuote: true,
+				semi: false,
+			},
+		],
     },
 	overrides: [
 		{
-			files: ['src/**/*.{ts,js,jsx}', 'backend/**/*.{ts,js,jsx}'],
+			files: ['*.vue'],
+			rules: {
+			  'vue/script-setup-uses-vars': 'error',
+			},
+		  },
+		{
+			files: ['src/**/*', 'backend/**/*'],
 			parserOptions: {
 				ecmaFeatures: {
 					jsx: true,

@@ -99,7 +99,7 @@
 					density="compact"
 					rounded
 					activatable>
-					<template v-slot:prepend="{ item }">
+					<template #prepend="{ item }">
 						<v-icon>
 							{{ fileIcons[item.file as FileType] }}
 						</v-icon>
@@ -119,7 +119,7 @@
 					density="compact"
 					rounded
 					activatable>
-					<template v-slot:prepend="{ item }">
+					<template #prepend="{ item }">
 						<v-icon>
 							{{ fileIcons[item.file as FileType] }}
 						</v-icon>

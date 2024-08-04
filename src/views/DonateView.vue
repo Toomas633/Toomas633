@@ -20,7 +20,7 @@
 				title="PayPal"
 				href="https://www.paypal.com/paypalme/ToomasK"
 				icon="fa:fa-brands fa-paypal"
-				iconColor="blue" />
+				icon-color="blue" />
 		</v-col>
 		<v-col>
 			<ButtonCard

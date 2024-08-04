@@ -19,8 +19,8 @@
 					<v-row justify="center" class="d-flex">
 						<v-col>
 							<v-text-field
-								label="Email"
 								v-model="email"
+								label="Email"
 								:rules="emailRules"
 								placeholder="johndoe@gmail.com"
 								prepend-inner-icon="mdi-email-arrow-left-outline"
@@ -30,23 +30,23 @@
 						</v-col>
 						<v-col>
 							<v-autocomplete
-								label="Project"
 								v-model="project"
+								label="Project"
 								:items="projects"
 								prepend-inner-icon="mdi-toolbox"
 								:rules="autocompleteRules"
 								class="pa-2"
 								min-width="300"
 								required>
-								<template v-slot:item="{ props, item }">
+								<template #item="{ props, item }">
 									<v-list-item v-bind="props" :prepend-icon="item.raw.icon" />
 								</template>
 							</v-autocomplete>
 						</v-col>
 					</v-row>
 					<v-textarea
-						label="Message..."
 						v-model="message"
+						label="Message..."
 						:rules="textRules"
 						prepend-inner-icon="mdi-format-align-left"
 						counter="250"

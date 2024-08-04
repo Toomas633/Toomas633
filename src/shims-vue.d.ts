@@ -5,6 +5,7 @@ declare module '*.vue' {
 	export default component
 }
 
+/* eslint-enable */
 declare module '*.jpg' {
 	const content: string
 	export default content
