@@ -33,23 +33,26 @@
 					icon-color="blue" />
 			</v-col>
 		</v-row>
-		<v-carousel
-			show-arrows="hover"
-			cycle
-			hide-delimiters
-			progress="primary"
-			interval="5000">
-			<v-carousel-item
-				v-for="(item, index) in items"
-				:key="index"
-				:alt="item.alt">
-				<v-img :src="item.src" cover>
-					<h1 class="image-title">
-						{{ item.title }}
-					</h1>
-				</v-img>
-			</v-carousel-item>
-		</v-carousel>
+		<v-row class="pa-4 ml-8 mr-8" justify="center">
+			<v-carousel
+				show-arrows="hover"
+				cycle
+				hide-delimiters
+				progress="primary"
+				interval="5000"
+				height="600">
+				<v-carousel-item
+					v-for="(item, index) in items"
+					:key="index"
+					:alt="item.alt">
+					<v-img :src="item.src" cover @click="openImageInNewTab(item.src)">
+						<h1 class="image-title">
+							{{ item.title }}
+						</h1>
+					</v-img>
+				</v-carousel-item>
+			</v-carousel>
+		</v-row>
 	</v-container>
 </template>
 <script setup lang="ts">
@@ -58,6 +61,7 @@ import render from '@/assets/T6Drone/render.jpg'
 import electronics from '@/assets/T6Drone/electronics.jpg'
 import model from '@/assets/T6Drone/model.jpg'
 import complete from '@/assets/T6Drone/complete.jpg'
+import useImageMixin from '@/helpers/imageMixin'
 
 const items = [
 	{
@@ -81,4 +85,6 @@ const items = [
 		alt: 'Complete build',
 	},
 ]
+
+const { openImageInNewTab } = useImageMixin()
 </script>

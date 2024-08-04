@@ -79,8 +79,7 @@ import ButtonCard from '@/components/ButtonCard.vue'
 import arm from '@/assets/RoboticArm/arm.jpeg'
 import wiring from '@/assets/RoboticArm/wiring.png'
 import list from '@/assets/RoboticArm/list.png'
+import useImageMixin from '@/helpers/imageMixin'
 
-const openImageInNewTab = (image: string) => {
-	window.open(image, '_blank')
-}
+const { openImageInNewTab } = useImageMixin()
 </script>
