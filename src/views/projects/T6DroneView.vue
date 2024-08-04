@@ -9,7 +9,7 @@
 			printing files in the STL form can be found on
 			<a href="https://www.thingiverse.com/thing:4804605">Thingiverse</a> .
 		</p>
-		<v-row class="pa-4 d-flex" justify="center">
+		<v-row class="pa-4" justify="center">
 			<v-col>
 				<ButtonCard
 					size="100"

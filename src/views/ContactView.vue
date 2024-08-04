@@ -1,64 +1,69 @@
 <template>
-	<v-row class="pa-4 mt-0 d-block d-md-flex" justify="center">
-		<v-col class="justify">
-			<v-card class="bg-black text-center pa-4">
-				<h1 class="text-center">Contact</h1>
-				<p class="text-center">
-					Having trouble? Raise a new Issue on project's GitHub, leave a
-					comment, fill out the contact form. <br />
-					<sup>
-						(Any spam will result in automatic permanent IP ban and reporting)
-					</sup>
-				</p>
-			</v-card>
-		</v-col>
-		<v-col class="justify">
-			<v-card class="bg-black text-center pa-4">
-				<h1 class="text-center">Contact Form</h1>
-				<v-form ref="form" v-model="valid">
-					<v-row justify="center" class="d-flex">
-						<v-col>
-							<v-text-field
-								v-model="email"
-								label="Email"
-								:rules="emailRules"
-								placeholder="johndoe@gmail.com"
-								prepend-inner-icon="mdi-email-arrow-left-outline"
-								class="pa-2"
-								min-width="300"
-								required />
-						</v-col>
-						<v-col>
-							<v-autocomplete
-								v-model="project"
-								label="Project"
-								:items="projects"
-								prepend-inner-icon="mdi-toolbox"
-								:rules="autocompleteRules"
-								class="pa-2"
-								min-width="300"
-								required>
-								<template #item="{ props, item }">
-									<v-list-item v-bind="props" :prepend-icon="item.raw.icon" />
-								</template>
-							</v-autocomplete>
-						</v-col>
-					</v-row>
-					<v-textarea
-						v-model="message"
-						label="Message..."
-						:rules="textRules"
-						prepend-inner-icon="mdi-format-align-left"
-						counter="250"
-						required />
-					<v-btn :disabled="!valid" :loading="loading" @click="submit">
-						<v-icon icon="mdi-email-fast" class="mr-1" /> Send
-					</v-btn>
-				</v-form>
-			</v-card>
-		</v-col>
-	</v-row>
-	<MessagePopup v-if="showPopup" :message="popupMessage!" @close="closePopup" />
+	<v-container class="pa-4">
+		<v-row class="mt-0 d-block d-md-flex" justify="center">
+			<v-col class="justify">
+				<v-card class="bg-black text-center pa-4">
+					<h1 class="text-center">Contact</h1>
+					<p class="text-center">
+						Having trouble? Raise a new Issue on project's GitHub, leave a
+						comment, fill out the contact form. <br />
+						<sup>
+							(Any spam will result in automatic permanent IP ban and reporting)
+						</sup>
+					</p>
+				</v-card>
+			</v-col>
+			<v-col class="justify">
+				<v-card class="bg-black text-center pa-4">
+					<h1 class="text-center">Contact Form</h1>
+					<v-form ref="form" v-model="valid">
+						<v-row justify="center">
+							<v-col>
+								<v-text-field
+									v-model="email"
+									label="Email"
+									:rules="emailRules"
+									placeholder="johndoe@gmail.com"
+									prepend-inner-icon="mdi-email-arrow-left-outline"
+									class="pa-2"
+									min-width="300"
+									required />
+							</v-col>
+							<v-col>
+								<v-autocomplete
+									v-model="project"
+									label="Project"
+									:items="projects"
+									prepend-inner-icon="mdi-toolbox"
+									:rules="autocompleteRules"
+									class="pa-2"
+									min-width="300"
+									required>
+									<template #item="{ props, item }">
+										<v-list-item v-bind="props" :prepend-icon="item.raw.icon" />
+									</template>
+								</v-autocomplete>
+							</v-col>
+						</v-row>
+						<v-textarea
+							v-model="message"
+							label="Message..."
+							:rules="textRules"
+							prepend-inner-icon="mdi-format-align-left"
+							counter="250"
+							required />
+						<v-btn :disabled="!valid" :loading="loading" @click="submit">
+							<v-icon icon="mdi-email-fast" class="mr-1" /> Send
+						</v-btn>
+					</v-form>
+				</v-card>
+			</v-col>
+		</v-row>
+		<MessagePopup
+			v-if="showPopup"
+			:message="popupMessage!"
+			@close="closePopup" />
+	</v-container>
 </template>
 
 <script setup lang="ts">
