@@ -4,13 +4,13 @@
 			<v-card-title class="d-inline-block">
 				<v-icon :icon="icon" /> {{ title }}
 			</v-card-title>
-			<v-btn flat icon="mdi-close" @click="emit('close')" />
+			<v-btn variant="flat" icon="mdi-close" @click="emit('close')" />
 		</div>
 		<v-card-text class="pt-0 pb-0">
 			{{ message.message }}
 		</v-card-text>
 		<div v-if="message.stack">
-			<v-btn flat @click="toggleStackTrace">
+			<v-btn variant="flat" @click="toggleStackTrace">
 				<v-icon>{{
 					showStack ? 'mdi-chevron-down' : 'mdi-chevron-right'
 				}}</v-icon>

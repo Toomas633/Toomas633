@@ -1,5 +1,5 @@
 <template>
-	<v-menu offset-y :location="isMobile ? 'start' : undefined">
+	<v-menu :location="isMobile ? 'start' : undefined">
 		<template #activator="{ props }">
 			<v-btn v-bind="props" :href="href" class="elevation-0">
 				<v-icon v-if="icon" :icon="icon" class="mr-1" />{{ label }}

@@ -1,6 +1,6 @@
 <template>
 	<v-row class="pa-4 mt-0 d-block d-md-flex" justify="center">
-		<v-col justify="center">
+		<v-col class="justify">
 			<v-card class="bg-black text-center pa-4">
 				<h1 class="text-center">Contact</h1>
 				<p class="text-center">
@@ -12,7 +12,7 @@
 				</p>
 			</v-card>
 		</v-col>
-		<v-col justify="center">
+		<v-col class="justify">
 			<v-card class="bg-black text-center pa-4">
 				<h1 class="text-center">Contact Form</h1>
 				<v-form ref="form" v-model="valid">
