@@ -2,7 +2,7 @@
 	<v-app-bar>
 		<router-link to="/" class="logo-and-title ml-4 align-center d-flex">
 			<v-img
-				src="@/assets/logo.svg"
+				src="@/assets/images/logo.svg"
 				alt="Logo"
 				max-height="40"
 				max-width="40" />

@@ -1,5 +1,5 @@
 import { PopupType } from '@/enums/popupType'
-import { PopupMessage } from '@/interfaces/popup'
+import { PopupMessage } from '@/models/popup'
 import useTimerMixin from './timerMixin'
 import { Ref } from 'vue'
 

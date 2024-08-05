@@ -33,7 +33,7 @@
 					icon-color="blue" />
 			</v-col>
 		</v-row>
-		<v-row class="pa-4 ml-8 mr-8" justify="center">
+		<v-row class="ma-4" justify="center">
 			<v-carousel
 				show-arrows="hover"
 				cycle
@@ -45,7 +45,11 @@
 					v-for="(item, index) in items"
 					:key="index"
 					:alt="item.alt">
-					<v-img :src="item.src" cover @click="openImageInNewTab(item.src)">
+					<v-img
+						:src="item.src"
+						cover
+						:alt="item.alt"
+						@click="openImageInNewTab(item.src)">
 						<h1 class="image-title">
 							{{ item.title }}
 						</h1>
@@ -57,10 +61,10 @@
 </template>
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
-import render from '@/assets/T6Drone/render.jpg'
-import electronics from '@/assets/T6Drone/electronics.jpg'
-import model from '@/assets/T6Drone/model.jpg'
-import complete from '@/assets/T6Drone/complete.jpg'
+import render from '@/assets/images/T6Drone/render.jpg'
+import electronics from '@/assets/images/T6Drone/electronics.jpg'
+import model from '@/assets/images/T6Drone/model.jpg'
+import complete from '@/assets/images/T6Drone/complete.jpg'
 import useImageMixin from '@/helpers/imageMixin'
 
 const items = [
@@ -88,3 +92,4 @@ const items = [
 
 const { openImageInNewTab } = useImageMixin()
 </script>
+@/mixins/imageMixin

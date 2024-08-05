@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Option } from '@/interfaces/option'
+import type { Option } from '@/models/option'
 
 defineProps<{
 	icon: string
@@ -32,3 +32,4 @@ defineProps<{
 	isMobile: boolean
 }>()
 </script>
+@/models/option

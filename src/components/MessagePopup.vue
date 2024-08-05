@@ -26,7 +26,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { PopupType } from '@/enums/popupType'
-import { PopupMessage } from '@/interfaces/popup'
+import { PopupMessage } from '@/models/popup'
 
 const props = defineProps<{
 	message: PopupMessage
@@ -94,3 +94,4 @@ const formattedStack = computed(() => {
 	)
 })
 </script>
+@/models/popup@/interfaces/popup

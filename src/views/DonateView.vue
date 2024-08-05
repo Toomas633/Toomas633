@@ -34,5 +34,5 @@
 
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
-import btc from '@/assets/btc.png'
+import btc from '@/assets/images/btc.png'
 </script>

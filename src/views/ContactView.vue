@@ -70,7 +70,7 @@
 import useAlertMixin from '@/helpers/alertMixin'
 import MessagePopup from '@/components/MessagePopup.vue'
 import { computed, ref } from 'vue'
-import { PopupMessage } from '@/interfaces/popup'
+import { PopupMessage } from '@/models/popup'
 import useTimerMixin from '@/helpers/timerMixin'
 
 const valid = ref(false)
@@ -171,3 +171,4 @@ function isKnownDomain(email: string) {
 	return knownDomains.includes(domain) || domain
 }
 </script>
+@/models/popup@/interfaces/popup@/mixins/alertMixin@/mixins/timerMixin

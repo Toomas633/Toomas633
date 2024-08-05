@@ -28,8 +28,7 @@
     "src/**/*.vue",
     "backend/**/*.ts",
     "backend/**/*.d.ts",
-    "backend/**/*.tsx",
-	"vue.config.ts"
+    "backend/**/*.tsx"
   ],
 	"exclude": ["node_modules", "public"]
 }

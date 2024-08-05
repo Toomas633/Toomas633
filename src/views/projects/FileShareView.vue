@@ -30,31 +30,7 @@
 					icon-color="blue" />
 			</v-col>
 		</v-row>
-		<v-container class="pa-4 ma-0" :fluid="true" justify="center">
-			<v-carousel
-				show-arrows="hover"
-				cycle
-				hide-delimiters
-				progress="primary"
-				interval="5000">
-				<v-carousel-item
-					:src="upload"
-					alt="Upload"
-					cover
-					@click="openImageInNewTab(upload)" />
-				<v-carousel-item
-					:src="download"
-					alt="Download"
-					cover
-					@click="openImageInNewTab(download)" />
-				<v-carousel-item
-					:src="settings"
-					alt="Settings"
-					cover
-					@click="openImageInNewTab(settings)" />
-			</v-carousel>
-		</v-container>
-		<v-row class="pa-4 mt-2 d-block d-sm-flex" justify="center">
+		<v-row class="pa-4 d-block d-md-flex" justify="center">
 			<v-col>
 				<v-card class="bg-black pa-4">
 					<h1 class="text-center">Features</h1>
@@ -87,6 +63,37 @@
 					</ul>
 				</v-card>
 			</v-col>
+			<v-col
+				class="d-block d-md-flex pr-lg-11 pl-lg-11 pr-xl-6 pl-xl-6"
+				md="12"
+				lg="11"
+				xl="7">
+				<v-carousel
+					show-arrows="hover"
+					cycle
+					hide-delimiters
+					progress="primary"
+					interval="5000">
+					<v-carousel-item
+						class="mt-md-n9 mt-lg-0"
+						:src="upload"
+						alt="Upload"
+						@click="openImageInNewTab(upload)" />
+					<v-carousel-item
+						class="mt-md-n9 mt-lg-0"
+						:src="download"
+						alt="Download"
+						@click="openImageInNewTab(download)" />
+					<v-carousel-item
+						class="mt-md-n9 mt-lg-0"
+						:src="settings"
+						alt="Settings"
+						@click="openImageInNewTab(settings)" />
+				</v-carousel>
+			</v-col>
+		</v-row>
+		<v-row class="pa-4 mt-2 d-block d-sm-flex" justify="center">
+			<v-col> </v-col>
 			<v-col>
 				<v-card class="bg-black pa-4">
 					<h1 class="text-center">Requirements</h1>
@@ -321,10 +328,11 @@ services:
 
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
-import download from '@/assets/FileShare/download.png'
-import settings from '@/assets/FileShare/settings.png'
-import upload from '@/assets/FileShare/upload.png'
+import download from '@/assets/images/FileShare/download.png'
+import settings from '@/assets/images/FileShare/settings.png'
+import upload from '@/assets/images/FileShare/upload.png'
 import useImageMixin from '@/helpers/imageMixin'
 
 const { openImageInNewTab } = useImageMixin()
 </script>
+@/mixins/imageMixin

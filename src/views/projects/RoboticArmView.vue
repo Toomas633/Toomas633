@@ -40,6 +40,7 @@
 					rounded
 					style="cursor: pointer"
 					:src="arm"
+					alt="Arm"
 					@click="openImageInNewTab(arm)" />
 			</v-col>
 			<v-col>
@@ -59,6 +60,7 @@
 							rounded
 							style="cursor: pointer"
 							:src="wiring"
+							alt="Wiring"
 							@click="openImageInNewTab(wiring)" />
 					</v-col>
 					<v-col md="4">
@@ -66,6 +68,7 @@
 							rounded
 							style="cursor: pointer"
 							:src="list"
+							alt="List"
 							@click="openImageInNewTab(list)" />
 					</v-col>
 				</v-row>
@@ -76,10 +79,11 @@
 
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
-import arm from '@/assets/RoboticArm/arm.jpeg'
-import wiring from '@/assets/RoboticArm/wiring.png'
-import list from '@/assets/RoboticArm/list.png'
+import arm from '@/assets/images/RoboticArm/arm.jpeg'
+import wiring from '@/assets/images/RoboticArm/wiring.png'
+import list from '@/assets/images/RoboticArm/list.png'
 import useImageMixin from '@/helpers/imageMixin'
 
 const { openImageInNewTab } = useImageMixin()
 </script>
+@/mixins/imageMixin
