@@ -34,7 +34,7 @@
 	"devDependencies": {
 		"@types/cors": "^2.8.17",
 		"@types/eslint": "^9.6.0",
-		"@types/node": "^22.0.0",
+		"@types/node": "^22.1.0",
 		"@types/nodemailer": "^6.4.15",
 		"@types/webfontloader": "^1.0.0",
 		"@typescript-eslint/eslint-plugin": "^7.18.0",
