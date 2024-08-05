@@ -27,7 +27,7 @@
 		"sass-loader": "^16.0.0",
 		"vue": "^3.4.34",
 		"vue-class-component": "^8.0.0-0",
-		"vue-router": "^4.4.0",
+		"vue-router": "^4.4.2",
 		"vuetify": "^3.6.13",
 		"webfontloader": "^1.0.0"
 	},
