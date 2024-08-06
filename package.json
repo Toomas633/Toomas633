@@ -12,22 +12,20 @@
 		"scan:stylelint": "stylelint 'src/**/*.{css,scss,vue}' --f json -o .reports/stylelint-report.json"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-free": "^6.6.0",
-		"@mdi/font": "^7.4.47",
 		"core-js": "^3.38.0",
 		"cors": "^2.8.5",
 		"date-fns": "^3.6.0",
 		"dotenv": "^16.4.5",
 		"homepage": "file:",
 		"nodemailer": "^6.9.14",
-		"roboto-fontface": "^0.10.0",
 		"vue": "^3.4.34",
 		"vue-class-component": "^8.0.0-0",
 		"vue-router": "^4.4.2",
-		"vuetify": "^3.6.13",
-		"webfontloader": "^1.0.0"
+		"vuetify": "^3.6.13"
 	},
 	"devDependencies": {
+		"@fortawesome/fontawesome-free": "^6.6.0",
+		"@mdi/font": "^7.4.47",
 		"@types/cors": "^2.8.17",
 		"@types/eslint": "^9.6.0",
 		"@types/node": "^22.1.0",
@@ -46,6 +44,7 @@
 		"eslint-plugin-vue": "^9.27.0",
 		"eslint-plugin-vuetify": "^2.4.0",
 		"prettier": "^3.3.3",
+		"roboto-fontface": "^0.10.0",
 		"sass": "^1.77.8",
 		"sass-loader": "^16.0.0",
 		"stylelint": "^16.8.1",
@@ -54,6 +53,7 @@
 		"stylelint-scss": "^6.5.0",
 		"typescript": "^5.5.4",
 		"vue-cli-plugin-vuetify": "~2.5.8",
+		"webfontloader": "^1.0.0",
 		"webpack-plugin-vuetify": "^3.0.3"
 	}
 }

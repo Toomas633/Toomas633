@@ -29,6 +29,6 @@
     "backend/**/*.ts",
     "backend/**/*.d.ts",
     "backend/**/*.tsx"
-  ],
-	"exclude": ["node_modules", "public"]
+, "backend/server.js"  ],
+	"exclude": ["node_modules", "public", "dist"]
 }

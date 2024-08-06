@@ -1,0 +1,9 @@
+.git/
+.github/
+.vscode/
+dist/
+icons/
+node_modules/
+.env.local
+LICENCE
+README.md

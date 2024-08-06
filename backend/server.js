@@ -1,8 +1,8 @@
-import express from 'express'
-import nodemailer from 'nodemailer'
-import bodyParser from 'body-parser'
-import cors from 'cors'
-import dotenv from 'dotenv'
+const express = require('express')
+const nodemailer = require('nodemailer')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const dotenv = require('dotenv')
 
 dotenv.config()
 
@@ -38,7 +38,7 @@ app.post('/send-email', (req, res) => {
 
 	transporter.verify((error) => {
 		if (error) {
-			console.error('Error with email configuration:', error)
+			return res.status(500).json({ success: false, error })
 		}
 	})
 
