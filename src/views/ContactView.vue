@@ -171,4 +171,3 @@ function isKnownDomain(email: string) {
 	return knownDomains.includes(domain) || domain
 }
 </script>
-@/models/popup@/interfaces/popup@/mixins/alertMixin@/mixins/timerMixin

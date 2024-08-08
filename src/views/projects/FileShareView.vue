@@ -1,17 +1,11 @@
 <template>
 	<v-container class="pa-4">
 		<v-row class="pa-4 pt-0 mt-0 d-block d-sm-flex" justify="center">
-			<v-col>
+			<v-col class="align-content-space-around">
 				<h1 class="text-center">FileShare</h1>
 				<p class="text-center">
 					Easy file sharing website featuring (direct) link generation and
 					delete timer.
-				</p>
-				<p class="text-center">
-					<strong>
-						I AM NOT RESPONSIBLE FOR ANY DATA LOSS UPON WRONG CONFIGURATION OR
-						CODE CHANGES!
-					</strong>
 				</p>
 			</v-col>
 			<v-col lg="2" md="3" sm="4">
@@ -92,34 +86,62 @@
 				</v-carousel>
 			</v-col>
 		</v-row>
-		<v-row class="pa-4 mt-2 d-block d-sm-flex" justify="center">
-			<v-col> </v-col>
+		<v-row class="pa-4 d-block d-sm-flex" justify="center">
+			<v-col>
+				<v-card class="bg-black pa-4">
+					<h1 class="text-center">Running instructions</h1>
+					<ul class="ml-4">
+						<li>Install PHP and Python (and add to system path on windows)</li>
+						<li>
+							Clone the GitHub repository to your local machine using the
+							command
+							<InlineCode
+								code="git clone https://github.com/Toomas633/FileShare.git" />
+							or download the zip from releases and unpack it to desired
+							destination
+						</li>
+						<li>
+							Start a local server to access the website in your browser. You
+							can do this by running the command
+							<InlineCode code="php -S localhost:8000" /> (or a different port
+							number) in your terminal from the project directory
+						</li>
+						<li>
+							For timed file delete also run <InlineCode code="cleanup.py" /> on
+							the backround
+						</li>
+						<li>
+							Access the website in your browser. Once the server is running,
+							you can access the website by navigating to
+							<a href="http://localhost:8000"> http://localhost:8000 </a> (or
+							the appropriate URL) in your web browser
+						</li>
+					</ul>
+				</v-card>
+			</v-col>
 			<v-col>
 				<v-card class="bg-black pa-4">
 					<h1 class="text-center">Requirements</h1>
 					<ul class="ml-4">
 						<li>
 							Make sure you have PHP installed on your local machine. You can
-							check this by running the command
-							<code> <mark> php -v </mark> </code>
-							in your terminal. If you don't have PHP installed, you can
-							download it from the
+							check this by running the command <InlineCode code="php -v" /> in
+							your terminal. If you don't have PHP installed, you can download
+							it from the
 							<a href="https://www.php.net/">official PHP website</a>
 						</li>
 						<li>
 							Install Python on your Windows machine if it is not already
 							installed. You can download the latest version of Python from the
 							official website at
-							<a href="https://www.python.org/downloads/"
-								>https://www.python.org/downloads/</a
-							>
+							<a href="https://www.python.org/downloads/">
+								https://www.python.org/downloads/
+							</a>
 						</li>
 						<li>
-							Change the values of
-							<code> <mark> post_max_size </mark> </code>
-							and
-							<code> <mark> upload_max_filesize </mark> </code>
-							in <code> php.ini </code> to a desired size amount, or bigger
+							Change the values of <InlineCode code="post_max_size" /> and
+							<InlineCode code="upload_max_filesize" /> in
+							<InlineCode code="php.ini" /> to a desired size amount, or bigger
 							files can't be uploaded (defaults are 8M and 2M in the file, so
 							the uploaded file can only be of size 2MB and less). Not needed on
 							docker image
@@ -130,89 +152,44 @@
 							<ul class="ml-4">
 								<li>
 									On debian run
-									<code>
-										<mark> sudo apt install php-sqlite3 php-curl </mark>
-									</code>
-									, windows should have the .dll files included in the php
-									folder
+									<InlineCode code="sudo apt install php-sqlite3 php-curl" />,
+									windows should have the .dll files included in the php folder
 								</li>
 								<li>
-									Edit <code> php.ini </code> and uncomment
-									<code> <mark> extension=pdo_sqlite </mark> </code> ,
-									<code> <mark> extension=sqlite3 </mark> </code> ,
-									<code> <mark> extension=curl </mark> </code>
-									and assign the php installation directory path to
-									<code> <mark> sqlite3.extension_dir = </mark> </code> , for
-									example
-									<code> <mark> sqlite3.extension_dir = C:\php </mark> </code>
-									on windows if you put php on C drive root
+									Edit <InlineCode code="php.ini" /> and uncomment
+									<InlineCode code="extension=pdo_sqlite" />,
+									<InlineCode code="extension=sqlite3" />,
+									<InlineCode code="extension=curl" /> and assign the php
+									installation directory path to
+									<InlineCode code="sqlite3.extension_dir =" />, for example
+									<InlineCode code="sqlite3.extension_dir = C:\php" /> on
+									windows if you put php on C drive root
 								</li>
 							</ul>
 						</li>
 						<li>
 							Check that you have pytz and datetime install for python by
-							running
-							<code> <mark> pip install pytz datetime </mark> </code>
+							running <InlineCode code="pip install pytz datetime" />
 						</li>
 					</ul>
 				</v-card>
 			</v-col>
 		</v-row>
-		<v-container class="pa-4">
-			<h1 class="text-center pb-2">Running instructions</h1>
-			<ul class="ml-4">
-				<li>Install PHP and Python (and add to system path on windows)</li>
-				<li>
-					Clone the GitHub repository to your local machine using the command
-					<code>
-						<mark class="bg-grey">
-							git clone https://github.com/Toomas633/FileShare.git
-						</mark>
-					</code>
-					or download the zip from releases and unpack it to desired destination
-				</li>
-				<li>
-					Start a local server to access the website in your browser. You can do
-					this by running the command
-					<code> <mark class="bg-grey"> php -S localhost:8000 </mark> </code>
-					(or a different port number) in your terminal from the project
-					directory
-				</li>
-				<li>
-					For timed file delete also run
-					<code> <mark class="bg-grey"> cleanup.py </mark> </code>
-					on the backround
-				</li>
-				<li>
-					Access the website in your browser. Once the server is running, you
-					can access the website by navigating to
-					<a href="http://localhost:8000"> http://localhost:8000 </a> (or the
-					appropriate URL) in your web browser
-				</li>
-			</ul>
-		</v-container>
-		<v-card class="bg-black pa-4 ma-4">
-			<h1 class="text-center pb-2">Debian service</h1>
+		<v-card class="bg-black pa-4 ma-4 mt-0">
+			<h1 class="text-center">Debian service</h1>
 			<ul class="ml-4">
 				<li>
 					Create a new systemd service file for your PHP website by running the
 					command
-					<code>
-						<mark> sudo nano /etc/systemd/system/FileShare.service </mark>
-					</code>
+					<InlineCode code="sudo nano /etc/systemd/system/FileShare.service" />
 				</li>
 				<li>
 					Download systemd service to
-					<code> <mark> /etc/systemd/system/ </mark> </code>
-					by running
-					<code>
-						<mark>
-							sudo wget
-							https://raw.githubusercontent.com/Toomas633/FileShare/main/examples/FileShare.service
-						</mark>
-					</code>
-					in
-					<code> <mark> cd /etc/systemd/system/ </mark> </code>
+					<InlineCode code="/etc/systemd/system/" /> by running
+					<InlineCode
+						code="sudo wget
+							https://raw.githubusercontent.com/Toomas633/FileShare/main/examples/FileShare.service" />
+					in <InlineCode code="cd /etc/systemd/system/" />
 				</li>
 				<li>
 					Make sure to replace "/path/to/start.sh" with the path to the
@@ -221,33 +198,26 @@
 				</li>
 				<li>
 					Reload the systemd daemon to recognize the new service by running the
-					command
-					<code> <mark> sudo systemctl daemon-reload </mark> </code>
+					command <InlineCode code="sudo systemctl daemon-reload" />
 				</li>
 				<li>
 					Start the new service by running the command
-					<code>
-						<mark> sudo systemctl start FileShare.service </mark>
-					</code>
+					<InlineCode code="sudo systemctl start FileShare.service" />
 				</li>
 				<li>
 					Verify that the service is running properly by checking the status
 					with the command
-					<code>
-						<mark> sudo systemctl status FileShare.service </mark>
-					</code>
+					<InlineCode code="sudo systemctl status FileShare.service" />
 				</li>
 				<li>
 					If the service is running correctly, enable it to start at boot time
 					by running the command
-					<code>
-						<mark> sudo systemctl enable FileShare.service </mark>
-					</code>
+					<InlineCode code="sudo systemctl enable FileShare.service" />
 				</li>
 			</ul>
 		</v-card>
 		<v-card class="bg-black pa-4 ma-4">
-			<h1 class="text-center pb-2">Windows</h1>
+			<h1 class="text-center">Windows</h1>
 			<ul class="ml-4">
 				<li>
 					Enable running the website in the background (or just double click to
@@ -282,8 +252,7 @@
 						</li>
 						<li>
 							In the "Program/script" field, enter the full path to the
-							<code> <mark> start.bat </mark> </code>
-							file.
+							<InlineCode code="start.bat" /> file.
 						</li>
 						<li>Click "OK" twice to save the action and task.</li>
 					</ul>
@@ -293,46 +262,26 @@
 		<v-card class="bg-black pa-4 ma-4">
 			<h1 class="text-center">Docker</h1>
 			<p class="text-center">
-				Create a
-				<code> <mark> docker-compose.yml </mark> </code> , copy the contents
+				Create a <InlineCode code="docker-compose.yml" />, copy the contents
 				under here and run it with
-				<code> <mark> docker-compose up -d </mark> </code>
-				(or download the .yml from
-				<code>
-					<mark>
-						https://raw.githubusercontent.com/Toomas633/FileShare/main/examples/docker-compose.yml
-					</mark>
-				</code>
-				and edit it)
+				<InlineCode code="docker-compose up -d" /> (or download the .yml from
+				<InlineCode
+					code="https://raw.githubusercontent.com/Toomas633/FileShare/main/examples/docker-compose.yml" />
+				and edit it) <CodeBlock :code="dockerCompose" />
 			</p>
-			<pre class="mt-4 pa-2 rounded">
-version: '3.9'
-services:
-  fileshare:
-    image: ghcr.io/toomas633/fileshare:latest #or version number instead of latest
-	container_name: fileshare #container name, can be set different
-	ports:
-	  - "8080:80" #map port 8080 from host to 80 on container
-	environment:
-      - TZ=Europe/London #default timezone for the container and on first database creation
-	  - MAX_FILESIZE=5M #allowed uploaded file size
-	  - PASSWORD=Password.123 #password for settings page login, set your own or change it on the page
-	volumes:
-	  - /host/path1:/var/www/html/uploads/ # volume or host dir to a folder where uploads will be held
-	  - /host/path2:/var/www/html/db/ # volume or host dir to a folder where the database will be held 
-	restart: always</pre
-			>
 		</v-card>
 	</v-container>
 </template>
 
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
+import CodeBlock from '@/components/CodeBlock.vue'
+import InlineCode from '@/components/InlineCode.vue'
 import download from '@/assets/images/FileShare/download.png'
 import settings from '@/assets/images/FileShare/settings.png'
 import upload from '@/assets/images/FileShare/upload.png'
 import useImageMixin from '@/helpers/imageMixin'
+import { dockerCompose } from '@/constants/fileshare'
 
 const { openImageInNewTab } = useImageMixin()
 </script>
-@/mixins/imageMixin

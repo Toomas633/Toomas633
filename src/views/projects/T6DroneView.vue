@@ -92,4 +92,3 @@ const items = [
 
 const { openImageInNewTab } = useImageMixin()
 </script>
-@/mixins/imageMixin

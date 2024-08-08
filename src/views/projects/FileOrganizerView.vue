@@ -1,7 +1,7 @@
 <template>
 	<v-container class="pa-4">
 		<v-row class="pr-4 pl-4 mt-0 d-block d-sm-flex" justify="center">
-			<v-col>
+			<v-col class="align-content-space-around">
 				<h1 class="text-center">File Organizer</h1>
 				<p class="text-center">
 					General use file organizer for removing all but the wanted file
@@ -28,7 +28,7 @@
 		</v-row>
 		<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black ml-8 mr-8 pa-4">
+				<v-card class="bg-black pa-4">
 					<h1 class="text-center">Organizer features</h1>
 					<ul class="ml-4">
 						<li>
@@ -51,37 +51,28 @@
 				</v-card>
 			</v-col>
 			<v-col>
-				<v-card class="bg-black ml-8 mr-8 pa-4">
+				<v-card class="bg-black pa-4">
 					<h1 class="text-center">Running</h1>
 					<ul class="ml-4">
 						<li>
 							Download with
-							<code>
-								<mark>
-									sudo wget
-									https://raw.githubusercontent.com/Toomas633/File-organizer/main/organizer.py
-								</mark>
-							</code>
+							<InlineCode
+								code="sudo wget
+									https://raw.githubusercontent.com/Toomas633/File-organizer/main/organizer.py" />
 							and place it into the folder you want it to search through (see
 							example below)
 						</li>
 						<li>
 							Run it in the backround while being in the same folder with
-							<code>
-								<mark>nohup python3 organizer.py &lt;path_to_folder&gt; </mark>
-							</code>
+							<InlineCode code="nohup python3 organizer.py <path_to_folder>" />
 						</li>
 						<li>
 							Or run it always after reboot with cron job by adding
-							<code>
-								<mark>
-									0 * * * * python3 /&lt;path_to_script&gt;/organizer.py
-									&lt;path_to_folder&gt;
-								</mark>
-							</code>
-							&nbsp;using&nbsp;
-							<code> <mark> sudo crontab -e </mark> </code> &nbsp;and adding it
-							to the end of the file
+							<InlineCode
+								code="0 * * * * python3 /<path_to_script>/organizer.py
+									<path_to_folder>" />
+							using <InlineCode code="sudo crontab -e" /> and adding it to the
+							end of the file
 						</li>
 					</ul>
 				</v-card>
@@ -89,7 +80,7 @@
 		</v-row>
 		<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black ml-8 mr-8 pa-4"
+				<v-card class="bg-black pa-4"
 					><h1 class="text-center pb-2">Takes in</h1>
 					<v-treeview
 						:items="inputItems"
@@ -109,7 +100,7 @@
 				</v-card>
 			</v-col>
 			<v-col>
-				<v-card class="bg-black ml-8 mr-8 pa-4">
+				<v-card class="bg-black pa-4">
 					<h1 class="text-center pb-2">Returns</h1>
 					<v-treeview
 						:items="outputItems"
@@ -134,6 +125,7 @@
 
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
+import InlineCode from '@/components/InlineCode.vue'
 import { inputItems, outputItems, fileIcons } from '@/constants/fileOrganizer'
 import { FileType } from '@/enums/fileType'
 </script>

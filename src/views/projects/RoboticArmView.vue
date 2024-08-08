@@ -86,4 +86,3 @@ import useImageMixin from '@/helpers/imageMixin'
 
 const { openImageInNewTab } = useImageMixin()
 </script>
-@/mixins/imageMixin

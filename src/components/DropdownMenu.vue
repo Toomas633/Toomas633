@@ -32,4 +32,3 @@ defineProps<{
 	isMobile: boolean
 }>()
 </script>
-@/models/option
