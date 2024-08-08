@@ -9,16 +9,23 @@
 	</head>
 	<!-- Google tag (gtag.js) -->
 	<script
+		id="gtag-script"
 		async
-		src="https://www.googletagmanager.com/gtag/js?id=G-NXQTF484K2"></script>
+		src="https://www.googletagmanager.com/gtag/js?id=G-NXQTF484K2"
+		data-consent="false"></script>
 	<script>
-		window.dataLayer = window.dataLayer || []
-		function gtag() {
-			dataLayer.push(arguments)
+		function initializeGtag() {
+			const gtagScript = document.getElementById('gtag-script')
+			if (gtagScript && gtagScript.dataset.consent === 'true') {
+				window.dataLayer = window.dataLayer || []
+				function gtag() {
+					dataLayer.push(arguments)
+				}
+				gtag('js', new Date())
+				gtag('config', 'G-NXQTF484K2')
+			}
 		}
-		gtag('js', new Date())
-
-		gtag('config', 'G-NXQTF484K2')
+		window.initializeGtag = initializeGtag
 	</script>
 
 	<body>

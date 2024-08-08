@@ -20,6 +20,8 @@
 		"nodemailer": "^6.9.14",
 		"vue": "^3.4.34",
 		"vue-class-component": "^8.0.0-0",
+		"vue-cookie-law": "^1.13.3",
+		"vue-cookies": "^1.8.4",
 		"vue-router": "^4.4.2",
 		"vuetify": "^3.6.13"
 	},
