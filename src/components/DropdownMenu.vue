@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Option } from '@/models/option'
+import type { Option } from '@/types/option'
 
 defineProps<{
 	icon: string

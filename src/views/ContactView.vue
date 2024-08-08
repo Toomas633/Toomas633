@@ -70,7 +70,7 @@
 import useAlertMixin from '@/helpers/alertMixin'
 import MessagePopup from '@/components/MessagePopup.vue'
 import { computed, ref } from 'vue'
-import { PopupMessage } from '@/models/popup'
+import { PopupMessage } from '@/types/popup'
 import useTimerMixin from '@/helpers/timerMixin'
 
 const valid = ref(false)

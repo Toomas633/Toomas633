@@ -26,7 +26,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { PopupType } from '@/enums/popupType'
-import { PopupMessage } from '@/models/popup'
+import { PopupMessage } from '@/types/popup'
 
 const props = defineProps<{
 	message: PopupMessage
