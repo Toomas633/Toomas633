@@ -1,36 +1,47 @@
 <template>
 	<v-container class="pa-4">
-		<h1 class="text-center">T6 Drone</h1>
-		<p class="text-center">
-			This is my first try at building a drone. It started as a schools
-			practical work project for graduation. It is built around DJI F450 frame.
-			All the 3D files, including project files and printing files, are found on
-			the <a href="https://github.com/Toomas633/T6-Drone"> GitHub page</a> . 3D
-			printing files in the STL form can be found on
-			<a href="https://www.thingiverse.com/thing:4804605">Thingiverse</a> .
-		</p>
-		<v-row class="pa-4" justify="center">
-			<v-col>
-				<ButtonCard
-					size="100"
-					text="Download ZIP"
-					href="https://github.com/Toomas633/T6-Drone/archive/v2.zip"
-					icon="mdi-file-download-outline" />
+		<v-row class="pa-4 d-block d-md-flex" justify="center">
+			<v-col class="align-content-space-around">
+				<h1 class="text-center">T6 Drone</h1>
+				<p class="text-center">
+					This is my first try at building a drone. It started as a schools
+					practical work project for graduation. It is built around DJI F450
+					frame. All the 3D files, including project files and printing files,
+					are found on the
+					<a href="https://github.com/Toomas633/T6-Drone"> GitHub page</a> . 3D
+					printing files in the STL form can be found on
+					<a href="https://www.thingiverse.com/thing:4804605">Thingiverse</a> .
+				</p>
 			</v-col>
-			<v-col>
-				<ButtonCard
-					size="100"
-					text="GitHub"
-					href="https://github.com/Toomas633/T6-Drone"
-					icon="mdi-github" />
-			</v-col>
-			<v-col>
-				<ButtonCard
-					size="100"
-					text="Thingiverse"
-					href="https://www.thingiverse.com/thing:4804605"
-					icon="mdi-rocket-launch"
-					icon-color="blue" />
+			<v-col
+				class="align-content-space-around d-block d-md-flex"
+				md="5"
+				lg="5"
+				xl="3">
+				<v-row class="pa-0 ma-0" justify="center">
+					<v-col>
+						<ButtonCard
+							size="100"
+							text="Download ZIP"
+							href="https://github.com/Toomas633/T6-Drone/archive/v2.zip"
+							icon="mdi-file-download-outline" />
+					</v-col>
+					<v-col>
+						<ButtonCard
+							size="100"
+							text="GitHub"
+							href="https://github.com/Toomas633/T6-Drone"
+							icon="mdi-github" />
+					</v-col>
+					<v-col>
+						<ButtonCard
+							size="100"
+							text="Thingiverse"
+							href="https://www.thingiverse.com/thing:4804605"
+							icon="mdi-rocket-launch"
+							icon-color="blue" />
+					</v-col>
+				</v-row>
 			</v-col>
 		</v-row>
 		<v-row class="ma-4" justify="center">

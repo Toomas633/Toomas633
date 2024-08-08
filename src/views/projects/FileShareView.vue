@@ -1,6 +1,6 @@
 <template>
 	<v-container class="pa-4">
-		<v-row class="pa-4 pt-0 mt-0 d-block d-sm-flex" justify="center">
+		<v-row class="pa-4 d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around">
 				<h1 class="text-center">FileShare</h1>
 				<p class="text-center">
@@ -8,14 +8,14 @@
 					delete timer.
 				</p>
 			</v-col>
-			<v-col class="align-content-space-around" lg="2" md="3" sm="4">
+			<v-col class="align-content-space-around" xl="1" lg="2" md="2" sm="3">
 				<ButtonCard
 					size="100"
 					text="GitHub"
 					href="https://github.com/Toomas633/FileShare"
 					icon="mdi-github" />
 			</v-col>
-			<v-col class="align-content-space-around" lg="2" md="3" sm="4">
+			<v-col class="align-content-space-around" xl="1" lg="2" md="2" sm="3">
 				<ButtonCard
 					size="100"
 					text="Docker Hub"

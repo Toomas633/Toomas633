@@ -6,14 +6,14 @@
 			Everything helps as I am a student who is doing projects on the side.
 		</p>
 		<v-row class="pt-4" justify="center">
-			<v-col lg="4" md="5" sm="6">
+			<v-col xl="3" lg="4" md="5" sm="6">
 				<ButtonCard
 					size="260"
 					title="Amazon DE"
 					href="https://www.amazon.de/hz/wishlist/ls/2MCH6EAMYMPHL?ref_=wl_share"
 					icon="fa:fa-brands fa-amazon" />
 			</v-col>
-			<v-col lg="4" md="5" sm="6">
+			<v-col xl="3" lg="4" md="5" sm="6">
 				<ButtonCard
 					size="260"
 					title="PayPal"
@@ -21,7 +21,7 @@
 					icon="fa:fa-brands fa-paypal"
 					icon-color="blue" />
 			</v-col>
-			<v-col lg="4" md="5" sm="6">
+			<v-col xl="3" lg="4" md="5" sm="6">
 				<ButtonCard
 					size="260"
 					title="Bitcoin"

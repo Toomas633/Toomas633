@@ -1,6 +1,6 @@
 <template>
 	<v-container class="pa-4">
-		<v-row class="pr-4 pl-4 mt-0 d-block d-sm-flex" justify="center">
+		<v-row class="pa-4 d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around">
 				<h1 class="text-center">File Organizer</h1>
 				<p class="text-center">
@@ -12,13 +12,13 @@
 					the working directory.
 				</p>
 				<p class="text-center">
-					<strong>
+					<b>
 						I AM NOT RESPONSIBLE FOR ANY DATA LOSS UPON WRONG CONFIGURATION OR
 						CODE CHANGES!
-					</strong>
+					</b>
 				</p>
 			</v-col>
-			<v-col class="align-content-space-around" lg="3" md="4" sm="5">
+			<v-col class="align-content-space-around" lg="2" md="3" sm="4" xl="1">
 				<ButtonCard
 					size="100"
 					text="GitHub"
