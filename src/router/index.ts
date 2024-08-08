@@ -6,6 +6,8 @@ import T6DroneView from '@/views/projects/T6DroneView.vue'
 import RoboticArmView from '@/views/projects/RoboticArmView.vue'
 import FileOrganizerView from '@/views/projects/FileOrganizerView.vue'
 import FileShareView from '@/views/projects/FileShareView.vue'
+import ToS from '@/views/ToS.vue'
+import PrivacyPolicy from '@/views/PrivacyPolicy.vue'
 
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -42,6 +44,16 @@ const routes: Array<RouteRecordRaw> = [
 		path: '/donate',
 		name: 'Donate',
 		component: DonateView,
+	},
+	{
+		path: '/tos',
+		name: 'ToS',
+		component: ToS,
+	},
+	{
+		path: '/privacy',
+		name: 'Privacy Policy',
+		component: PrivacyPolicy,
 	},
 ]
 
