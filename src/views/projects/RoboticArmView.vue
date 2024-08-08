@@ -34,7 +34,7 @@
 					icon-color="blue" />
 			</v-col>
 		</v-row>
-		<v-row class="pa-4 mr-4 ml-4" justify="center">
+		<v-row class="pa-4" justify="center">
 			<v-col cols="5" md="4" lg="3">
 				<v-img
 					rounded

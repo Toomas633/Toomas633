@@ -94,4 +94,3 @@ const formattedStack = computed(() => {
 	)
 })
 </script>
-@/models/popup@/interfaces/popup

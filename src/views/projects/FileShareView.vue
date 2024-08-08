@@ -8,14 +8,14 @@
 					delete timer.
 				</p>
 			</v-col>
-			<v-col lg="2" md="3" sm="4">
+			<v-col class="align-content-space-around" lg="2" md="3" sm="4">
 				<ButtonCard
 					size="100"
 					text="GitHub"
 					href="https://github.com/Toomas633/FileShare"
 					icon="mdi-github" />
 			</v-col>
-			<v-col lg="2" md="3" sm="4">
+			<v-col class="align-content-space-around" lg="2" md="3" sm="4">
 				<ButtonCard
 					size="100"
 					text="Docker Hub"
@@ -26,7 +26,7 @@
 		</v-row>
 		<v-row class="pa-4 d-block d-md-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black pa-4">
+				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Features</h1>
 					<ul class="ml-4">
 						<li>Single file upload</li>
@@ -88,7 +88,7 @@
 		</v-row>
 		<v-row class="pa-4 d-block d-sm-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black pa-4">
+				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Running instructions</h1>
 					<ul class="ml-4">
 						<li>Install PHP and Python (and add to system path on windows)</li>
@@ -120,7 +120,7 @@
 				</v-card>
 			</v-col>
 			<v-col>
-				<v-card class="bg-black pa-4">
+				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Requirements</h1>
 					<ul class="ml-4">
 						<li>

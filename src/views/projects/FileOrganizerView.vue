@@ -18,7 +18,7 @@
 					</strong>
 				</p>
 			</v-col>
-			<v-col lg="3" md="4" sm="5">
+			<v-col class="align-content-space-around" lg="3" md="4" sm="5">
 				<ButtonCard
 					size="100"
 					text="GitHub"
@@ -28,7 +28,7 @@
 		</v-row>
 		<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black pa-4">
+				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Organizer features</h1>
 					<ul class="ml-4">
 						<li>
@@ -51,7 +51,7 @@
 				</v-card>
 			</v-col>
 			<v-col>
-				<v-card class="bg-black pa-4">
+				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Running</h1>
 					<ul class="ml-4">
 						<li>
