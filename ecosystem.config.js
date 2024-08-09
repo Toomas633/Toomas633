@@ -8,7 +8,7 @@ module.exports = {
 		{
 			name: 'backend',
 			script: 'node',
-			args: 'backend/server.js',
+			args: 'backend/server.mjs',
 		},
 	],
 }

@@ -163,7 +163,7 @@ const submit = async () => {
 			}, 5000)
 		} else {
 			loading.value = false
-			showErrorMessage(data.error as Error, popupMessage, showPopup)
+			showErrorMessage(data as Error, popupMessage, showPopup)
 		}
 	} catch (error) {
 		loading.value = false

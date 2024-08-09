@@ -4,7 +4,11 @@
 			<v-card-title class="d-inline-block">
 				<v-icon :icon="icon" /> {{ title }}
 			</v-card-title>
-			<v-btn variant="flat" icon="mdi-close" @click="emit('close')" />
+			<v-btn
+				variant="flat"
+				icon="mdi-close"
+				:color="color"
+				@click="emit('close')" />
 		</div>
 		<v-card-text class="pt-0 pb-0">
 			{{ message.message }}
@@ -17,13 +21,14 @@
 				<span>Stack Trace</span>
 			</v-btn>
 			<v-card-text v-if="showStack" class="stack-trace pa-2">
-				<pre class="pa-2">{{ formattedStack }}</pre>
+				<CodeBlock :code="formattedStack"></CodeBlock>
 			</v-card-text>
 		</div>
 	</v-card>
 </template>
 
 <script setup lang="ts">
+import CodeBlock from './CodeBlock.vue'
 import { computed, ref } from 'vue'
 import { PopupType } from '@/enums/popupType'
 import { PopupMessage } from '@/types/popup'
