@@ -6,10 +6,20 @@
 					<h1 class="text-center">Contact</h1>
 					<p class="text-center">
 						Having trouble? Raise a new Issue on project's GitHub, leave a
-						comment, fill out the contact form. <br />
+						comment, fill out the contact form.<br />
 						<sup>
 							(Any spam will result in automatic permanent IP ban and reporting)
 						</sup>
+					</p>
+				</v-card>
+				<v-card class="bg-black text-center pa-4 mt-6">
+					<h1 class="text-center">Email</h1>
+					<p class="text-center">
+						If for watherver reason you can't or don't want to use the contact
+						form you can also directly email me at:<br />
+						<a href="mailto:info@toomas633.com">
+							<v-icon icon="mdi-email-outline" />info@toomas633.com
+						</a>
 					</p>
 				</v-card>
 			</v-col>

@@ -8,13 +8,13 @@
 					practical work project for graduation. It is built around DJI F450
 					frame. All the 3D files, including project files and printing files,
 					are found on the
-					<a href="https://github.com/Toomas633/T6-Drone"> GitHub page</a> . 3D
+					<a href="https://github.com/Toomas633/T6-Drone"> GitHub page</a>. 3D
 					printing files in the STL form can be found on
-					<a href="https://www.thingiverse.com/thing:4804605">Thingiverse</a> .
+					<a href="https://www.thingiverse.com/thing:4804605">Thingiverse</a>.
 				</p>
 			</v-col>
 			<v-col
-				class="align-content-space-around d-block d-md-flex"
+				class="align-content-space-around d-block d-md-flex pa-0"
 				md="5"
 				lg="5"
 				xl="3">
@@ -61,7 +61,7 @@
 						cover
 						:alt="item.alt"
 						@click="openImageInNewTab(item.src)">
-						<h1 class="image-title">
+						<h1 class="image-title w-100 text-center">
 							{{ item.title }}
 						</h1>
 					</v-img>

@@ -1,5 +1,5 @@
 <template>
-	<v-card class="bg-black text-center" justfy="center">
+	<v-card class="bg-black text-center h-100" justfy="center">
 		<h1 v-if="title">{{ title }}</h1>
 		<v-btn
 			v-if="href && icon"

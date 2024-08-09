@@ -89,10 +89,9 @@
 						expand-icon="mdi-folder"
 						collapse-icon="mdi-folder-open"
 						density="compact"
-						rounded
-						activatable>
+						rounded>
 						<template #prepend="{ item }">
-							<v-icon>
+							<v-icon v-if="!(item.file === 'folder' && item.children?.length)">
 								{{ fileIcons[item.file as FileType] }}
 							</v-icon>
 						</template>
@@ -109,10 +108,9 @@
 						expand-icon="mdi-folder"
 						collapse-icon="mdi-folder-open"
 						density="compact"
-						rounded
-						activatable>
+						rounded>
 						<template #prepend="{ item }">
-							<v-icon>
+							<v-icon v-if="!(item.file === 'folder' && item.children?.length)">
 								{{ fileIcons[item.file as FileType] }}
 							</v-icon>
 						</template>

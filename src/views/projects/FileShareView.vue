@@ -8,20 +8,29 @@
 					delete timer.
 				</p>
 			</v-col>
-			<v-col class="align-content-space-around" xl="1" lg="2" md="2" sm="3">
-				<ButtonCard
-					size="100"
-					text="GitHub"
-					href="https://github.com/Toomas633/FileShare"
-					icon="mdi-github" />
-			</v-col>
-			<v-col class="align-content-space-around" xl="1" lg="2" md="2" sm="3">
-				<ButtonCard
-					size="100"
-					text="Docker Hub"
-					href="https://hub.docker.com/r/toomas633/fileshare"
-					icon="mdi-docker"
-					icon-color="blue" />
+			<v-col
+				class="align-content-space-around pa-0"
+				sm="3"
+				md="5"
+				lg="4"
+				xl="3">
+				<v-row class="pa-0 ma-0" justify="center">
+					<v-col>
+						<ButtonCard
+							size="100"
+							text="GitHub"
+							href="https://github.com/Toomas633/FileShare"
+							icon="mdi-github" />
+					</v-col>
+					<v-col>
+						<ButtonCard
+							size="100"
+							text="Docker Hub"
+							href="https://hub.docker.com/r/toomas633/fileshare"
+							icon="mdi-docker"
+							icon-color="blue" />
+					</v-col>
+				</v-row>
 			</v-col>
 		</v-row>
 		<v-row class="pa-4 d-block d-md-flex" justify="center">
