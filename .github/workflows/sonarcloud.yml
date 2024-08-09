@@ -37,6 +37,9 @@ jobs:
       - name: Make reports dir
         run: mkdir .reports
 
+      - name: Set .env values
+        run: echo "node_env='local'" >> .env
+
       - name: ESlint
         run: npm run scan:lint
         continue-on-error: true
