@@ -24,11 +24,7 @@
 	"include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
-    "src/**/*.tsx",
     "src/**/*.vue",
-    "backend/**/*.ts",
-    "backend/**/*.d.ts",
-    "backend/**/*.tsx",
-	"backend/server.mjs"  ],
+	"backend/**/*.mjs"  ],
 	"exclude": ["node_modules", "public", "dist"]
 }
