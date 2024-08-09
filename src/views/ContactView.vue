@@ -25,28 +25,26 @@
 			</v-col>
 			<v-col class="justify">
 				<v-card class="bg-black text-center pa-4">
-					<h1 class="text-center">Contact Form</h1>
+					<h1 class="text-center pb-3">Contact Form</h1>
 					<v-form ref="form" v-model="valid">
 						<v-row justify="center">
-							<v-col>
+							<v-col class="pb-0 pt-0">
 								<v-text-field
 									v-model="email"
 									label="Email"
 									:rules="emailRules"
 									placeholder="johndoe@gmail.com"
 									prepend-inner-icon="mdi-email-arrow-left-outline"
-									class="pa-2"
 									min-width="300"
 									required />
 							</v-col>
-							<v-col>
+							<v-col class="pt-0">
 								<v-autocomplete
 									v-model="project"
 									label="Project"
 									:items="projects"
 									prepend-inner-icon="mdi-toolbox"
 									:rules="autocompleteRules"
-									class="pa-2"
 									min-width="300"
 									required>
 									<template #item="{ props, item }">

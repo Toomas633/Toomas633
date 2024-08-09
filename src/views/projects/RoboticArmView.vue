@@ -58,8 +58,8 @@
 						won't come back when you let go. Buttons are programmed to use the
 						Arduino's built in pullup resistors, so none are needed on the
 						ground nor on the signal lines. Serial monitor can show real time
-						feedback on button values and servo positions.</v-card-text
-					>
+						feedback on button values and servo positions.
+					</v-card-text>
 				</v-card>
 				<v-row class="pt-6 d-block d-md-flex" justify="center">
 					<v-col md="8">

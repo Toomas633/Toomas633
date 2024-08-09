@@ -10,8 +10,8 @@
 				agree to our use of cookies.
 			</v-card-text>
 			<v-card-actions>
-				<v-btn color="green" @click="acceptCookies">I Accept</v-btn>
-				<v-btn @click="declineCookies">Decline</v-btn>
+				<v-btn color="green" @click="acceptCookies"> I Accept </v-btn>
+				<v-btn @click="declineCookies"> Decline </v-btn>
 			</v-card-actions>
 		</v-card>
 	</v-dialog>

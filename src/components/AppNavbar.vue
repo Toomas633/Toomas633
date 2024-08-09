@@ -6,7 +6,7 @@
 				alt="Logo"
 				max-height="40"
 				max-width="40" />
-			<v-toolbar-title class="ml-2">Toomas633's Dungeon</v-toolbar-title>
+			<v-toolbar-title class="ml-2"> Toomas633's Dungeon </v-toolbar-title>
 		</router-link>
 		<v-spacer />
 		<div class="d-none d-md-flex">

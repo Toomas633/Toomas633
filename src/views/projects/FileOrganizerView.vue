@@ -80,8 +80,8 @@
 		</v-row>
 		<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black pa-4"
-					><h1 class="text-center pb-2">Takes in</h1>
+				<v-card class="bg-black pa-4">
+					<h1 class="text-center pb-2">Takes in</h1>
 					<v-treeview
 						:items="inputItems"
 						item-key="name"

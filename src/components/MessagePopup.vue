@@ -15,13 +15,13 @@
 		</v-card-text>
 		<div v-if="message.stack">
 			<v-btn variant="flat" @click="toggleStackTrace">
-				<v-icon>{{
-					showStack ? 'mdi-chevron-down' : 'mdi-chevron-right'
-				}}</v-icon>
+				<v-icon>
+					{{ showStack ? 'mdi-chevron-down' : 'mdi-chevron-right' }}
+				</v-icon>
 				<span>Stack Trace</span>
 			</v-btn>
 			<v-card-text v-if="showStack" class="stack-trace pa-2">
-				<CodeBlock :code="formattedStack"></CodeBlock>
+				<CodeBlock :code="formattedStack" />
 			</v-card-text>
 		</div>
 	</v-card>

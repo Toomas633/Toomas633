@@ -8,7 +8,7 @@ on:
       - reopened
       - labeled
 
-jobs:   
+jobs:
   automerge:
     runs-on: ubuntu-latest
     if: contains(github.event.pull_request.labels.*.name, 'automerge')
