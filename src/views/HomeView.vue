@@ -6,18 +6,25 @@
 				<p class="text-center">
 					I'm a hobbyist who loves robots, space, video games, tech, cars and 3D
 					printing. Currently going to
-					<a href="https://taltech.ee/en/">TalTech</a>
+					<a href="https://taltech.ee/en/" target="_blank" rel="noopener">
+						TalTech
+					</a>
 					university learning cyber-physical systems and working as a full time
 					dev (Vue, Angular).<br />From early in my life, I was salvaging and
 					repairing old electronics and worked with LEGO Mindstorms and
 					Technics. I recently picked up Arduinos and have started making
 					projects of my own. All my projects are licenced under
 					<a
-						href="https://www.tldrlegal.com/license/gnu-general-public-license-v3-gpl-3">
+						href="https://www.tldrlegal.com/license/gnu-general-public-license-v3-gpl-3"
+						target="_blank"
+						rel="noopener">
 						GPL-3
 					</a>
 					or
-					<a href="https://choosealicense.com/licenses/cern-ohl-s-2.0/#">
+					<a
+						href="https://choosealicense.com/licenses/cern-ohl-s-2.0/#"
+						target="_blank"
+						rel="noopener">
 						CERN OHL v2
 					</a>
 					and are free to be used by anyone.
@@ -53,42 +60,51 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Programming</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://www.cprogramming.com/" target="_blank">
+						<a
+							href="https://www.cprogramming.com/"
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/c.svg"
 								alt="C"
 								height="75" />
 						</a>
-						<a href="https://www.java.com/" target="_blank">
+						<a href="https://www.java.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/java.svg"
 								alt="Java"
 								height="75" />
 						</a>
-						<a href="https://www.python.org/" target="_blank">
+						<a href="https://www.python.org/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/python.svg"
 								alt="Python"
 								height="75" />
 						</a>
-						<a href="https://www.php.net/" target="_blank">
+						<a href="https://www.php.net/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://profilinator.rishav.dev/skills-assets/php-original.svg"
 								alt="PHP"
 								height="75" />
 						</a>
-						<a href="https://www.javascript.com/" target="_blank">
+						<a
+							href="https://www.javascript.com/"
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/javascript.svg"
 								alt="JavaScript"
 								height="75" />
 						</a>
-						<a href="https://www.typescriptlang.org/" target="_blank">
+						<a
+							href="https://www.typescriptlang.org/"
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/typescript.svg"
@@ -102,21 +118,21 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Backend</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://www.nginx.com/" target="_blank">
+						<a href="https://www.nginx.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/nginx.svg"
 								alt="Nginx"
 								height="75" />
 						</a>
-						<a href="https://spring.io/" target="_blank">
+						<a href="https://spring.io/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/spring.svg"
 								alt="Spring"
 								height="75" />
 						</a>
-						<a href="https://nodejs.org/" target="_blank">
+						<a href="https://nodejs.org/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/nodejs.svg"
@@ -130,35 +146,35 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Frontend</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://vuejs.org/" target="_blank">
+						<a href="https://vuejs.org/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/vue.svg"
 								alt="Vue"
 								height="75" />
 						</a>
-						<a href="https://vuetifyjs.com/" target="_blank">
+						<a href="https://vuetifyjs.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/vuetify.svg"
 								alt="Vuetify"
 								height="75" />
 						</a>
-						<a href="https://angular.io/" target="_blank">
+						<a href="https://angular.io/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/angular.svg"
 								alt="Angular"
 								height="75" />
 						</a>
-						<a href="https://sass-lang.com/" target="_blank">
+						<a href="https://sass-lang.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/sass.svg"
 								alt="Sass"
 								height="75" />
 						</a>
-						<a href="https://wordpress.com/" target="_blank">
+						<a href="https://wordpress.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/wordpress.svg"
@@ -172,21 +188,24 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Devops</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://www.gnu.org/software/bash/" target="_blank">
+						<a
+							href="https://www.gnu.org/software/bash/"
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/bash.svg"
 								alt="Bash"
 								height="75" />
 						</a>
-						<a href="https://www.docker.com/" target="_blank">
+						<a href="https://www.docker.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/docker.svg"
 								alt="Docker"
 								height="75" />
 						</a>
-						<a href="https://k3s.io/" target="_blank">
+						<a href="https://k3s.io/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/k3s.svg"
@@ -200,7 +219,7 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Visualization</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://grafana.com/" target="_blank">
+						<a href="https://grafana.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/grafana.svg"
@@ -214,28 +233,37 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Databases</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://www.mysql.com/" target="_blank">
+						<a href="https://www.mysql.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/mysql.svg"
 								alt="MySQL"
 								height="75" />
 						</a>
-						<a href="https://sqlite.org/index.html" target="_blank">
+						<a
+							href="https://sqlite.org/index.html"
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/sqlite.svg"
 								alt="SQLite3"
 								height="75" />
 						</a>
-						<a href="https://www.postgresql.org/" target="_blank">
+						<a
+							href="https://www.postgresql.org/"
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/postgresql.svg"
 								alt="PostgreSQL"
 								height="75" />
 						</a>
-						<a href="https://www.oracle.com/database/" target="_blank">
+						<a
+							href="https://www.oracle.com/database/"
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/oracle.svg"
@@ -249,14 +277,17 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Cloud</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://aws.amazon.com/" target="_blank">
+						<a href="https://aws.amazon.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/aws.svg"
 								alt="AWS"
 								height="75" />
 						</a>
-						<a href="https://www.oracle.com/cloud/" target="_blank">
+						<a
+							href="https://www.oracle.com/cloud/"
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/oracle-cloud.svg"
@@ -270,21 +301,24 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">3D</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://www.blender.org/" target="_blank">
+						<a href="https://www.blender.org/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/blender.svg"
 								alt="Blender"
 								height="75" />
 						</a>
-						<a href="https://www.sketchup.com/" target="_blank">
+						<a href="https://www.sketchup.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/sketchup.svg"
 								alt="SketchUp"
 								height="75" />
 						</a>
-						<a href="https://solidedge.siemens.com/en/" target="_blank">
+						<a
+							href="https://solidedge.siemens.com/en/"
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/solidEdge.svg"
@@ -293,7 +327,8 @@
 						</a>
 						<a
 							href="https://ultimaker.com/software/ultimaker-cura"
-							target="_blank">
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/cura.svg"
@@ -307,14 +342,17 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Hardware</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://www.raspberrypi.org/" target="_blank">
+						<a
+							href="https://www.raspberrypi.org/"
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/raspberry-pi.svg"
 								alt="Raspberry Pi"
 								height="75" />
 						</a>
-						<a href="https://www.arduino.cc/" target="_blank">
+						<a href="https://www.arduino.cc/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/arduino.svg"
@@ -328,14 +366,17 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Op systems</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://www.microsoft.com/en-us/windows" target="_blank">
+						<a
+							href="https://www.microsoft.com/en-us/windows"
+							target="_blank"
+							rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/windows.svg"
 								alt="Windows"
 								height="75" />
 						</a>
-						<a href="https://ubuntu.com/" target="_blank">
+						<a href="https://ubuntu.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/ubuntu.svg"
@@ -349,21 +390,21 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Version control</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://git-scm.com/" target="_blank">
+						<a href="https://git-scm.com/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/git.svg"
 								alt="Git"
 								height="75" />
 						</a>
-						<a href="https://maven.apache.org/" target="_blank">
+						<a href="https://maven.apache.org/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/maven.svg"
 								alt="Maven"
 								height="75" />
 						</a>
-						<a href="https://gradle.org/" target="_blank">
+						<a href="https://gradle.org/" target="_blank" rel="noopener">
 							<img
 								style="margin: 0.625rem"
 								src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/gradle.svg"

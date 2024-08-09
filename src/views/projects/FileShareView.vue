@@ -137,13 +137,18 @@
 							check this by running the command <InlineCode code="php -v" /> in
 							your terminal. If you don't have PHP installed, you can download
 							it from the
-							<a href="https://www.php.net/">official PHP website</a>
+							<a href="https://www.php.net/" target="_blank" rel="noopener">
+								official PHP website
+							</a>
 						</li>
 						<li>
 							Install Python on your Windows machine if it is not already
 							installed. You can download the latest version of Python from the
 							official website at
-							<a href="https://www.python.org/downloads/">
+							<a
+								href="https://www.python.org/downloads/"
+								target="_blank"
+								rel="noopener">
 								https://www.python.org/downloads/
 							</a>
 						</li>
