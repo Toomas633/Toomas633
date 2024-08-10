@@ -2,15 +2,21 @@ h1 {
 	color: rgb(var(--v-theme-primary));
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
+/* stylelint-disable selector-class-pattern */
 .v-autocomplete__content .v-list {
 	background: rgb(var(--v-theme-secondary)) !important;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
 .v-switch__thumb {
-	background-color: rgb(var(--v-theme-secondary));
+	background-color: rgb(var(--v-theme-secondary)) !important;
 }
+
+.v-input--disabled {
+	.v-switch__track {
+		background-color: green !important;
+	}
+}
+/* stylelint-enable selector-class-pattern */
 
 pre,
 mark {

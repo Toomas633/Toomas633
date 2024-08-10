@@ -29,6 +29,8 @@
 		gtag('consent', 'default', {
 			ad_storage: 'denied',
 			analytics_storage: 'denied',
+			ad_user_data: 'denied',
+			ad_personalization: 'denied',
 			functionality_storage: 'denied',
 			personalization_storage: 'denied',
 			security_storage: 'granted',
@@ -37,6 +39,7 @@
 	<script>
 		function updateConsent(consent) {
 			gtag('consent', 'update', {
+				functionality_storage: consent.necessary ? 'granted' : 'deinied',
 				personalization_storage: consent.necessary ? 'granted' : 'deinied',
 				ad_storage: consent.ads ? 'granted' : 'denied',
 				ad_personalization: consent.ads ? 'granted' : 'denied',

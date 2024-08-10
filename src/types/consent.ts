@@ -1,6 +1,6 @@
 export interface Consent {
-	adStorage: boolean
-	userData: boolean
-	personalization: boolean
+	necessary: boolean
+	ads: boolean
 	analytics: boolean
+	userData: boolean
 }

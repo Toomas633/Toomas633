@@ -1,5 +1,5 @@
 <template>
-	<v-dialog v-model="visible" persistent max-width="600">
+	<v-dialog v-model="visible" persistent max-width="650">
 		<v-card v-model="visible" class="bg-background">
 			<v-card-title class="text-h5 bg-black">
 				<v-icon icon="mdi-cookie" /> Cookie Consent
@@ -9,30 +9,43 @@
 				serve targeted advertisements. By continuing to use this website, you
 				agree to our use of cookies.
 			</v-card-text>
-			<v-card-actions
+			<div
 				v-if="showSelection"
-				class="justify-space-between pl-6 pr-8">
-				<v-switch v-model="consent.adStorage" color="green" label="Ads" inset />
-				<v-switch
-					v-model="consent.userData"
-					color="green"
-					label="User data"
-					inset />
-				<v-switch
-					v-model="consent.personalization"
-					color="green"
-					label="Personalization"
-					inset />
-				<v-switch
-					v-model="consent.analytics"
-					color="green"
-					label="Analytics"
-					inset />
-			</v-card-actions>
+				class="pl-6 pr-6 d-sm-flex align-content-space-between justify-center">
+				<div class="pr-sm-4">
+					<v-switch
+						v-model="consent.necessary"
+						color="green"
+						label="Necessary Cookies"
+						inset
+						hide-details
+						disabled />
+					<v-switch
+						v-model="consent.ads"
+						color="green"
+						label="Personalized Ads and Content"
+						inset
+						hide-details />
+				</div>
+				<div class="pl-sm-4">
+					<v-switch
+						v-model="consent.analytics"
+						color="green"
+						label="Analytics"
+						inset
+						hide-details />
+					<v-switch
+						v-model="consent.userData"
+						color="green"
+						label="Personal Data Usage"
+						inset
+						hide-details />
+				</div>
+			</div>
 			<v-card-actions>
-				<v-list-item class="w-100">
+				<v-list-item class="w-100 pt-4">
 					<template #prepend>
-						<v-btn @click="showSelection = true"> Show more </v-btn>
+						<v-btn @click="showSelection = !showSelection"> Show more </v-btn>
 					</template>
 					<template #append>
 						<v-btn
@@ -56,10 +69,10 @@ import useCookies from '@/helpers/useCookies'
 const visible = ref(false)
 const showSelection = ref(false)
 const consent = ref<Consent>({
-	adStorage: false,
-	userData: false,
-	personalization: false,
+	necessary: true,
+	ads: false,
 	analytics: false,
+	userData: false,
 })
 const cookies = useCookies()
 
@@ -67,10 +80,10 @@ const acceptAllCookies = () => {
 	cookies.set('cookieConsent', 'acceptedAll', '365d')
 	visible.value = false
 	const consent: Consent = {
-		adStorage: true,
-		userData: true,
-		personalization: true,
+		necessary: true,
+		ads: true,
 		analytics: true,
+		userData: true,
 	}
 	window.updateConsent(consent)
 }
@@ -79,10 +92,10 @@ const declineCookies = () => {
 	cookies.set('cookieConsent', 'declined', '365d')
 	visible.value = false
 	const consent: Consent = {
-		adStorage: false,
-		userData: false,
-		personalization: false,
+		necessary: false,
+		ads: false,
 		analytics: false,
+		userData: false,
 	}
 	window.updateConsent(consent)
 }
@@ -111,10 +124,10 @@ function isConsent(obj: unknown): obj is Consent {
 	return (
 		typeof obj === 'object' &&
 		obj !== null &&
-		typeof (obj as Consent).adStorage === 'boolean' &&
-		typeof (obj as Consent).userData === 'boolean' &&
-		typeof (obj as Consent).personalization === 'boolean' &&
-		typeof (obj as Consent).analytics === 'boolean'
+		typeof (obj as Consent).necessary === 'boolean' &&
+		typeof (obj as Consent).ads === 'boolean' &&
+		typeof (obj as Consent).analytics === 'boolean' &&
+		typeof (obj as Consent).userData === 'boolean'
 	)
 }
 </script>
