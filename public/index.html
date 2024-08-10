@@ -4,6 +4,9 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<meta
+			name="google-site-verification"
+			content="3mzfkHeHI79i5vZPIipQ5bCn0TflXUHfrzTDuzzuVOw" />
 		<link rel="icon" href="<%= BASE_URL %>favicon.ico" />
 		<title><%= htmlWebpackPlugin.options.title %></title>
 	</head>
@@ -26,8 +29,10 @@
 		})
 
 		gtag('js', new Date())
-		gtag('config', 'YOUR_MEASUREMENT_ID')
-
+		gtag('config', 'G-NXQTF484K2')
+		console.log(arguments)
+	</script>
+	<script>
 		function updateConsent(consent) {
 			gtag('consent', 'update', {
 				ad_storage: consent.adStorage ? 'granted' : 'denied',
@@ -35,7 +40,16 @@
 				ad_personalization: consent.personalization ? 'granted' : 'denied',
 				analytics_storage: consent.analytics ? 'granted' : 'denied',
 			})
+
+			if (!consent.analytics) {
+				gtag('set', 'url_passthrough', true)
+			}
+			if (!consent.adStorage) {
+				gtag('set', 'ads_data_redaction', true)
+			}
 		}
+
+		console.log(arguments)
 
 		window.updateConsent = updateConsent
 	</script>
