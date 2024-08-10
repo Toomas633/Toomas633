@@ -7,6 +7,11 @@ h1 {
 	background: rgb(var(--v-theme-secondary)) !important;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
+.v-switch__thumb {
+	background-color: rgb(var(--v-theme-secondary));
+}
+
 pre,
 mark {
 	background-color: rgb(var(--v-theme-secondary));

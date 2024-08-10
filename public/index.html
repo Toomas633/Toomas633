@@ -9,23 +9,35 @@
 	</head>
 	<!-- Google tag (gtag.js) -->
 	<script
-		id="gtag-script"
 		async
-		src="https://www.googletagmanager.com/gtag/js?id=G-NXQTF484K2"
-		data-consent="false"></script>
+		src="https://www.googletagmanager.com/gtag/js?id=G-NXQTF484K2"></script>
 	<script>
-		function initializeGtag() {
-			const gtagScript = document.getElementById('gtag-script')
-			if (gtagScript && gtagScript.dataset.consent === 'true') {
-				window.dataLayer = window.dataLayer || []
-				function gtag() {
-					dataLayer.push(arguments)
-				}
-				gtag('js', new Date())
-				gtag('config', 'G-NXQTF484K2')
-			}
+		window.dataLayer = window.dataLayer || []
+		function gtag() {
+			dataLayer.push(arguments)
 		}
-		window.initializeGtag = initializeGtag
+
+		gtag('consent', 'default', {
+			ad_storage: 'denied',
+			analytics_storage: 'denied',
+			functionality_storage: 'denied',
+			personalization_storage: 'denied',
+			security_storage: 'granted',
+		})
+
+		gtag('js', new Date())
+		gtag('config', 'YOUR_MEASUREMENT_ID')
+
+		function updateConsent(consent) {
+			gtag('consent', 'update', {
+				ad_storage: consent.adStorage ? 'granted' : 'denied',
+				ad_user_data: consent.userData ? 'granted' : 'denied',
+				ad_personalization: consent.personalization ? 'granted' : 'denied',
+				analytics_storage: consent.analytics ? 'granted' : 'denied',
+			})
+		}
+
+		window.updateConsent = updateConsent
 	</script>
 
 	<body>

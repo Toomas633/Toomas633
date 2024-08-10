@@ -1,3 +1,3 @@
 interface Window {
-	initializeGtag: () => void
+	updateConsent: (consent: Consent) => void
 }
