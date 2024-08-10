@@ -28,7 +28,7 @@
 					<h1 class="text-center pb-3">Contact Form</h1>
 					<v-form ref="form" v-model="valid">
 						<v-row justify="center">
-							<v-col class="pb-0 pt-0">
+							<v-col class="pt-0">
 								<v-text-field
 									v-model="email"
 									label="Email"
@@ -55,12 +55,17 @@
 						</v-row>
 						<v-textarea
 							v-model="message"
+							class="pt-4"
 							label="Message..."
 							:rules="textRules"
 							prepend-inner-icon="mdi-format-align-left"
 							counter="250"
 							required />
-						<v-btn :disabled="!valid" :loading="loading" @click="submit">
+						<v-btn
+							class="mt-2"
+							:disabled="!valid"
+							:loading="loading"
+							@click="submit">
 							<v-icon icon="mdi-email-fast" class="mr-1" /> Send
 						</v-btn>
 					</v-form>
@@ -141,7 +146,7 @@ const closePopup = () => {
 const submit = async () => {
 	loading.value = true
 	try {
-		const response = await fetch('http://localhost:3000/send-email', {
+		const response = await fetch('/api/send-email', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

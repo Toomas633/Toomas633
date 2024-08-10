@@ -6,14 +6,36 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const { BACKEND_PORT, EMAIL_HOST, EMAIL_USER, EMAIL_PASS, EMAIL_TO } =
+const { EMAIL_HOST, EMAIL_USER, EMAIL_PASS, EMAIL_TO, ALLOWED_ORIGINS } =
 	process.env
+
+const requiredEnvVars = {
+	EMAIL_HOST,
+	EMAIL_USER,
+	EMAIL_PASS,
+	EMAIL_TO,
+	ALLOWED_ORIGINS,
+}
+for (const [key, value] of Object.entries(requiredEnvVars)) {
+	if (value === undefined) {
+		console.error(`Missing required environment variable: ${key}`)
+		process.exit(1)
+	}
+}
 
 const app = express().disable('x-powered-by')
 
 const corsOptions = {
 	methods: ['POST'],
 	allowedHeaders: ['Content-Type'],
+	origin: (origin, callback) => {
+		const allowedOrigins = ALLOWED_ORIGINS.split(',')
+		if (allowedOrigins.includes(origin) || !origin) {
+			callback(null, true)
+		} else {
+			callback(new Error(`Not allowed by CORS from origin ${origin}`))
+		}
+	},
 }
 
 app.use(bodyParser.json())
@@ -51,7 +73,6 @@ app.post('/send-email', async (req, res) => {
 			success: false,
 			message: 'Error sending email',
 			stack: objectToString(error),
-			debug: process.env,
 		})
 	}
 })
@@ -62,6 +83,4 @@ function objectToString(obj) {
 		.join(',')
 }
 
-app.listen(BACKEND_PORT, () => {
-	console.log(`Server running on http://localhost:${BACKEND_PORT}`)
-})
+app.listen(3000)

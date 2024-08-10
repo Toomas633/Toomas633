@@ -8,9 +8,16 @@ RUN npm i --ignore-scripts
 
 COPY . .
 
-RUN npm run build
+RUN echo "NODE_ENV='production'" > .env \
+    && npm run build
 
 FROM node:22.1.0 AS production-stage
+
+ENV EMAIL_HOST=""
+ENV EMAIL_USER=""
+ENV EMAIL_PASS=""
+ENV EMAIL_TO=""
+ENV ALLOWED_ORIGINS=""
 
 WORKDIR /app
 
@@ -23,6 +30,6 @@ RUN apt-get update && apt-get --no-install-recommends install nginx -y \
     && apt-get clean \
     && rm /etc/nginx/sites-enabled/default
 
-EXPOSE 80 3000
+EXPOSE 80
 
 CMD ["pm2-runtime", "start", "ecosystem.config.js"]
