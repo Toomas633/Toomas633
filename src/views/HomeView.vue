@@ -60,33 +60,21 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Programming</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a
-							href="https://www.cprogramming.com/"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="C" alt="C" height="75" />
-						</a>
-						<a href="https://www.java.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Java" alt="Java" height="75" />
-						</a>
-						<a href="https://www.python.org/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Python" alt="Python" height="75" />
-						</a>
-						<a href="https://www.php.net/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="PhP" alt="PHP" height="75" />
-						</a>
-						<a
+						<LinkImage href="https://www.cprogramming.com/" :src="C" alt="C" />
+						<LinkImage href="https://www.java.com/" :src="Java" alt="Java" />
+						<LinkImage
+							href="https://www.python.org/"
+							:src="Python"
+							alt="Python" />
+						<LinkImage href="https://www.php.net/" :src="PHP" alt="PHP" />
+						<LinkImage
 							href="https://www.javascript.com/"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="JS" alt="JavaScript" height="75" />
-						</a>
-						<a
+							:src="JS"
+							alt="JavaScript" />
+						<LinkImage
 							href="https://www.typescriptlang.org/"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="TS" alt="TypeScript" height="75" />
-						</a>
+							:src="TS"
+							alt="TypeScript" />
 					</div>
 				</v-card>
 			</v-col>
@@ -94,15 +82,9 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Backend</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://www.nginx.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Nginx" alt="Nginx" height="75" />
-						</a>
-						<a href="https://spring.io/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Spring" alt="Spring" height="75" />
-						</a>
-						<a href="https://nodejs.org/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="NodeJS" alt="Node.js" height="75" />
-						</a>
+						<LinkImage href="https://www.nginx.com/" :src="Nginx" alt="Nginx" />
+						<LinkImage href="https://spring.io/" :src="Spring" alt="Spring" />
+						<LinkImage href="https://nodejs.org/" :src="NodeJS" alt="Node.js" />
 					</div>
 				</v-card>
 			</v-col>
@@ -110,21 +92,20 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Frontend</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://vuejs.org/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Vue" alt="Vue" height="75" />
-						</a>
-						<a href="https://vuetifyjs.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Vuetify" alt="Vuetify" height="75" />
-						</a>
-						<a href="https://angular.io/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Angular" alt="Angular" height="75" />
-						</a>
-						<a href="https://sass-lang.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Sass" alt="Sass" height="75" />
-						</a>
-						<a href="https://wordpress.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Wordpress" alt="Wordpress" height="75" />
-						</a>
+						<LinkImage href="https://vuejs.org/" :src="Vue" alt="Vue" />
+						<LinkImage
+							href="https://vuetifyjs.com/"
+							:src="Vuetify"
+							alt="Vuetify" />
+						<LinkImage
+							href="https://angular.io/"
+							:src="Angular"
+							alt="Angular" />
+						<LinkImage href="https://sass-lang.com/" :src="Sass" alt="Sass" />
+						<LinkImage
+							href="https://wordpress.com/"
+							:src="Wordpress"
+							alt="Wordpress" />
 					</div>
 				</v-card>
 			</v-col>
@@ -132,18 +113,15 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Devops</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a
+						<LinkImage
 							href="https://www.gnu.org/software/bash/"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="Bash" alt="Bash" height="75" />
-						</a>
-						<a href="https://www.docker.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Docker" alt="Docker" height="75" />
-						</a>
-						<a href="https://k3s.io/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="K3S" alt="K3S" height="75" />
-						</a>
+							:src="Bash"
+							alt="Bash" />
+						<LinkImage
+							href="https://www.docker.com/"
+							:src="Docker"
+							alt="Docker" />
+						<LinkImage href="https://k3s.io/" :src="K3S" alt="K3S" />
 					</div>
 				</v-card>
 			</v-col>
@@ -151,9 +129,10 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Visualization</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://grafana.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Grafana" alt="Grafana" height="75" />
-						</a>
+						<LinkImage
+							href="https://grafana.com/"
+							:src="Grafana"
+							alt="Grafana" />
 					</div>
 				</v-card>
 			</v-col>
@@ -161,27 +140,19 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Databases</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://www.mysql.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="MySQL" alt="MySQL" height="75" />
-						</a>
-						<a
+						<LinkImage href="https://www.mysql.com/" :src="MySQL" alt="MySQL" />
+						<LinkImage
 							href="https://sqlite.org/index.html"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="SQLite" alt="SQLite3" height="75" />
-						</a>
-						<a
+							:src="SQLite"
+							alt="SQLite3" />
+						<LinkImage
 							href="https://www.postgresql.org/"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="Postgres" alt="PostgreSQL" height="75" />
-						</a>
-						<a
+							:src="PostgreSQL"
+							alt="PostgreSQL" />
+						<LinkImage
 							href="https://www.oracle.com/database/"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="Oracle" alt="Oracle" height="75" />
-						</a>
+							:src="Oracle"
+							alt="Oracle" />
 					</div>
 				</v-card>
 			</v-col>
@@ -189,15 +160,11 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Cloud</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://aws.amazon.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="AWS" alt="AWS" height="75" />
-						</a>
-						<a
+						<LinkImage href="https://aws.amazon.com/" :src="AWS" alt="AWS" />
+						<LinkImage
 							href="https://www.oracle.com/cloud/"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="OracleCloud" alt="Oracle" height="75" />
-						</a>
+							:src="OracleCloud"
+							alt="Oracle Cloud" />
 					</div>
 				</v-card>
 			</v-col>
@@ -205,24 +172,22 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">3D</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://www.blender.org/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Blender" alt="Blender" height="75" />
-						</a>
-						<a href="https://www.sketchup.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="SketchUp" alt="SketchUp" height="75" />
-						</a>
-						<a
+						<LinkImage
+							href="https://www.blender.org/"
+							:src="Blender"
+							alt="Blender" />
+						<LinkImage
+							href="https://www.sketchup.com/"
+							:src="SketchUp"
+							alt="SketchUp" />
+						<LinkImage
 							href="https://solidedge.siemens.com/en/"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="SolidEdge" alt="Solid Edge" height="75" />
-						</a>
-						<a
+							:src="SolidEdge"
+							alt="Solid Edge" />
+						<LinkImage
 							href="https://ultimaker.com/software/ultimaker-cura"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="Cura" alt="Cura" height="75" />
-						</a>
+							:src="Cura"
+							alt="Cura" />
 					</div>
 				</v-card>
 			</v-col>
@@ -230,15 +195,14 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Hardware</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a
+						<LinkImage
 							href="https://www.raspberrypi.org/"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="RPi" alt="Raspberry Pi" height="75" />
-						</a>
-						<a href="https://www.arduino.cc/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Arduino" alt="Arduino" height="75" />
-						</a>
+							:src="RPi"
+							alt="Raspberry Pi" />
+						<LinkImage
+							href="https://www.arduino.cc/"
+							:src="Arduino"
+							alt="Arduino" />
 					</div>
 				</v-card>
 			</v-col>
@@ -246,15 +210,11 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Op systems</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a
+						<LinkImage
 							href="https://www.microsoft.com/en-us/windows"
-							target="_blank"
-							rel="noopener">
-							<img class="ma-2" :src="Windows" alt="Windows" height="75" />
-						</a>
-						<a href="https://ubuntu.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Ubuntu" alt="Ubuntu" height="75" />
-						</a>
+							:src="Windows"
+							alt="Windows" />
+						<LinkImage href="https://ubuntu.com/" :src="Ubuntu" alt="Ubuntu" />
 					</div>
 				</v-card>
 			</v-col>
@@ -262,15 +222,12 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Version control</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<a href="https://git-scm.com/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Git" alt="Git" height="75" />
-						</a>
-						<a href="https://maven.apache.org/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Maven" alt="Maven" height="75" />
-						</a>
-						<a href="https://gradle.org/" target="_blank" rel="noopener">
-							<img class="ma-2" :src="Gradle" alt="Gradle" height="75" />
-						</a>
+						<LinkImage href="https://git-scm.com/" :src="Git" alt="Git" />
+						<LinkImage
+							href="https://maven.apache.org/"
+							:src="Maven"
+							alt="Maven" />
+						<LinkImage href="https://gradle.org/" :src="Gradle" alt="Gradle" />
 					</div>
 				</v-card>
 			</v-col>
@@ -280,10 +237,11 @@
 
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
+import LinkImage from '@/components/LinkImage.vue'
 import C from '@icons/c.svg'
 import Java from '@icons/java.svg'
 import Python from '@icons/python.svg'
-import PhP from '@icons/php.svg'
+import PHP from '@icons/php.svg'
 import JS from '@icons/javascript.svg'
 import TS from '@icons/typescript.svg'
 import Nginx from '@icons/nginx.svg'
@@ -300,7 +258,7 @@ import K3S from '@icons/k3s.svg'
 import Grafana from '@icons/grafana.svg'
 import MySQL from '@icons/mysql.svg'
 import SQLite from '@icons/sqlite.svg'
-import Postgres from '@icons/postgresql.svg'
+import PostgreSQL from '@icons/postgresql.svg'
 import Oracle from '@icons/oracle.svg'
 import AWS from '@icons/aws.svg'
 import OracleCloud from '@icons/oracle-cloud.svg'

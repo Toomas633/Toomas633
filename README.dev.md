@@ -2,9 +2,9 @@
 
 TODO:
 
-- [X] Cookie change button
-- [X] Custom image carosel
-- [ ] Home page custom image element
+- [x] Cookie change button
+- [x] Custom image carosel
+- [x] Home page custom image element
 - [ ] Link component instead of `<a>`
 - [ ] Copy button to code blocks
 - [ ] Copy button to inline code
@@ -18,9 +18,9 @@ docker
 
 | Platform | Supported |
 | :------: | :-------: |
-|  amd64  |   ✔️   |
-|  arm64  |   ✔️   |
-|  arm32  |   ✔️   |
+|  amd64   |    ✔️     |
+|  arm64   |    ✔️     |
+|  arm32   |    ✔️     |
 
 ## Commands
 
@@ -37,10 +37,10 @@ Run Stylelint: `npm run stylelint`
 
 |  ENV variables  | Description                                                            |
 | :-------------: | ---------------------------------------------------------------------- |
-|   EMAIL_HOST   | SMTP host for your mail server (smtp.mailprovider.com)                 |
-|   EMAIL_USER   | Login user                                                             |
-|   EMAIL_PASS   | Password                                                               |
-|    EMAIL_TO    | What email address the contact form info is sent to (info@example.com) |
+|   EMAIL_HOST    | SMTP host for your mail server (smtp.mailprovider.com)                 |
+|   EMAIL_USER    | Login user                                                             |
+|   EMAIL_PASS    | Password                                                               |
+|    EMAIL_TO     | What email address the contact form info is sent to (info@example.com) |
 | ALLOWED_ORIGINS | Allowed origins (https://example.com,http://localhost:8080)            |
 
 ### docker-compose.yml
