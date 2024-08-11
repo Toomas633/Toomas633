@@ -2,7 +2,6 @@
 .github/
 .vscode/
 dist/
-icons/
 node_modules/
 .env
 LICENCE
