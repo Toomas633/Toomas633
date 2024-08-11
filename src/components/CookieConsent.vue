@@ -109,7 +109,6 @@ const declineCookies = () => {
 const acceptSomeCookies = () => {
 	cookies.set('cookieConsent', consent.value, '365d')
 	visible.value = false
-	showSelection.value = false
 	window.updateConsent(consent)
 }
 

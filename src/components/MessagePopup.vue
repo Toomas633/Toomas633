@@ -1,5 +1,5 @@
 <template>
-	<v-card :color="color" style="z-index: 1000" class="message-popup">
+	<v-card :color="color" class="message-popup position-fixed">
 		<div class="d-flex" style="justify-content: space-between">
 			<v-card-title class="d-inline-block">
 				<v-icon :icon="icon" /> {{ title }}
@@ -20,7 +20,7 @@
 				</v-icon>
 				<span>Stack Trace</span>
 			</v-btn>
-			<v-card-text v-if="showStack" class="stack-trace pa-2">
+			<v-card-text v-if="showStack" class="stack-trace pa-2 overflow-auto">
 				<CodeBlock :code="formattedStack" />
 			</v-card-text>
 		</div>
@@ -99,3 +99,18 @@ const formattedStack = computed(() => {
 	)
 })
 </script>
+<style scoped>
+.message-popup {
+	bottom: 1rem;
+	right: 1rem;
+	min-width: 25rem;
+	max-width: 50rem;
+	min-height: 6.25rem;
+	z-index: 1000;
+}
+
+.stack-trace {
+	max-height: 25rem;
+	font-family: monospace;
+}
+</style>

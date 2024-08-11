@@ -110,28 +110,29 @@ const navigateToImage = (event: MouseEvent) => {
 	height: 200px;
 }
 
-@media (min-width: 600px) {
+@media (width >= 600px) {
 	.v-img {
 		height: 300px;
 	}
 }
 
-@media (min-width: 800px) {
+@media (width >= 800px) {
 	.v-img {
 		height: 400px;
 	}
 }
 
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
 	.v-img {
 		height: 500px;
 	}
 }
 
-@media (min-width: 1280px) {
+@media (width >= 1280px) {
 	.v-img {
 		height: 600px;
 	}
+
 	.v-container {
 		width: 1136px;
 	}

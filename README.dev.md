@@ -4,6 +4,7 @@ TODO:
 
 - [X] Cookie change button
 - [X] Custom image carosel
+- [ ] Home page custom image element
 - [ ] Link component instead of `<a>`
 - [ ] Copy button to code blocks
 - [ ] Copy button to inline code

@@ -92,7 +92,7 @@
 <div align="left">
 <a href="https://www.blender.org/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/blender.svg" alt="Blender" height="75" /></a>
 <a href="https://www.sketchup.com/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/sketchup.svg" alt="SketchUp" height="75"/></a>
-<a href="https://solidedge.siemens.com/en/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/solidEdge.svg" alt="Solid Edge" height="75"/></a>
+<a href="https://solidedge.siemens.com/en/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/solid-edge.svg" alt="Solid Edge" height="75"/></a>
 <a href="https://ultimaker.com/software/ultimaker-cura" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/cura.svg" alt="Cura" height="75"/></a>
 </div>
 

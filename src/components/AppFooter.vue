@@ -1,6 +1,7 @@
 <template>
 	<v-footer class="d-flex flex-column bg-black">
-		<div class="d-flex w-100 pa-1 justify-center justify-sm-space-between">
+		<div
+			class="d-flex w-100 pa-1 justify-center justify-sm-space-between align-center">
 			<span class="d-none d-sm-flex">
 				<v-btn variant="text" href="/tos" color="grey" class="pa-0 mr-2">
 					Terms of Service

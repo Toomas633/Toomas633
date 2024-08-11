@@ -2,6 +2,10 @@ h1 {
 	color: rgb(var(--v-theme-primary));
 }
 
+a {
+	color: rgb(var(--v-theme-primary));
+}
+
 /* stylelint-disable selector-class-pattern */
 .v-autocomplete__content .v-list {
 	background: rgb(var(--v-theme-secondary)) !important;
@@ -17,38 +21,3 @@ h1 {
 	}
 }
 /* stylelint-enable selector-class-pattern */
-
-pre,
-mark {
-	background-color: rgb(var(--v-theme-secondary));
-	color: white;
-	overflow-wrap: break-word;
-	white-space: pre-line;
-	padding-left: 0.25rem;
-	padding-right: 0.25rem;
-}
-
-a {
-	color: rgb(var(--v-theme-primary));
-}
-
-.logo-and-title {
-	color: inherit;
-	text-decoration: none;
-	width: 16.563rem;
-}
-
-.message-popup {
-	position: fixed;
-	bottom: 1rem;
-	right: 1rem;
-	min-width: 25rem;
-	max-width: 50rem;
-	min-height: 6.25rem;
-
-	.stack-trace {
-		overflow: auto;
-		max-height: 25rem;
-		font-family: monospace;
-	}
-}
