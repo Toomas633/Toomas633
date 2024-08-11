@@ -1,15 +1,15 @@
 <template>
 	<v-container class="pa-4">
 		<h1 class="text-center">Privacy Policy</h1>
-		<p class="text-center"><b>Effective Date:</b> 07 jun 2024</p>
+		<p class="text-center"><b>Effective Date:</b> 12 July 2024</p>
 		<div class="pa-4">
 			<h2>1. Introduction</h2>
 			<p>
-				Welcome to <a href="/">Toomas633's Dungeon</a>. Your privacy is
-				important to us. This Privacy Policy explains how we collect, use,
-				disclose, and safeguard your information when you visit our website
-				<a href="/">toomas633.com</a>, use our services, or contact us via our
-				contact form.
+				Welcome to <LinkComponent href="/" text="Toomas633's Dungeon" />. Your
+				privacy is important to us. This Privacy Policy explains how we collect,
+				use, disclose, and safeguard your information when you visit our website
+				<LinkComponent href="/" text="toomas633.com" />, use our services, or
+				contact us via our contact form.
 			</p>
 			<h2 class="pt-2">2. Information We Collect</h2>
 			<ul class="ml-4">
@@ -79,9 +79,14 @@
 			<h2 class="pt-2">9. Contact Us</h2>
 			<p>
 				If you have any questions about this Privacy Policy, please contact us
-				at:
+				at: <br />
+				<LinkComponent
+					href="mailto:info@toomas633.com"
+					text="info@toomas633.com" />
 			</p>
-			<a href="mailto:info@toomas633.com">info@toomas633.com</a>
 		</div>
 	</v-container>
 </template>
+<script setup lang="ts">
+import LinkComponent from '@/components/LinkComponent.vue'
+</script>

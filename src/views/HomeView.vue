@@ -6,27 +6,19 @@
 				<p class="text-center">
 					I'm a hobbyist who loves robots, space, video games, tech, cars and 3D
 					printing. Currently going to
-					<a href="https://taltech.ee/en/" target="_blank" rel="noopener">
-						TalTech
-					</a>
+					<LinkComponent href="https://taltech.ee/en/" text="TalTech" />
 					university learning cyber-physical systems and working as a full time
 					dev (Vue, Angular).<br />From early in my life, I was salvaging and
 					repairing old electronics and worked with LEGO Mindstorms and
 					Technics. I recently picked up Arduinos and have started making
 					projects of my own. All my projects are licenced under
-					<a
+					<LinkComponent
 						href="https://www.tldrlegal.com/license/gnu-general-public-license-v3-gpl-3"
-						target="_blank"
-						rel="noopener">
-						GPL-3
-					</a>
+						text="GPL-3" />
 					or
-					<a
+					<LinkComponent
 						href="https://choosealicense.com/licenses/cern-ohl-s-2.0/#"
-						target="_blank"
-						rel="noopener">
-						CERN OHL v2
-					</a>
+						text="CERN OHL v2" />
 					and are free to be used by anyone.
 				</p>
 			</v-col>
@@ -238,6 +230,7 @@
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
 import LinkImage from '@/components/LinkImage.vue'
+import LinkComponent from '@/components/LinkComponent.vue'
 import C from '@icons/c.svg'
 import Java from '@icons/java.svg'
 import Python from '@icons/python.svg'

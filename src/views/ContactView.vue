@@ -17,9 +17,10 @@
 					<p class="text-center">
 						If for watherver reason you can't or don't want to use the contact
 						form you can also directly email me at:<br />
-						<a href="mailto:info@toomas633.com">
-							<v-icon icon="mdi-email-outline" />info@toomas633.com
-						</a>
+						<LinkComponent
+							href="mailto:info@toomas633.com"
+							text="info@toomas633.com"
+							icon="mdi-email-outline"></LinkComponent>
 					</p>
 				</v-card>
 			</v-col>
@@ -80,10 +81,11 @@
 </template>
 
 <script setup lang="ts">
-import useAlertMixin from '@/helpers/alertMixin'
 import MessagePopup from '@/components/MessagePopup.vue'
+import LinkComponent from '@/components/LinkComponent.vue'
 import { computed, ref } from 'vue'
 import { PopupMessage } from '@/types/popup'
+import useAlertMixin from '@/helpers/alertMixin'
 import useTimerMixin from '@/helpers/timerMixin'
 
 const valid = ref(false)

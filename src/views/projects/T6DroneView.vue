@@ -8,18 +8,13 @@
 					practical work project for graduation. It is built around DJI F450
 					frame. All the 3D files, including project files and printing files,
 					are found on the
-					<a
+					<LinkComponent
 						href="https://github.com/Toomas633/T6-Drone"
-						target="_blank"
-						rel="noopener">
-						GitHub page</a
-					>. 3D printing files in the STL form can be found on
-					<a
+						text="GitHub page" />. 3D printing files in the STL form can be
+					found on
+					<LinkComponent
 						href="https://www.thingiverse.com/thing:4804605"
-						target="_blank"
-						rel="noopener">
-						Thingiverse</a
-					>.
+						text="Thingiverse" />.
 				</p>
 			</v-col>
 			<v-col
@@ -59,6 +54,7 @@
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
 import ImageCarosel from '@/components/ImageCarosel.vue'
+import LinkComponent from '@/components/LinkComponent.vue'
 import render from '@/assets/images/T6Drone/render.jpg'
 import electronics from '@/assets/images/T6Drone/electronics.jpg'
 import model from '@/assets/images/T6Drone/model.jpg'

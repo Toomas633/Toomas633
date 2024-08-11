@@ -2,10 +2,6 @@ h1 {
 	color: rgb(var(--v-theme-primary));
 }
 
-a {
-	color: rgb(var(--v-theme-primary));
-}
-
 /* stylelint-disable selector-class-pattern */
 .v-autocomplete__content .v-list {
 	background: rgb(var(--v-theme-secondary)) !important;

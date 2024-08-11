@@ -95,8 +95,8 @@
 						<li>
 							Access the website in your browser. Once the server is running,
 							you can access the website by navigating to
-							<a href="http://localhost:8000"> http://localhost:8000 </a> (or
-							the appropriate URL) in your web browser
+							<LinkComponent href="http://localhost:8000" /> (or the appropriate
+							URL) in your web browser
 						</li>
 					</ul>
 				</v-card>
@@ -110,20 +110,15 @@
 							check this by running the command <InlineCode code="php -v" /> in
 							your terminal. If you don't have PHP installed, you can download
 							it from the
-							<a href="https://www.php.net/" target="_blank" rel="noopener">
-								official PHP website
-							</a>
+							<LinkComponent
+								href="https://www.php.net/"
+								text="official PHP website" />.
 						</li>
 						<li>
 							Install Python on your Windows machine if it is not already
 							installed. You can download the latest version of Python from the
 							official website at
-							<a
-								href="https://www.python.org/downloads/"
-								target="_blank"
-								rel="noopener">
-								https://www.python.org/downloads/
-							</a>
+							<LinkComponent href="https://www.python.org/downloads/" />.
 						</li>
 						<li>
 							Change the values of <InlineCode code="post_max_size" /> and
@@ -131,7 +126,7 @@
 							<InlineCode code="php.ini" /> to a desired size amount, or bigger
 							files can't be uploaded (defaults are 8M and 2M in the file, so
 							the uploaded file can only be of size 2MB and less). Not needed on
-							docker image
+							docker image.
 						</li>
 						<li>
 							Check that you have php-sqlite3 and php-curl installed and
@@ -265,6 +260,7 @@ import ButtonCard from '@/components/ButtonCard.vue'
 import CodeBlock from '@/components/CodeBlock.vue'
 import InlineCode from '@/components/InlineCode.vue'
 import ImageCarosel from '@/components/ImageCarosel.vue'
+import LinkComponent from '@/components/LinkComponent.vue'
 import download from '@/assets/images/FileShare/download.png'
 import settings from '@/assets/images/FileShare/settings.png'
 import upload from '@/assets/images/FileShare/upload.png'
