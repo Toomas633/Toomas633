@@ -2,12 +2,13 @@
 
 TODO:
 
-- [x] Cookie change button
-- [ ] Custom image carosel
+- [X] Cookie change button
+- [X] Custom image carosel
 - [ ] Link component instead of `<a>`
 - [ ] Copy button to code blocks
 - [ ] Copy button to inline code
 - [ ] Chaching fixes to workflows
+- [ ] Minecraft server page
 
 ## Requirements
 
@@ -16,9 +17,9 @@ docker
 
 | Platform | Supported |
 | :------: | :-------: |
-|  amd64   |    ✔️     |
-|  arm64   |    ✔️     |
-|  arm32   |    ✔️     |
+|  amd64  |   ✔️   |
+|  arm64  |   ✔️   |
+|  arm32  |   ✔️   |
 
 ## Commands
 
@@ -35,10 +36,10 @@ Run Stylelint: `npm run stylelint`
 
 |  ENV variables  | Description                                                            |
 | :-------------: | ---------------------------------------------------------------------- |
-|   EMAIL_HOST    | SMTP host for your mail server (smtp.mailprovider.com)                 |
-|   EMAIL_USER    | Login user                                                             |
-|   EMAIL_PASS    | Password                                                               |
-|    EMAIL_TO     | What email address the contact form info is sent to (info@example.com) |
+|   EMAIL_HOST   | SMTP host for your mail server (smtp.mailprovider.com)                 |
+|   EMAIL_USER   | Login user                                                             |
+|   EMAIL_PASS   | Password                                                               |
+|    EMAIL_TO    | What email address the contact form info is sent to (info@example.com) |
 | ALLOWED_ORIGINS | Allowed origins (https://example.com,http://localhost:8080)            |
 
 ### docker-compose.yml

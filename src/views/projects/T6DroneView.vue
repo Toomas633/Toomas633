@@ -53,41 +53,19 @@
 				</v-row>
 			</v-col>
 		</v-row>
-		<v-row class="ma-4" justify="center">
-			<v-carousel
-				show-arrows="hover"
-				cycle
-				hide-delimiters
-				progress="primary"
-				interval="5000"
-				height="600">
-				<v-carousel-item
-					v-for="(item, index) in items"
-					:key="index"
-					:alt="item.alt">
-					<v-img
-						:src="item.src"
-						cover
-						:alt="item.alt"
-						@click="openImageInNewTab(item.src)">
-						<h1 class="image-title w-100 text-center">
-							{{ item.title }}
-						</h1>
-					</v-img>
-				</v-carousel-item>
-			</v-carousel>
-		</v-row>
+		<ImageCarosel :images="images" :cover="true" />
 	</v-container>
 </template>
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
+import ImageCarosel from '@/components/ImageCarosel.vue'
 import render from '@/assets/images/T6Drone/render.jpg'
 import electronics from '@/assets/images/T6Drone/electronics.jpg'
 import model from '@/assets/images/T6Drone/model.jpg'
 import complete from '@/assets/images/T6Drone/complete.jpg'
-import useImageMixin from '@/helpers/imageMixin'
+import type { Images } from '@/types/images'
 
-const items = [
+const images: Images[] = [
 	{
 		src: render,
 		title: 'KeyShot render',
@@ -109,6 +87,4 @@ const items = [
 		alt: 'Complete build',
 	},
 ]
-
-const { openImageInNewTab } = useImageMixin()
 </script>

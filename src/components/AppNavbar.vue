@@ -1,7 +1,7 @@
 <template>
 	<v-app-bar>
 		<router-link to="/" class="logo-and-title ml-4 align-center d-flex">
-			<v-img src="logo.svg" alt="Logo" max-height="40" max-width="40" />
+			<v-img src="/logo.svg" alt="Logo" max-height="40" max-width="40" />
 			<v-toolbar-title class="ml-2"> Toomas633's Dungeon </v-toolbar-title>
 		</router-link>
 		<v-spacer />
