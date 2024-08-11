@@ -1,4 +1,10 @@
 <template>
+	<v-btn
+		class="mr-3 mb-3"
+		icon="mdi-cookie"
+		position="fixed"
+		location="bottom right"
+		@click="reopenSelection" />
 	<v-dialog v-model="visible" persistent max-width="650">
 		<v-card v-model="visible" class="bg-background">
 			<v-card-title class="text-h5 bg-black">
@@ -79,41 +85,64 @@ const cookies = useCookies()
 const acceptAllCookies = () => {
 	cookies.set('cookieConsent', 'acceptedAll', '365d')
 	visible.value = false
-	const consent: Consent = {
+	showSelection.value = false
+	window.updateConsent({
 		necessary: true,
 		ads: true,
 		analytics: true,
 		userData: true,
-	}
-	window.updateConsent(consent)
+	} as Consent)
 }
 
 const declineCookies = () => {
 	cookies.set('cookieConsent', 'declined', '365d')
 	visible.value = false
-	const consent: Consent = {
+	showSelection.value = false
+	window.updateConsent({
 		necessary: false,
 		ads: false,
 		analytics: false,
 		userData: false,
-	}
-	window.updateConsent(consent)
+	} as Consent)
 }
 
 const acceptSomeCookies = () => {
 	cookies.set('cookieConsent', consent.value, '365d')
 	visible.value = false
+	showSelection.value = false
 	window.updateConsent(consent)
 }
 
+const reopenSelection = () => {
+	const cookie = cookies.get('cookieConsent')
+	if (cookie === 'acceptedAll') {
+		consent.value = {
+			necessary: true,
+			ads: true,
+			analytics: true,
+			userData: true,
+		} as Consent
+	} else if (isConsent(cookie)) {
+		consent.value = cookie
+	} else {
+		consent.value = {
+			necessary: true,
+			ads: false,
+			analytics: false,
+			userData: false,
+		} as Consent
+	}
+	visible.value = true
+}
+
 onMounted(() => {
-	const consent = cookies.get('cookieConsent')
-	if (!consent) {
+	const cookie = cookies.get('cookieConsent')
+	if (!cookie) {
 		visible.value = true
-	} else if (consent === 'acceptedAll') {
+	} else if (cookie === 'acceptedAll') {
 		acceptAllCookies()
-	} else if (isConsent(consent)) {
-		window.updateConsent(consent)
+	} else if (isConsent(cookie)) {
+		window.updateConsent(cookie)
 	} else {
 		cookies.remove('cookieConsent')
 		visible.value = true

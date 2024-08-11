@@ -2,7 +2,7 @@
 
 TODO:
 
-- [ ] Cookie change button
+- [x] Cookie change button
 - [ ] Custom image carosel
 - [ ] Link component instead of `<a>`
 - [ ] Copy button to code blocks
@@ -11,8 +11,8 @@ TODO:
 
 ## Requirements
 
-- node v22.1.0
-- docker
+node v22.1.0
+docker
 
 | Platform | Supported |
 | :------: | :-------: |
