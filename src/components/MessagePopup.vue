@@ -1,5 +1,5 @@
 <template>
-	<v-card :color="color" class="message-popup position-fixed">
+	<v-card :color="color" class="message-popup position-fixed overflow-auto">
 		<div class="d-flex" style="justify-content: space-between">
 			<v-card-title class="d-inline-block">
 				<v-icon :icon="icon" /> {{ title }}
@@ -10,7 +10,7 @@
 				:color="color"
 				@click="emit('close')" />
 		</div>
-		<v-card-text class="pt-0 pb-0">
+		<v-card-text class="pt-0 pb-0 text-start">
 			{{ message.message }}
 		</v-card-text>
 		<div v-if="message.stack">
@@ -20,8 +20,10 @@
 				</v-icon>
 				<span>Stack Trace</span>
 			</v-btn>
-			<v-card-text v-if="showStack" class="stack-trace pa-2 overflow-auto">
-				<CodeBlock :code="formattedStack" />
+			<v-card-text
+				v-if="showStack"
+				class="stack-trace pa-2 overflow-auto mt-n5">
+				<CodeBlock :code="formattedStack" :disable-copy="true" />
 			</v-card-text>
 		</div>
 	</v-card>
@@ -103,14 +105,12 @@ const formattedStack = computed(() => {
 .message-popup {
 	bottom: 1rem;
 	right: 1rem;
-	min-width: 25rem;
-	max-width: 50rem;
-	min-height: 6.25rem;
+	max-width: 37rem;
+	max-height: 20rem;
 	z-index: 1000;
 }
 
 .stack-trace {
 	max-height: 25rem;
-	font-family: monospace;
 }
 </style>
