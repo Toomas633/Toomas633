@@ -45,6 +45,6 @@ jobs:
           labels: |
             org.opencontainers.image.created=${{ env.DATE_LABEL }}
             org.opencontainers.image.version=latest
-          platforms: linux/amd64,linux/arm64,linux/arm32
+          platforms: linux/amd64,linux/arm64
           cache-from: type=registry,ref=ghcr.io/toomas633/toomas633:buildcache
           cache-to: type=registry,ref=ghcr.io/toomas633/toomas633:buildcache,mode=max

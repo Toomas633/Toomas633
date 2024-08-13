@@ -7,9 +7,9 @@
 					<p class="text-center">
 						Having trouble? Raise a new Issue on project's GitHub, leave a
 						comment, fill out the contact form.<br />
-						<sup>
+						<b>
 							(Any spam will result in automatic permanent IP ban and reporting)
-						</sup>
+						</b>
 					</p>
 				</v-card>
 				<v-card class="bg-black text-center pa-4 mt-6">
