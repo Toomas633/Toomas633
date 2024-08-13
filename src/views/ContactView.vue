@@ -86,7 +86,6 @@ import LinkComponent from '@/components/LinkComponent.vue'
 import { computed, ref } from 'vue'
 import { PopupMessage } from '@/types/popup'
 import useAlertMixin from '@/helpers/alertMixin'
-import useTimerMixin from '@/helpers/timerMixin'
 
 const valid = ref(false)
 const loading = ref(false)
@@ -97,7 +96,6 @@ const popupMessage = ref<PopupMessage | undefined>(undefined)
 const showPopup = ref(false)
 
 const { showErrorMessage, showSuccessMessage } = useAlertMixin()
-const { timer } = useTimerMixin()
 
 const knownDomains = [
 	'gmail.com',
@@ -163,9 +161,6 @@ const submit = async () => {
 		if (data.success) {
 			loading.value = false
 			showSuccessMessage('Email sent', popupMessage, showPopup)
-			timer((value: boolean) => {
-				showPopup.value = value
-			}, 5000)
 		} else {
 			loading.value = false
 			showErrorMessage(data as Error, popupMessage, showPopup)

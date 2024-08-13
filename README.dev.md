@@ -6,11 +6,12 @@ TODO:
 - [X] Custom image carosel
 - [X] Home page custom image element
 - [X] Link component instead of `<a>`
-- [ ] Copy button to code blocks
-- [ ] Copy button to inline code
+- [X] Copy button to code blocks
+- [X] Copy button to inline code
 - [ ] Caching fixes to workflows
 - [ ] Minecraft server page
 - [ ] Cookie button refactor
+- [ ] Message popup refactor
 
 ## Requirements
 

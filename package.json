@@ -12,6 +12,7 @@
 		"scan:stylelint": "stylelint 'src/**/*.{css,scss,vue}' --f json -o .reports/stylelint-report.json"
 	},
 	"dependencies": {
+		"@basitcodeenv/vue3-device-detect": "^1.0.3",
 		"core-js": "^3.38.0",
 		"cors": "^2.8.5",
 		"date-fns": "^3.6.0",

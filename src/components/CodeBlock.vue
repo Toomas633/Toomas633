@@ -1,9 +1,12 @@
 <template>
-	<code>
+	<code class="position-relative">
 		<pre class="mt-4 pa-2 rounded text-left"> {{ code }}</pre>
+		<CopyButton :text-to-copy="code" :disable-copy="disableCopy" />
 	</code>
 </template>
 <script setup lang="ts">
+import CopyButton from './CopyButton.vue'
+
 defineProps<{
 	code: string
 	disableCopy?: boolean
