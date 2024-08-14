@@ -1,3 +1,18 @@
+:root {
+	--footer-height: 4rem;
+	--scrollbar-offset-right: 0rem;
+}
+
+@media (width < 600px) {
+	:root {
+		--footer-height: 8rem;
+	}
+}
+
+html {
+	overflow-y: auto !important;
+}
+
 h1 {
 	color: rgb(var(--v-theme-primary));
 }
@@ -17,3 +32,18 @@ h1 {
 	}
 }
 /* stylelint-enable selector-class-pattern */
+
+.v-main {
+	margin-top: var(--v-layout-top);
+	padding-top: 0;
+	height: calc(100vh - var(--footer-height) - var(--v-layout-top));
+	overflow: auto;
+}
+
+.green {
+	color: green;
+}
+
+.red {
+	color: red;
+}

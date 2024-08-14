@@ -10,8 +10,9 @@ TODO:
 - [X] Copy button to inline code
 - [ ] Caching fixes to workflows
 - [ ] Minecraft server page
-- [ ] Cookie button refactor
+- [X] Cookie button refactor
 - [ ] Message popup refactor
+- [ ] Custom scrollbar
 
 ## Requirements
 

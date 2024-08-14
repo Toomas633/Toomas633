@@ -1,6 +1,6 @@
 <template>
 	<v-btn
-		class="mr-3 mb-3"
+		class="cookie-button"
 		icon="mdi-cookie"
 		position="fixed"
 		location="bottom right"
@@ -159,3 +159,9 @@ function isConsent(obj: unknown): obj is Consent {
 	)
 }
 </script>
+<style scoped>
+.cookie-button {
+	right: calc(0.5rem + var(--scrollbar-offset)) !important;
+	bottom: calc(var(--footer-height) + 0.25rem) !important;
+}
+</style>

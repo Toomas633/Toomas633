@@ -55,7 +55,7 @@
 					variant="plain" />
 			</span>
 		</div>
-		<v-btn variant="text" href="/tos" color="grey" class="d-sm-none mt-2">
+		<v-btn variant="text" href="/tos" color="grey" class="d-sm-none">
 			Terms of Service
 		</v-btn>
 		<v-btn variant="text" href="/privacy" color="grey" class="d-sm-none">
