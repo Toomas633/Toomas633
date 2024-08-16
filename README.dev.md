@@ -13,6 +13,7 @@ TODO:
 - [X] Cookie button refactor
 - [ ] Message popup refactor
 - [ ] Custom scrollbar
+- [X] Add axios
 
 ## Requirements
 

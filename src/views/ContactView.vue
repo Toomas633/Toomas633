@@ -86,6 +86,8 @@ import LinkComponent from '@/components/LinkComponent.vue'
 import { computed, ref } from 'vue'
 import { PopupMessage } from '@/types/popup'
 import useAlertMixin from '@/helpers/alertMixin'
+import { EmailData } from '@/types/email'
+import { sendEmail } from '@/services/emailService'
 
 const valid = ref(false)
 const loading = ref(false)
@@ -146,24 +148,18 @@ const closePopup = () => {
 const submit = async () => {
 	loading.value = true
 	try {
-		const response = await fetch('/api/send-email', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				from: email.value,
-				project: project.value,
-				message: message.value,
-			}),
-		})
-		const data = await response.json()
-		if (data.success) {
+		const data: EmailData = {
+			from: email.value,
+			project: project.value,
+			message: message.value,
+		}
+		const response = await sendEmail(data)
+		if (response.data.success) {
 			loading.value = false
 			showSuccessMessage('Email sent', popupMessage, showPopup)
 		} else {
 			loading.value = false
-			showErrorMessage(data as Error, popupMessage, showPopup)
+			showErrorMessage(response.data as Error, popupMessage, showPopup)
 		}
 	} catch (error) {
 		loading.value = false
