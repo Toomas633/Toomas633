@@ -2,19 +2,8 @@
 
 TODO:
 
-- [X] Cookie change button
-- [X] Custom image carosel
-- [X] Home page custom image element
-- [X] Link component instead of `<a>`
-- [X] Copy button to code blocks
-- [X] Copy button to inline code
 - [ ] Caching fixes to workflows
-- [X] Minecraft server page
-- [X] Cookie button refactor
-- [X] Message popup refactor
 - [ ] Custom scrollbar
-- [X] Add axios
-- [X] Copy refactor
 
 ## Requirements
 
