@@ -4,9 +4,62 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="theme-color" content="#f44336" />
+		<meta
+			name="google-site-verification"
+			content="3mzfkHeHI79i5vZPIipQ5bCn0TflXUHfrzTDuzzuVOw" />
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8511585383372617"
+			crossorigin="anonymous"></script>
 		<link rel="icon" href="<%= BASE_URL %>favicon.ico" />
 		<title><%= htmlWebpackPlugin.options.title %></title>
 	</head>
+	<!-- Google tag (gtag.js) -->
+	<script
+		async
+		src="https://www.googletagmanager.com/gtag/js?id=G-NXQTF484K2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || []
+		function gtag() {
+			dataLayer.push(arguments)
+		}
+
+		gtag('js', new Date())
+		gtag('config', 'G-NXQTF484K2')
+		gtag('consent', 'default', {
+			ad_storage: 'denied',
+			analytics_storage: 'denied',
+			ad_user_data: 'denied',
+			ad_personalization: 'denied',
+			functionality_storage: 'denied',
+			personalization_storage: 'denied',
+			security_storage: 'granted',
+		})
+	</script>
+	<script>
+		function updateConsent(consent) {
+			gtag('consent', 'update', {
+				functionality_storage: consent.necessary ? 'granted' : 'deinied',
+				personalization_storage: consent.necessary ? 'granted' : 'deinied',
+				ad_storage: consent.ads ? 'granted' : 'denied',
+				ad_personalization: consent.ads ? 'granted' : 'denied',
+				analytics_storage: consent.analytics ? 'granted' : 'denied',
+				ad_user_data: consent.userData ? 'granted' : 'denied',
+			})
+
+			if (!consent.analytics) {
+				gtag('set', 'url_passthrough', true)
+			}
+			if (!consent.ads) {
+				gtag('set', 'ads_data_redaction', true)
+			}
+		}
+
+		window.updateConsent = updateConsent
+	</script>
+
 	<body>
 		<noscript>
 			<strong

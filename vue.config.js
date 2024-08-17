@@ -1,10 +1,20 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
+/* eslint-disable @typescript-eslint/no-require-imports */
+const path = require('path')
+
+module.exports = {
 	transpileDependencies: true,
+	publicPath: '/',
 
 	pluginOptions: {
-		vuetify: {
-			// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vuetify-loader
+		vuetify: {},
+	},
+
+	configureWebpack: {
+		resolve: {
+			alias: {
+				'@': path.resolve(__dirname, 'src'),
+				'@icons': path.resolve(__dirname, 'icons'),
+			},
 		},
 	},
-})
+}

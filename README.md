@@ -50,12 +50,10 @@
 ### Frontend
 
 <div align="left">
-<a href="https://en.wikipedia.org/wiki/HTML" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/html.svg" alt="HTML" height="75" /></a>
-<a href="https://en.wikipedia.org/wiki/CSS" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/css.svg" alt="CSS" height="75" /></a>
-<a href="https://sass-lang.com/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/sass.svg" alt="Sass" height="75" /></a>
 <a href="https://vuejs.org/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/vue.svg" alt="Vue" height="75" /></a>
 <a href="https://vuetifyjs.com/" target="_blank"> <img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/vuetify.svg" alt="Vuetify" height="75"/></a>
 <a href="https://angular.io/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/angular.svg" alt="Angular" height="75" /></a>
+<a href="https://sass-lang.com/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/sass.svg" alt="Sass" height="75" /></a>
 <a href="https://wordpress.com/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/wordpress.svg" alt="Wordpress" height="75"/></a>
 </div>
 
@@ -73,7 +71,7 @@
 <a href="https://grafana.com/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/grafana.svg" alt="Grafana" height="75" /></a>
 </div>
 
-### Database
+### Databases
 
 <div align="left">
 <a href="https://www.mysql.com/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/mysql.svg" alt="MySQL" height="75" /></a>
@@ -94,7 +92,7 @@
 <div align="left">
 <a href="https://www.blender.org/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/blender.svg" alt="Blender" height="75" /></a>
 <a href="https://www.sketchup.com/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/sketchup.svg" alt="SketchUp" height="75"/></a>
-<a href="https://solidedge.siemens.com/en/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/solidEdge.svg" alt="Solid Edge" height="75"/></a>
+<a href="https://solidedge.siemens.com/en/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/solid-edge.svg" alt="Solid Edge" height="75"/></a>
 <a href="https://ultimaker.com/software/ultimaker-cura" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/cura.svg" alt="Cura" height="75"/></a>
 </div>
 
@@ -105,7 +103,7 @@
 <a href="https://www.arduino.cc/" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/arduino.svg" alt="Arduino" height="75" /></a>
 </div>
 
-### Operating systems
+### Op systems
 
 <div align="left">
 <a href="https://www.microsoft.com/en-us/windows" target="_blank"><img style="margin: 0.625rem" src="https://raw.githubusercontent.com/Toomas633/Toomas633/main/icons/windows.svg" alt="Windows" height="75" /></a>
@@ -123,9 +121,9 @@
 ## Github Stats
 
 <p float="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=Toomas633&theme=dark&hide_border=true&include_all_commits=true&count_private=false" style="height:10.938rem" />
+  <img src="https://github-readme-stats-two-topaz-39.vercel.app/api?username=Toomas633&theme=dark&hide_border=true&include_all_commits=true&count_private=false" style="height:10.938rem" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Toomas633&theme=dark&hide_border=true" style="height:10.938rem" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toomas633&theme=dark&hide_border=true&include_all_commits=true&count_private=false&layout=compact" style="height:10.938rem" />
+  <img src="https://github-readme-stats-two-topaz-39.vercel.app/api/top-langs/?username=Toomas633&theme=dark&hide_border=true&layout=compact&langs_count=10" style="height:10.938rem" />
 </p>
 
 ## Top Contributed Repo

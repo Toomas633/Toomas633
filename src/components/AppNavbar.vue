@@ -1,14 +1,9 @@
 <template>
-	<v-app-bar app>
-		<router-link to="/" class="logo-and-title ml-4 align-center d-flex">
-			<v-img
-				src="@/assets/logo.png"
-				alt="Logo"
-				max-height="40"
-				max-width="40"
-				contain />
-			<v-toolbar-title class="ml-2">Toomas633's Dungeon</v-toolbar-title>
-		</router-link>
+	<v-app-bar height="64">
+		<a href="/" class="logo-and-title ml-4 align-center d-flex">
+			<v-img src="/logo.svg" alt="Logo" max-height="40" max-width="40" />
+			<v-toolbar-title class="ml-2"> Toomas633's Dungeon </v-toolbar-title>
+		</a>
 		<v-spacer />
 		<div class="d-none d-md-flex">
 			<template v-for="(item, index) in menuItems" :key="index">
@@ -17,7 +12,7 @@
 					:icon="item.icon"
 					:label="item.label"
 					:options="item.options"
-					:isMobile="false" />
+					:is-mobile="false" />
 				<v-btn
 					v-else
 					:class="index === menuItems.length - 1 ? 'mr-2' : ''"
@@ -29,7 +24,7 @@
 			</template>
 		</div>
 		<v-menu>
-			<template v-slot:activator="{ props }">
+			<template #activator="{ props }">
 				<v-app-bar-nav-icon class="d-md-none" v-bind="props" />
 			</template>
 			<v-list class="mt-3">
@@ -40,7 +35,7 @@
 							:label="item.label"
 							:options="item.options"
 							:href="item.href"
-							:isMobile="true" />
+							:is-mobile="true" />
 					</v-list-item>
 					<v-list-item v-else class="pr-0 pl-0">
 						<v-btn class="elevation-0" :href="item.href">
@@ -92,8 +87,8 @@ const menuItems = [
 		label: 'Game servers',
 		options: [
 			{
-				label: 'Minecraft Vanilla Server',
-				href: 'https://servers.toomas633.com/',
+				label: 'Vanilla Minecraft',
+				href: '/servers/minecraft',
 				icon: 'mdi-minecraft',
 			},
 		],
@@ -112,3 +107,10 @@ const menuItems = [
 	},
 ]
 </script>
+<style scoped>
+.logo-and-title {
+	color: inherit;
+	text-decoration: none;
+	width: 16.563rem;
+}
+</style>

@@ -1,0 +1,26 @@
+{
+	"manifest_version": 3,
+	"version": "1.0.0",
+	"author": "Toomas633",
+	"id": "/",
+	"name": "Toomas633's Dungeon",
+	"short_name": "toomas633.com",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#353535",
+	"theme_color": "#f44336",
+	"description": "Toomas633's home page",
+	"default_locale": "en",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"sizes": "48x48",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "logo.svg",
+			"sizes": "150x150",
+			"type": "image/svg+xml"
+		}
+	]
+}

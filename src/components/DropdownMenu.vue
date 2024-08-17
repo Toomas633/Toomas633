@@ -1,6 +1,6 @@
 <template>
-	<v-menu offset-y :location="isMobile ? 'start' : undefined">
-		<template v-slot:activator="{ props }">
+	<v-menu :location="isMobile ? 'start' : undefined">
+		<template #activator="{ props }">
 			<v-btn v-bind="props" :href="href" class="elevation-0">
 				<v-icon v-if="icon" :icon="icon" class="mr-1" />{{ label }}
 			</v-btn>
@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Option } from '@/interfaces/option'
+import type { Option } from '@/types/option'
 
 defineProps<{
 	icon: string

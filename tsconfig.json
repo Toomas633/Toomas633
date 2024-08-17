@@ -2,23 +2,30 @@
 	"compilerOptions": {
 		"target": "ES2020",
 		"module": "ES2020",
+		"lib": ["ES2020", "dom", "scripthost"],
+		"allowJs": false,
 		"strict": true,
-		"jsx": "preserve",
+		"noImplicitAny": true,
 		"moduleResolution": "node",
-		"experimentalDecorators": true,
-		"skipLibCheck": true,
 		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
-		"useDefineForClassFields": true,
 		"sourceMap": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
 		"baseUrl": ".",
-		"types": ["webpack-env", "vuetify"],
+		"types": ["webpack-env", "vuetify", "node"],
 		"paths": {
-			"@/*": ["src/*"]
+			"@/*": ["src/*"],
+			"@icons/*": ["icons/*"] 
 		},
-		"lib": ["ES2020", "dom", "scripthost"]
+		
 	},
-	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-	"exclude": ["node_modules"]
+	"include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue",
+	"backend/**/*.mjs"  ],
+	"exclude": ["node_modules", "public", "dist"]
 }
