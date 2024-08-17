@@ -4,6 +4,7 @@ TODO:
 
 - [ ] Caching fixes to workflows
 - [ ] Custom scrollbar
+- [ ] Automatic sitemap update
 
 ## Requirements
 
