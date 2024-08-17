@@ -27,7 +27,13 @@
 									size="small" />
 								{{ data?.online ? 'Server is online' : 'Server is offline' }}
 							</h3>
-							<InlineTextCopy text="mc.toomas633.com" />
+							<div class="d-flex">
+								<InlineTextCopy class="my-auto" :text="data?.hostname ?? ''" />
+								<CopyButton
+									class="ml-1"
+									:text-to-copy="data?.hostname ?? ''"
+									:inline="true" />
+							</div>
 							<!-- eslint-disable-next-line vue/no-v-html -->
 							<div v-html="motd"></div>
 						</div>
@@ -138,7 +144,8 @@
 					</v-expand-transition>
 				</v-container>
 				<v-btn
-					variant="text"
+					variant="plain"
+					:ripple="false"
 					icon="mdi-refresh"
 					class="position-absolute top-0 right-0"
 					:loading="loading"
@@ -170,11 +177,12 @@ import useLoadingMixin from '@/helpers/loadingMixin'
 import { Player } from '@/types/minecraftPlayer'
 import useAlertMixin from '@/helpers/alertMixin'
 import InlineTextCopy from '@/components/InlineTextCopy.vue'
+import CopyButton from '@/components/CopyButton.vue'
 import background from '@/assets/images/Minecraft/background.jpg'
 
 const tab = ref<Tabs>(Tabs.Status)
 const loading = ref(true)
-const data = ref<MinecraftData | undefined>(undefined)
+const data = ref<MinecraftData>()
 const online = ref(false)
 const players = ref<Player[]>([])
 const showPlugins = ref(false)

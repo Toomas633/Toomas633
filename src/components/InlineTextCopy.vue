@@ -26,3 +26,8 @@ const copyCode = async (text: string) => {
 	}
 }
 </script>
+<style scoped>
+p {
+	cursor: pointer;
+}
+</style>

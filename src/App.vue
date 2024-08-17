@@ -15,10 +15,10 @@ import AppNavbar from './components/AppNavbar.vue'
 import AppFooter from './components/AppFooter.vue'
 import CookieConsent from './components/CookieConsent.vue'
 import MessagePopup from './components/MessagePopup.vue'
-import { computed, onBeforeUnmount, onMounted, ref, VNodeRef } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 
-const mainElement = ref<VNodeRef | null>(null)
+const mainElement = ref<HTMLElement>()
 const hasScrollbar = ref(false)
 
 const rootStyle = computed(() => ({
@@ -38,6 +38,7 @@ onBeforeUnmount(() => {
 function checkScrollbar() {
 	if (mainElement.value) {
 		hasScrollbar.value =
+			// @ts-expect-error $el is present
 			mainElement.value.$el.scrollHeight > mainElement.value.$el.clientHeight
 	}
 }

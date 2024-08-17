@@ -46,7 +46,7 @@ import useTimerMixin from '@/helpers/timerMixin'
 import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 
 const showPopup = ref(false)
-const message = ref<PopupMessage | null>(null)
+const message = ref<PopupMessage>()
 const showStack = ref(false)
 
 const alertEvent = EventType.SHOW_ALERT_MESSAGE

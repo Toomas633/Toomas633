@@ -58,7 +58,7 @@ const { openImageInNewTab } = useImageMixin()
 const currentSlide = ref(0)
 const progress = ref(0)
 
-let interval: NodeJS.Timeout | null = null
+let interval: NodeJS.Timeout
 const totalSlides = props.images.length
 const sectionWidth = 100 / totalSlides
 
