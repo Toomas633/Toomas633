@@ -1,6 +1,6 @@
 <template>
 	<v-btn
-		class="cookie-button"
+		:class="isDesktop ? 'cookie-button-desktop' : 'cookie-button-mobile'"
 		icon="mdi-cookie"
 		position="fixed"
 		location="bottom right"
@@ -71,6 +71,7 @@
 import { ref, onMounted } from 'vue'
 import type { Consent } from '@/types/consent'
 import useCookies from '@/helpers/useCookies'
+import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 
 const visible = ref(false)
 const showSelection = ref(false)
@@ -160,8 +161,13 @@ function isConsent(obj: unknown): obj is Consent {
 }
 </script>
 <style scoped>
-.cookie-button {
+.cookie-button-desktop {
 	right: calc(0.5rem + var(--scrollbar-offset)) !important;
 	bottom: calc(var(--footer-height) + 0.25rem) !important;
+}
+
+.cookie-button-mobile {
+	right: 0.5rem !important;
+	bottom: 0.5rem !important;
 }
 </style>

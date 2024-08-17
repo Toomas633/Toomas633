@@ -73,18 +73,12 @@
 				</v-card>
 			</v-col>
 		</v-row>
-		<MessagePopup
-			v-if="showPopup"
-			:message="popupMessage!"
-			@close="closePopup" />
 	</v-container>
 </template>
 
 <script setup lang="ts">
-import MessagePopup from '@/components/MessagePopup.vue'
 import LinkComponent from '@/components/LinkComponent.vue'
 import { computed, ref } from 'vue'
-import { PopupMessage } from '@/types/popup'
 import useAlertMixin from '@/helpers/alertMixin'
 import { EmailData } from '@/types/email'
 import { sendEmail } from '@/services/emailService'
@@ -94,8 +88,6 @@ const loading = ref(false)
 const email = ref('')
 const project = ref('')
 const message = ref('')
-const popupMessage = ref<PopupMessage | undefined>(undefined)
-const showPopup = ref(false)
 
 const { showErrorMessage, showSuccessMessage } = useAlertMixin()
 
@@ -141,10 +133,6 @@ const autocompleteRules = computed(() => {
 	return [(value: string) => !!value || 'Required']
 })
 
-const closePopup = () => {
-	showPopup.value = false
-}
-
 const submit = async () => {
 	loading.value = true
 	try {
@@ -156,14 +144,14 @@ const submit = async () => {
 		const response = await sendEmail(data)
 		if (response.data.success) {
 			loading.value = false
-			showSuccessMessage('Email sent', popupMessage, showPopup)
+			showSuccessMessage('Email sent')
 		} else {
 			loading.value = false
-			showErrorMessage(response.data as Error, popupMessage, showPopup)
+			showErrorMessage(response.data as Error)
 		}
 	} catch (error) {
 		loading.value = false
-		showErrorMessage(error as Error, popupMessage, showPopup)
+		showErrorMessage(error as Error)
 	}
 }
 

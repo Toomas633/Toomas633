@@ -1,73 +1,40 @@
 import { PopupType } from '@/enums/popupType'
+import { EventBus } from '@/util/eventBus'
+import { EventType } from '@/enums/eventType'
 import { PopupMessage } from '@/types/popup'
-import useTimerMixin from './timerMixin'
-import { Ref } from 'vue'
 
 export default function useAlertMixin() {
-	const { timer } = useTimerMixin()
-	const fiveSeconds = 5000
+	const alertEvent = EventType.SHOW_ALERT_MESSAGE
 
-	function showErrorMessage(
-		error: Error,
-		popupMessage: Ref<PopupMessage | undefined>,
-		showPopup: Ref<boolean>
-	) {
+	function showErrorMessage(error: Error) {
 		console.error(error)
-		popupMessage.value = {
+		EventBus.emit(alertEvent, {
 			message: error.message,
 			type: PopupType.Error,
 			stack: error.stack,
-		}
-		if (!popupMessage.value.stack) {
-			timer((value: boolean) => {
-				showPopup.value = value
-			}, fiveSeconds)
-		} else {
-			showPopup.value = true
-		}
+		} as PopupMessage)
 	}
 
-	function showSuccessMessage(
-		status: string,
-		popupMessage: Ref<PopupMessage | undefined>,
-		showPopup: Ref<boolean>
-	) {
-		popupMessage.value = {
+	function showSuccessMessage(status: string) {
+		EventBus.emit(alertEvent, {
 			message: status,
 			type: PopupType.Success,
-		}
-		timer((value: boolean) => {
-			showPopup.value = value
-		}, fiveSeconds)
+		} as PopupMessage)
 	}
 
-	function showWarningMessage(
-		status: string,
-		popupMessage: Ref<PopupMessage | undefined>,
-		showPopup: Ref<boolean>
-	) {
+	function showWarningMessage(status: string) {
 		console.warn(status)
-		popupMessage.value = {
+		EventBus.emit(alertEvent, {
 			message: status,
 			type: PopupType.Warn,
-		}
-		timer((value: boolean) => {
-			showPopup.value = value
-		}, fiveSeconds)
+		} as PopupMessage)
 	}
 
-	function showInfoMessage(
-		info: string,
-		popupMessage: Ref<PopupMessage | undefined>,
-		showPopup: Ref<boolean>
-	) {
-		popupMessage.value = {
+	function showInfoMessage(info: string) {
+		EventBus.emit(alertEvent, {
 			message: info,
 			type: PopupType.Info,
-		}
-		timer((value: boolean) => {
-			showPopup.value = value
-		}, fiveSeconds)
+		} as PopupMessage)
 	}
 
 	return {

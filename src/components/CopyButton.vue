@@ -44,7 +44,7 @@ const copy = async () => {
 			copied.value = value
 		}, 2000)
 	} catch (error) {
-		showErrorMessage(error as Error, popupMessage, showPopup)
+		showErrorMessage(error as Error)
 	}
 }
 </script>

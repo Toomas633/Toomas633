@@ -1,5 +1,9 @@
 <template>
-	<v-card :color="color" class="message-popup position-fixed overflow-auto">
+	<v-card
+		v-show="showPopup"
+		:color="color"
+		class="position-fixed"
+		:class="isDesktop ? 'message-popup-desktop' : 'message-popup-mobile'">
 		<div class="d-flex" style="justify-content: space-between">
 			<v-card-title class="d-inline-block">
 				<v-icon :icon="icon" /> {{ title }}
@@ -8,22 +12,23 @@
 				variant="flat"
 				icon="mdi-close"
 				:color="color"
-				@click="emit('close')" />
+				@click="closePopup" />
 		</div>
 		<v-card-text class="pt-0 pb-0 text-start">
-			{{ message.message }}
+			{{ message?.message }}
 		</v-card-text>
-		<div v-if="message.stack">
+		<div v-if="message?.stack">
 			<v-btn variant="flat" @click="toggleStackTrace">
 				<v-icon>
 					{{ showStack ? 'mdi-chevron-down' : 'mdi-chevron-right' }}
 				</v-icon>
 				<span>Stack Trace</span>
 			</v-btn>
-			<v-card-text
-				v-if="showStack"
-				class="stack-trace pa-2 overflow-auto mt-n5">
-				<CodeBlock :code="formattedStack" :disable-copy="true" />
+			<v-card-text v-if="showStack" class="pa-2 overflow-auto mt-n5">
+				<CodeBlock
+					class="overflow-auto height-100"
+					:code="formattedStack"
+					:disable-copy="true" />
 			</v-card-text>
 		</div>
 	</v-card>
@@ -31,24 +36,32 @@
 
 <script setup lang="ts">
 import CodeBlock from './CodeBlock.vue'
-import { computed, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { PopupType } from '@/enums/popupType'
 import { PopupMessage } from '@/types/popup'
+import { EventType } from '@/enums/eventType'
+import { EventBus } from '@/util/eventBus'
+import useTimerMixin from '@/helpers/timerMixin'
+import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 
-const props = defineProps<{
-	message: PopupMessage
-}>()
-
-const emit = defineEmits(['close'])
-
+const showPopup = ref(false)
+const message = ref<PopupMessage | null>(null)
 const showStack = ref(false)
+
+const alertEvent = EventType.SHOW_ALERT_MESSAGE
+
+const { timer } = useTimerMixin()
+
+onMounted(() => {
+	EventBus.on(alertEvent, onAlertMessage)
+})
 
 const toggleStackTrace = () => {
 	showStack.value = !showStack.value
 }
 
 const title = computed(() => {
-	switch (props.message?.type) {
+	switch (message.value?.type) {
 		case PopupType.Error:
 			return 'Error'
 		case PopupType.Warn:
@@ -63,7 +76,7 @@ const title = computed(() => {
 })
 
 const color = computed(() => {
-	switch (props.message?.type) {
+	switch (message.value?.type) {
 		case PopupType.Error:
 			return 'red'
 		case PopupType.Warn:
@@ -78,7 +91,7 @@ const color = computed(() => {
 })
 
 const icon = computed(() => {
-	switch (props.message?.type) {
+	switch (message.value?.type) {
 		case PopupType.Error:
 			return 'mdi-alert'
 		case PopupType.Warn:
@@ -94,23 +107,46 @@ const icon = computed(() => {
 
 const formattedStack = computed(() => {
 	return (
-		props.message.stack
+		message.value?.stack
 			?.split('\n')
 			.map((line) => line.trim())
 			.join('\n') || ''
 	)
 })
-</script>
-<style scoped>
-.message-popup {
-	bottom: 1rem;
-	right: 1rem;
-	max-width: 37rem;
-	max-height: 20rem;
-	z-index: 1000;
+
+const closePopup = () => {
+	showPopup.value = false
+	showStack.value = false
 }
 
-.stack-trace {
-	max-height: 25rem;
+function onAlertMessage(event: PopupMessage) {
+	showStack.value = false
+	message.value = event
+	if (event.stack) {
+		showPopup.value = true
+	} else {
+		timer((value: boolean) => {
+			showPopup.value = value
+		}, 5000)
+	}
+}
+
+onUnmounted(() => {
+	EventBus.off(alertEvent, onAlertMessage)
+})
+</script>
+<style scoped>
+.message-popup-desktop {
+	right: calc(0.5rem + var(--scrollbar-offset)) !important;
+	bottom: calc(var(--footer-height) + 0.25rem) !important;
+	min-width: 20rem;
+	min-height: 5rem;
+	max-width: 37rem;
+	max-height: 20rem;
+}
+.message-popup-mobile {
+	right: 0;
+	bottom: var(--footer-height);
+	max-width: 100%;
 }
 </style>

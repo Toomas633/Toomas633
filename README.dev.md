@@ -11,7 +11,7 @@ TODO:
 - [ ] Caching fixes to workflows
 - [ ] Minecraft server page
 - [X] Cookie button refactor
-- [ ] Message popup refactor
+- [X] Message popup refactor
 - [ ] Custom scrollbar
 - [X] Add axios
 

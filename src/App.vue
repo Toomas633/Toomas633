@@ -1,9 +1,10 @@
 <template>
 	<v-app :style="rootStyle">
 		<AppNavbar />
-		<v-main ref="mainElement">
+		<v-main ref="mainElement" :class="isDesktop ? 'desktop' : 'mobile'">
 			<router-view />
 			<CookieConsent />
+			<MessagePopup />
 		</v-main>
 		<AppFooter />
 	</v-app>
@@ -13,7 +14,9 @@
 import AppNavbar from './components/AppNavbar.vue'
 import AppFooter from './components/AppFooter.vue'
 import CookieConsent from './components/CookieConsent.vue'
+import MessagePopup from './components/MessagePopup.vue'
 import { computed, onBeforeUnmount, onMounted, ref, VNodeRef } from 'vue'
+import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 
 const mainElement = ref<VNodeRef | null>(null)
 const hasScrollbar = ref(false)
