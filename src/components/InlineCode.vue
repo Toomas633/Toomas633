@@ -1,10 +1,19 @@
 <template>
-	<code class="position-relative" @mousedown="copy">
-		<mark>{{ code }}</mark>
+	<code class="position-relative" @mousedown="copyCode">
+		<mark>
+			{{ code }}
+			<v-tooltip v-if="isDesktop" activator="parent" location="bottom">
+				<v-icon
+					:icon="
+						copied ? (!error ? 'mdi-check' : 'mdi-close') : 'mdi-content-copy'
+					" />
+				{{ copied ? (!error ? 'Copied' : 'Error') : 'Copy' }}
+			</v-tooltip>
+		</mark>
 	</code>
 </template>
 <script setup lang="ts">
-import useAlertMixin from '@/helpers/alertMixin'
+import useCopyMixin from '@/helpers/copyMixin'
 import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 
 const props = defineProps<{
@@ -12,16 +21,11 @@ const props = defineProps<{
 	disableCopy?: boolean
 }>()
 
-const { showErrorMessage, showSuccessMessage } = useAlertMixin()
+const { copied, error, copy } = useCopyMixin()
 
-const copy = async () => {
+const copyCode = async () => {
 	if (isDesktop) {
-		try {
-			await navigator.clipboard.writeText(props.code)
-			showSuccessMessage('Code copied to clipboard')
-		} catch (error) {
-			showErrorMessage(error as Error)
-		}
+		await copy(props.code)
 	}
 }
 </script>

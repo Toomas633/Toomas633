@@ -28,7 +28,8 @@
 				<CodeBlock
 					class="overflow-auto height-100"
 					:code="formattedStack"
-					:disable-copy="true" />
+					:disable-copy="true"
+					style="max-height: 12.688rem" />
 			</v-card-text>
 		</div>
 	</v-card>
@@ -144,6 +145,7 @@ onUnmounted(() => {
 	max-width: 37rem;
 	max-height: 20rem;
 }
+
 .message-popup-mobile {
 	right: 0;
 	bottom: var(--footer-height);

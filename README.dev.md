@@ -14,6 +14,7 @@ TODO:
 - [X] Message popup refactor
 - [ ] Custom scrollbar
 - [X] Add axios
+- [X] Copy refactor
 
 ## Requirements
 
