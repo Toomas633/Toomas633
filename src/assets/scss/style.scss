@@ -34,10 +34,18 @@ h1 {
 /* stylelint-enable selector-class-pattern */
 
 .v-main {
+	position: relative;
 	margin-top: var(--v-layout-top);
 	padding-top: 0;
-	height: calc(100vh - var(--footer-height) - var(--v-layout-top));
 	overflow: auto;
+}
+
+.desktop {
+	height: calc(100dvh - var(--footer-height) - var(--v-layout-top));
+}
+
+.mobile {
+	height: calc(100dvh - var(--v-layout-top));
 }
 
 .green {
@@ -46,4 +54,8 @@ h1 {
 
 .red {
 	color: red;
+}
+
+.light-blue {
+	color: lightskyblue;
 }

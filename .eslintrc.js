@@ -29,6 +29,7 @@ module.exports = {
 		'@typescript-eslint/no-explicit-any': 'warn',
 		'vuetify/no-deprecated-classes': 'warn',
 		'vuetify/no-deprecated-props': 'warn',
+		'vuetify/no-deprecated-colors': 'off',
         'no-console': [
             process.env.NODE_ENV === 'production' ? 'error' : 'warn',
             {

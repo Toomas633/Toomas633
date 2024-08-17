@@ -1,10 +1,8 @@
 <template>
 	<v-app-bar height="64">
-		<router-link to="/" class="logo-and-title ml-4 align-center d-flex">
 		<a href="/" class="logo-and-title ml-4 align-center d-flex">
 			<v-img src="/logo.svg" alt="Logo" max-height="40" max-width="40" />
 			<v-toolbar-title class="ml-2"> Toomas633's Dungeon </v-toolbar-title>
-		</router-link>
 		</a>
 		<v-spacer />
 		<div class="d-none d-md-flex">
@@ -89,8 +87,8 @@ const menuItems = [
 		label: 'Game servers',
 		options: [
 			{
-				label: 'Minecraft Vanilla Server',
-				href: 'https://servers.toomas633.com/',
+				label: 'Vanilla Minecraft',
+				href: '/servers/minecraft',
 				icon: 'mdi-minecraft',
 			},
 		],

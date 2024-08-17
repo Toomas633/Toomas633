@@ -1,5 +1,5 @@
 <template>
-	<code class="position-relative" @mousedown="copyCode">
+	<code class="position-relative" @mousedown="copyCode(code)">
 		<mark>
 			{{ code }}
 			<v-tooltip v-if="isDesktop" activator="parent" location="bottom">
@@ -16,16 +16,16 @@
 import useCopyMixin from '@/helpers/copyMixin'
 import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 
-const props = defineProps<{
+defineProps<{
 	code: string
 	disableCopy?: boolean
 }>()
 
 const { copied, error, copy } = useCopyMixin()
 
-const copyCode = async () => {
+const copyCode = async (code: string) => {
 	if (isDesktop) {
-		await copy(props.code)
+		await copy(code)
 	}
 }
 </script>

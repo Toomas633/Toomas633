@@ -8,6 +8,7 @@ import FileOrganizerView from '@/views/projects/FileOrganizerView.vue'
 import FileShareView from '@/views/projects/FileShareView.vue'
 import ToS from '@/views/ToS.vue'
 import PrivacyPolicy from '@/views/PrivacyPolicy.vue'
+import MinecraftView from '@/views/servers/MinecraftView.vue'
 
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -34,6 +35,11 @@ const routes: Array<RouteRecordRaw> = [
 		path: '/projects/fileshare',
 		name: 'FileShare',
 		component: FileShareView,
+	},
+	{
+		path: '/servers/minecraft',
+		name: 'Minecraft server',
+		component: MinecraftView,
 	},
 	{
 		path: '/contact',

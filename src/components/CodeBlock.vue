@@ -1,6 +1,6 @@
 <template>
 	<code class="position-relative">
-		<pre class="mt-4 pa-2 rounded text-left overflow-auto" style="style">
+		<pre class="mt-4 pa-2 rounded text-left overflow-auto" :style="style">
  {{ code }}</pre
 		>
 		<CopyButton :text-to-copy="code" :disable-copy="disableCopy" />

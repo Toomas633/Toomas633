@@ -9,7 +9,7 @@ TODO:
 - [X] Copy button to code blocks
 - [X] Copy button to inline code
 - [ ] Caching fixes to workflows
-- [ ] Minecraft server page
+- [X] Minecraft server page
 - [X] Cookie button refactor
 - [X] Message popup refactor
 - [ ] Custom scrollbar
