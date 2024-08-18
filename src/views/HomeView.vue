@@ -58,7 +58,11 @@
 							href="https://www.python.org/"
 							:src="Python"
 							alt="Python" />
-						<LinkImage href="https://www.php.net/" :src="PHP" alt="PHP" />
+						<LinkImage
+							href="https://www.php.net/"
+							:src="PHP"
+							alt="PHP"
+							width="109" />
 						<LinkImage
 							href="https://www.javascript.com/"
 							:src="JS"
@@ -74,9 +78,17 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Backend</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<LinkImage href="https://www.nginx.com/" :src="Nginx" alt="Nginx" />
+						<LinkImage
+							href="https://www.nginx.com/"
+							:src="Nginx"
+							alt="Nginx"
+							width="190" />
 						<LinkImage href="https://spring.io/" :src="Spring" alt="Spring" />
-						<LinkImage href="https://nodejs.org/" :src="NodeJS" alt="Node.js" />
+						<LinkImage
+							href="https://nodejs.org/"
+							:src="NodeJS"
+							alt="Node.js"
+							width="122" />
 					</div>
 				</v-card>
 			</v-col>
@@ -152,11 +164,16 @@
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Cloud</h1>
 					<div class="d-sm-flex justify-center text-center">
-						<LinkImage href="https://aws.amazon.com/" :src="AWS" alt="AWS" />
+						<LinkImage
+							href="https://aws.amazon.com/"
+							:src="AWS"
+							alt="AWS"
+							width="124" />
 						<LinkImage
 							href="https://www.oracle.com/cloud/"
 							:src="OracleCloud"
-							alt="Oracle Cloud" />
+							alt="Oracle Cloud"
+							width="143" />
 					</div>
 				</v-card>
 			</v-col>

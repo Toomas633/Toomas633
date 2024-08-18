@@ -29,7 +29,6 @@
     "src/**/*.vue",
 	"backend/**/*.mjs",
 	"scripts/**/*.mjs",
-	"public/**/*.html"
-	],
+	"public/**/*.html"],
 	"exclude": ["node_modules", "dist"]
 }
