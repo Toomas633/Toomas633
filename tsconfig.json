@@ -18,7 +18,8 @@
 		"types": ["webpack-env", "vuetify", "node"],
 		"paths": {
 			"@/*": ["src/*"],
-			"@icons/*": ["icons/*"] 
+			"@icons/*": ["icons/*"],
+			"@public/*": ["public/*"]
 		},
 		
 	},
@@ -26,6 +27,9 @@
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.vue",
-	"backend/**/*.mjs"  ],
-	"exclude": ["node_modules", "public", "dist"]
+	"backend/**/*.mjs",
+	"scripts/**/*.mjs",
+	"public/**/*.html"
+	],
+	"exclude": ["node_modules", "dist"]
 }
