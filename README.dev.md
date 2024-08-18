@@ -1,10 +1,11 @@
 # Development documentation
 
-TODO:
+TODO v3.2:
 
 - [ ] Caching fixes to workflows
 - [ ] Custom scrollbar
 - [ ] Automatic sitemap update
+- [ ] Replace importing all to importing specific icons
 
 ## Requirements
 
