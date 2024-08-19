@@ -12,6 +12,7 @@ if (!isProduction) {
 
 module.exports = {
 	transpileDependencies: true,
+	productionSourceMap: true,
 	publicPath: '/',
 
 	pluginOptions: {
