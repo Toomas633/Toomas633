@@ -28,7 +28,7 @@
 		"vue-cookie-law": "^1.13.3",
 		"vue-cookies": "^1.8.4",
 		"vue-router": "^4.4.3",
-		"vuetify": "^3.6.13"
+		"vuetify": "^3.7.0"
 	},
 	"devDependencies": {
 		"@fortawesome/fontawesome-free": "^6.6.0",
