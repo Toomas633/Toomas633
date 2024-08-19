@@ -38,7 +38,7 @@
 		"@types/node": "^22.2.0",
 		"@types/nodemailer": "^6.4.15",
 		"@types/webfontloader": "^1.0.0",
-		"@typescript-eslint/eslint-plugin": "^8.0.1",
+		"@typescript-eslint/eslint-plugin": "^8.1.0",
 		"@typescript-eslint/parser": "^8.0.1",
 		"@vue/cli-plugin-eslint": "~5.0.8",
 		"@vue/cli-plugin-router": "~5.0.8",
