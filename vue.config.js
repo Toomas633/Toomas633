@@ -3,6 +3,13 @@ const path = require('path')
 const BundleAnalyzerPlugin =
 	require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
+const isProduction = process.env.NODE_ENV === 'production'
+const plugins = []
+
+if (!isProduction) {
+	plugins.push(new BundleAnalyzerPlugin())
+}
+
 module.exports = {
 	transpileDependencies: true,
 	publicPath: '/',
@@ -19,7 +26,7 @@ module.exports = {
 	},
 
 	configureWebpack: {
-		plugins: [new BundleAnalyzerPlugin()],
+		plugins: plugins,
 		resolve: {
 			alias: {
 				'@': path.resolve(__dirname, 'src'),
