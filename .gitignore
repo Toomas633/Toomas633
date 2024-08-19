@@ -45,3 +45,5 @@ pnpm-debug.log*
 
 #Lint reports
 .reports
+
+public/sitemap.xml

@@ -4,7 +4,7 @@ TODO v3.2:
 
 - [ ] Caching fixes to workflows
 - [ ] Custom scrollbar
-- [ ] Automatic sitemap update
+- [X] Automatic sitemap update
 
 ## Requirements
 
