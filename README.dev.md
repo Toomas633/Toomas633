@@ -5,6 +5,10 @@ TODO v3.2:
 - [ ] Caching fixes to workflows
 - [ ] Custom scrollbar
 - [X] Automatic sitemap update
+- [ ] Map to contact page
+- [ ] Remove bitcoin from donate
+- [ ] Add github statistics
+- [ ] Robotic arm v2 page
 
 ## Requirements
 
