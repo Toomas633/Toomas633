@@ -1,95 +1,41 @@
 <template>
 	<v-container class="pa-4">
-		<v-row class="pa-4 d-block d-sm-flex" justify="center">
-			<v-col class="align-content-space-around">
-				<h1 class="text-center">Robotic Arm</h1>
-				<p class="text-center">
-					This is Arduino Uno robotic arm using joystick input. It's my first
-					Arduino project that I have coded completely by myself from the
-					beginning. I recently salvaged a broken controller for joysticks and
-					decided to take a crack at a robotic arm. The arm needs some spare
-					metal or weight in the base for extra heft so it won't tip over so
-					easily. It's using servos with metal gearboxes for extra sturdiness
-					and better power and performance. Currently on my setup it can lift
-					about 1/2 to 1kg of weights.
-				</p>
-			</v-col>
-			<v-col class="align-content-space-around" sm="4" md="5" lg="5" xl="3">
-				<v-row class="pa-0 ma-0" justify="center">
-					<v-col>
-						<ButtonCard
-							size="100"
-							text="Download"
-							href="https://github.com/Toomas633/Arduino-Robotic-Arm/releases/download/v1/Robot_arm_v1.ino"
-							icon="mdi-file-download-outline" />
-					</v-col>
-					<v-col>
-						<ButtonCard
-							size="100"
-							text="GitHub"
-							href="https://github.com/Toomas633/Arduino-Robotic-Arm"
-							icon="mdi-github" />
-					</v-col>
-					<v-col>
-						<ButtonCard
-							size="100"
-							text="Thingiverse"
-							href="https://www.thingiverse.com/thing:5391135"
-							icon="mdi-rocket-launch"
-							icon-color="blue" />
-					</v-col>
-				</v-row>
-			</v-col>
-		</v-row>
-		<v-row class="pa-4" justify="center">
-			<v-col cols="5" md="4" lg="3">
-				<v-img
-					rounded
-					style="cursor: pointer"
-					:src="arm"
-					alt="Arm"
-					@click="openImageInNewTab(arm)" />
-			</v-col>
-			<v-col>
-				<v-card class="bg-black text-center pa-4" min-width="282">
-					<h1>V1</h1>
-					<v-card-text>
-						Joysticks change the servo position values so they hold position and
-						won't come back when you let go. Buttons are programmed to use the
-						Arduino's built in pullup resistors, so none are needed on the
-						ground nor on the signal lines. Serial monitor can show real time
-						feedback on button values and servo positions.
-					</v-card-text>
-				</v-card>
-				<v-row class="pt-6 d-block d-md-flex" justify="center">
-					<v-col md="8">
-						<v-img
-							rounded
-							style="cursor: pointer"
-							:src="wiring"
-							alt="Wiring"
-							@click="openImageInNewTab(wiring)" />
-					</v-col>
-					<v-col md="4">
-						<v-img
-							rounded
-							style="cursor: pointer"
-							:src="list"
-							alt="List"
-							@click="openImageInNewTab(list)" />
-					</v-col>
-				</v-row>
-			</v-col>
-		</v-row>
+		<h1 class="text-center">Robotic Arm</h1>
+		<p class="text-center mb-2">
+			This is Arduino Uno robotic arm using joystick input. It's my first
+			Arduino project that I have coded completely by myself from the beginning.
+			The arm needs some spare metal or weight in the base for extra heft so it
+			won't tip over so easily. It's using servos with metal gearboxes for extra
+			sturdiness and better power and performance. Currently on my setup it can
+			lift about 1kg of weights.
+		</p>
+		<v-tabs v-model="tab" align-tabs="center" class="bg-black" grow stacked>
+			<v-tab :value="Tabs.V1">
+				<v-icon icon="mdi-robot-industrial" /> V1
+			</v-tab>
+			<v-tab :value="Tabs.V2">
+				<v-icon icon="mdi-robot-industrial" /> V2
+			</v-tab>
+		</v-tabs>
+		<v-tabs-window v-model="tab" class="v-tabs-wrapper">
+			<v-tabs-window-item :value="Tabs.V1">
+				<ArmV1 />
+			</v-tabs-window-item>
+			<v-tabs-window-item :value="Tabs.V2"> <ArmV2 /> </v-tabs-window-item>
+		</v-tabs-window>
 	</v-container>
 </template>
 
 <script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
-import arm from '@/assets/images/RoboticArm/arm.jpeg'
-import wiring from '@/assets/images/RoboticArm/wiring.png'
-import list from '@/assets/images/RoboticArm/list.png'
-import useImageMixin from '@/helpers/imageMixin'
+import { Tabs } from '@/enums/roboticArm'
+import ArmV1 from './RoboticArm/ArmV1.vue'
+import { ref } from 'vue'
+import ArmV2 from './RoboticArm/ArmV2.vue'
 
-const { openImageInNewTab } = useImageMixin()
+const tab = ref<Tabs>(Tabs.V1)
 </script>
+<style scoped>
+.v-slide-group {
+	border-radius: 4px;
+}
+</style>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 512 512">
+    <path fill="#fff"
+        d="M238.57 140h35.14l77.76 211.31h-40.9l-19-52.68h-71.43l-18.72 52.68h-40.89Zm45.8 129.77-28.23-83-29.37 83Z" />
+    <circle cx="256" cy="256" r="166.22" fill="none" stroke="#fff" stroke-miterlimit="10"
+        stroke-width="24" />
+</svg>

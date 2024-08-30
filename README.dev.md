@@ -8,7 +8,7 @@ TODO v3.2:
 - [ ] Map to contact page
 - [ ] Remove bitcoin from donate
 - [ ] Add github statistics
-- [ ] Robotic arm v2 page
+- [X] Robotic arm v2 page
 
 ## Requirements
 
