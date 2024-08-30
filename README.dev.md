@@ -3,7 +3,6 @@
 TODO v3.2:
 
 - [ ] Caching fixes to workflows
-- [ ] Custom scrollbar
 - [X] Automatic sitemap update
 - [ ] Map to contact page
 - [X] Remove bitcoin from donate
