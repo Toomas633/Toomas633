@@ -6,7 +6,7 @@ TODO v3.2:
 - [ ] Custom scrollbar
 - [X] Automatic sitemap update
 - [ ] Map to contact page
-- [ ] Remove bitcoin from donate
+- [X] Remove bitcoin from donate
 - [ ] Add github statistics
 - [X] Robotic arm v2 page
 

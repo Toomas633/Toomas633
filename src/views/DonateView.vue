@@ -21,18 +21,10 @@
 					icon="fa:fa-brands fa-paypal"
 					icon-color="blue" />
 			</v-col>
-			<v-col xl="3" lg="4" md="5" sm="6">
-				<ButtonCard
-					size="260"
-					title="Bitcoin"
-					:image="btc"
-					text="bc1q97xwfd8vr0q0jste47fd8me2nke0jcj8aaue9w" />
-			</v-col>
 		</v-row>
 	</v-container>
 </template>
 
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
-import btc from '@/assets/images/btc.png'
 </script>
