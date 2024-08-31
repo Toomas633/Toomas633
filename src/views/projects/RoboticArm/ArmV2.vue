@@ -156,7 +156,7 @@ import B from '@/assets/controller/B.svg'
 import RightStickX from '@/assets/controller/Right-Stick-X.svg'
 import RightStickY from '@/assets/controller/Right-Stick-Y.svg'
 import LeftStickX from '@/assets/controller/Left-Stick-X.svg'
-import LeftStickY from '@/assets/controller/Left-Stick-X.svg'
+import LeftStickY from '@/assets/controller/Left-Stick-Y.svg'
 
 const { openImageInNewTab } = useImageMixin()
 </script>
