@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import rateLimit from 'express-rate-limit'
 
 dotenv.config()
 
@@ -16,6 +17,7 @@ const requiredEnvVars = {
 	EMAIL_TO,
 	ALLOWED_ORIGINS,
 }
+
 for (const [key, value] of Object.entries(requiredEnvVars)) {
 	if (value === undefined) {
 		console.error(`Missing required environment variable: ${key}`)
@@ -38,6 +40,15 @@ const corsOptions = {
 	},
 }
 
+const emailRateLimiter = rateLimit({
+	windowMs: 15 * 60 * 1000,
+	max: 10,
+	message:
+		'Too many emails sent from this IP, please try again after 15 minutes',
+	standardHeaders: true,
+	legacyHeaders: false,
+})
+
 app.use(bodyParser.json())
 app.use(cors(corsOptions))
 
@@ -52,20 +63,17 @@ const createTransporter = () => {
 	})
 }
 
-app.post('/send-email', async (req, res) => {
+app.post('/send-email', emailRateLimiter, async (req, res) => {
 	const { from, message, project } = req.body
 	const transporter = createTransporter()
-
 	try {
 		await transporter.verify()
-
 		const mailOptions = {
 			from,
 			to: EMAIL_TO,
 			subject: project,
 			text: message,
 		}
-
 		const info = await transporter.sendMail(mailOptions)
 		res.status(200).json({ success: true, info })
 	} catch (error) {
