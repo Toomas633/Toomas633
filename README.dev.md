@@ -2,12 +2,12 @@
 
 TODO v3.2:
 
-- [X] Caching fixes to workflows
-- [X] Automatic sitemap update
-- [X] Map to contact page
-- [X] Remove bitcoin from donate
+- [x] Caching fixes to workflows
+- [x] Automatic sitemap update
+- [x] Map to contact page
+- [x] Remove bitcoin from donate
 - [ ] Add github statistics
-- [X] Robotic arm v2 page
+- [x] Robotic arm v2 page
 
 ## Requirements
 
@@ -16,9 +16,9 @@ docker
 
 | Platform | Supported |
 | :------: | :-------: |
-|  amd64  |   ✔️   |
-|  arm64  |   ✔️   |
-|  arm32  |    ❌    |
+|  amd64   |    ✔️     |
+|  arm64   |    ✔️     |
+|  arm32   |    ❌     |
 
 ## Commands
 
@@ -35,10 +35,10 @@ Run Stylelint: `npm run stylelint`
 
 |  ENV variables  | Description                                                            |
 | :-------------: | ---------------------------------------------------------------------- |
-|   EMAIL_HOST   | SMTP host for your mail server (smtp.mailprovider.com)                 |
-|   EMAIL_USER   | Login user                                                             |
-|   EMAIL_PASS   | Password                                                               |
-|    EMAIL_TO    | What email address the contact form info is sent to (info@example.com) |
+|   EMAIL_HOST    | SMTP host for your mail server (smtp.mailprovider.com)                 |
+|   EMAIL_USER    | Login user                                                             |
+|   EMAIL_PASS    | Password                                                               |
+|    EMAIL_TO     | What email address the contact form info is sent to (info@example.com) |
 | ALLOWED_ORIGINS | Allowed origins (https://example.com,http://localhost:8080)            |
 
 ### docker-compose.yml
