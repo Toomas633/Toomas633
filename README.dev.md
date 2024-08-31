@@ -2,7 +2,7 @@
 
 TODO v3.2:
 
-- [ ] Caching fixes to workflows
+- [X] Caching fixes to workflows
 - [X] Automatic sitemap update
 - [X] Map to contact page
 - [X] Remove bitcoin from donate
