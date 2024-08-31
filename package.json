@@ -17,14 +17,17 @@
 		"axios": "^1.7.5",
 		"cors": "^2.8.5",
 		"express-rate-limit": "^7.4.0",
+		"leaflet": "^1.9.4",
 		"mitt": "^3.0.1",
 		"nodemailer": "^6.9.14",
 		"vue": "^3.4.38",
 		"vue-class-component": "^8.0.0-0",
 		"vue-cookie-law": "^1.13.3",
 		"vue-cookies": "^1.8.4",
+		"vue-leaflet": "^0.1.0",
 		"vue-router": "^4.4.3",
-		"vuetify": "^3.7.0"
+		"vuetify": "^3.7.0",
+		"world-geojson": "^3.1.0"
 	},
 	"devDependencies": {
 		"@fortawesome/fontawesome-free": "^6.6.0",

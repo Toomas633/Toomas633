@@ -4,7 +4,7 @@ TODO v3.2:
 
 - [ ] Caching fixes to workflows
 - [X] Automatic sitemap update
-- [ ] Map to contact page
+- [X] Map to contact page
 - [X] Remove bitcoin from donate
 - [ ] Add github statistics
 - [X] Robotic arm v2 page
