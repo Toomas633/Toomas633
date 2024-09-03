@@ -43,6 +43,7 @@ export const inputItems = [
 					},
 					{
 						title: 'subs',
+						file: 'folder',
 						children: [
 							{
 								title: 'sub.srt',

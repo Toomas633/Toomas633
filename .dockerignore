@@ -6,3 +6,4 @@ node_modules/
 .env
 LICENCE
 README.md
+public/sitemap.xml

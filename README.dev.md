@@ -1,10 +1,8 @@
 # Development documentation
 
-TODO:
+TODO v3.3:
 
-- [ ] Caching fixes to workflows
-- [ ] Custom scrollbar
-- [ ] Automatic sitemap update
+- [ ] Add github statistics
 
 ## Requirements
 

@@ -1,4 +1,4 @@
-FROM node:22.1.0 AS build-stage
+FROM node:22-slim AS build-stage
 
 WORKDIR /app
 
@@ -9,9 +9,10 @@ RUN npm i --ignore-scripts
 COPY . .
 
 RUN echo "NODE_ENV='production'" > .env \
+    && node ./scripts/generateSitemap.mjs \
     && npm run build
 
-FROM node:22.1.0 AS production-stage
+FROM node:22-slim AS production-stage
 
 ENV EMAIL_HOST=""
 ENV EMAIL_USER=""

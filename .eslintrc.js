@@ -54,7 +54,7 @@ module.exports = {
 			},
 		  },
 		{
-			files: ['src/**/*', 'backend/**/*'],
+			files: ['src/**/*', 'backend/**/*', 'public/**/*', 'scripts/**/*'],
 			parserOptions: {
 				ecmaFeatures: {
 					jsx: true,

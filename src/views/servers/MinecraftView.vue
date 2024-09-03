@@ -287,10 +287,6 @@ iframe {
 	border: none;
 }
 
-.v-tabs-wrapper {
-	height: calc(100% - 4.5rem);
-}
-
 /* stylelint-disable selector-class-pattern */
 .v-window__container {
 	height: 100% !important;

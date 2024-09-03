@@ -1,8 +1,8 @@
 <template>
 	<v-container class="pa-4">
 		<v-row class="mt-0 d-block d-md-flex" justify="center">
-			<v-col class="justify">
-				<v-card class="bg-black text-center pa-4">
+			<v-col>
+				<v-card class="bg-black text-center pa-4 h-100">
 					<h1 class="text-center">Contact</h1>
 					<p class="text-center">
 						Having trouble? Raise a new Issue on project's GitHub, leave a
@@ -12,7 +12,9 @@
 						</b>
 					</p>
 				</v-card>
-				<v-card class="bg-black text-center pa-4 mt-6">
+			</v-col>
+			<v-col>
+				<v-card class="bg-black text-center pa-4 h-100">
 					<h1 class="text-center">Email</h1>
 					<p class="text-center">
 						If for watherver reason you can't or don't want to use the contact
@@ -24,8 +26,13 @@
 					</p>
 				</v-card>
 			</v-col>
-			<v-col class="justify">
-				<v-card class="bg-black text-center pa-4">
+		</v-row>
+		<v-row class="d-block d-md-flex" justify="center">
+			<v-col class="d-none d-md-block">
+				<MapComponent id="map" class="h-100" />
+			</v-col>
+			<v-col>
+				<v-card class="bg-black text-center pa-4 h-100">
 					<h1 class="text-center pb-3">Contact Form</h1>
 					<v-form ref="form" v-model="valid">
 						<v-row justify="center">
@@ -72,6 +79,9 @@
 					</v-form>
 				</v-card>
 			</v-col>
+			<v-col class="d-block d-md-none">
+				<MapComponent id="map2" class="h-100" />
+			</v-col>
 		</v-row>
 	</v-container>
 </template>
@@ -82,6 +92,7 @@ import { computed, ref } from 'vue'
 import useAlertMixin from '@/helpers/alertMixin'
 import { EmailData } from '@/types/email'
 import { sendEmail } from '@/services/emailService'
+import MapComponent from '@/components/MapComponent.vue'
 
 const valid = ref(false)
 const loading = ref(false)
