@@ -3,6 +3,8 @@
 TODO v3.3:
 
 - [ ] Add github statistics
+- [ ] Auto build and push image after master merge
+- [ ] Automatic site redeploy
 
 ## Requirements
 
