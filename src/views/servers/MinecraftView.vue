@@ -28,10 +28,10 @@
 								{{ data?.online ? 'Server is online' : 'Server is offline' }}
 							</h3>
 							<div class="d-flex">
-								<InlineTextCopy class="my-auto" :text="data?.hostname ?? ''" />
+								<InlineTextCopy class="my-auto" :text="server" />
 								<CopyButton
 									class="ml-1"
-									:text-to-copy="data?.hostname ?? ''"
+									:text-to-copy="server"
 									:inline="true" />
 							</div>
 							<!-- eslint-disable-next-line vue/no-v-html -->
@@ -40,31 +40,29 @@
 					</div>
 				</v-container>
 				<v-container v-if="online && !loading">
-					<h4>
-						<v-icon class="mr-1 pb-1" icon="mdi-account-group" /> Players online
-					</h4>
-					<v-progress-linear
-						:model-value="data?.players?.online"
-						min="0"
-						:max="data?.players?.max"
-						color="green"
-						:height="7"
-						rounded />
-					<p class="text-center">
-						{{ data?.players?.online }} /
-						{{ data?.players?.max }}
-					</p>
-					<div v-if="players.length">
-						<div class="expand" @click="showPlayers = !showPlayers">
-							<div class="d-flex justify-space-between">
-								<h4 class="text-center">
-									<v-icon icon="mdi-account-group" /> Player list
-								</h4>
-								<v-icon
-									:icon="showPlayers ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
-							</div>
-							<v-divider thickness="2" class="border-opacity-100" />
+					<div
+						:class="players.length ? 'expand' : ''"
+						@click="players.length ? (showPlayers = !showPlayers) : null">
+						<div class="d-flex justify-space-between">
+							<h4>
+								<v-icon class="mr-1 pb-1" icon="mdi-account-group" /> Players
+								online
+							</h4>
+							<v-icon
+								v-if="players.length"
+								:icon="showPlayers ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
 						</div>
+						<v-progress-linear
+							:model-value="data?.players?.online"
+							min="0"
+							:max="data?.players?.max"
+							color="green"
+							:height="7"
+							rounded />
+						<p class="text-center">
+							{{ data?.players?.online }} /
+							{{ data?.players?.max }}
+						</p>
 						<v-expand-transition>
 							<v-row v-show="showPlayers" class="mt-0 pa-2">
 								<v-col
@@ -103,11 +101,6 @@
 							<v-divider thickness="2" class="border-opacity-100" />
 							<div class="pa-1 d-flex justify-space-between">
 								<p>IP</p>
-								<InlineTextCopy :text="data?.hostname ?? '...'" />
-							</div>
-							<v-divider thickness="2" class="border-opacity-100" />
-							<div class="pa-1 d-flex justify-space-between">
-								<p>Pure IP</p>
 								<InlineTextCopy :text="ip" />
 							</div>
 						</v-col>
@@ -189,6 +182,8 @@ const showPlugins = ref(false)
 const showPlayers = ref(false)
 const ip = ref('...')
 
+const server = 'vanilla.toomas633.com'
+
 const loadingIcons = [
 	'mdi-signal-cellular-outline',
 	'mdi-signal-cellular-1',
@@ -221,7 +216,7 @@ const backgroundImageStyle = computed(() => {
 async function queryData() {
 	loading.value = true
 	try {
-		const response = await queryMinecraftStatus('vanilla.toomas633.com')
+		const response = await queryMinecraftStatus(server)
 		if (response.status === RequestStatus.success) {
 			data.value = response.data
 			online.value = response.data.online
@@ -278,7 +273,7 @@ async function createPlayers(players: PlayerList[]): Promise<Player[]> {
 }
 
 h3 {
-	width: 10.021rem;
+	width: 10.5rem;
 }
 
 iframe {
