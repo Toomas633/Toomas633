@@ -19,7 +19,7 @@
 		"express-rate-limit": "^7.4.0",
 		"leaflet": "^1.9.4",
 		"mitt": "^3.0.1",
-		"nodemailer": "^6.9.14",
+		"nodemailer": "^6.9.15",
 		"vue": "^3.4.38",
 		"vue-class-component": "^8.0.0-0",
 		"vue-cookie-law": "^1.13.3",
