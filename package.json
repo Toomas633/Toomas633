@@ -26,7 +26,7 @@
 		"vue-cookies": "^1.8.4",
 		"vue-leaflet": "^0.1.0",
 		"vue-router": "^4.4.5",
-		"vuetify": "^3.7.0",
+		"vuetify": "^3.7.2",
 		"world-geojson": "^3.1.0"
 	},
 	"devDependencies": {
