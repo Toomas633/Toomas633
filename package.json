@@ -52,7 +52,7 @@
 		"eslint-plugin-vuetify": "^2.4.0",
 		"prettier": "^3.3.3",
 		"sass": "^1.78.0",
-		"sass-loader": "^16.0.1",
+		"sass-loader": "^16.0.2",
 		"sitemap": "^8.0.0",
 		"stylelint": "^16.8.2",
 		"stylelint-config-recommended-scss": "^14.1.0",
