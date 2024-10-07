@@ -16,7 +16,7 @@
 		"@basitcodeenv/vue3-device-detect": "^1.0.3",
 		"axios": "^1.7.7",
 		"cors": "^2.8.5",
-		"express-rate-limit": "^7.4.0",
+		"express-rate-limit": "^7.4.1",
 		"leaflet": "^1.9.4",
 		"mitt": "^3.0.1",
 		"nodemailer": "^6.9.15",
