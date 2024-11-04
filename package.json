@@ -34,7 +34,7 @@
 		"@mdi/font": "^7.4.47",
 		"@types/cors": "^2.8.17",
 		"@types/eslint": "^9.6.0",
-		"@types/node": "^22.8.1",
+		"@types/node": "^22.8.7",
 		"@types/nodemailer": "^6.4.16",
 		"@typescript-eslint/eslint-plugin": "^8.12.2",
 		"@typescript-eslint/parser": "^8.11.0",
