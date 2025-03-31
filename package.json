@@ -51,7 +51,7 @@
 		"eslint-plugin-vue": "^10.0.0",
 		"eslint-plugin-vuetify": "^2.5.1",
 		"prettier": "^3.5.3",
-		"sass": "^1.85.1",
+		"sass": "^1.86.0",
 		"sass-loader": "^16.0.5",
 		"sitemap": "^8.0.0",
 		"stylelint": "^16.16.0",
