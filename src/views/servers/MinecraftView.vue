@@ -251,10 +251,7 @@ async function createPlayers(players: PlayerList[]): Promise<Player[]> {
 				showErrorMessage(error as Error)
 			}
 
-			return {
-				...player,
-				avatar,
-			}
+			return { ...player, avatar }
 		})
 	)
 }

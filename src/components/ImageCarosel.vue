@@ -48,17 +48,14 @@ import type { Images } from '@/types/images'
 import useImageMixin from '@/helpers/imageMixin'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 
-const props = defineProps<{
-	images: Images[]
-	cover?: boolean
-}>()
+const props = defineProps<{ images: Images[]; cover?: boolean }>()
 
 const { openImageInNewTab } = useImageMixin()
 
 const currentSlide = ref(0)
 const progress = ref(0)
 
-let interval: NodeJS.Timeout
+let interval: ReturnType<typeof setInterval>
 const totalSlides = props.images.length
 const sectionWidth = 100 / totalSlides
 

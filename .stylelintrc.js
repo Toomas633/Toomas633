@@ -16,23 +16,11 @@ module.exports = {
 		'property-no-unknown': true,
 		'selector-pseudo-class-no-unknown': [
 			true,
-			{
-				ignorePseudoClasses: ['global'],
-			},
+			{ ignorePseudoClasses: ['global'] },
 		],
-		'selector-type-no-unknown': [
-			true,
-			{
-				ignoreTypes: ['/^v-/'],
-			},
-		],
+		'selector-type-no-unknown': [true, { ignoreTypes: ['/^v-/'] }],
 		'unit-no-unknown': true,
 	},
-	overrides: [
-		{
-			files: ['*.vue'],
-			customSyntax: 'postcss-html',
-		},
-	],
+	overrides: [{ files: ['*.vue'], customSyntax: 'postcss-html' }],
 	ignoreFiles: ['node_modules/**/*'],
 }
