@@ -8,8 +8,7 @@ RUN npm i --ignore-scripts
 
 COPY . .
 
-RUN echo "NODE_ENV='production'" > .env \
-    && node ./scripts/generateSitemap.mjs \
+RUN node ./scripts/generateSitemap.mjs \
     && npm run build
 
 FROM node:22-slim AS production-stage

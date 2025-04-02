@@ -6,8 +6,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 		<link rel="manifest" href="/manifest.json" />
 		<meta name="theme-color" content="#f44336" />
-		<link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-		<title><%= htmlWebpackPlugin.options.title %></title>
+		<link rel="icon" href="/favicon.ico" />
+		<title>Toomas633's Dungeon</title>
 		<meta
 			name="google-site-verification"
 			content="3mzfkHeHI79i5vZPIipQ5bCn0TflXUHfrzTDuzzuVOw" />
@@ -62,13 +62,12 @@
 
 	<body>
 		<noscript>
-			<strong
-				>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
-				properly without JavaScript enabled. Please enable it to
-				continue.</strong
-			>
+			<strong>
+				We're sorry but Toomas633's Dungeon doesn't work properly without
+				JavaScript enabled. Please enable it to continue.
+			</strong>
 		</noscript>
 		<div id="app"></div>
-		<!-- built files will be auto injected -->
+		<script type="module" src="/src/main.ts"></script>
 	</body>
 </html>

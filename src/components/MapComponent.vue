@@ -4,7 +4,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import L from 'leaflet'
-import geoJson from 'world-geojson'
+import { forCountry } from 'world-geojson'
 
 const props = defineProps<{
 	id: string
@@ -18,7 +18,7 @@ onMounted(() => {
 			'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	}).addTo(map)
 
-	L.geoJSON(geoJson.forCountry('Estonia'), {
+	L.geoJSON(forCountry('Estonia'), {
 		style: {
 			color: 'red',
 			weight: 1,
