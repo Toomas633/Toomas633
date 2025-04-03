@@ -12,6 +12,7 @@
 					height="5"
 					color="primary"
 					class="cursor-pointer"
+					aria-label="Image carousel progress bar"
 					@click="navigateToImage" />
 				<div
 					class="progress-bar-segments position-absolute top-0 bottom-0 right-0 left-0">

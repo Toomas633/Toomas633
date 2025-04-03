@@ -73,6 +73,7 @@
 							class="mt-2"
 							:disabled="!valid"
 							:loading="loading"
+							aria-label="Send button"
 							@click="submit">
 							<v-icon icon="mdi-email-fast" class="mr-1" /> Send
 						</v-btn>

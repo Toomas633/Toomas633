@@ -75,9 +75,9 @@
 </template>
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
-import arm from '@/assets/images/RoboticArm/arm.jpeg'
-import wiring from '@/assets/images/RoboticArm/V1/wiring.png'
-import list from '@/assets/images/RoboticArm/V1/list.png'
+import arm from '@/assets/images/RoboticArm/arm.webp'
+import wiring from '@/assets/images/RoboticArm/V1/wiring.webp'
+import list from '@/assets/images/RoboticArm/V1/list.webp'
 import useImageMixin from '@/helpers/imageMixin'
 
 const { openImageInNewTab } = useImageMixin()

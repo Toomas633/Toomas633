@@ -2,7 +2,8 @@
 	<v-menu :location="isMobile ? 'start' : undefined">
 		<template #activator="{ props }">
 			<v-btn v-bind="props" :href="href" class="elevation-0">
-				<v-icon v-if="icon" :icon="icon" class="mr-1" />{{ label }}
+				<v-icon v-if="icon" :icon="icon" class="mr-1" />
+				<p class="font-weight-bold">{{ label }}</p>
 			</v-btn>
 		</template>
 		<v-list :class="isMobile ? 'mr-1' : ''">
@@ -12,9 +13,8 @@
 				:href="option.href"
 				class="pr-0 pl-0">
 				<v-btn class="elevation-0" :href="option.href">
-					<v-icon v-if="option.icon" :icon="option.icon" class="mr-1" />{{
-						option.label
-					}}
+					<v-icon v-if="option.icon" :icon="option.icon" class="mr-1" />
+					<p class="font-weight-bold">{{ option.label }}</p>
 				</v-btn>
 			</v-list-item>
 		</v-list>

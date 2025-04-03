@@ -146,17 +146,17 @@
 </template>
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
-import arm from '@/assets/images/RoboticArm/arm.jpeg'
-import wiring from '@/assets/images/RoboticArm/V2/wiring.png'
-import list from '@/assets/images/RoboticArm/V2/list.png'
+import arm from '@/assets/images/RoboticArm/arm.webp'
+import wiring from '@/assets/images/RoboticArm/V2/wiring.webp'
+import list from '@/assets/images/RoboticArm/V2/list.webp'
 import useImageMixin from '@/helpers/imageMixin'
 import LinkComponent from '@/components/LinkComponent.vue'
-import A from '@/assets/controller/A.svg'
-import B from '@/assets/controller/B.svg'
-import RightStickX from '@/assets/controller/Right-Stick-X.svg'
-import RightStickY from '@/assets/controller/Right-Stick-Y.svg'
-import LeftStickX from '@/assets/controller/Left-Stick-X.svg'
-import LeftStickY from '@/assets/controller/Left-Stick-Y.svg'
+import A from '@/assets/icons/controller/A.svg'
+import B from '@/assets/icons/controller/B.svg'
+import RightStickX from '@/assets/icons/controller/Right-Stick-X.svg'
+import RightStickY from '@/assets/icons/controller/Right-Stick-Y.svg'
+import LeftStickX from '@/assets/icons/controller/Left-Stick-X.svg'
+import LeftStickY from '@/assets/icons/controller/Left-Stick-Y.svg'
 
 const { openImageInNewTab } = useImageMixin()
 </script>

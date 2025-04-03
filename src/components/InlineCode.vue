@@ -2,7 +2,11 @@
 	<code class="position-relative" @mousedown="copyCode(code)">
 		<mark>
 			{{ code }}
-			<v-tooltip v-if="isDesktop" activator="parent" location="bottom">
+			<v-tooltip
+				v-if="isDesktop"
+				activator="parent"
+				location="bottom"
+				aria-label="Click to copy">
 				<v-icon
 					:icon="
 						copied ? (!error ? 'mdi-check' : 'mdi-close') : 'mdi-content-copy'

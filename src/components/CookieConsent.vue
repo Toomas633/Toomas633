@@ -4,6 +4,7 @@
 		icon="mdi-cookie"
 		position="fixed"
 		location="bottom right"
+		aria-label="Cookie button"
 		@click="reopenSelection" />
 	<v-dialog v-model="visible" persistent max-width="650">
 		<v-card v-model="visible" class="bg-background">
