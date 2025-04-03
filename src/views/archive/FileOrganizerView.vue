@@ -2,7 +2,12 @@
 	<v-container class="pa-4">
 		<v-row class="pa-4 d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around">
-				<h1 class="text-center">File Organizer</h1>
+				<h1 class="text-center d-flex justify-center align-items-center">
+					<ArchiveChip
+						new-page="Plex Organizer"
+						new-link="/projects/plex-organizer" />
+					File Organizer
+				</h1>
 				<p class="text-center">
 					General use file organizer for removing all but the wanted file
 					extensions, moving files out of subfolders and deleting empty folders.
@@ -89,6 +94,8 @@
 						expand-icon="mdi-folder"
 						collapse-icon="mdi-folder-open"
 						density="compact"
+						fluid
+						open-on-click
 						rounded>
 						<template #prepend="{ item }">
 							<v-icon v-if="!(item.file === 'folder' && item.children?.length)">
@@ -108,6 +115,8 @@
 						expand-icon="mdi-folder"
 						collapse-icon="mdi-folder-open"
 						density="compact"
+						fluid
+						open-on-click
 						rounded>
 						<template #prepend="{ item }">
 							<v-icon v-if="!(item.file === 'folder' && item.children?.length)">
@@ -122,6 +131,7 @@
 </template>
 
 <script setup lang="ts">
+import ArchiveChip from '@/components/ArchiveChip.vue'
 import ButtonCard from '@/components/ButtonCard.vue'
 import InlineCode from '@/components/InlineCode.vue'
 import { inputItems, outputItems, fileIcons } from '@/constants/fileOrganizer'

@@ -5,31 +5,9 @@ const baseUrl = 'https://toomas633.com'
 
 const routes = [
 	{ path: '/', priority: 1.0, lastmod: new Date() },
-	{
-		path: '/projects/t6-drone',
-		priority: 0.8,
-		lastmod: new Date(),
-	},
-	{
-		path: '/projects/robotic-arm',
-		priority: 0.8,
-		lastmod: new Date(),
-	},
-	{
-		path: '/projects/file-organizer',
-		priority: 0.7,
-		lastmod: new Date(),
-	},
-	{
-		path: '/projects/fileshare',
-		priority: 0.7,
-		lastmod: new Date(),
-	},
-	{
-		path: '/servers/minecraft',
-		priority: 0.7,
-		lastmod: new Date(),
-	},
+	...getProjects(),
+	...getServers(),
+	...getArchived(),
 	{
 		path: '/contact',
 		priority: 0.6,
@@ -47,6 +25,10 @@ const routes = [
 		lastmod: new Date(),
 	},
 ]
+
+const projectPages = ['t6-drone', 'robotic-arm', 'fileshare']
+const archivePages = ['file-organizer']
+const serverPages = ['minecraft']
 
 const sitemapStream = new SitemapStream({ hostname: baseUrl })
 
@@ -66,3 +48,39 @@ sitemapStream.end()
 streamToPromise(sitemapStream)
 	.then((data) => writeStream.end(data))
 	.catch((err) => console.error(err))
+
+function getProjects() {
+	const paths = []
+	for (const page in projectPages) {
+		paths.push({
+			path: '/projects/' + page,
+			priority: 0.8,
+			lastmod: new Date(),
+		})
+	}
+	return paths
+}
+
+function getArchived() {
+	const paths = []
+	for (const page in archivePages) {
+		paths.push({
+			path: '/archive/' + page,
+			priority: 0.5,
+			lastmod: new Date(),
+		})
+	}
+	return paths
+}
+
+function getServers() {
+	const paths = []
+	for (const page in serverPages) {
+		paths.push({
+			path: '/servers/' + page,
+			priority: 0.7,
+			lastmod: new Date(),
+		})
+	}
+	return paths
+}

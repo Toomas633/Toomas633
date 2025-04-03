@@ -70,11 +70,6 @@ const menuItems = [
 				icon: 'mdi-robot-industrial',
 			},
 			{
-				label: 'File Organizer',
-				href: '/projects/file-organizer',
-				icon: 'mdi-file-document-arrow-right',
-			},
-			{
 				label: 'FileShare',
 				href: '/projects/fileshare',
 				icon: 'mdi-share-variant',
@@ -90,6 +85,18 @@ const menuItems = [
 				label: 'Vanilla Minecraft',
 				href: '/servers/minecraft',
 				icon: 'mdi-minecraft',
+			},
+		],
+	},
+	{
+		type: 'menu',
+		label: 'Archive',
+		icon: 'mdi-archive',
+		options: [
+			{
+				label: 'File Organizer',
+				href: '/archive/file-organizer',
+				icon: 'mdi-file-document-arrow-right',
 			},
 		],
 	},
