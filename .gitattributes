@@ -4,3 +4,4 @@
 *.jpg binary
 *.jpeg binary
 *.vue text eol=lf
+*.scss text eol=lf
