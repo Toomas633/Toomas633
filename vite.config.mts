@@ -5,7 +5,6 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import compression from 'vite-plugin-compression'
 import zlib from 'zlib'
 import viteImagemin from 'vite-plugin-imagemin'
-import purgecss from 'vite-plugin-purgecss'
 
 export default defineConfig({
 	plugins: [
@@ -33,15 +32,6 @@ export default defineConfig({
 				quality: 100,
 				lossless: true,
 			},
-		}),
-		purgecss({
-			content: ['./src/**/*.html', './src/**/*.vue', './src/**/*.ts'],
-			extractors: [
-				{
-					extractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-					extensions: ['html', 'vue', 'ts'],
-				},
-			],
 		}),
 	],
 	build: {
