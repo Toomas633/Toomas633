@@ -70,7 +70,9 @@
 	</v-footer>
 </template>
 <style>
+/* stylelint-disable selector-class-pattern */
 .v-btn__content {
 	font-weight: bold;
 }
+/* stylelint-enable selector-class-pattern */
 </style>

@@ -45,11 +45,11 @@
 	</v-container>
 </template>
 <script setup lang="ts">
-import type { Images } from '@/types/images'
+import type { Image } from '@/types/image'
 import useImageMixin from '@/helpers/imageMixin'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 
-const props = defineProps<{ images: Images[]; cover?: boolean }>()
+const props = defineProps<{ images: Image[]; cover?: boolean }>()
 
 const { openImageInNewTab } = useImageMixin()
 

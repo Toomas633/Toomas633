@@ -5,9 +5,9 @@
 				class="mt-3"
 				rounded
 				style="cursor: pointer"
-				:src="arm"
-				alt="Arm"
-				@click="openImageInNewTab(arm)" />
+				:src="armImage.src"
+				:alt="armImage.alt"
+				@click="openImageInNewTab(armImage.src)" />
 		</v-col>
 		<v-col class="pl-0 pr-0">
 			<v-row class="pt-3 pl-3 d-block d-lg-flex">
@@ -75,10 +75,14 @@
 </template>
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
-import arm from '@/assets/images/RoboticArm/arm.webp'
-import wiring from '@/assets/images/RoboticArm/V1/wiring.webp'
 import list from '@/assets/images/RoboticArm/V1/list.webp'
+import wiring from '@/assets/images/RoboticArm/V1/wiring.webp'
 import useImageMixin from '@/helpers/imageMixin'
+import { Image } from '@/types/image'
+
+defineProps<{
+	armImage: Image
+}>()
 
 const { openImageInNewTab } = useImageMixin()
 </script>

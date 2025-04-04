@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm i --ignore-scripts
+RUN npm ci
 
 COPY . .
 
