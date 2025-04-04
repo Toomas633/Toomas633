@@ -5,7 +5,7 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import compression from 'vite-plugin-compression'
 import zlib from 'zlib'
 import viteImagemin from 'vite-plugin-imagemin'
-import purgecss from 'rollup-plugin-purgecss'
+import purgecss from 'vite-plugin-purgecss'
 
 export default defineConfig({
 	plugins: [
@@ -35,8 +35,13 @@ export default defineConfig({
 			},
 		}),
 		purgecss({
-			content: ['./index.html', './src/**/*.vue'],
-			output: false,
+			content: ['./src/**/*.html', './src/**/*.vue', './src/**/*.ts'],
+			extractors: [
+				{
+					extractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+					extensions: ['html', 'vue', 'ts'],
+				},
+			],
 		}),
 	],
 	build: {
