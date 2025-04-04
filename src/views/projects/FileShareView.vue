@@ -261,13 +261,13 @@ import CodeBlock from '@/components/CodeBlock.vue'
 import InlineCode from '@/components/InlineCode.vue'
 import ImageCarosel from '@/components/ImageCarosel.vue'
 import LinkComponent from '@/components/LinkComponent.vue'
+import { dockerCompose } from '@/constants/fileshare'
+import type { Image } from '@/types/image'
 import download from '@/assets/images/FileShare/download.webp'
 import settings from '@/assets/images/FileShare/settings.webp'
 import upload from '@/assets/images/FileShare/upload.webp'
-import { dockerCompose } from '@/constants/fileshare'
-import type { Images } from '@/types/images'
 
-const images: Images[] = [
+const images: Image[] = [
 	{
 		src: upload,
 		alt: 'Upload',
