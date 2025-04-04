@@ -33,7 +33,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm i --ignore-scripts
+        run: npm ci
 
       - name: Make reports dir
         run: mkdir .reports

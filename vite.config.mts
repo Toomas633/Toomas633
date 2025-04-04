@@ -4,6 +4,8 @@ import vue from '@vitejs/plugin-vue'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import compression from 'vite-plugin-compression'
 import zlib from 'zlib'
+import viteImagemin from 'vite-plugin-imagemin'
+import purgecss from 'rollup-plugin-purgecss'
 
 export default defineConfig({
 	plugins: [
@@ -18,6 +20,23 @@ export default defineConfig({
 					[zlib.constants.BROTLI_PARAM_QUALITY]: 11,
 				},
 			},
+		}),
+		viteImagemin({
+			gifsicle: { optimizationLevel: 7 },
+			svgo: {
+				plugins: [
+					{ name: 'removeViewBox', active: false },
+					{ name: 'removeEmptyAttrs', active: true },
+				],
+			},
+			webp: {
+				quality: 100,
+				lossless: true,
+			},
+		}),
+		purgecss({
+			content: ['./index.html', './src/**/*.vue'],
+			output: false,
 		}),
 	],
 	build: {

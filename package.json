@@ -1,7 +1,7 @@
 {
 	"name": "toomas633s-dungeon",
 	"description": "Toomas633's projects homepage",
-	"version": "3.3.3",
+	"version": "3.3.5",
 	"private": true,
 	"scripts": {
 		"dev": "vite",
@@ -52,6 +52,7 @@
 		"eslint-plugin-vuetify": "^2.5.2",
 		"globals": "^16.0.0",
 		"prettier": "^3.5.3",
+		"rollup-plugin-purgecss": "^7.0.2",
 		"sass": "^1.86.0",
 		"sass-loader": "^16.0.5",
 		"sitemap": "^8.0.0",
@@ -64,6 +65,7 @@
 		"typescript": "^5.8.2",
 		"vite": "^5.0.0",
 		"vite-plugin-compression": "^0.5.1",
+		"vite-plugin-imagemin": "^0.6.1",
 		"vite-plugin-vuetify": "^2.1.0",
 		"vue-eslint-parser": "^10.1.1"
 	}
