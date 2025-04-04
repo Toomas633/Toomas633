@@ -261,24 +261,66 @@ import CodeBlock from '@/components/CodeBlock.vue'
 import InlineCode from '@/components/InlineCode.vue'
 import ImageCarosel from '@/components/ImageCarosel.vue'
 import LinkComponent from '@/components/LinkComponent.vue'
-import download from '@/assets/images/FileShare/download.webp'
-import settings from '@/assets/images/FileShare/settings.webp'
-import upload from '@/assets/images/FileShare/upload.webp'
 import { dockerCompose } from '@/constants/fileshare'
-import type { Images } from '@/types/images'
+import type { Image } from '@/types/image'
 
-const images: Images[] = [
+import download639 from '@/assets/images/FileShare/download-639x319.webp'
+import download939 from '@/assets/images/FileShare/download-939x469.webp'
+import download1136 from '@/assets/images/FileShare/download-1136x568.webp'
+import download1470 from '@/assets/images/FileShare/download-1470x735.webp'
+import download1736 from '@/assets/images/FileShare/download-1736x868.webp'
+import download2048 from '@/assets/images/FileShare/download-2048x1023.webp'
+
+import settings639 from '@/assets/images/FileShare/settings-639x319.webp'
+import settings939 from '@/assets/images/FileShare/settings-939x469.webp'
+import settings1136 from '@/assets/images/FileShare/settings-1136x568.webp'
+import settings1470 from '@/assets/images/FileShare/settings-1470x735.webp'
+import settings1736 from '@/assets/images/FileShare/settings-1736x868.webp'
+import settings2048 from '@/assets/images/FileShare/settings-2048x1023.webp'
+
+import upload639 from '@/assets/images/FileShare/upload-639x319.webp'
+import upload939 from '@/assets/images/FileShare/upload-939x469.webp'
+import upload1136 from '@/assets/images/FileShare/upload-1136x568.webp'
+import upload1470 from '@/assets/images/FileShare/upload-1470x735.webp'
+import upload1736 from '@/assets/images/FileShare/upload-1736x868.webp'
+import upload2048 from '@/assets/images/FileShare/upload-2048x1023.webp'
+
+const images: Image[] = [
 	{
-		src: upload,
+		src: upload2048,
 		alt: 'Upload',
+		srcSet: new Map<number, string>([
+			[639, upload639],
+			[939, upload939],
+			[1136, upload1136],
+			[1470, upload1470],
+			[1736, upload1736],
+			[2048, upload2048],
+		]),
 	},
 	{
-		src: download,
+		src: download2048,
 		alt: 'Upload',
+		srcSet: new Map<number, string>([
+			[639, download639],
+			[939, download939],
+			[1136, download1136],
+			[1470, download1470],
+			[1736, download1736],
+			[2048, download2048],
+		]),
 	},
 	{
-		src: settings,
+		src: settings2048,
 		alt: 'Settings',
+		srcSet: new Map<number, string>([
+			[639, settings639],
+			[939, settings939],
+			[1136, settings1136],
+			[1470, settings1470],
+			[1736, settings1736],
+			[2048, settings2048],
+		]),
 	},
 ]
 </script>

@@ -2,6 +2,9 @@ import { createWriteStream } from 'fs'
 import { SitemapStream, streamToPromise } from 'sitemap'
 
 const baseUrl = 'https://toomas633.com'
+const projectPages = ['t6-drone', 'robotic-arm', 'fileshare']
+const archivePages = ['file-organizer']
+const serverPages = ['minecraft']
 
 const routes = [
 	{ path: '/', priority: 1.0, lastmod: new Date() },
@@ -26,10 +29,6 @@ const routes = [
 	},
 ]
 
-const projectPages = ['t6-drone', 'robotic-arm', 'fileshare']
-const archivePages = ['file-organizer']
-const serverPages = ['minecraft']
-
 const sitemapStream = new SitemapStream({ hostname: baseUrl })
 
 const writeStream = createWriteStream('./public/sitemap.xml')
@@ -51,7 +50,7 @@ streamToPromise(sitemapStream)
 
 function getProjects() {
 	const paths = []
-	for (const page in projectPages) {
+	for (const page of projectPages) {
 		paths.push({
 			path: '/projects/' + page,
 			priority: 0.8,
@@ -63,7 +62,7 @@ function getProjects() {
 
 function getArchived() {
 	const paths = []
-	for (const page in archivePages) {
+	for (const page of archivePages) {
 		paths.push({
 			path: '/archive/' + page,
 			priority: 0.5,
@@ -75,7 +74,7 @@ function getArchived() {
 
 function getServers() {
 	const paths = []
-	for (const page in serverPages) {
+	for (const page of serverPages) {
 		paths.push({
 			path: '/servers/' + page,
 			priority: 0.7,

@@ -26,14 +26,14 @@
 				</div>
 			</div>
 			<v-carousel-item
-				v-for="(image, index) in images"
+				v-for="(image, index) in carouselItems"
 				:key="index"
 				:value="index">
 				<v-img
 					:src="image.src"
 					:alt="image.alt"
 					:cover="cover"
-					@click="openImageInNewTab(image.src)">
+					@click="openImageInNewTab(images[index].src)">
 					<h1
 						v-if="image.title"
 						class="w-100 text-center position-absolute bottom-0">
@@ -45,11 +45,13 @@
 	</v-container>
 </template>
 <script setup lang="ts">
-import type { Images } from '@/types/images'
+import type { Image } from '@/types/image'
 import useImageMixin from '@/helpers/imageMixin'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 
-const props = defineProps<{ images: Images[]; cover?: boolean }>()
+const props = defineProps<{ images: Image[]; cover?: boolean }>()
+
+const carouselItems = ref<Image[]>([])
 
 const { openImageInNewTab } = useImageMixin()
 
@@ -61,11 +63,20 @@ const totalSlides = props.images.length
 const sectionWidth = 100 / totalSlides
 
 onMounted(() => {
+	updateCarouselItems()
+	window.addEventListener('resize', updateCarouselItems)
+	for (const image of props.images) {
+		carouselItems.value.push({
+			...image,
+			src: getOptimizedImage(image),
+		})
+	}
 	startProgress()
 })
 
 onUnmounted(() => {
 	if (interval) clearInterval(interval)
+	window.removeEventListener('resize', updateCarouselItems)
 })
 
 const startProgress = () => {
@@ -89,6 +100,29 @@ const navigateToImage = (event: MouseEvent) => {
 	const percentage = (clickX / rect.width) * 100
 	const section = Math.floor((percentage / 100) * props.images.length)
 	currentSlide.value = section
+}
+
+function updateCarouselItems() {
+	carouselItems.value = props.images.map((image) => ({
+		...image,
+		src: getOptimizedImage(image),
+	}))
+}
+
+function getOptimizedImage(image: Image): string {
+	if (!image.srcSet) return image.src
+
+	const viewportWidth = window.innerWidth
+	const sources: { url: string; width: number }[] = Array.from(
+		image.srcSet.entries()
+	).map(([width, url]) => ({ width, url }))
+
+	const optimal = sources.reduce((prev, curr) =>
+		Math.abs(curr.width - viewportWidth) < Math.abs(prev.width - viewportWidth)
+			? curr
+			: prev
+	)
+	return optimal.url
 }
 </script>
 <style scoped>

@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import compression from 'vite-plugin-compression'
+import zlib from 'zlib'
 
 export default defineConfig({
 	plugins: [
@@ -12,9 +13,15 @@ export default defineConfig({
 			algorithm: 'brotliCompress',
 			ext: '.br',
 			threshold: 10240,
+			compressionOptions: {
+				params: {
+					[zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+				},
+			},
 		}),
 	],
 	build: {
+		sourcemap: true,
 		chunkSizeWarningLimit: 1500,
 		minify: 'terser',
 		terserOptions: {

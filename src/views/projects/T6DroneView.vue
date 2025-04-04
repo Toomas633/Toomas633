@@ -59,7 +59,7 @@ import render from '@/assets/images/T6Drone/render.webp'
 import electronics from '@/assets/images/T6Drone/electronics.webp'
 import model from '@/assets/images/T6Drone/model.webp'
 import complete from '@/assets/images/T6Drone/complete.webp'
-import type { Images } from '@/types/images'
+import type { Images } from '@/types/image'
 
 const images: Images[] = [
 	{
