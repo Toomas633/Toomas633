@@ -26,7 +26,7 @@
 		"vue-cookie-law": "^1.13.3",
 		"vue-cookies": "^1.8.6",
 		"vue-leaflet": "^0.1.0",
-		"vue-router": "^4.5.0",
+		"vue-router": "^4.5.1",
 		"vuetify": "^3.8.2"
 	},
 	"devDependencies": {
