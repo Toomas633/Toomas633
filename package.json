@@ -27,7 +27,7 @@
 		"vue-cookies": "^1.8.6",
 		"vue-leaflet": "^0.1.0",
 		"vue-router": "^4.5.1",
-		"vuetify": "^3.8.4"
+		"vuetify": "^3.8.5"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.1",
