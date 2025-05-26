@@ -3,10 +3,14 @@
 TODO v3.3:
 
 - [ ] Auto build and push image after master merge
-- [ ] Automatic site redeploy
-- [ ] Lighthouse analasys fixes
+- [ ] Version check
 - [ ] google script links
 - [ ] Light and dark theme
+- [ ] Click counter page (archive)
+- [ ] Student api page (archive)
+- [ ] TalTech pages (archive)
+- [ ] T6 Drone to archiv
+- [ ] Check repos
 
 ## Requirements
 
