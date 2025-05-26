@@ -9,7 +9,7 @@ TODO v3.3:
 - [ ] Click counter page (archive)
 - [ ] Student api page (archive)
 - [ ] TalTech pages (archive)
-- [ ] T6 Drone to archiv
+- [ ] T6 Drone to archive
 - [ ] Check repos
 
 ## Requirements
