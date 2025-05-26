@@ -2,24 +2,30 @@
 
 TODO v3.3:
 
-- [ ] Add github statistics
 - [ ] Auto build and push image after master merge
-- [ ] Automatic site redeploy
+- [ ] Version check
+- [ ] google script links
+- [ ] Light and dark theme
+- [ ] Click counter page (archive)
+- [ ] Student api page (archive)
+- [ ] TalTech pages (archive)
+- [ ] T6 Drone to archive
+- [ ] Check repos
 
 ## Requirements
 
-node v22.1.0
+node 22
 docker
 
 | Platform | Supported |
 | :------: | :-------: |
-|  amd64  |   ✔️   |
-|  arm64  |   ✔️   |
-|  arm32  |    ❌    |
+|  amd64   |    ✔️     |
+|  arm64   |    ✔️     |
+|  arm32   |    ❌     |
 
 ## Commands
 
-Serve vue frontend: `npm run serve`
+Serve vue frontend: `npm run dev`
 Run ESLint: `npm run lint`
 Run prettier: `npm run prettier`
 Run Stylelint: `npm run stylelint`
@@ -32,10 +38,10 @@ Run Stylelint: `npm run stylelint`
 
 |  ENV variables  | Description                                                            |
 | :-------------: | ---------------------------------------------------------------------- |
-|   EMAIL_HOST   | SMTP host for your mail server (smtp.mailprovider.com)                 |
-|   EMAIL_USER   | Login user                                                             |
-|   EMAIL_PASS   | Password                                                               |
-|    EMAIL_TO    | What email address the contact form info is sent to (info@example.com) |
+|   EMAIL_HOST    | SMTP host for your mail server (smtp.mailprovider.com)                 |
+|   EMAIL_USER    | Login user                                                             |
+|   EMAIL_PASS    | Password                                                               |
+|    EMAIL_TO     | What email address the contact form info is sent to (info@example.com) |
 | ALLOWED_ORIGINS | Allowed origins (https://example.com,http://localhost:8080)            |
 
 ### docker-compose.yml

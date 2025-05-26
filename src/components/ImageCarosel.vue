@@ -12,6 +12,7 @@
 					height="5"
 					color="primary"
 					class="cursor-pointer"
+					aria-label="Image carousel progress bar"
 					@click="navigateToImage" />
 				<div
 					class="progress-bar-segments position-absolute top-0 bottom-0 right-0 left-0">
@@ -44,11 +45,11 @@
 	</v-container>
 </template>
 <script setup lang="ts">
-import type { Images } from '@/types/images'
+import type { Image } from '@/types/image'
 import useImageMixin from '@/helpers/imageMixin'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 
-const props = defineProps<{ images: Images[]; cover?: boolean }>()
+const props = defineProps<{ images: Image[]; cover?: boolean }>()
 
 const { openImageInNewTab } = useImageMixin()
 

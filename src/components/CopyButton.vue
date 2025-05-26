@@ -7,6 +7,7 @@
 		:ripple="false"
 		rounded="0"
 		density="compact"
+		aria-label="Copy button"
 		@click="copy(textToCopy)" />
 </template>
 <script setup lang="ts">

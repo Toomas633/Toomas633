@@ -19,9 +19,11 @@
 		</v-tabs>
 		<v-tabs-window v-model="tab" class="v-tabs-wrapper">
 			<v-tabs-window-item :value="Tabs.V1">
-				<ArmV1 />
+				<ArmV1 :arm-image="armImage" />
 			</v-tabs-window-item>
-			<v-tabs-window-item :value="Tabs.V2"> <ArmV2 /> </v-tabs-window-item>
+			<v-tabs-window-item :value="Tabs.V2">
+				<ArmV2 :arm-image="armImage" />
+			</v-tabs-window-item>
 		</v-tabs-window>
 	</v-container>
 </template>
@@ -31,8 +33,14 @@ import { Tabs } from '@/enums/roboticArm'
 import ArmV1 from './RoboticArm/ArmV1.vue'
 import { ref } from 'vue'
 import ArmV2 from './RoboticArm/ArmV2.vue'
+import arm from '@/assets/images/RoboticArm/arm.webp'
+import { Image } from '@/types/image'
 
 const tab = ref<Tabs>(Tabs.V1)
+const armImage = ref<Image>({
+	src: arm,
+	alt: 'Arm',
+})
 </script>
 <style scoped>
 .v-slide-group {

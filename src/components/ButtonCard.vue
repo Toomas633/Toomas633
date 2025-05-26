@@ -10,7 +10,8 @@
 			:width="size"
 			class="pa-0 bg-black"
 			:class="text ? 'mb-0' : 'mb-9'"
-			:href="href">
+			:href="href"
+			:aria-label="label ?? text ?? title">
 			<v-icon :icon="icon" :color="iconColor" :size="size" />
 		</v-btn>
 		<v-img v-if="image" :src="image" rounded height="240" class="mt-5" />
@@ -22,6 +23,7 @@
 
 <script setup lang="ts">
 defineProps<{
+	label?: string
 	title?: string
 	href?: string
 	icon?: string

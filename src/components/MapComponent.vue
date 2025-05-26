@@ -3,22 +3,22 @@
 </template>
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import L from 'leaflet'
-import { forCountry } from 'world-geojson'
+import { map, tileLayer, geoJSON } from 'leaflet'
+import type { GeoJsonObject } from 'geojson'
+import estoniaGeoJSON from '@/assets/json/estonia.json'
 
 const props = defineProps<{
 	id: string
 }>()
 
 onMounted(() => {
-	const map = L.map(props.id).setView([58.61, 25.0136], 7)
+	const customMap = map(props.id).setView([58.61, 25.0136], 7)
 
-	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution:
 			'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-	}).addTo(map)
-
-	L.geoJSON(forCountry('Estonia'), {
+	}).addTo(customMap)
+	geoJSON(estoniaGeoJSON as GeoJsonObject, {
 		style: {
 			color: 'red',
 			weight: 1,
@@ -26,7 +26,7 @@ onMounted(() => {
 			fillOpacity: 0,
 			className: 'dotted-line',
 		},
-	}).addTo(map)
+	}).addTo(customMap)
 })
 </script>
 <style>

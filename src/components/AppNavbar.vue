@@ -17,15 +17,17 @@
 					v-else
 					:class="index === menuItems.length - 1 ? 'mr-2' : ''"
 					:href="item.href">
-					<v-icon v-if="item.icon" :icon="item.icon" class="mr-1" />{{
-						item.label
-					}}
+					<v-icon v-if="item.icon" :icon="item.icon" class="mr-1" />
+					<p class="font-weight-bold">{{ item.label }}</p>
 				</v-btn>
 			</template>
 		</div>
 		<v-menu>
 			<template #activator="{ props }">
-				<v-app-bar-nav-icon class="d-md-none" v-bind="props" />
+				<v-app-bar-nav-icon
+					class="d-md-none"
+					v-bind="props"
+					aria-label="Menu" />
 			</template>
 			<v-list class="mt-3">
 				<template v-for="(item, index) in menuItems" :key="index">
@@ -70,11 +72,6 @@ const menuItems = [
 				icon: 'mdi-robot-industrial',
 			},
 			{
-				label: 'File Organizer',
-				href: '/projects/file-organizer',
-				icon: 'mdi-file-document-arrow-right',
-			},
-			{
 				label: 'FileShare',
 				href: '/projects/fileshare',
 				icon: 'mdi-share-variant',
@@ -90,6 +87,18 @@ const menuItems = [
 				label: 'Vanilla Minecraft',
 				href: '/servers/minecraft',
 				icon: 'mdi-minecraft',
+			},
+		],
+	},
+	{
+		type: 'menu',
+		label: 'Archive',
+		icon: 'mdi-archive',
+		options: [
+			{
+				label: 'File Organizer',
+				href: '/archive/file-organizer',
+				icon: 'mdi-file-document-arrow-right',
 			},
 		],
 	},

@@ -55,13 +55,13 @@
 import ButtonCard from '@/components/ButtonCard.vue'
 import ImageCarosel from '@/components/ImageCarosel.vue'
 import LinkComponent from '@/components/LinkComponent.vue'
-import render from '@/assets/images/T6Drone/render.jpg'
-import electronics from '@/assets/images/T6Drone/electronics.jpg'
-import model from '@/assets/images/T6Drone/model.jpg'
-import complete from '@/assets/images/T6Drone/complete.jpg'
-import type { Images } from '@/types/images'
+import render from '@/assets/images/T6Drone/render.webp'
+import electronics from '@/assets/images/T6Drone/electronics.webp'
+import model from '@/assets/images/T6Drone/model.webp'
+import complete from '@/assets/images/T6Drone/complete.webp'
+import type { Image } from '@/types/image'
 
-const images: Images[] = [
+const images: Image[] = [
 	{
 		src: render,
 		title: 'KeyShot render',

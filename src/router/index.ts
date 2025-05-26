@@ -2,14 +2,12 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import ContactView from '@/views/ContactView.vue'
 import DonateView from '@/views/DonateView.vue'
-import T6DroneView from '@/views/projects/T6DroneView.vue'
-import RoboticArmView from '@/views/projects/RoboticArmView.vue'
-import FileOrganizerView from '@/views/projects/FileOrganizerView.vue'
-import FileShareView from '@/views/projects/FileShareView.vue'
+import FileOrganizerView from '@/views/archive/FileOrganizerView.vue'
 import ToS from '@/views/ToS.vue'
 import PrivacyPolicy from '@/views/PrivacyPolicy.vue'
 import MinecraftView from '@/views/servers/MinecraftView.vue'
 import { useHead } from '@vueuse/head'
+import { projectRoutes } from './projects'
 
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -21,42 +19,7 @@ const routes: Array<RouteRecordRaw> = [
 				'Explore the projects and interests of a tech enthusiast and full-time developer. From robotics to 3D printing and find open-source work on GitHub and Thingiverse.',
 		},
 	},
-	{
-		path: '/projects/t6-drone',
-		component: T6DroneView,
-		meta: {
-			title: 'T6 Drone',
-			description:
-				'Explore my first drone project, built on a DJI F450 frame. Access all 3D and project files on GitHub and download STL files from Thingiverse. Check out images of the build process and final product.',
-		},
-	},
-	{
-		path: '/projects/robotic-arm',
-		component: RoboticArmView,
-		meta: {
-			title: 'Robotic Arm',
-			description:
-				'Discover my first Arduino robotic arm project, controlled via joystick input. Built with metal-geared servos for stability and performance, this project can lift up to 1kg. Access the code and 3D models on GitHub and Thingiverse, and view detailed images of the setup and wiring.',
-		},
-	},
-	{
-		path: '/projects/file-organizer',
-		component: FileOrganizerView,
-		meta: {
-			title: 'File Organizer',
-			description:
-				'Manage your files effortlessly with this versatile organizer script. Remove unwanted files, move specific files from subfolders, and delete empty folders. Ideal for Plex and torrent downloads, with customizable extensions. Find the code and setup instructions on GitHub.',
-		},
-	},
-	{
-		path: '/projects/fileshare',
-		component: FileShareView,
-		meta: {
-			title: 'FileShare',
-			description:
-				'FileShare is a user-friendly file sharing website with features like direct link generation, delete timers, and file previews. Easily upload files, set expiration times, and manage links through an intuitive admin page. Available on GitHub and Docker Hub, with detailed setup instructions for local and server environments.',
-		},
-	},
+	...projectRoutes,
 	{
 		path: '/servers/minecraft',
 		component: MinecraftView,
@@ -64,6 +27,15 @@ const routes: Array<RouteRecordRaw> = [
 			title: 'Minecraft server',
 			description:
 				'Explore the detailed status and statistics of your Minecraft server with our interactive dashboard. View server status, player information, and server statistics, and check out real-time server maps and plugin lists. Stay updated with live data and intuitive UI features.',
+		},
+	},
+	{
+		path: '/archive/file-organizer',
+		component: FileOrganizerView,
+		meta: {
+			title: 'File Organizer',
+			description:
+				'Manage your files effortlessly with this versatile organizer script. Remove unwanted files, move specific files from subfolders, and delete empty folders. Ideal for Plex and torrent downloads, with customizable extensions. Find the code and setup instructions on GitHub.',
 		},
 	},
 	{

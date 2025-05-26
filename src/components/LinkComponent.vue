@@ -13,5 +13,6 @@ defineProps<{
 <style scoped>
 a {
 	color: rgb(var(--v-theme-primary));
+	font-weight: bold;
 }
 </style>

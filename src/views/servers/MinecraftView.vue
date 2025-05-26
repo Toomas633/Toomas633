@@ -14,7 +14,12 @@
 			<v-card class="ma-4 bg-black align-center w-75 mx-auto position-relative">
 				<v-container class="d-flex justify-center">
 					<div class="card-title d-flex">
-						<v-img src="/logo.svg" height="76" width="76" class="mr-2" />
+						<v-img
+							src="/logo.svg"
+							height="76"
+							width="76"
+							class="mr-2"
+							alt="Server logo" />
 						<div v-if="loading">
 							<h3 class="light-blue">
 								<v-icon :icon="loadingIcon" /> Loading...
@@ -58,7 +63,8 @@
 							:max="data?.players?.max"
 							color="green"
 							:height="7"
-							rounded />
+							rounded
+							aria-label="Player progress bar" />
 						<p class="text-center">
 							{{ data?.players?.online }} /
 							{{ data?.players?.max }}
@@ -86,7 +92,10 @@
 								<p>Version</p>
 								<p>
 									{{ data?.version }}
-									<v-tooltip activator="parent" location="bottom">
+									<v-tooltip
+										activator="parent"
+										location="bottom"
+										aria-label="Precise version tooltip">
 										{{ data?.software }}
 									</v-tooltip>
 								</p>
@@ -128,7 +137,10 @@
 								cols="auto">
 								<p>
 									{{ plugin.name }}
-									<v-tooltip activator="parent" location="bottom">
+									<v-tooltip
+										activator="parent"
+										location="bottom"
+										aria-label="Plugin version tooltip">
 										{{ plugin.version }}
 									</v-tooltip>
 								</p>
@@ -142,6 +154,7 @@
 					icon="mdi-refresh"
 					class="position-absolute top-0 right-0"
 					:loading="loading"
+					aria-label="Refresh server status"
 					@click="queryData" />
 			</v-card>
 		</v-tabs-window-item>
@@ -171,7 +184,7 @@ import { Player } from '@/types/minecraftPlayer'
 import useAlertMixin from '@/helpers/alertMixin'
 import InlineTextCopy from '@/components/InlineTextCopy.vue'
 import CopyButton from '@/components/CopyButton.vue'
-import background from '@/assets/images/Minecraft/background.jpg'
+import background from '@/assets/images/Minecraft/background.webp'
 
 const tab = ref<Tabs>(Tabs.Status)
 const loading = ref(true)

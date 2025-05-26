@@ -17,42 +17,48 @@
 					class="mx-2"
 					color="blue"
 					size="medium"
-					variant="plain" />
+					variant="plain"
+					aria-label="Thingiverse link" />
 				<v-btn
 					icon="mdi-twitter"
 					href="https://x.com/Toomas633"
 					class="mx-2"
 					color="light-blue"
 					size="medium"
-					variant="plain" />
+					variant="plain"
+					aria-label="Twitter link" />
 				<v-btn
 					icon="mdi-reddit"
 					href="https://reddit.com/u/toomas633"
 					class="mx-2"
 					color="deep-orange"
 					size="medium"
-					variant="plain" />
+					variant="plain"
+					aria-label="Reddit link" />
 				<v-btn
 					icon="mdi-github"
 					href="https://github.com/Toomas633/"
 					class="mx-2"
 					color="grey"
 					size="medium"
-					variant="plain" />
+					variant="plain"
+					aria-label="GitHub link" />
 				<v-btn
 					icon="mdi-email-edit"
 					href="mailto:mailto:info@toomas633.com"
 					color="red"
 					class="mx-2"
 					size="medium"
-					variant="plain" />
+					variant="plain"
+					aria-label="Email link" />
 				<v-btn
 					icon="fa:fa-brands fa-cc-paypal"
 					href="https://www.paypal.com/paypalme/ToomasK"
 					class="mx-2"
 					color="blue"
 					size="medium"
-					variant="plain" />
+					variant="plain"
+					aria-label="PayPal link" />
 			</span>
 		</div>
 		<v-btn variant="text" href="/tos" color="grey" class="d-sm-none">
@@ -63,3 +69,10 @@
 		</v-btn>
 	</v-footer>
 </template>
+<style>
+/* stylelint-disable selector-class-pattern */
+.v-btn__content {
+	font-weight: bold;
+}
+/* stylelint-enable selector-class-pattern */
+</style>
