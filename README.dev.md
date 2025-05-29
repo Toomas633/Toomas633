@@ -1,18 +1,5 @@
 # Development documentation
 
-TODO v3.3:
-
-- [ ] Auto build and push image after master merge
-- [ ] Version check
-- [ ] Show more - less on cookies popup
-- [ ] Light and dark theme
-- [ ] Click counter page (archive)
-- [ ] Student api page (archive)
-- [ ] SMIT töö (archive ja parem nimi)
-- [ ] TalTech pages (archive)
-- [ ] Check repos
-- [ ] lang icons on project (node, vue, arduino etc...)
-
 ## Requirements
 
 node 22
