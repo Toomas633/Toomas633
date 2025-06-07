@@ -14,12 +14,7 @@
 					icon="fa:fa-brands fa-amazon" />
 			</v-col>
 			<v-col xl="3" lg="4" md="5" sm="6">
-				<ButtonCard
-					size="260"
-					title="PayPal"
-					href="https://www.paypal.com/paypalme/ToomasK"
-					icon="fa:fa-brands fa-paypal"
-					icon-color="blue" />
+				<PayPalBtn :is-btn="false" />
 			</v-col>
 		</v-row>
 	</v-container>
@@ -27,4 +22,5 @@
 
 <script setup lang="ts">
 import ButtonCard from '@/components/ButtonCard.vue'
+import PayPalBtn from '@/components/PayPalBtn.vue'
 </script>

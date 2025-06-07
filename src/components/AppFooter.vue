@@ -51,14 +51,7 @@
 					size="medium"
 					variant="plain"
 					aria-label="Email link" />
-				<v-btn
-					icon="fa:fa-brands fa-cc-paypal"
-					href="https://www.paypal.com/paypalme/ToomasK"
-					class="mx-2"
-					color="blue"
-					size="medium"
-					variant="plain"
-					aria-label="PayPal link" />
+				<PayPalBtn />
 			</span>
 		</div>
 		<v-btn variant="text" href="/tos" color="grey" class="d-sm-none">
@@ -69,6 +62,9 @@
 		</v-btn>
 	</v-footer>
 </template>
+<script setup lang="ts">
+import PayPalBtn from './PayPalBtn.vue'
+</script>
 <style>
 /* stylelint-disable selector-class-pattern */
 .v-btn__content {
