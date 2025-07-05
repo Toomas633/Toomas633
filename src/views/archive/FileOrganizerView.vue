@@ -18,8 +18,10 @@
 				</p>
 				<p class="text-center">
 					<b>
-						I AM NOT RESPONSIBLE FOR ANY DATA LOSS UPON WRONG CONFIGURATION OR
-						CODE CHANGES!
+						<i>
+							I AM NOT RESPONSIBLE FOR ANY DATA LOSS UPON WRONG CONFIGURATION OR
+							CODE CHANGES!
+						</i>
 					</b>
 				</p>
 			</v-col>

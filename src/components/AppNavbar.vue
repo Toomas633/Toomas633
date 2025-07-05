@@ -76,6 +76,11 @@ const menuItems = [
 				href: '/projects/fileshare',
 				icon: 'mdi-share-variant',
 			},
+			{
+				label: 'Plex Organizer',
+				href: '/projects/plex-organizer',
+				icon: 'mdi-file-document-arrow-right',
+			},
 		],
 	},
 	{

@@ -249,7 +249,7 @@
 				<InlineCode code="docker-compose up -d" /> (or download the .yml from
 				<InlineCode
 					code="https://raw.githubusercontent.com/Toomas633/FileShare/main/examples/docker-compose.yml" />
-				and edit it) <CodeBlock :code="dockerCompose" />
+				and edit it) <CodeBlock :top-margin="true" :code="dockerCompose" />
 			</p>
 		</v-card>
 	</v-container>

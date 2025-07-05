@@ -16,15 +16,23 @@ export const inputItems = [
 		file: FileType.Folder,
 		children: [
 			{
-				title: 'movie folder 1',
+				title: 'Venom.2018.BluRay.x264-[YTS.AM].mp4',
+				file: FileType.Video,
+			},
+			{
+				title: 'Warcraft.2016.1080p.BluRay.x264-[YTS.AG].mkv',
+				file: FileType.Video,
+			},
+			{
+				title: '1917 (2019) [1080p] [BluRay] [5.1] [YTS.MX]',
 				file: FileType.Folder,
 				children: [
 					{
-						title: 'movie.mkv',
+						title: '1917 (2019) [1080p] [BluRay] [5.1] [YTS.MX].mkv',
 						file: FileType.Video,
 					},
 					{
-						title: 'sub.srt',
+						title: 'English.srt',
 						file: FileType.Txt,
 					},
 					{
@@ -34,11 +42,11 @@ export const inputItems = [
 				],
 			},
 			{
-				title: 'movie folder 2',
+				title: '2 Fast 2 Furious (2003) [1080p]',
 				file: FileType.Folder,
 				children: [
 					{
-						title: 'movie.mp4',
+						title: '2 Fast 2 Furious (2003) [1080p].mp4',
 						file: FileType.Video,
 					},
 					{
@@ -46,7 +54,11 @@ export const inputItems = [
 						file: FileType.Folder,
 						children: [
 							{
-								title: 'sub.srt',
+								title: 'English.srt',
+								file: FileType.Txt,
+							},
+							{
+								title: 'French.srt',
 								file: FileType.Txt,
 							},
 						],
@@ -64,11 +76,15 @@ export const inputItems = [
 		file: FileType.Folder,
 		children: [
 			{
-				title: 'show folder 1',
+				title: 'Black Bird',
 				file: FileType.Folder,
 				children: [
 					{
-						title: 'show.mkv',
+						title: 'Black.Bird.S01E01.mp4',
+						file: FileType.Video,
+					},
+					{
+						title: 'black.bird.S02E01.mp4',
 						file: FileType.Video,
 					},
 					{
@@ -88,15 +104,15 @@ export const inputItems = [
 				],
 			},
 			{
-				title: 'show folder 2',
+				title: 'Colony',
 				file: FileType.Folder,
 				children: [
 					{
-						title: 'episode or season folder',
+						title: 'S01',
 						file: FileType.Folder,
 						children: [
 							{
-								title: 'show.mp4',
+								title: 'Colony.s01e01.mp4',
 								file: FileType.Video,
 							},
 							{
@@ -135,32 +151,20 @@ export const outputItems = [
 		file: FileType.Folder,
 		children: [
 			{
-				title: 'movie folder 1',
-				file: FileType.Folder,
-				children: [
-					{
-						title: 'movie.mkv',
-						file: FileType.Video,
-					},
-					{
-						title: 'sub.srt',
-						file: FileType.Txt,
-					},
-				],
+				title: '1917 (2019) 1080p.mp4',
+				file: FileType.Video,
 			},
 			{
-				title: 'movie folder 2',
-				file: FileType.Folder,
-				children: [
-					{
-						title: 'movie.mp4',
-						file: FileType.Video,
-					},
-					{
-						title: 'sub.srt',
-						file: FileType.Txt,
-					},
-				],
+				title: '2 Fast 2 Furious (2003) 1080p.mp4',
+				file: FileType.Video,
+			},
+			{
+				title: 'Venom (2018).mp4',
+				file: FileType.Video,
+			},
+			{
+				title: 'Warcraft (2016) 1080p.mkv',
+				file: FileType.Video,
 			},
 		],
 	},
@@ -169,34 +173,42 @@ export const outputItems = [
 		file: FileType.Folder,
 		children: [
 			{
-				title: 'show folder 1',
+				title: 'Black Bird',
 				file: FileType.Folder,
 				children: [
 					{
-						title: 'show.mkv',
-						file: FileType.Video,
+						title: 'Season 1',
+						file: FileType.Folder,
+						children: [
+							{
+								title: 'Black Bird S01E01.mp4',
+								file: FileType.Video,
+							},
+						],
 					},
 					{
-						title: 'sub.srt',
-						file: FileType.Txt,
+						title: 'Season 2',
+						file: FileType.Folder,
+						children: [
+							{
+								title: 'Black Bird S02E01.mp4',
+								file: FileType.Video,
+							},
+						],
 					},
 				],
 			},
 			{
-				title: 'show folder 2',
+				title: 'Colony',
 				file: FileType.Folder,
 				children: [
 					{
-						title: 'episode or season folder',
+						title: 'Season 1',
 						file: FileType.Folder,
 						children: [
 							{
-								title: 'show.mp4',
+								title: 'Colony S01E01.mp4',
 								file: FileType.Video,
-							},
-							{
-								title: 'sub.srt',
-								file: FileType.Txt,
 							},
 						],
 					},

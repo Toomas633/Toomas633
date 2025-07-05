@@ -29,6 +29,7 @@
 					class="overflow-auto height-100"
 					:code="formattedStack"
 					:disable-copy="true"
+					:top-margin="true"
 					style="max-height: 12.688rem" />
 			</v-card-text>
 		</div>
