@@ -1,9 +1,10 @@
+import { RouteRecordRaw } from 'vue-router'
 import T6DroneView from '@/views/projects/T6DroneView.vue'
 import RoboticArmView from '@/views/projects/RoboticArmView.vue'
 import FileShareView from '@/views/projects/FileShareView.vue'
 import PlexOrganizerView from '@/views/projects/PlexOrganizerView.vue'
 
-export const projectRoutes = [
+export const projectRoutes: Array<RouteRecordRaw> = [
 	{
 		path: '/projects/t6-drone',
 		component: T6DroneView,
