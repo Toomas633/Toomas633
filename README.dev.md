@@ -2,7 +2,7 @@
 
 ## Requirements
 
-node 22
+node 24
 docker
 
 | Platform | Supported |
