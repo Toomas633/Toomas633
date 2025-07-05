@@ -4,6 +4,7 @@ import ContactView from '@/views/ContactView.vue'
 import DonateView from '@/views/DonateView.vue'
 import ToS from '@/views/ToS.vue'
 import PrivacyPolicy from '@/views/PrivacyPolicy.vue'
+import NotFound from '@/views/NotFound.vue'
 
 export const mainRoutes: Array<RouteRecordRaw> = [
 	{
@@ -49,6 +50,14 @@ export const mainRoutes: Array<RouteRecordRaw> = [
 			title: 'Privacy Policy',
 			description:
 				"Review Toomas633's Dungeon Privacy Policy, effective July 12, 2024. Learn how we collect, use, and protect your information when using our website and services. Understand our practices regarding cookies, data security, and your rights to manage your personal data. For any questions, contact us directly.",
+		},
+	},
+	{
+		path: '/404',
+		component: NotFound,
+		meta: {
+			title: '404 Not Found',
+			description: 'The page you are looking for does not exist.',
 		},
 	},
 ]

@@ -44,6 +44,8 @@ router.beforeEach((to, from, next) => {
 		if (matchedRoute) {
 			return next({ path: matchedRoute.path })
 		}
+
+		return next({ path: '/404' })
 	}
 
 	const defaultDescription = "Toomas633's projects homepage"
