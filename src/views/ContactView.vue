@@ -8,7 +8,10 @@
 						Having trouble? Raise a new Issue on project's GitHub, leave a
 						comment, fill out the contact form.<br />
 						<b>
-							(Any spam will result in automatic permanent IP ban and reporting)
+							<i>
+								(Any spam will result in automatic permanent IP ban and
+								reporting)
+							</i>
 						</b>
 					</p>
 				</v-card>

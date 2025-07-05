@@ -1,20 +1,8 @@
 # Development documentation
 
-TODO v3.3:
-
-- [ ] Auto build and push image after master merge
-- [ ] Version check
-- [ ] google script links
-- [ ] Light and dark theme
-- [ ] Click counter page (archive)
-- [ ] Student api page (archive)
-- [ ] TalTech pages (archive)
-- [ ] T6 Drone to archive
-- [ ] Check repos
-
 ## Requirements
 
-node 22
+node 24
 docker
 
 | Platform | Supported |
