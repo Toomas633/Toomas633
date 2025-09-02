@@ -1,6 +1,9 @@
 <template>
 	<v-container class="pa-4">
 		<h1 class="text-center">Robotic Arm</h1>
+		<div class="chips">
+			<LicenseChip repo="arduino-robotic-arm" />
+		</div>
 		<p class="text-center mb-2">
 			This is Arduino Uno robotic arm using joystick input. It's my first
 			Arduino project that I have coded completely by myself from the beginning.
@@ -35,6 +38,7 @@ import { ref } from 'vue'
 import ArmV2 from './RoboticArm/ArmV2.vue'
 import arm from '@/assets/images/RoboticArm/arm.webp'
 import { Image } from '@/types/image'
+import LicenseChip from '@/components/LicenseChip.vue'
 
 const tab = ref<Tabs>(Tabs.V1)
 const armImage = ref<Image>({

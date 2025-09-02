@@ -3,6 +3,9 @@
 		<v-row class="pa-4 d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around">
 				<h1 class="text-center">FileShare</h1>
+				<div class="chips">
+					<LicenseChip repo="fileshare" />
+				</div>
 				<p class="text-center">
 					Easy file sharing website featuring (direct) link generation and
 					delete timer.
@@ -266,6 +269,7 @@ import type { Image } from '@/types/image'
 import download from '@/assets/images/FileShare/download.webp'
 import settings from '@/assets/images/FileShare/settings.webp'
 import upload from '@/assets/images/FileShare/upload.webp'
+import LicenseChip from '@/components/LicenseChip.vue'
 
 const images: Image[] = [
 	{

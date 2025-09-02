@@ -5,6 +5,9 @@
 				<h1 class="text-center d-flex justify-center align-items-center">
 					Plex Organizer
 				</h1>
+				<div class="chips">
+					<LicenseChip repo="plex-organizer" />
+				</div>
 				<p class="text-center">
 					Plex Organizer is a Python-based utility designed to help manage and
 					organize media files for Plex Media Server. It automates tasks such as
@@ -261,6 +264,7 @@ import { inputItems, outputItems, fileIcons } from '@/constants/plexOrganizer'
 import { FileType } from '@/enums/fileType'
 import Example from '@/assets/images/PlexOrganizer/example.png'
 import useImageMixin from '@/helpers/imageMixin'
+import LicenseChip from '@/components/LicenseChip.vue'
 
 const { openImageInNewTab } = useImageMixin()
 

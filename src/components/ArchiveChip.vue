@@ -1,7 +1,7 @@
 <template>
 	<v-chip
 		v-if="isDesktop"
-		class="font-weight-bold mr-2 margin-left"
+		class="font-weight-bold"
 		prepend-icon="mdi-archive"
 		variant="outlined"
 		size="large"
@@ -53,8 +53,3 @@ defineProps<{
 
 const showDialog = ref(false)
 </script>
-<style scoped>
-.v-chip {
-	margin-left: -8rem;
-}
-</style>
