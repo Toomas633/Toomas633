@@ -1,20 +1,15 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-const path = require('path')
+import { resolve as _resolve } from 'path'
 
-module.exports = {
-	transpileDependencies: true,
-	productionSourceMap: true,
-	publicPath: '/',
-
-	pluginOptions: { vuetify: {} },
-
-	configureWebpack: {
-		resolve: {
-			alias: {
-				'@': path.resolve(__dirname, 'src'),
-				'@icons': path.resolve(__dirname, 'icons'),
-				'@public': path.resolve(__dirname, 'public'),
-			},
+export const transpileDependencies = true
+export const productionSourceMap = true
+export const publicPath = '/'
+export const pluginOptions = { vuetify: {} }
+export const configureWebpack = {
+	resolve: {
+		alias: {
+			'@': _resolve(__dirname, 'src'),
+			'@icons': _resolve(__dirname, 'icons'),
+			'@public': _resolve(__dirname, 'public'),
 		},
 	},
 }

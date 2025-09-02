@@ -5,7 +5,7 @@ import { fa } from 'vuetify/iconsets/fa'
 import '@mdi/font/css/materialdesignicons.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import '@/assets/scss/style.scss'
-import { VTreeview } from 'vuetify/lib/labs/components.mjs'
+
 const myTheme = {
 	dark: true,
 	colors: {
@@ -49,5 +49,5 @@ export default createVuetify({
 			myTheme,
 		},
 	},
-	components: { VTreeview },
+	components: {},
 })
