@@ -10,6 +10,7 @@
 					Easy file sharing website featuring (direct) link generation and
 					delete timer.
 				</p>
+				<LangGraph repo="fileshare" />
 			</v-col>
 			<v-col
 				class="align-content-space-around pa-0"
@@ -270,6 +271,7 @@ import download from '@/assets/images/FileShare/download.webp'
 import settings from '@/assets/images/FileShare/settings.webp'
 import upload from '@/assets/images/FileShare/upload.webp'
 import LicenseChip from '@/components/LicenseChip.vue'
+import LangGraph from '@/components/LangGraph.vue'
 
 const images: Image[] = [
 	{

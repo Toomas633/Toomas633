@@ -8,7 +8,7 @@
 		"dev": "vite",
 		"serve": "vite preview",
 		"build": "vite build",
-		"lint": "eslint --fix src/**/* backend/**/* scripts/**/*",
+		"lint": "eslint src/**/* backend/**/* scripts/**/*",
 		"stylelint": "stylelint 'src/**/*.{css,scss,vue}'",
 		"prettier": "prettier --write '**/*.{ts,js,jsx,json,css,scss,vue,html}'",
 		"scan:lint": "eslint src/**/* backend/**/* scripts/**/* --format json --output-file .reports/eslint-report.json --no-fix",

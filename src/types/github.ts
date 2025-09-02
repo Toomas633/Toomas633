@@ -5,3 +5,8 @@ export interface License {
 	spdx_id: string
 	url: string
 }
+
+export interface Language {
+	name: string
+	count: number
+}

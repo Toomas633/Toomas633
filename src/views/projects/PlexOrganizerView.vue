@@ -22,6 +22,7 @@
 						</i>
 					</b>
 				</p>
+				<LangGraph repo="plex-organizer" />
 			</v-col>
 			<v-col class="align-content-space-around" lg="2" md="3" sm="4" xl="1">
 				<ButtonCard
@@ -265,6 +266,7 @@ import { FileType } from '@/enums/fileType'
 import Example from '@/assets/images/PlexOrganizer/example.png'
 import useImageMixin from '@/helpers/imageMixin'
 import LicenseChip from '@/components/LicenseChip.vue'
+import LangGraph from '@/components/LangGraph.vue'
 
 const { openImageInNewTab } = useImageMixin()
 
