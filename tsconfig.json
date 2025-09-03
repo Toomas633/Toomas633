@@ -1,12 +1,12 @@
 {
 	"compilerOptions": {
 		"target": "ESNext",
-		"module": "Node16",
+		"module": "ESNext",
 		"lib": ["ESNext", "dom", "scripthost"],
 		"allowJs": false,
 		"strict": true,
 		"noImplicitAny": true,
-		"moduleResolution": "node16",
+		"moduleResolution": "bundler",
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
