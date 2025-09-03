@@ -1,5 +1,5 @@
 <template>
-	<v-container class="pa-4">
+	<v-container class="px-4 py-1">
 		<v-row class="pa-4 d-block d-md-flex" justify="center">
 			<v-col class="align-content-space-around">
 				<h1 class="text-center">T6 Drone</h1>

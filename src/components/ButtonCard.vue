@@ -1,5 +1,5 @@
 <template>
-	<v-card class="bg-black text-center h-100" justfy="center">
+	<v-card class="bg-black text-center" justfy="center">
 		<h1 v-if="title">
 			{{ title }}
 		</h1>
@@ -15,7 +15,7 @@
 			<v-icon :icon="icon" :color="iconColor" :size="size" />
 		</v-btn>
 		<v-img v-if="image" :src="image" rounded height="240" class="mt-5" />
-		<v-card-text v-if="text" class="pb-0 pr-2 pl-2">
+		<v-card-text v-if="text" class="pb-2 pr-2 pl-2">
 			{{ text }}
 		</v-card-text>
 	</v-card>

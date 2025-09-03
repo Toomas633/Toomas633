@@ -1,5 +1,5 @@
 <template>
-	<v-container class="pa-4">
+	<v-container class="px-4 py-1">
 		<v-row class="mt-0 d-block d-md-flex" justify="center">
 			<v-col>
 				<v-card class="bg-black text-center pa-4 h-100">

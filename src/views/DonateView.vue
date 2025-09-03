@@ -1,5 +1,5 @@
 <template>
-	<v-container class="pa-4">
+	<v-container class="px-4 py-1">
 		<h1 class="text-center">For those who wish to help</h1>
 		<p class="text-center">
 			Here are links to support my projects, for any amount you feel like.

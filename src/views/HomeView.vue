@@ -1,5 +1,5 @@
 <template>
-	<v-container class="pa-4">
+	<v-container class="px-4 py-1">
 		<v-row class="pa-4 d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around">
 				<h1 class="text-center">About me</h1>
@@ -48,10 +48,10 @@
 			</v-col>
 		</v-row>
 		<v-row class="pa-4 d-block d-sm-flex">
-			<v-col>
+			<v-col sm="1" md="4">
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Programming</h1>
-					<div class="d-sm-flex justify-center text-center">
+					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage href="https://www.cprogramming.com/" :src="C" alt="C" />
 						<LinkImage href="https://www.java.com/" :src="Java" alt="Java" />
 						<LinkImage
@@ -74,10 +74,10 @@
 					</div>
 				</v-card>
 			</v-col>
-			<v-col>
+			<v-col sm="1" md="4">
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Backend</h1>
-					<div class="d-sm-flex justify-center text-center">
+					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
 							href="https://www.nginx.com/"
 							:src="Nginx"
@@ -92,10 +92,10 @@
 					</div>
 				</v-card>
 			</v-col>
-			<v-col>
+			<v-col sm="1" md="4">
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Frontend</h1>
-					<div class="d-sm-flex justify-center text-center">
+					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage href="https://vuejs.org/" :src="Vue" alt="Vue" />
 						<LinkImage
 							href="https://vuetifyjs.com/"
@@ -113,10 +113,10 @@
 					</div>
 				</v-card>
 			</v-col>
-			<v-col>
+			<v-col sm="1" md="4">
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Devops</h1>
-					<div class="d-sm-flex justify-center text-center">
+					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
 							href="https://www.gnu.org/software/bash/"
 							:src="Bash"
@@ -129,58 +129,10 @@
 					</div>
 				</v-card>
 			</v-col>
-			<v-col>
-				<v-card class="bg-black pa-4 h-100">
-					<h1 class="text-center">Visualization</h1>
-					<div class="d-sm-flex justify-center text-center">
-						<LinkImage
-							href="https://grafana.com/"
-							:src="Grafana"
-							alt="Grafana" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col>
-				<v-card class="bg-black pa-4 h-100">
-					<h1 class="text-center">Databases</h1>
-					<div class="d-sm-flex justify-center text-center">
-						<LinkImage href="https://www.mysql.com/" :src="MySQL" alt="MySQL" />
-						<LinkImage
-							href="https://sqlite.org/index.html"
-							:src="SQLite"
-							alt="SQLite3" />
-						<LinkImage
-							href="https://www.postgresql.org/"
-							:src="PostgreSQL"
-							alt="PostgreSQL" />
-						<LinkImage
-							href="https://www.oracle.com/database/"
-							:src="Oracle"
-							alt="Oracle" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col>
-				<v-card class="bg-black pa-4 h-100">
-					<h1 class="text-center">Cloud</h1>
-					<div class="d-sm-flex justify-center text-center">
-						<LinkImage
-							href="https://aws.amazon.com/"
-							:src="AWS"
-							alt="AWS"
-							width="124" />
-						<LinkImage
-							href="https://www.oracle.com/cloud/"
-							:src="OracleCloud"
-							alt="Oracle Cloud"
-							width="143" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col>
+			<v-col sm="1" md="4">
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">3D</h1>
-					<div class="d-sm-flex justify-center text-center">
+					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
 							href="https://www.blender.org/"
 							:src="Blender"
@@ -200,10 +152,58 @@
 					</div>
 				</v-card>
 			</v-col>
-			<v-col>
+			<v-col sm="1" md="4">
+				<v-card class="bg-black pa-4 h-100">
+					<h1 class="text-center">Databases</h1>
+					<div class="d-flex flex-wrap justify-center text-center">
+						<LinkImage href="https://www.mysql.com/" :src="MySQL" alt="MySQL" />
+						<LinkImage
+							href="https://sqlite.org/index.html"
+							:src="SQLite"
+							alt="SQLite3" />
+						<LinkImage
+							href="https://www.postgresql.org/"
+							:src="PostgreSQL"
+							alt="PostgreSQL" />
+						<LinkImage
+							href="https://www.oracle.com/database/"
+							:src="Oracle"
+							alt="Oracle" />
+					</div>
+				</v-card>
+			</v-col>
+			<v-col sm="1" md="4">
+				<v-card class="bg-black pa-4 h-100">
+					<h1 class="text-center">Cloud</h1>
+					<div class="d-flex flex-wrap justify-center text-center">
+						<LinkImage
+							href="https://aws.amazon.com/"
+							:src="AWS"
+							alt="AWS"
+							width="124" />
+						<LinkImage
+							href="https://www.oracle.com/cloud/"
+							:src="OracleCloud"
+							alt="Oracle Cloud"
+							width="143" />
+					</div>
+				</v-card>
+			</v-col>
+			<v-col sm="1" md="4">
+				<v-card class="bg-black pa-4 h-100">
+					<h1 class="text-center">Visualization</h1>
+					<div class="d-flex flex-wrap justify-center text-center">
+						<LinkImage
+							href="https://grafana.com/"
+							:src="Grafana"
+							alt="Grafana" />
+					</div>
+				</v-card>
+			</v-col>
+			<v-col sm="1" md="4">
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Hardware</h1>
-					<div class="d-sm-flex justify-center text-center">
+					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
 							href="https://www.raspberrypi.org/"
 							:src="RPi"
@@ -215,10 +215,10 @@
 					</div>
 				</v-card>
 			</v-col>
-			<v-col>
+			<v-col sm="1" md="6">
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Op systems</h1>
-					<div class="d-sm-flex justify-center text-center">
+					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
 							href="https://www.microsoft.com/en-us/windows"
 							:src="Windows"
@@ -227,10 +227,10 @@
 					</div>
 				</v-card>
 			</v-col>
-			<v-col>
+			<v-col sm="1" md="6">
 				<v-card class="bg-black pa-4 h-100">
 					<h1 class="text-center">Version control</h1>
-					<div class="d-sm-flex justify-center text-center">
+					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage href="https://git-scm.com/" :src="Git" alt="Git" />
 						<LinkImage
 							href="https://maven.apache.org/"

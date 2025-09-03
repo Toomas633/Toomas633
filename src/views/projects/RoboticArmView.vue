@@ -1,5 +1,5 @@
 <template>
-	<v-container class="pa-4">
+	<v-container class="px-4 py-1">
 		<h1 class="text-center">Robotic Arm</h1>
 		<div class="chips">
 			<LicenseChip repo="arduino-robotic-arm" />
