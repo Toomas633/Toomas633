@@ -10,9 +10,7 @@
 		</v-card-title>
 		<v-divider />
 		<v-card-text class="pt-4 pb-3">
-			<div v-if="loading" class="d-flex w-100">
-				<v-skeleton-loader type="image" class="flex-grow-1" height="18" />
-			</div>
+			<v-progress-linear v-if="loading" indeterminate height="8" rounded />
 			<div v-else>
 				<div
 					v-if="segments.length"
