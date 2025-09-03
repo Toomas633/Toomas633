@@ -52,7 +52,9 @@
 			<v-card-actions>
 				<v-list-item class="w-100 pt-4">
 					<template #prepend>
-						<v-btn @click="showSelection = !showSelection"> Show more </v-btn>
+						<v-btn @click="showSelection = !showSelection">
+							{{ showSelection ? 'Show less' : 'Show more' }}
+						</v-btn>
 					</template>
 					<template #append>
 						<v-btn
