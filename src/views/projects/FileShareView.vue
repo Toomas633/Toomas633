@@ -3,14 +3,7 @@
 		<v-row class="pa-4 d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around">
 				<h1 class="text-center">FileShare</h1>
-				<div class="chips">
-					<LicenseChip repo="fileshare" />
-				</div>
-				<p class="text-center">
-					Easy file sharing website featuring (direct) link generation and
-					delete timer.
-				</p>
-				<LangGraph repo="fileshare" />
+				<StatsAndChips repo="fileshare" />
 			</v-col>
 			<v-col
 				class="align-content-space-around pa-0"
@@ -38,6 +31,10 @@
 			</v-col>
 		</v-row>
 		<ImageCarosel :images="images" :cover="false" />
+		<p class="text-center">
+			Easy file sharing website featuring (direct) link generation and delete
+			timer.
+		</p>
 		<v-row class="pa-4 d-block d-md-flex" justify="center">
 			<v-col>
 				<v-card class="bg-black pa-4 h-100">
@@ -260,18 +257,11 @@
 </template>
 
 <script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
-import CodeBlock from '@/components/CodeBlock.vue'
-import InlineCode from '@/components/InlineCode.vue'
-import ImageCarosel from '@/components/ImageCarosel.vue'
-import LinkComponent from '@/components/LinkComponent.vue'
 import { dockerCompose } from '@/constants/fileshare'
 import type { Image } from '@/types/image'
 import download from '@/assets/images/FileShare/download.webp'
 import settings from '@/assets/images/FileShare/settings.webp'
 import upload from '@/assets/images/FileShare/upload.webp'
-import LicenseChip from '@/components/LicenseChip.vue'
-import LangGraph from '@/components/LangGraph.vue'
 
 const images: Image[] = [
 	{

@@ -53,8 +53,6 @@
 </template>
 
 <script setup lang="ts">
-import DropdownMenu from './DropdownMenu.vue'
-
 const menuItems = [
 	{
 		type: 'menu',
@@ -121,7 +119,7 @@ const menuItems = [
 	},
 ]
 </script>
-<style scoped>
+<style scoped lang="scss">
 .logo-and-title {
 	color: inherit;
 	text-decoration: none;

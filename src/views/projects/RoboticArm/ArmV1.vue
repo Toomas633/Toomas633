@@ -74,7 +74,6 @@
 	</v-row>
 </template>
 <script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
 import list from '@/assets/images/RoboticArm/V1/list.webp'
 import wiring from '@/assets/images/RoboticArm/V1/wiring.webp'
 import useImageMixin from '@/helpers/imageMixin'

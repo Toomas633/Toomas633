@@ -3,9 +3,7 @@
 		<v-row class="pa-4 d-block d-md-flex" justify="center">
 			<v-col class="align-content-space-around">
 				<h1 class="text-center">T6 Drone</h1>
-				<div class="chips">
-					<LicenseChip repo="t6-drone" />
-				</div>
+				<StatsAndChips repo="t6-drone" :hide-langs="true" />
 				<p class="text-center">
 					This is my first try at building a drone. It started as a schools
 					practical work project for graduation. It is built around DJI F450
@@ -55,15 +53,11 @@
 	</v-container>
 </template>
 <script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
-import ImageCarosel from '@/components/ImageCarosel.vue'
-import LinkComponent from '@/components/LinkComponent.vue'
 import render from '@/assets/images/T6Drone/render.webp'
 import electronics from '@/assets/images/T6Drone/electronics.webp'
 import model from '@/assets/images/T6Drone/model.webp'
 import complete from '@/assets/images/T6Drone/complete.webp'
 import type { Image } from '@/types/image'
-import LicenseChip from '@/components/LicenseChip.vue'
 
 const images: Image[] = [
 	{

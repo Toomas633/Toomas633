@@ -6,6 +6,7 @@ import compression from 'vite-plugin-compression'
 import zlib from 'zlib'
 import viteImagemin from 'vite-plugin-imagemin'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import Components from 'unplugin-vue-components/vite'
 import pkg from './package.json'
 
 interface PkgJson {
@@ -22,6 +23,13 @@ export default defineConfig((): import('vite').UserConfig => {
 			vue({ template: { transformAssetUrls } }),
 			vuetify(),
 			vueDevTools(),
+			Components({
+				dts: 'src/components.d.ts',
+				dirs: ['src/components', 'src/views'],
+				extensions: ['vue'],
+				deep: true,
+				include: [/\.vue$/],
+			}),
 			compression({
 				algorithm: 'brotliCompress',
 				ext: '.br',

@@ -5,9 +5,7 @@
 				<h1 class="text-center d-flex justify-center align-items-center">
 					Plex Organizer
 				</h1>
-				<div class="chips">
-					<LicenseChip repo="plex-organizer" />
-				</div>
+				<StatsAndChips repo="plex-organizer" />
 				<p class="text-center">
 					Plex Organizer is a Python-based utility designed to help manage and
 					organize media files for Plex Media Server. It automates tasks such as
@@ -22,7 +20,6 @@
 						</i>
 					</b>
 				</p>
-				<LangGraph repo="plex-organizer" />
 			</v-col>
 			<v-col class="align-content-space-around" lg="2" md="3" sm="4" xl="1">
 				<ButtonCard
@@ -258,15 +255,10 @@ git clean -fd" />
 </template>
 
 <script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
-import CodeBlock from '@/components/CodeBlock.vue'
-import InlineCode from '@/components/InlineCode.vue'
 import { inputItems, outputItems, fileIcons } from '@/constants/plexOrganizer'
 import { FileType } from '@/enums/fileType'
 import Example from '@/assets/images/PlexOrganizer/example.png'
 import useImageMixin from '@/helpers/imageMixin'
-import LicenseChip from '@/components/LicenseChip.vue'
-import LangGraph from '@/components/LangGraph.vue'
 
 const { openImageInNewTab } = useImageMixin()
 

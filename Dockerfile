@@ -1,4 +1,4 @@
-FROM node:24.3-slim AS build-stage
+FROM node:24.8-slim AS build-stage
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY . .
 RUN node ./scripts/generateSitemap.mjs \
     && npm run build
 
-FROM node:24.3-slim AS production-stage
+FROM node:24.8-slim AS production-stage
 
 ENV EMAIL_HOST=""
 ENV EMAIL_USER=""

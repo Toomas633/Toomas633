@@ -29,7 +29,7 @@ onMounted(() => {
 	}).addTo(customMap)
 })
 </script>
-<style>
+<style lang="scss">
 .map-container {
 	min-height: 25rem;
 	border-radius: 0.25rem;

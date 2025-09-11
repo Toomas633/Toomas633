@@ -145,11 +145,9 @@
 	</v-row>
 </template>
 <script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
 import wiring from '@/assets/images/RoboticArm/V2/wiring.webp'
 import list from '@/assets/images/RoboticArm/V2/list.webp'
 import useImageMixin from '@/helpers/imageMixin'
-import LinkComponent from '@/components/LinkComponent.vue'
 import A from '@/assets/icons/controller/A.svg'
 import B from '@/assets/icons/controller/B.svg'
 import RightStickX from '@/assets/icons/controller/Right-Stick-X.svg'
@@ -164,7 +162,7 @@ defineProps<{
 
 const { openImageInNewTab } = useImageMixin()
 </script>
-<style scoped>
+<style scoped lang="scss">
 .spacer {
 	border-right: 0.125rem solid rgb(var(--v-theme-background));
 	margin-left: 0.5rem;

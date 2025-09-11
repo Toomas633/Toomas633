@@ -10,7 +10,7 @@ defineProps<{
 	icon?: string
 }>()
 </script>
-<style scoped>
+<style scoped lang="scss">
 a {
 	color: rgb(var(--v-theme-primary));
 	font-weight: bold;

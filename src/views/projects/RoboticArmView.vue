@@ -1,9 +1,7 @@
 <template>
 	<v-container class="px-4 py-1">
 		<h1 class="text-center">Robotic Arm</h1>
-		<div class="chips">
-			<LicenseChip repo="arduino-robotic-arm" />
-		</div>
+		<StatsAndChips repo="arduino-robotic-arm" />
 		<p class="text-center mb-2">
 			This is Arduino Uno robotic arm using joystick input. It's my first
 			Arduino project that I have coded completely by myself from the beginning.
@@ -12,7 +10,6 @@
 			sturdiness and better power and performance. Currently on my setup it can
 			lift about 1kg of weights.
 		</p>
-		<LangGraph repo="arduino-robotic-arm" />
 		<v-tabs v-model="tab" align-tabs="center" class="bg-black" grow stacked>
 			<v-tab :value="Tabs.V1">
 				<v-icon icon="mdi-robot-industrial" /> V1
@@ -34,13 +31,9 @@
 
 <script setup lang="ts">
 import { Tabs } from '@/enums/roboticArm'
-import ArmV1 from './RoboticArm/ArmV1.vue'
 import { ref } from 'vue'
-import ArmV2 from './RoboticArm/ArmV2.vue'
 import arm from '@/assets/images/RoboticArm/arm.webp'
 import { Image } from '@/types/image'
-import LicenseChip from '@/components/LicenseChip.vue'
-import LangGraph from '@/components/LangGraph.vue'
 
 const tab = ref<Tabs>(Tabs.V1)
 const armImage = ref<Image>({
@@ -48,7 +41,7 @@ const armImage = ref<Image>({
 	alt: 'Arm',
 })
 </script>
-<style scoped>
+<style scoped lang="scss">
 .v-slide-group {
 	border-radius: 4px;
 }

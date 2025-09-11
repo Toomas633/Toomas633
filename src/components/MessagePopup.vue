@@ -37,7 +37,6 @@
 </template>
 
 <script setup lang="ts">
-import CodeBlock from './CodeBlock.vue'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { PopupType } from '@/enums/popupType'
 import { PopupMessage } from '@/types/popup'
@@ -137,7 +136,7 @@ onUnmounted(() => {
 	EventBus.off(alertEvent, onAlertMessage)
 })
 </script>
-<style scoped>
+<style scoped lang="scss">
 .message-popup-desktop {
 	right: calc(0.5rem + var(--scrollbar-offset)) !important;
 	bottom: calc(var(--footer-height) + 0.25rem) !important;

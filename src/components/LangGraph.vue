@@ -16,7 +16,6 @@
 					v-if="segments.length"
 					class="d-flex w-100 rounded"
 					style="overflow: hidden; height: 0.5rem"
-					role="img"
 					aria-label="Repository language usage">
 					<div
 						v-for="l in segments"

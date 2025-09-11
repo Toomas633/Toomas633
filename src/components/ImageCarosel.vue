@@ -91,7 +91,7 @@ const navigateToImage = (event: MouseEvent) => {
 	currentSlide.value = section
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 .progress-bar-segments {
 	pointer-events: none;
 }

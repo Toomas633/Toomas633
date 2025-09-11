@@ -33,7 +33,7 @@ const copyCode = async (code: string) => {
 	}
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 mark {
 	background-color: rgb(var(--v-theme-secondary));
 	color: white;

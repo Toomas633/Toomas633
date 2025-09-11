@@ -19,8 +19,3 @@
 		</v-row>
 	</v-container>
 </template>
-
-<script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
-import PayPalBtn from '@/components/PayPalBtn.vue'
-</script>

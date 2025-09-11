@@ -11,10 +11,6 @@
 </template>
 
 <script setup lang="ts">
-import AppNavbar from './components/AppNavbar.vue'
-import AppFooter from './components/AppFooter.vue'
-import CookieConsent from './components/CookieConsent.vue'
-import MessagePopup from './components/MessagePopup.vue'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 
