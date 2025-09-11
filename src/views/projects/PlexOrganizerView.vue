@@ -255,14 +255,10 @@ git clean -fd" />
 </template>
 
 <script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
-import CodeBlock from '@/components/CodeBlock.vue'
-import InlineCode from '@/components/InlineCode.vue'
 import { inputItems, outputItems, fileIcons } from '@/constants/plexOrganizer'
 import { FileType } from '@/enums/fileType'
 import Example from '@/assets/images/PlexOrganizer/example.png'
 import useImageMixin from '@/helpers/imageMixin'
-import StatsAndChips from '@/components/StatsAndChips.vue'
 
 const { openImageInNewTab } = useImageMixin()
 

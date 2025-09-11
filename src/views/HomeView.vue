@@ -245,9 +245,6 @@
 </template>
 
 <script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
-import LinkImage from '@/components/LinkImage.vue'
-import LinkComponent from '@/components/LinkComponent.vue'
 import C from '@icons/c.svg'
 import Java from '@icons/java.svg'
 import Python from '@icons/python.svg'

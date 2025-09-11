@@ -182,8 +182,6 @@ import { Tabs } from '@/enums/minecraft'
 import useLoadingMixin from '@/helpers/loadingMixin'
 import { Player } from '@/types/minecraftPlayer'
 import useAlertMixin from '@/helpers/alertMixin'
-import InlineTextCopy from '@/components/InlineTextCopy.vue'
-import CopyButton from '@/components/CopyButton.vue'
 import background from '@/assets/images/Minecraft/background.webp'
 
 const tab = ref<Tabs>(Tabs.Status)
@@ -269,7 +267,7 @@ async function createPlayers(players: PlayerList[]): Promise<Player[]> {
 	)
 }
 </script>
-<style>
+<style lang="scss">
 .card-title {
 	width: 15.313rem;
 }

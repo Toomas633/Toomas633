@@ -257,17 +257,11 @@
 </template>
 
 <script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
-import CodeBlock from '@/components/CodeBlock.vue'
-import InlineCode from '@/components/InlineCode.vue'
-import ImageCarosel from '@/components/ImageCarosel.vue'
-import LinkComponent from '@/components/LinkComponent.vue'
 import { dockerCompose } from '@/constants/fileshare'
 import type { Image } from '@/types/image'
 import download from '@/assets/images/FileShare/download.webp'
 import settings from '@/assets/images/FileShare/settings.webp'
 import upload from '@/assets/images/FileShare/upload.webp'
-import StatsAndChips from '@/components/StatsAndChips.vue'
 
 const images: Image[] = [
 	{

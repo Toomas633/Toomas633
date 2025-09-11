@@ -31,12 +31,9 @@
 
 <script setup lang="ts">
 import { Tabs } from '@/enums/roboticArm'
-import ArmV1 from './RoboticArm/ArmV1.vue'
 import { ref } from 'vue'
-import ArmV2 from './RoboticArm/ArmV2.vue'
 import arm from '@/assets/images/RoboticArm/arm.webp'
 import { Image } from '@/types/image'
-import StatsAndChips from '@/components/StatsAndChips.vue'
 
 const tab = ref<Tabs>(Tabs.V1)
 const armImage = ref<Image>({
@@ -44,7 +41,7 @@ const armImage = ref<Image>({
 	alt: 'Arm',
 })
 </script>
-<style scoped>
+<style scoped lang="scss">
 .v-slide-group {
 	border-radius: 4px;
 }

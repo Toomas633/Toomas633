@@ -53,15 +53,11 @@
 	</v-container>
 </template>
 <script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
-import ImageCarosel from '@/components/ImageCarosel.vue'
-import LinkComponent from '@/components/LinkComponent.vue'
 import render from '@/assets/images/T6Drone/render.webp'
 import electronics from '@/assets/images/T6Drone/electronics.webp'
 import model from '@/assets/images/T6Drone/model.webp'
 import complete from '@/assets/images/T6Drone/complete.webp'
 import type { Image } from '@/types/image'
-import StatsAndChips from '@/components/StatsAndChips.vue'
 
 const images: Image[] = [
 	{

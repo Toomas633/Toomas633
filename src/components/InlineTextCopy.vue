@@ -30,7 +30,7 @@ const copyCode = async (text: string) => {
 	}
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 p {
 	cursor: pointer;
 }

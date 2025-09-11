@@ -91,12 +91,10 @@
 </template>
 
 <script setup lang="ts">
-import LinkComponent from '@/components/LinkComponent.vue'
 import { computed, ref } from 'vue'
 import useAlertMixin from '@/helpers/alertMixin'
 import { EmailData } from '@/types/email'
 import { sendEmail } from '@/services/emailService'
-import MapComponent from '@/components/MapComponent.vue'
 
 const valid = ref(false)
 const loading = ref(false)

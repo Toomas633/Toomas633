@@ -10,11 +10,6 @@
 	<LangGraph v-if="!hideLangs" :repo="repo" />
 </template>
 <script setup lang="ts">
-import ArchiveChip from './ArchiveChip.vue'
-import LangGraph from './LangGraph.vue'
-import LatestReleaseChip from './LatestReleaseChip.vue'
-import LicenseChip from './LicenseChip.vue'
-
 defineProps<{
 	repo: string
 	newPage?: string
@@ -22,7 +17,7 @@ defineProps<{
 	hideLangs?: boolean
 }>()
 </script>
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .chips {
 	text-align: center;
 	margin-bottom: 0.5rem;

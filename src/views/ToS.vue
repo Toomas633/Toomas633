@@ -58,6 +58,3 @@
 		</div>
 	</v-container>
 </template>
-<script setup lang="ts">
-import LinkComponent from '@/components/LinkComponent.vue'
-</script>

@@ -163,7 +163,7 @@ function isConsent(obj: unknown): obj is Consent {
 	)
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 .cookie-button-desktop {
 	right: calc(0.5rem + var(--scrollbar-offset)) !important;
 	bottom: calc(var(--footer-height) + 0.25rem) !important;

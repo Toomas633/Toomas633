@@ -132,9 +132,6 @@
 </template>
 
 <script setup lang="ts">
-import ButtonCard from '@/components/ButtonCard.vue'
-import InlineCode from '@/components/InlineCode.vue'
-import StatsAndChips from '@/components/StatsAndChips.vue'
 import { inputItems, outputItems, fileIcons } from '@/constants/fileOrganizer'
 import { FileType } from '@/enums/fileType'
 </script>

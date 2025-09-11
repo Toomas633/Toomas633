@@ -65,7 +65,7 @@
 <script setup lang="ts">
 import PayPalBtn from './PayPalBtn.vue'
 </script>
-<style>
+<style lang="scss">
 /* stylelint-disable selector-class-pattern */
 .v-btn__content {
 	font-weight: bold;

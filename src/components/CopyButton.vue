@@ -31,7 +31,7 @@ const buttonClass = computed(() => {
 	return ''
 })
 </script>
-<style scoped>
+<style scoped lang="scss">
 .top-right {
 	top: 3rem;
 	right: 0.5rem;

@@ -14,7 +14,6 @@
 </template>
 <script setup lang="ts">
 import { StyleValue } from 'vue'
-import CopyButton from './CopyButton.vue'
 
 defineProps<{
 	code: string
@@ -24,7 +23,7 @@ defineProps<{
 	topMargin?: boolean
 }>()
 </script>
-<style scoped>
+<style scoped lang="scss">
 pre {
 	background-color: rgb(var(--v-theme-secondary));
 	color: white;
