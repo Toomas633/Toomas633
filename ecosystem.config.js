@@ -3,7 +3,7 @@ module.exports = {
 		{
 			name: 'frontend',
 			script: 'nginx',
-			args: "-g 'daemon off;'",
+			args: ['-g', 'daemon off;'],
 		},
 		{
 			name: 'backend',
