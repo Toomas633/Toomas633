@@ -19,10 +19,10 @@ const compat = new FlatCompat({
 })
 
 export default defineConfig([
+	...vue.configs['flat/recommended'],
 	{
 		extends: compat.extends(
 			'eslint:recommended',
-			'plugin:vue/vue3-recommended',
 			'plugin:@typescript-eslint/recommended',
 			'plugin:prettier/recommended',
 			'plugin:vuetify/recommended'
@@ -32,9 +32,7 @@ export default defineConfig([
 
 		languageOptions: {
 			globals: { ...globals.node, ...globals.browser },
-
 			ecmaVersion: 'latest',
-
 			parser: vueEslintParser,
 			parserOptions: {
 				parser: '@typescript-eslint/parser',
@@ -44,23 +42,21 @@ export default defineConfig([
 		},
 
 		rules: {
-			'vue/no-multiple-template-root': 'off',
-			'vue/script-setup-uses-vars': 'error',
+			// TypeScript adjustments
 			'@typescript-eslint/explicit-module-boundary-types': 'off',
 			'@typescript-eslint/no-explicit-any': 'warn',
-			'vuetify/no-deprecated-classes': 'warn',
-			'vuetify/no-deprecated-props': 'warn',
-			'vuetify/no-deprecated-colors': 'off',
-
-			'no-console': ['error', { allow: ['warn', 'error'] }],
-
-			'no-debugger': 'warn',
-
 			'@typescript-eslint/no-unused-vars': [
 				'error',
 				{ argsIgnorePattern: '^_' },
 			],
-
+			// Vuetify deprecation awareness
+			'vuetify/no-deprecated-classes': 'warn',
+			'vuetify/no-deprecated-props': 'warn',
+			'vuetify/no-deprecated-colors': 'off',
+			// General JS rules
+			'no-console': ['error', { allow: ['warn', 'error'] }],
+			'no-debugger': 'warn',
+			// Prettier integration
 			'prettier/prettier': ['error', { singleQuote: true, semi: false }],
 		},
 	},

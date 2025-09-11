@@ -8,14 +8,14 @@
 		variant="plain"
 		aria-label="PayPal link"
 		@click="showPayPal" />
-	<v-card v-else class="bg-black text-center h-100" justfy="center">
+	<v-card v-else class="bg-black text-center pb-5" justfy="center">
 		<h1>PayPal</h1>
 		<v-img
 			:src="qr"
 			rounded="xl"
 			height="240"
 			width="240"
-			class="mt-5 mx-auto cursor-pointer"
+			class="mt-9 mx-auto cursor-pointer"
 			@click="showPayPal" />
 	</v-card>
 	<span id="donate-button" style="display: none" />

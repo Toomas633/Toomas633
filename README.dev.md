@@ -18,6 +18,8 @@ Run ESLint: `npm run lint`
 Run prettier: `npm run prettier`
 Run Stylelint: `npm run stylelint`
 
+Update dependencies `ncu`
+
 ## Building docker image
 
 `docker build -t toomas633/toomas633:latest  .`

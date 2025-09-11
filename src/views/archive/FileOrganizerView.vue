@@ -1,13 +1,15 @@
 <template>
-	<v-container class="pa-4">
+	<v-container class="px-4 py-1">
 		<v-row class="pa-4 d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around">
-				<h1 class="text-center d-flex justify-center align-items-center">
+				<h1 class="text-center">File Organizer</h1>
+				<div class="chips">
+					<LicenseChip repo="file-organizer" />
 					<ArchiveChip
 						new-page="Plex Organizer"
 						new-link="/projects/plex-organizer" />
-					File Organizer
-				</h1>
+				</div>
+				<LangGraph repo="file-organizer" />
 				<p class="text-center">
 					General use file organizer for removing all but the wanted file
 					extensions, moving files out of subfolders and deleting empty folders.
@@ -136,6 +138,8 @@
 import ArchiveChip from '@/components/ArchiveChip.vue'
 import ButtonCard from '@/components/ButtonCard.vue'
 import InlineCode from '@/components/InlineCode.vue'
+import LangGraph from '@/components/LangGraph.vue'
+import LicenseChip from '@/components/LicenseChip.vue'
 import { inputItems, outputItems, fileIcons } from '@/constants/fileOrganizer'
 import { FileType } from '@/enums/fileType'
 </script>

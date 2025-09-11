@@ -1,12 +1,11 @@
 <template>
 	<v-chip
-		v-if="isDesktop"
-		class="font-weight-bold mr-2 margin-left"
+		class="font-weight-bold"
 		prepend-icon="mdi-archive"
 		variant="outlined"
 		size="large"
 		color="orange"
-		:href="newLink">
+		@click="handleClick">
 		<v-tooltip
 			v-if="isDesktop"
 			activator="parent"
@@ -17,16 +16,6 @@
 		</v-tooltip>
 		Archived
 	</v-chip>
-	<v-btn
-		v-else
-		icon="mdi-archive"
-		variant="outlined"
-		density="compact"
-		color="orange"
-		size="large"
-		class="mr-2 ml-n10"
-		@click="showDialog = true">
-	</v-btn>
 	<v-dialog v-model="showDialog" max-width="400">
 		<v-card class="bg-background">
 			<v-card-title class="text-h5 bg-black pa-3">
@@ -43,18 +32,22 @@
 	</v-dialog>
 </template>
 <script setup lang="ts">
+import router from '@/router'
 import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 import { ref } from 'vue'
 
-defineProps<{
+const props = defineProps<{
 	newPage: string
 	newLink: string
 }>()
 
 const showDialog = ref(false)
-</script>
-<style scoped>
-.v-chip {
-	margin-left: -8rem;
+
+function handleClick() {
+	if (!isDesktop) {
+		showDialog.value = true
+	} else {
+		router.push(props.newLink)
+	}
 }
-</style>
+</script>

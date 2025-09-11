@@ -1,5 +1,5 @@
 <template>
-	<v-container class="pa-4">
+	<v-container class="px-4 py-1">
 		<h1 class="text-center">Privacy Policy</h1>
 		<p class="text-center"><b>Effective Date:</b> 12 July 2024</p>
 		<div class="pa-4">

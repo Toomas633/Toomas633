@@ -1,8 +1,11 @@
 <template>
-	<v-container class="pa-4">
+	<v-container class="px-4 py-1">
 		<v-row class="pa-4 d-block d-md-flex" justify="center">
 			<v-col class="align-content-space-around">
 				<h1 class="text-center">T6 Drone</h1>
+				<div class="chips">
+					<LicenseChip repo="t6-drone" />
+				</div>
 				<p class="text-center">
 					This is my first try at building a drone. It started as a schools
 					practical work project for graduation. It is built around DJI F450
@@ -60,6 +63,7 @@ import electronics from '@/assets/images/T6Drone/electronics.webp'
 import model from '@/assets/images/T6Drone/model.webp'
 import complete from '@/assets/images/T6Drone/complete.webp'
 import type { Image } from '@/types/image'
+import LicenseChip from '@/components/LicenseChip.vue'
 
 const images: Image[] = [
 	{
