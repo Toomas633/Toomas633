@@ -46,3 +46,15 @@ export async function getLanguages(repo: string): Promise<Language[]> {
 			return []
 		})
 }
+
+export async function getLatestRelease(
+	repo: string
+): Promise<string | undefined> {
+	return githubApi
+		.get(`/${repo}/releases/latest`)
+		.then((res) => res.data.tag_name)
+		.catch((error: AxiosError) => {
+			showErrorMessage(error)
+			return undefined
+		})
+}
