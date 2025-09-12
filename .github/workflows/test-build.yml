@@ -38,10 +38,9 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          push: false
+          push: true
           tags: |
             ghcr.io/toomas633/toomas633:dev
-            ghcr.io/toomas633/toomas633:${{ steps.pkg.outputs.package_version }}
           labels: |
             org.opencontainers.image.created=${{ steps.meta.outputs.date_label }}
             org.opencontainers.image.version=${{ steps.pkg.outputs.package_version }}
