@@ -22,7 +22,7 @@ Update dependencies `ncu`
 
 ## Building docker image
 
-`docker build -t toomas633/toomas633:latest  .`
+`docker build -t toomas633/toomas633:latest .`
 
 ## Deploying image
 

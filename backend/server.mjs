@@ -52,16 +52,17 @@ const emailRateLimiter = rateLimit({
 app.use(bodyParser.json())
 app.use(cors(corsOptions))
 
-const createTransporter = () => {
-	return nodemailer.createTransport({
+const createTransporter = () =>
+	nodemailer.createTransport({
 		host: EMAIL_HOST,
-		secure: true,
+		port: 587,
+		requireTLS: true,
+		secure: false,
 		auth: {
 			user: EMAIL_USER,
 			pass: EMAIL_PASS,
 		},
 	})
-}
 
 app.post('/send-email', emailRateLimiter, async (req, res) => {
 	const { from, message, project } = req.body
@@ -69,10 +70,11 @@ app.post('/send-email', emailRateLimiter, async (req, res) => {
 	try {
 		await transporter.verify()
 		const mailOptions = {
-			from,
+			from: EMAIL_USER,
 			to: EMAIL_TO,
 			subject: project,
 			text: message,
+			replyTo: from,
 		}
 		const info = await transporter.sendMail(mailOptions)
 		res.status(200).json({ success: true, info })
@@ -91,4 +93,20 @@ function objectToString(obj) {
 		.join(',')
 }
 
-app.listen(3000)
+;(async () => {
+	const transporter = createTransporter()
+	try {
+		console.info('Verifying email server connection...')
+		const start = Date.now()
+		await transporter.verify()
+		console.warn(`Email server connection verified in ${Date.now() - start}ms`)
+	} catch (err) {
+		console.error('Failed to verify email server connection at startup.')
+		console.error(objectToString(err))
+		process.exit(1)
+	}
+
+	app.listen(3000, () => {
+		console.info(`Backend listening on port ${3000}`)
+	})
+})()
