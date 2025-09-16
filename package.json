@@ -1,7 +1,7 @@
 {
 	"name": "toomas633s-dungeon",
 	"description": "Toomas633's projects homepage",
-	"version": "3.6.0",
+	"version": "3.6.1",
 	"private": true,
 	"license": "GPL-3.0-only",
 	"scripts": {
