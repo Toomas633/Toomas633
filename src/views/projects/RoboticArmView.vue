@@ -34,6 +34,8 @@ import { Tabs } from '@/enums/roboticArm'
 import { ref } from 'vue'
 import arm from '@/assets/images/RoboticArm/arm.webp'
 import { Image } from '@/types/image'
+import ArmV1 from './RoboticArm/ArmV1.vue'
+import ArmV2 from './RoboticArm/ArmV2.vue'
 
 const tab = ref<Tabs>(Tabs.V1)
 const armImage = ref<Image>({

@@ -16,7 +16,7 @@
 	},
 	"dependencies": {
 		"@basitcodeenv/vue3-device-detect": "^1.0.3",
-		"axios": "^1.11.0",
+		"axios": "^1.12.2",
 		"cors": "^2.8.5",
 		"express-rate-limit": "^8.1.0",
 		"leaflet": "^1.9.4",
@@ -27,7 +27,7 @@
 		"vue-cookies": "^1.8.6",
 		"vue-leaflet": "^0.1.0",
 		"vue-router": "^4.5.1",
-		"vuetify": "^3.10.0"
+		"vuetify": "^3.10.1"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.1",
@@ -37,10 +37,10 @@
 		"@types/cors": "^2.8.19",
 		"@types/eslint": "^9.6.1",
 		"@types/leaflet": "^1.9.20",
-		"@types/node": "^24.3.1",
+		"@types/node": "^24.5.0",
 		"@types/nodemailer": "^7.0.1",
-		"@typescript-eslint/eslint-plugin": "^8.43.0",
-		"@typescript-eslint/parser": "^8.43.0",
+		"@typescript-eslint/eslint-plugin": "^8.44.0",
+		"@typescript-eslint/parser": "^8.44.0",
 		"@vitejs/plugin-vue": "^6.0.1",
 		"@vueuse/head": "^2.0.0",
 		"dotenv": "^17.2.2",
@@ -55,7 +55,7 @@
 		"sass-loader": "^16.0.5",
 		"sitemap": "^8.0.0",
 		"stylelint": "^16.24.0",
-		"stylelint-config-recommended-scss": "^16.0.0",
+		"stylelint-config-recommended-scss": "^16.0.1",
 		"stylelint-config-recommended-vue": "^1.6.1",
 		"stylelint-config-standard": "^39.0.0",
 		"stylelint-scss": "^6.12.1",
@@ -65,7 +65,7 @@
 		"vite": "^7.1.5",
 		"vite-plugin-compression": "^0.5.1",
 		"vite-plugin-imagemin": "^0.6.1",
-		"vite-plugin-vue-devtools": "^8.0.1",
+		"vite-plugin-vue-devtools": "^8.0.2",
 		"vite-plugin-vuetify": "^2.1.2",
 		"vue-eslint-parser": "^10.2.0"
 	}

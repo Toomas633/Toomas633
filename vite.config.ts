@@ -23,13 +23,7 @@ export default defineConfig((): import('vite').UserConfig => {
 			vue({ template: { transformAssetUrls } }),
 			vuetify(),
 			vueDevTools(),
-			Components({
-				dts: 'src/components.d.ts',
-				dirs: ['src/components', 'src/views'],
-				extensions: ['vue'],
-				deep: true,
-				include: [/\.vue$/],
-			}),
+			Components(),
 			compression({
 				algorithm: 'brotliCompress',
 				ext: '.br',
@@ -54,6 +48,12 @@ export default defineConfig((): import('vite').UserConfig => {
 				},
 			}),
 		],
+		optimizeDeps: {
+			exclude: [
+				'vuetify',
+				'vue-router',
+			],
+		},
 		build: {
 			sourcemap: true,
 			chunkSizeWarningLimit: 1500,
