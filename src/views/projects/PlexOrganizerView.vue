@@ -199,7 +199,7 @@ git clean -fd" />
 					<v-img
 						class="mt-2"
 						rounded
-						style="cursor: pointer"
+						style="cursor: zoom-in"
 						:src="Example"
 						alt="qBittorrent example configuration"
 						position="center"

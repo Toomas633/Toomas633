@@ -1,13 +1,23 @@
 <template>
 	<v-row justify="center" class="d-block d-sm-flex">
-		<v-col md="4" lg="3" class="pb-0">
-			<v-img
+		<v-col md="6" lg="5" class="pb-0">
+			<v-carousel
+				hide-delimiter-background
 				class="mt-3"
-				rounded
-				style="cursor: pointer"
-				:src="armImage.src"
-				:alt="armImage.alt"
-				@click="openImageInNewTab(armImage.src)" />
+				style="cursor: zoom-in">
+				<v-carousel-item
+					:src="armImage.src"
+					:alt="armImage.alt"
+					@click="openImageInNewTab(armImage.src)" />
+				<v-carousel-item
+					:src="wiring"
+					alt="Wiring"
+					@click="openImageInNewTab(wiring)" />
+				<v-carousel-item
+					:src="list"
+					alt="List"
+					@click="openImageInNewTab(list)" />
+			</v-carousel>
 		</v-col>
 		<v-col class="pl-0 pr-0">
 			<v-col class="align-content-space-around pl-0">
@@ -32,21 +42,21 @@
 			</v-col>
 			<v-col>
 				<v-row justify="center">
-					<v-col sm="4" md="3" lg="2">
+					<v-col sm="5" md="4" lg="3">
 						<ButtonCard
 							size="100"
 							text="Download"
 							href="https://github.com/Toomas633/Arduino-Robotic-Arm/releases/download/v2/Robotic-Arm-v2.ino"
 							icon="mdi-file-download-outline" />
 					</v-col>
-					<v-col sm="4" md="3" lg="2">
+					<v-col sm="5" md="4" lg="3">
 						<ButtonCard
 							size="100"
 							text="GitHub"
 							href="https://github.com/Toomas633/Arduino-Robotic-Arm/tree/v2"
 							icon="mdi-github" />
 					</v-col>
-					<v-col sm="4" md="3" lg="2">
+					<v-col sm="5" md="4" lg="3">
 						<ButtonCard
 							size="100"
 							text="Thingiverse"
@@ -56,91 +66,62 @@
 					</v-col>
 				</v-row>
 			</v-col>
-			<v-col class="align-content-space-around pl-0">
-				<v-row class="d-block d-lg-flex">
-					<v-col>
-						<v-img
-							rounded
-							style="cursor: pointer"
-							:src="list"
-							alt="List"
-							@click="openImageInNewTab(list)" />
-					</v-col>
-					<v-col xl="8">
-						<v-card class="bg-black pa-4 h-100">
-							<h2 class="text-center mb-2">Contol scheme</h2>
-							<div class="d-flex justify-center">
-								<div class="d-block mr-2">
-									<p class="d-flex align-center mb-2">
-										<img
-											:src="A"
-											height="28"
-											alt="Xbox A Button"
-											class="ma-2" />
-										Gripper open/close
-									</p>
-									<p class="d-flex align-center mb-2">
-										<img
-											:src="RightStickX"
-											height="28"
-											alt="Xbox Right Stick X"
-											class="ma-2" />
-										Rotate Left-Right
-									</p>
-									<p class="d-flex align-center mb-2">
-										<img
-											:src="RightStickY"
-											height="28"
-											alt="Xbox Right Stick Y"
-											class="ma-2" />
-										Move Up-Down
-									</p>
-								</div>
-								<div class="spacer"></div>
-								<div class="d-block ml-2">
-									<p class="d-flex align-center mb-2">
-										<img
-											:src="LeftStickX"
-											height="28"
-											alt="Xbox Left Stick X"
-											class="ma-2" />
-										Rotate Gripper Left-Right
-									</p>
-									<p class="d-flex align-center mb-2">
-										<img
-											:src="LeftStickY"
-											height="28"
-											alt="Xbox Left Stick Y"
-											class="ma-2" />
-										Extend-Retract
-									</p>
-									<p class="d-flex align-center mb-2">
-										<span class="d-flex ma-2">
-											<img :src="B" height="28" alt="Xbox B Button" />
-											<v-icon icon="mdi-plus" />
-											<img
-												:src="LeftStickY"
-												height="28"
-												alt="Xbox Left Stick Y" />
-										</span>
-										Gripper Up-Down
-									</p>
-								</div>
-							</div>
-						</v-card>
-					</v-col>
-				</v-row>
+			<v-col class="align-content-space-around pl-0" xl="8">
+				<v-card class="bg-black pa-4 h-100">
+					<h2 class="text-center mb-2">Contol scheme</h2>
+					<div class="d-flex justify-center">
+						<div class="d-block mr-2">
+							<p class="d-flex align-center mb-2">
+								<img :src="A" height="28" alt="Xbox A Button" class="ma-2" />
+								Gripper open/close
+							</p>
+							<p class="d-flex align-center mb-2">
+								<img
+									:src="RightStickX"
+									height="28"
+									alt="Xbox Right Stick X"
+									class="ma-2" />
+								Rotate Left-Right
+							</p>
+							<p class="d-flex align-center mb-2">
+								<img
+									:src="RightStickY"
+									height="28"
+									alt="Xbox Right Stick Y"
+									class="ma-2" />
+								Move Up-Down
+							</p>
+						</div>
+						<div class="spacer"></div>
+						<div class="d-block ml-2">
+							<p class="d-flex align-center mb-2">
+								<img
+									:src="LeftStickX"
+									height="28"
+									alt="Xbox Left Stick X"
+									class="ma-2" />
+								Rotate Gripper Left-Right
+							</p>
+							<p class="d-flex align-center mb-2">
+								<img
+									:src="LeftStickY"
+									height="28"
+									alt="Xbox Left Stick Y"
+									class="ma-2" />
+								Extend-Retract
+							</p>
+							<p class="d-flex align-center mb-2">
+								<span class="d-flex ma-2">
+									<img :src="B" height="28" alt="Xbox B Button" />
+									<v-icon icon="mdi-plus" />
+									<img :src="LeftStickY" height="28" alt="Xbox Left Stick Y" />
+								</span>
+								Gripper Up-Down
+							</p>
+						</div>
+					</div>
+				</v-card>
 			</v-col>
-			<v-row class="pt-3 d-block d-md-flex" justify="center">
-				<v-col>
-					<v-img
-						rounded
-						style="cursor: pointer"
-						:src="wiring"
-						alt="Wiring"
-						@click="openImageInNewTab(wiring)" />
-				</v-col>
-			</v-row>
 		</v-col>
 	</v-row>
 </template>

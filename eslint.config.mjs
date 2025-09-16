@@ -54,7 +54,7 @@ export default defineConfig([
 			'vuetify/no-deprecated-props': 'warn',
 			'vuetify/no-deprecated-colors': 'off',
 			// General JS rules
-			'no-console': ['error', { allow: ['warn', 'error'] }],
+			'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
 			'no-debugger': 'warn',
 			// Prettier integration
 			'prettier/prettier': ['error', { singleQuote: true, semi: false }],
