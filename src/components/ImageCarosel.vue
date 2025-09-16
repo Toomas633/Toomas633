@@ -30,6 +30,7 @@
 				:key="index"
 				:value="index">
 				<v-img
+					style="cursor: zoom-in"
 					:src="image.src"
 					:alt="image.alt"
 					:cover="cover"
