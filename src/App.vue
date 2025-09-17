@@ -12,15 +12,19 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { isDesktop } from '@basitcodeenv/vue3-device-detect'
+import useThemeMixin from './helpers/themeMixin'
 
 const mainElement = ref<HTMLElement>()
 const hasScrollbar = ref(false)
+
+const { checkThemeStorage } = useThemeMixin()
 
 const rootStyle = computed(() => ({
 	'--scrollbar-offset': hasScrollbar.value ? '1rem' : '0rem',
 }))
 
 onMounted(() => {
+	checkThemeStorage()
 	window.addEventListener('load', checkScrollbar)
 	window.addEventListener('resize', checkScrollbar)
 })

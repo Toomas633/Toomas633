@@ -2,6 +2,7 @@
 	<v-row justify="center" class="d-block d-sm-flex">
 		<v-col md="6" lg="5" class="pb-0">
 			<v-carousel
+				color="primary"
 				hide-delimiter-background
 				class="mt-3"
 				style="cursor: zoom-in">
@@ -21,7 +22,7 @@
 		</v-col>
 		<v-col class="pl-0 pr-0">
 			<v-col class="align-content-space-around pl-0">
-				<v-card class="bg-black text-center pa-4">
+				<v-card elevation="4" class="text-center pa-4">
 					<h1>V2</h1>
 					<v-card-text>
 						Removed the custom joystick, moved servo connections down to pins
@@ -67,26 +68,39 @@
 				</v-row>
 			</v-col>
 			<v-col class="align-content-space-around pl-0" xl="8">
-				<v-card class="bg-black pa-4 h-100">
-					<h2 class="text-center mb-2">Contol scheme</h2>
+				<v-card elevation="4" class="pa-4 h-100">
+					<h1 class="text-center mb-2">Contol scheme</h1>
 					<div class="d-flex justify-center">
 						<div class="d-block mr-2">
 							<p class="d-flex align-center mb-2">
-								<img :src="A" height="28" alt="Xbox A Button" class="ma-2" />
+								<v-img
+									:src="A"
+									color="black"
+									rounded="circle"
+									height="28"
+									width="28"
+									alt="Xbox A Button"
+									class="ma-2" />
 								Gripper open/close
 							</p>
 							<p class="d-flex align-center mb-2">
-								<img
+								<v-img
 									:src="RightStickX"
+									color="black"
+									rounded="circle"
 									height="28"
+									max-width="28"
 									alt="Xbox Right Stick X"
 									class="ma-2" />
 								Rotate Left-Right
 							</p>
 							<p class="d-flex align-center mb-2">
-								<img
+								<v-img
 									:src="RightStickY"
+									color="black"
+									rounded="circle"
 									height="28"
+									max-width="28"
 									alt="Xbox Right Stick Y"
 									class="ma-2" />
 								Move Up-Down
@@ -95,26 +109,44 @@
 						<div class="spacer"></div>
 						<div class="d-block ml-2">
 							<p class="d-flex align-center mb-2">
-								<img
+								<v-img
 									:src="LeftStickX"
+									color="black"
+									rounded="circle"
 									height="28"
+									width="28"
 									alt="Xbox Left Stick X"
 									class="ma-2" />
 								Rotate Gripper Left-Right
 							</p>
 							<p class="d-flex align-center mb-2">
-								<img
+								<v-img
 									:src="LeftStickY"
+									color="black"
+									rounded="circle"
 									height="28"
+									max-width="28"
 									alt="Xbox Left Stick Y"
 									class="ma-2" />
 								Extend-Retract
 							</p>
 							<p class="d-flex align-center mb-2">
 								<span class="d-flex ma-2">
-									<img :src="B" height="28" alt="Xbox B Button" />
+									<v-img
+										:src="B"
+										color="black"
+										rounded="circle"
+										height="28"
+										width="28"
+										alt="Xbox B Button" />
 									<v-icon icon="mdi-plus" />
-									<img :src="LeftStickY" height="28" alt="Xbox Left Stick Y" />
+									<v-img
+										:src="LeftStickY"
+										color="black"
+										rounded="circle"
+										height="28"
+										width="28"
+										alt="Xbox Left Stick Y" />
 								</span>
 								Gripper Up-Down
 							</p>
@@ -126,15 +158,15 @@
 	</v-row>
 </template>
 <script setup lang="ts">
-import wiring from '@/assets/images/RoboticArm/V2/wiring.webp'
-import list from '@/assets/images/RoboticArm/V2/list.webp'
+import wiring from '@/assets/images/robotic-arm/v2/wiring.webp'
+import list from '@/assets/images/robotic-arm/v2/list.webp'
 import useImageMixin from '@/helpers/imageMixin'
-import A from '@/assets/icons/controller/A.svg'
-import B from '@/assets/icons/controller/B.svg'
-import RightStickX from '@/assets/icons/controller/Right-Stick-X.svg'
-import RightStickY from '@/assets/icons/controller/Right-Stick-Y.svg'
-import LeftStickX from '@/assets/icons/controller/Left-Stick-X.svg'
-import LeftStickY from '@/assets/icons/controller/Left-Stick-Y.svg'
+import A from '@/assets/icons/controller/a.svg'
+import B from '@/assets/icons/controller/b.svg'
+import RightStickX from '@/assets/icons/controller/right-stick-x.svg'
+import RightStickY from '@/assets/icons/controller/right-stick-y.svg'
+import LeftStickX from '@/assets/icons/controller/left-stick-x.svg'
+import LeftStickY from '@/assets/icons/controller/left-stick-y.svg'
 import { Image } from '@/types/image'
 
 defineProps<{

@@ -1,5 +1,5 @@
 <template>
-	<v-tabs v-model="tab" align-tabs="center" class="bg-black" grow stacked>
+	<v-tabs v-model="tab" align-tabs="center" grow stacked>
 		<v-tab :value="Tabs.Status"> <v-icon icon="mdi-minecraft" /> Status </v-tab>
 		<v-tab :value="Tabs.Statistics">
 			<v-icon icon="mdi-poll" /> Statistics
@@ -8,17 +8,18 @@
 	</v-tabs>
 	<v-tabs-window
 		v-model="tab"
-		class="v-tabs-wrapper"
+		class="w-100"
+		style="height: calc(100% - 4.5rem)"
 		:style="backgroundImageStyle">
 		<v-tabs-window-item :value="Tabs.Status" class="overflow-auto">
-			<v-card class="ma-4 bg-black align-center w-75 mx-auto position-relative">
+			<v-card class="ma-4 align-center w-75 mx-auto position-relative">
 				<v-container class="d-flex justify-center">
-					<div class="card-title d-flex">
+					<div class="d-flex" style="width: 15.313rem">
 						<v-img
 							src="/logo.svg"
 							height="76"
 							width="76"
-							class="mr-2"
+							class="mr-2 bg-black rounded-circle"
 							alt="Server logo" />
 						<div v-if="loading">
 							<h3 class="light-blue">
@@ -76,7 +77,12 @@
 									:key="index"
 									class="d-flex align-center pa-2"
 									cols="auto">
-									<img :src="player.avatar" alt="Avatar" class="mr-1" />
+									<v-img
+										:src="player.avatar"
+										height="25"
+										width="25"
+										alt="Avatar"
+										class="mr-1" />
 									<p>{{ player.name }}</p>
 								</v-col>
 							</v-row>
@@ -115,39 +121,6 @@
 						</v-col>
 					</v-row>
 				</v-container>
-				<v-container v-if="online && !loading">
-					<div class="expand" @click="showPlugins = !showPlugins">
-						<div class="d-flex justify-space-between">
-							<h4 class="text-center">
-								<v-icon icon="mdi-connection" /> Plugins
-							</h4>
-							<p>
-								{{ data?.plugins?.length }}
-								<v-icon
-									:icon="showPlugins ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
-							</p>
-						</div>
-						<v-divider thickness="2" class="border-opacity-100" />
-					</div>
-					<v-expand-transition>
-						<v-row v-show="showPlugins" class="mt-0 pa-2">
-							<v-col
-								v-for="(plugin, index) in data?.plugins"
-								:key="index"
-								cols="auto">
-								<p>
-									{{ plugin.name }}
-									<v-tooltip
-										activator="parent"
-										location="bottom"
-										aria-label="Plugin version tooltip">
-										{{ plugin.version }}
-									</v-tooltip>
-								</p>
-							</v-col>
-						</v-row>
-					</v-expand-transition>
-				</v-container>
 				<v-btn
 					variant="plain"
 					:ripple="false"
@@ -158,15 +131,18 @@
 					@click="queryData" />
 			</v-card>
 		</v-tabs-window-item>
-		<v-tabs-window-item :value="Tabs.Statistics" class="h-100 z-top">
+		<v-tabs-window-item :value="Tabs.Statistics" class="h-100">
 			<iframe
 				title="Grafana"
-				class="grafana"
-				height="100"
+				class="w-100 h-100 border-none"
 				src="https://grafana.toomas633.com/public-dashboards/b6001832311f480fa0a153c29aadb839" />
 		</v-tabs-window-item>
-		<v-tabs-window-item :value="Tabs.Map" class="h-100 z-top">
-			<iframe title="Map" src="https://map.toomas633.com" allowfullscreen />
+		<v-tabs-window-item :value="Tabs.Map" class="h-100">
+			<iframe
+				title="Map"
+				class="w-100 h-100 border-none"
+				src="https://map.toomas633.com"
+				allowfullscreen />
 		</v-tabs-window-item>
 	</v-tabs-window>
 </template>
@@ -182,14 +158,13 @@ import { Tabs } from '@/enums/minecraft'
 import useLoadingMixin from '@/helpers/loadingMixin'
 import { Player } from '@/types/minecraftPlayer'
 import useAlertMixin from '@/helpers/alertMixin'
-import background from '@/assets/images/Minecraft/background.webp'
+import background from '@/assets/images/minecraft/background.webp'
 
 const tab = ref<Tabs>(Tabs.Status)
 const loading = ref(true)
 const data = ref<MinecraftData>()
 const online = ref(false)
 const players = ref<Player[]>([])
-const showPlugins = ref(false)
 const showPlayers = ref(false)
 const ip = ref('...')
 
@@ -267,29 +242,12 @@ async function createPlayers(players: PlayerList[]): Promise<Player[]> {
 	)
 }
 </script>
-<style lang="scss">
-.card-title {
-	width: 15.313rem;
-}
-
-.expand {
-	cursor: pointer;
-}
-
-.z-top {
-	z-index: 1;
-}
-
+<style scoped lang="scss">
 h3 {
 	width: 10.5rem;
 }
-
-iframe {
-	width: 100%;
-	height: 100%;
-	border: none;
-}
-
+</style>
+<style lang="scss">
 /* stylelint-disable selector-class-pattern */
 .v-window__container {
 	height: 100% !important;

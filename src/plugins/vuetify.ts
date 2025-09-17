@@ -4,7 +4,7 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@mdi/font/css/materialdesignicons.min.css'
 import '@/assets/scss/style.scss'
 
-const myTheme = {
+const darkTheme = {
 	dark: true,
 	colors: {
 		background: '#353535',
@@ -32,6 +32,34 @@ const myTheme = {
 	},
 }
 
+const lightTheme = {
+	dark: false,
+	colors: {
+		background: '#FAFAFA',
+		surface: '#FFFFFF',
+		primary: '#f44336',
+		secondary: '#e2e2e2ff',
+	},
+	variables: {
+		'border-color': '#000000',
+		'border-opacity': 0.12,
+		'high-emphasis-opacity': 0.87,
+		'medium-emphasis-opacity': 0.6,
+		'disabled-opacity': 0.38,
+		'idle-opacity': 0.04,
+		'hover-opacity': 0.04,
+		'focus-opacity': 0.12,
+		'selected-opacity': 0.08,
+		'activated-opacity': 0.12,
+		'pressed-opacity': 0.12,
+		'dragged-opacity': 0.08,
+		'theme-kbd': '#212529',
+		'theme-on-kbd': '#FFFFFF',
+		'theme-code': '#1E1E1E',
+		'theme-on-code': '#FFFFFF',
+	},
+}
+
 export default createVuetify({
 	icons: {
 		defaultSet: 'mdi',
@@ -41,9 +69,10 @@ export default createVuetify({
 		},
 	},
 	theme: {
-		defaultTheme: 'myTheme',
+		defaultTheme: 'darkTheme',
 		themes: {
-			myTheme,
+			darkTheme,
+			lightTheme,
 		},
 	},
 	components: {},

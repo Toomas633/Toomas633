@@ -1,5 +1,5 @@
 <template>
-	<v-card class="bg-black mb-2" variant="flat" rounded="lg">
+	<v-card class="mb-2" variant="flat" elevation="4" rounded="lg">
 		<v-card-title class="d-flex align-center justify-space-between py-2">
 			<span class="text-subtitle-1 font-weight-medium">Languages</span>
 			<span

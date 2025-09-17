@@ -1,28 +1,30 @@
 <template>
 	<v-container class="px-4 py-1">
+		<h1 class="text-center">File Organizer</h1>
+		<StatsAndChips
+			:hide-langs="true"
+			repo="file-organizer"
+			new-page="Plex Organizer"
+			new-link="/projects/plex-organizer" />
+		<p class="text-center pa-4">
+			General use file organizer for removing all but the wanted file
+			extensions, moving files out of subfolders and deleting empty folders.
+			Default file is set up for using with Plex for cleaning up torrent
+			downloads (movies and tv shows), but extensions can simply be changed in
+			the python script. PS! The code needs a command line argument for the
+			working directory.
+		</p>
+		<p class="text-center">
+			<b>
+				<i>
+					I AM NOT RESPONSIBLE FOR ANY DATA LOSS UPON WRONG CONFIGURATION OR
+					CODE CHANGES!
+				</i>
+			</b>
+		</p>
 		<v-row class="pa-4 d-block d-sm-flex" justify="center">
-			<v-col class="align-content-space-around">
-				<h1 class="text-center">File Organizer</h1>
-				<StatsAndChips
-					repo="file-organizer"
-					new-page="Plex Organizer"
-					new-link="/projects/plex-organizer" />
-				<p class="text-center">
-					General use file organizer for removing all but the wanted file
-					extensions, moving files out of subfolders and deleting empty folders.
-					Default file is set up for using with Plex for cleaning up torrent
-					downloads (movies and tv shows), but extensions can simply be changed
-					in the python script. PS! The code needs a command line argument for
-					the working directory.
-				</p>
-				<p class="text-center">
-					<b>
-						<i>
-							I AM NOT RESPONSIBLE FOR ANY DATA LOSS UPON WRONG CONFIGURATION OR
-							CODE CHANGES!
-						</i>
-					</b>
-				</p>
+			<v-col class="align-content-space-around mt-3">
+				<StatsAndChips :hide-chips="true" repo="file-organizer" />
 			</v-col>
 			<v-col class="align-content-space-around" lg="2" md="3" sm="4" xl="1">
 				<ButtonCard
@@ -34,7 +36,7 @@
 		</v-row>
 		<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Organizer features</h1>
 					<ul class="ml-4">
 						<li>
@@ -57,7 +59,7 @@
 				</v-card>
 			</v-col>
 			<v-col>
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Running</h1>
 					<ul class="ml-4">
 						<li>
@@ -86,7 +88,7 @@
 		</v-row>
 		<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black pa-4">
+				<v-card class="pa-4" elevation="4">
 					<h1 class="text-center pb-2">Takes in</h1>
 					<v-treeview
 						:items="inputItems"
@@ -107,7 +109,7 @@
 				</v-card>
 			</v-col>
 			<v-col>
-				<v-card class="bg-black pa-4">
+				<v-card class="pa-4" elevation="4">
 					<h1 class="text-center pb-2">Returns</h1>
 					<v-treeview
 						:items="outputItems"

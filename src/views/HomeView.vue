@@ -49,7 +49,7 @@
 		</v-row>
 		<v-row class="pa-4 d-block d-sm-flex">
 			<v-col sm="1" md="4">
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Programming</h1>
 					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage href="https://www.cprogramming.com/" :src="C" alt="C" />
@@ -71,12 +71,13 @@
 				</v-card>
 			</v-col>
 			<v-col sm="1" md="4">
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Backend</h1>
 					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
 							href="https://www.nginx.com/"
 							:src="Nginx"
+							:src-dark="NginxDark"
 							alt="Nginx"
 							width="152" />
 						<LinkImage href="https://spring.io/" :src="Spring" alt="Spring" />
@@ -89,7 +90,7 @@
 				</v-card>
 			</v-col>
 			<v-col sm="1" md="4">
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Frontend</h1>
 					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage href="https://vuejs.org/" :src="Vue" alt="Vue" />
@@ -110,12 +111,13 @@
 				</v-card>
 			</v-col>
 			<v-col sm="1" md="4">
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Devops</h1>
 					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
 							href="https://www.gnu.org/software/bash/"
 							:src="Bash"
+							:src-dark="BashDark"
 							alt="Bash" />
 						<LinkImage
 							href="https://www.docker.com/"
@@ -126,7 +128,7 @@
 				</v-card>
 			</v-col>
 			<v-col sm="1" md="4">
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">3D</h1>
 					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
@@ -149,7 +151,7 @@
 				</v-card>
 			</v-col>
 			<v-col sm="1" md="4">
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Databases</h1>
 					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage href="https://www.mysql.com/" :src="MySQL" alt="MySQL" />
@@ -169,7 +171,7 @@
 				</v-card>
 			</v-col>
 			<v-col sm="1" md="4">
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Cloud</h1>
 					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
@@ -186,7 +188,7 @@
 				</v-card>
 			</v-col>
 			<v-col sm="1" md="4">
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Visualization</h1>
 					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
@@ -197,7 +199,7 @@
 				</v-card>
 			</v-col>
 			<v-col sm="1" md="4">
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Hardware</h1>
 					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
@@ -212,7 +214,7 @@
 				</v-card>
 			</v-col>
 			<v-col sm="1" md="6">
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Op systems</h1>
 					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage
@@ -224,7 +226,7 @@
 				</v-card>
 			</v-col>
 			<v-col sm="1" md="6">
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Version control</h1>
 					<div class="d-flex flex-wrap justify-center text-center">
 						<LinkImage href="https://git-scm.com/" :src="Git" alt="Git" />
@@ -239,7 +241,6 @@
 		</v-row>
 	</v-container>
 </template>
-
 <script setup lang="ts">
 import C from '@icons/c.svg'
 import Java from '@icons/java.svg'
@@ -248,6 +249,7 @@ import PHP from '@icons/php.svg'
 import JS from '@icons/javascript.svg'
 import TS from '@icons/typescript.svg'
 import Nginx from '@icons/nginx.svg'
+import NginxDark from '@icons/nginx-dark.svg'
 import Spring from '@icons/spring.svg'
 import NodeJS from '@icons/nodejs.svg'
 import Vue from '@icons/vue.svg'
@@ -256,6 +258,7 @@ import Angular from '@icons/angular.svg'
 import Sass from '@icons/sass.svg'
 import Wordpress from '@icons/wordpress.svg'
 import Bash from '@icons/bash.svg'
+import BashDark from '@icons/bash-dark.svg'
 import Docker from '@icons/docker.svg'
 import K3S from '@icons/k3s.svg'
 import Grafana from '@icons/grafana.svg'

@@ -1,5 +1,5 @@
 <template>
-	<div class="chips">
+	<div v-if="!hideChips" class="chips">
 		<LicenseChip :repo="repo" />
 		<ArchiveChip
 			v-if="newPage && newLink"
@@ -15,6 +15,7 @@ defineProps<{
 	newPage?: string
 	newLink?: string
 	hideLangs?: boolean
+	hideChips?: boolean
 }>()
 </script>
 <style scoped lang="scss">

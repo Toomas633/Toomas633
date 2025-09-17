@@ -2,7 +2,7 @@
 	<v-navigation-drawer
 		v-model:rail="isRail"
 		data-primary-drawer
-		width="4.438rem"
+		width="3.438rem"
 		class="bg-black"
 		permanent
 		@mouseenter="handleMouseEnter"

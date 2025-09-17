@@ -2,7 +2,7 @@
 	<v-container class="px-4 py-1">
 		<v-row class="mt-0 d-block d-md-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black text-center pa-4 h-100">
+				<v-card class="text-center pa-4 h-100" elevation="4">
 					<h1 class="text-center">Contact</h1>
 					<p class="text-center">
 						Having trouble? Raise a new Issue on project's GitHub, leave a
@@ -17,7 +17,7 @@
 				</v-card>
 			</v-col>
 			<v-col>
-				<v-card class="bg-black text-center pa-4 h-100">
+				<v-card class="text-center pa-4 h-100" elevation="4">
 					<h1 class="text-center">Email</h1>
 					<p class="text-center">
 						If for watherver reason you can't or don't want to use the contact
@@ -32,10 +32,10 @@
 		</v-row>
 		<v-row class="d-block d-md-flex" justify="center">
 			<v-col class="d-none d-md-block">
-				<MapComponent id="map" class="h-100" />
+				<MapComponent id="map" class="h-100 elevation-4" />
 			</v-col>
 			<v-col>
-				<v-card class="bg-black text-center pa-4 h-100">
+				<v-card class="text-center pa-4 h-100" elevation="4">
 					<h1 class="text-center pb-3">Contact Form</h1>
 					<v-form ref="form" v-model="valid">
 						<v-row justify="center">
