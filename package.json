@@ -32,7 +32,6 @@
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.1",
 		"@eslint/js": "^9.35.0",
-		"@fortawesome/fontawesome-free": "^7.0.1",
 		"@mdi/font": "^7.4.47",
 		"@types/cors": "^2.8.19",
 		"@types/eslint": "^9.6.1",
