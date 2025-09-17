@@ -58,11 +58,7 @@
 							href="https://www.python.org/"
 							:src="Python"
 							alt="Python" />
-						<LinkImage
-							href="https://www.php.net/"
-							:src="PHP"
-							alt="PHP"
-							width="109" />
+						<LinkImage href="https://www.php.net/" :src="PHP" alt="PHP" />
 						<LinkImage
 							href="https://www.javascript.com/"
 							:src="JS"
@@ -82,13 +78,13 @@
 							href="https://www.nginx.com/"
 							:src="Nginx"
 							alt="Nginx"
-							width="190" />
+							width="152" />
 						<LinkImage href="https://spring.io/" :src="Spring" alt="Spring" />
 						<LinkImage
 							href="https://nodejs.org/"
 							:src="NodeJS"
 							alt="Node.js"
-							width="122" />
+							width="98" />
 					</div>
 				</v-card>
 			</v-col>
@@ -180,12 +176,12 @@
 							href="https://aws.amazon.com/"
 							:src="AWS"
 							alt="AWS"
-							width="124" />
+							width="99" />
 						<LinkImage
 							href="https://www.oracle.com/cloud/"
 							:src="OracleCloud"
 							alt="Oracle Cloud"
-							width="143" />
+							width="115" />
 					</div>
 				</v-card>
 			</v-col>

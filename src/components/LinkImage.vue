@@ -4,8 +4,8 @@
 			class="ma-2"
 			:src="src"
 			alt="alt"
-			:height="height ?? 75"
-			:width="width ?? 75" />
+			:height="height ?? 60"
+			:width="width ?? 60" />
 	</a>
 </template>
 <script setup lang="ts">
