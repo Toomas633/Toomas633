@@ -26,7 +26,7 @@
 			</v-card-text>
 			<v-card-actions>
 				<v-btn variant="text" @click="showDialog = false">Cancel</v-btn>
-				<v-btn variant="text" color="success" :href="newLink">Navigate</v-btn>
+				<v-btn variant="text" color="success" :to="newLink">Navigate</v-btn>
 			</v-card-actions>
 		</v-card>
 	</v-dialog>

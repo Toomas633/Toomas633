@@ -8,14 +8,12 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AppFooter: typeof import('./src/components/AppFooter.vue')['default']
     AppNavbar: typeof import('./src/components/AppNavbar.vue')['default']
     ArchiveChip: typeof import('./src/components/ArchiveChip.vue')['default']
     ButtonCard: typeof import('./src/components/ButtonCard.vue')['default']
     CodeBlock: typeof import('./src/components/CodeBlock.vue')['default']
     CookieConsent: typeof import('./src/components/CookieConsent.vue')['default']
     CopyButton: typeof import('./src/components/CopyButton.vue')['default']
-    DropdownMenu: typeof import('./src/components/DropdownMenu.vue')['default']
     ImageCarosel: typeof import('./src/components/ImageCarosel.vue')['default']
     InlineCode: typeof import('./src/components/InlineCode.vue')['default']
     InlineTextCopy: typeof import('./src/components/InlineTextCopy.vue')['default']

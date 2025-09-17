@@ -15,8 +15,12 @@ interface PkgJson {
 
 export default defineConfig((): import('vite').UserConfig => {
 	const version = (pkg as PkgJson).version || '0.0.0'
+	const vueVersion = (pkg.dependencies?.vue ?? '').replace('^', '')
+	const vuetifyVersion = (pkg.dependencies?.vuetify ?? '').replace('^', '')
 	return {
 		define: {
+			__VUE_VERSION__: JSON.stringify(vueVersion),
+			__VUETIFY_VERSION__: JSON.stringify(vuetifyVersion),
 			__APP_VERSION__: JSON.stringify(version),
 		},
 		plugins: [

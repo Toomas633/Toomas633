@@ -6,7 +6,6 @@
 			<CookieConsent />
 			<MessagePopup />
 		</v-main>
-		<AppFooter />
 	</v-app>
 </template>
 
