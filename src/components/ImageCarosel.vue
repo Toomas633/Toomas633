@@ -106,34 +106,34 @@ const navigateToImage = (event: MouseEvent) => {
 }
 
 .v-img {
-	height: 200px;
+	height: 12.5rem;
 }
 
-@media (width >= 600px) {
+@media (width >= 37.5rem) {
 	.v-img {
-		height: 300px;
+		height: 18.75rem;
 	}
 }
 
-@media (width >= 800px) {
+@media (width >= 50rem) {
 	.v-img {
-		height: 400px;
+		height: 25rem;
 	}
 }
 
-@media (width >= 1000px) {
+@media (width >= 62.5rem) {
 	.v-img {
-		height: 500px;
+		height: 31.25rem;
 	}
 }
 
-@media (width >= 1280px) {
+@media (width >= 80rem) {
 	.v-img {
-		height: 600px;
+		height: 37.5rem;
 	}
 
 	.v-container {
-		width: 1136px;
+		width: 71rem;
 	}
 }
 </style>

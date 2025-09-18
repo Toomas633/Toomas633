@@ -2,7 +2,8 @@
 	<v-chip
 		class="font-weight-bold"
 		prepend-icon="mdi-archive"
-		variant="outlined"
+		:variant="isDark ? 'outlined' : 'elevated'"
+		elevation="4"
 		size="large"
 		color="orange"
 		@click="handleClick">
@@ -26,12 +27,13 @@
 			</v-card-text>
 			<v-card-actions>
 				<v-btn variant="text" @click="showDialog = false">Cancel</v-btn>
-				<v-btn variant="text" color="success" :href="newLink">Navigate</v-btn>
+				<v-btn variant="text" color="success" :to="newLink">Navigate</v-btn>
 			</v-card-actions>
 		</v-card>
 	</v-dialog>
 </template>
 <script setup lang="ts">
+import useThemeMixin from '@/helpers/themeMixin'
 import router from '@/router'
 import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 import { ref } from 'vue'
@@ -42,6 +44,8 @@ const props = defineProps<{
 }>()
 
 const showDialog = ref(false)
+
+const { isDark } = useThemeMixin()
 
 function handleClick() {
 	if (!isDesktop) {

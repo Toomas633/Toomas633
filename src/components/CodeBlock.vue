@@ -23,14 +23,3 @@ defineProps<{
 	topMargin?: boolean
 }>()
 </script>
-<style scoped lang="scss">
-pre {
-	background-color: rgb(var(--v-theme-secondary));
-	color: white;
-	overflow-wrap: break-word;
-	overflow: auto;
-	white-space: pre-line;
-	padding-left: 0.25rem;
-	padding-right: 0.25rem;
-}
-</style>

@@ -5,6 +5,7 @@
 		position="fixed"
 		location="bottom right"
 		aria-label="Cookie button"
+		color="primary"
 		@click="reopenSelection" />
 	<v-dialog v-model="visible" persistent max-width="650">
 		<v-card v-model="visible" class="bg-background">
@@ -166,7 +167,7 @@ function isConsent(obj: unknown): obj is Consent {
 <style scoped lang="scss">
 .cookie-button-desktop {
 	right: calc(0.5rem + var(--scrollbar-offset)) !important;
-	bottom: calc(var(--footer-height) + 0.25rem) !important;
+	bottom: 0.5rem !important;
 }
 
 .cookie-button-mobile {

@@ -8,14 +8,14 @@
 		variant="plain"
 		aria-label="PayPal link"
 		@click="showPayPal" />
-	<v-card v-else class="bg-black text-center pb-5" justfy="center">
+	<v-card v-else class="text-center pb-5" elevation="4" justfy="center">
 		<h1>PayPal</h1>
 		<v-img
 			:src="qr"
 			rounded="xl"
 			height="240"
 			width="240"
-			class="mt-9 mx-auto cursor-pointer"
+			class="mt-3 mb-2 mx-auto cursor-pointer"
 			@click="showPayPal" />
 	</v-card>
 	<span id="donate-button" style="display: none" />
@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import qr from '@/assets/images/Donate/paypal-qr.svg'
+import qr from '@/assets/icons/donate/paypal-qr.svg'
 
 withDefaults(
 	defineProps<{

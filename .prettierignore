@@ -7,3 +7,4 @@ package*.json
 *.config.ts
 .eslintrc.js
 tsconfig.json
+components.d.ts

@@ -36,7 +36,6 @@ const copyCode = async (code: string) => {
 <style scoped lang="scss">
 mark {
 	background-color: rgb(var(--v-theme-secondary));
-	color: white;
 	overflow-wrap: break-word;
 	white-space: pre-line;
 	padding-left: 0.25rem;

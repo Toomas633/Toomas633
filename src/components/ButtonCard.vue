@@ -1,5 +1,5 @@
 <template>
-	<v-card class="bg-black text-center" justfy="center">
+	<v-card class="text-center" justfy="center" elevation="4">
 		<h1 v-if="title">
 			{{ title }}
 		</h1>
@@ -8,13 +8,21 @@
 			icon
 			:height="size"
 			:width="size"
-			class="pa-0 bg-black"
-			:class="text ? 'mb-0' : 'mb-9'"
+			class="pa-0"
+			elevation="0"
+			:class="[isDark ? 'bg-black' : '', props.text ? 'mb-0' : 'mb-9']"
 			:href="href"
 			:aria-label="label ?? text ?? title">
 			<v-icon :icon="icon" :color="iconColor" :size="size" />
 		</v-btn>
-		<v-img v-if="image" :src="image" rounded height="240" class="mt-5" />
+		<v-img
+			v-if="image"
+			:src="isDark && imageDark ? imageDark : image"
+			rounded
+			height="240"
+			class="mt-5"
+			:class="[!text ? 'mb-5' : '', href ? 'cursor-pointer' : '']"
+			@click="navigate" />
 		<v-card-text v-if="text" class="pb-2 pr-2 pl-2">
 			{{ text }}
 		</v-card-text>
@@ -22,7 +30,9 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import useThemeMixin from '@/helpers/themeMixin'
+
+const props = defineProps<{
 	label?: string
 	title?: string
 	href?: string
@@ -30,6 +40,15 @@ defineProps<{
 	iconColor?: string
 	text?: string
 	image?: string
+	imageDark?: string
 	size: string
 }>()
+
+const { isDark } = useThemeMixin()
+
+function navigate() {
+	if (props.href) {
+		window.open(props.href, '_blank')
+	}
+}
 </script>

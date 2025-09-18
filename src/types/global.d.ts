@@ -12,3 +12,5 @@ interface ImportMeta {
 }
 
 declare const __APP_VERSION__: string
+declare const __VUE_VERSION__: string
+declare const __VUETIFY_VERSION__: string

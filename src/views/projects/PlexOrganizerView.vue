@@ -1,25 +1,26 @@
 <template>
 	<v-container class="px-4 py-1">
+		<h1 class="text-center d-flex justify-center align-items-center">
+			Plex Organizer
+		</h1>
+		<StatsAndChips :hide-langs="true" repo="plex-organizer" />
+		<p class="text-center px-4">
+			Plex Organizer is a Python-based utility designed to help manage and
+			organize media files for Plex Media Server. It automates tasks such as
+			renaming files, deleting unwanted files, moving directories, and cleaning
+			up empty folders.
+		</p>
+		<p class="text-center">
+			<b>
+				<i>
+					Any data loss is not on me, but you can still report any bugs or
+					faults you find in issues
+				</i>
+			</b>
+		</p>
 		<v-row class="pa-4 d-block d-sm-flex" justify="center">
-			<v-col class="align-content-space-around">
-				<h1 class="text-center d-flex justify-center align-items-center">
-					Plex Organizer
-				</h1>
-				<StatsAndChips repo="plex-organizer" />
-				<p class="text-center">
-					Plex Organizer is a Python-based utility designed to help manage and
-					organize media files for Plex Media Server. It automates tasks such as
-					renaming files, deleting unwanted files, moving directories, and
-					cleaning up empty folders.
-				</p>
-				<p class="text-center">
-					<b>
-						<i>
-							Any data loss is not on me, but you can still report any bugs or
-							faults you find in issues
-						</i>
-					</b>
-				</p>
+			<v-col class="align-content-space-around mt-3">
+				<StatsAndChips :hide-chips="true" repo="plex-organizer" />
 			</v-col>
 			<v-col class="align-content-space-around" lg="2" md="3" sm="4" xl="1">
 				<ButtonCard
@@ -31,7 +32,7 @@
 		</v-row>
 		<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Features</h1>
 					<ul class="ml-4">
 						<li>
@@ -71,7 +72,7 @@
 				</v-card>
 			</v-col>
 			<v-col>
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Installation</h1>
 					<ul class="ml-4">
 						<li>
@@ -100,7 +101,7 @@
 		</v-row>
 		<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Update</h1>
 					<ul class="ml-4">
 						<li>
@@ -118,7 +119,7 @@ git clean -fd" />
 				</v-card>
 			</v-col>
 			<v-col>
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Configuration</h1>
 					<ul class="ml-4">
 						<li>
@@ -151,7 +152,7 @@ git clean -fd" />
 				</v-card>
 			</v-col>
 		</v-row>
-		<v-card class="bg-black ma-4 pa-4">
+		<v-card class="ma-4 pa-4" elevation="4">
 			<h1 class="text-center">Usage</h1>
 			<v-row class="d-block d-md-flex" justify="center">
 				<v-col>
@@ -209,7 +210,7 @@ git clean -fd" />
 		</v-card>
 		<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black pa-4">
+				<v-card class="pa-4" elevation="4">
 					<h1 class="text-center pb-2">Takes in</h1>
 					<v-treeview
 						:items="inputItems"
@@ -230,7 +231,7 @@ git clean -fd" />
 				</v-card>
 			</v-col>
 			<v-col>
-				<v-card class="bg-black pa-4">
+				<v-card class="pa-4" elevation="4">
 					<h1 class="text-center pb-2">Returns</h1>
 					<v-treeview
 						:items="outputItems"
@@ -257,7 +258,7 @@ git clean -fd" />
 <script setup lang="ts">
 import { inputItems, outputItems, fileIcons } from '@/constants/plexOrganizer'
 import { FileType } from '@/enums/fileType'
-import Example from '@/assets/images/PlexOrganizer/example.png'
+import Example from '@/assets/images/plex-organizer/example.png'
 import useImageMixin from '@/helpers/imageMixin'
 
 const { openImageInNewTab } = useImageMixin()

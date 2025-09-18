@@ -1,7 +1,7 @@
 <template>
 	<v-container class="px-4 py-1">
 		<v-row class="pa-4 d-block d-md-flex" justify="center">
-			<v-col class="align-content-space-around">
+			<v-col class="align-content-space-around" md="12" lg="7">
 				<h1 class="text-center">T6 Drone</h1>
 				<StatsAndChips repo="t6-drone" :hide-langs="true" />
 				<p class="text-center">
@@ -19,10 +19,7 @@
 				</p>
 			</v-col>
 			<v-col
-				class="align-content-space-around d-block d-md-flex pa-0"
-				md="5"
-				lg="5"
-				xl="3">
+				class="align-content-space-around d-block d-md-flex pa-0 align-center">
 				<v-row class="pa-0 ma-0" justify="center">
 					<v-col>
 						<ButtonCard
@@ -53,10 +50,10 @@
 	</v-container>
 </template>
 <script setup lang="ts">
-import render from '@/assets/images/T6Drone/render.webp'
-import electronics from '@/assets/images/T6Drone/electronics.webp'
-import model from '@/assets/images/T6Drone/model.webp'
-import complete from '@/assets/images/T6Drone/complete.webp'
+import render from '@/assets/images/t6-drone/render.webp'
+import electronics from '@/assets/images/t6-drone/electronics.webp'
+import model from '@/assets/images/t6-drone/model.webp'
+import complete from '@/assets/images/t6-drone/complete.webp'
 import type { Image } from '@/types/image'
 
 const images: Image[] = [

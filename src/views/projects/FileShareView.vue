@@ -1,13 +1,18 @@
 <template>
 	<v-container class="px-4 py-1">
+		<h1 class="text-center">FileShare</h1>
+		<StatsAndChips :hide-langs="true" repo="fileshare" />
+		<p class="text-center">
+			Easy file sharing website featuring (direct) link generation and delete
+			timer.
+		</p>
 		<v-row class="pa-4 d-block d-sm-flex" justify="center">
-			<v-col class="align-content-space-around">
-				<h1 class="text-center">FileShare</h1>
-				<StatsAndChips repo="fileshare" />
+			<v-col class="align-content-space-around pt-5">
+				<StatsAndChips :hide-chips="true" repo="fileshare" />
 			</v-col>
 			<v-col
 				class="align-content-space-around pa-0"
-				sm="3"
+				sm="12"
 				md="5"
 				lg="4"
 				xl="3">
@@ -31,21 +36,26 @@
 			</v-col>
 		</v-row>
 		<ImageCarosel :images="images" :cover="false" />
-		<p class="text-center">
-			Easy file sharing website featuring (direct) link generation and delete
-			timer.
-		</p>
 		<v-row class="pa-4 d-block d-md-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Features</h1>
-					<ul class="ml-4">
+					<ul class="ml-4 features-list">
 						<li>Single file upload</li>
 						<li>Random name toggle</li>
 						<li>Status popups</li>
 						<li>File preview icons</li>
 						<li>Delete time slider (1-12h, 24h, never)</li>
 						<li>Easy link copy</li>
+						<li>Automatic file deletion</li>
+						<li>Responsive css for all screen sizes</li>
+						<li>
+							Download page
+							<ul class="ml-4">
+								<li>Download, delete buttons</li>
+								<li>Delete time</li>
+							</ul>
+						</li>
 						<li>
 							Admin page
 							<ul class="ml-4">
@@ -56,22 +66,13 @@
 								<li>Custom link address</li>
 							</ul>
 						</li>
-						<li>
-							Download page
-							<ul class="ml-4">
-								<li>Download, delete buttons</li>
-								<li>Delete time</li>
-							</ul>
-						</li>
-						<li>Automatic file deletion</li>
-						<li>Responsive css for all screen sizes</li>
 					</ul>
 				</v-card>
 			</v-col>
 		</v-row>
 		<v-row class="pa-4 d-block d-sm-flex" justify="center">
 			<v-col>
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Running instructions</h1>
 					<ul class="ml-4">
 						<li>Install PHP and Python (and add to system path on windows)</li>
@@ -103,7 +104,7 @@
 				</v-card>
 			</v-col>
 			<v-col>
-				<v-card class="bg-black pa-4 h-100">
+				<v-card class="pa-4 h-100" elevation="4">
 					<h1 class="text-center">Requirements</h1>
 					<ul class="ml-4">
 						<li>
@@ -158,7 +159,7 @@
 				</v-card>
 			</v-col>
 		</v-row>
-		<v-card class="bg-black pa-4 ma-4 mt-0">
+		<v-card class="pa-4 ma-4 mt-0" elevation="4">
 			<h1 class="text-center">Debian service</h1>
 			<ul class="ml-4">
 				<li>
@@ -199,7 +200,7 @@
 				</li>
 			</ul>
 		</v-card>
-		<v-card class="bg-black pa-4 ma-4">
+		<v-card class="pa-4 ma-4" elevation="4">
 			<h1 class="text-center">Windows</h1>
 			<ul class="ml-4">
 				<li>
@@ -242,7 +243,7 @@
 				</li>
 			</ul>
 		</v-card>
-		<v-card class="bg-black pa-4 ma-4">
+		<v-card class="pa-4 ma-4" elevation="4">
 			<h1 class="text-center">Docker</h1>
 			<p class="text-center">
 				Create a <InlineCode code="docker-compose.yml" />, copy the contents
@@ -259,9 +260,9 @@
 <script setup lang="ts">
 import { dockerCompose } from '@/constants/fileshare'
 import type { Image } from '@/types/image'
-import download from '@/assets/images/FileShare/download.webp'
-import settings from '@/assets/images/FileShare/settings.webp'
-import upload from '@/assets/images/FileShare/upload.webp'
+import download from '@/assets/images/fileshare/download.webp'
+import settings from '@/assets/images/fileshare/settings.webp'
+import upload from '@/assets/images/fileshare/upload.webp'
 
 const images: Image[] = [
 	{
@@ -278,3 +279,29 @@ const images: Image[] = [
 	},
 ]
 </script>
+
+<style scoped lang="scss">
+.features-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(13.125rem, 1fr));
+	gap: 0.25rem 1.125rem;
+	padding-left: 0;
+	list-style: disc outside;
+}
+
+.features-list > li {
+	margin-left: 1rem;
+}
+
+.features-list > li > ul {
+	display: block;
+	padding-left: 1.25rem;
+	margin-top: 0.25rem;
+}
+
+@media (width <= 26.25rem) {
+	.features-list {
+		grid-template-columns: 1fr;
+	}
+}
+</style>

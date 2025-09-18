@@ -1,128 +1,345 @@
 <template>
-	<v-app-bar height="64">
-		<a href="/" class="logo-and-title ml-4 align-center d-flex">
-			<v-img src="/logo.svg" alt="Logo" max-height="40" max-width="40" />
-			<v-toolbar-title class="ml-2"> Toomas633's Dungeon </v-toolbar-title>
-		</a>
-		<v-spacer />
-		<div class="d-none d-md-flex">
-			<template v-for="(item, index) in menuItems" :key="index">
-				<DropdownMenu
-					v-if="item.type === 'menu'"
-					:icon="item.icon"
-					:label="item.label"
-					:options="item.options"
-					:is-mobile="false" />
-				<v-btn
-					v-else
-					:class="index === menuItems.length - 1 ? 'mr-2' : ''"
-					:href="item.href">
-					<v-icon v-if="item.icon" :icon="item.icon" class="mr-1" />
-					<p class="font-weight-bold">{{ item.label }}</p>
-				</v-btn>
-			</template>
-		</div>
-		<v-menu>
-			<template #activator="{ props }">
-				<v-app-bar-nav-icon
-					class="d-md-none"
-					v-bind="props"
-					aria-label="Menu" />
-			</template>
-			<v-list class="mt-3">
-				<template v-for="(item, index) in menuItems" :key="index">
-					<v-list-item v-if="item.type === 'menu'" class="pr-0 pl-0">
-						<DropdownMenu
-							:icon="item.icon"
-							:label="item.label"
-							:options="item.options"
-							:href="item.href"
-							:is-mobile="true" />
-					</v-list-item>
-					<v-list-item v-else class="pr-0 pl-0">
-						<v-btn class="elevation-0" :href="item.href">
-							<v-icon v-if="item.icon" :icon="item.icon" class="mr-1" />{{
-								item.label
-							}}
-						</v-btn>
-					</v-list-item>
-				</template>
+	<v-navigation-drawer
+		v-model:rail="isRail"
+		data-primary-drawer
+		width="3.438rem"
+		class="bg-black"
+		permanent
+		@mouseenter="handleMouseEnter"
+		@mouseleave="handleMouseLeave">
+		<v-list>
+			<v-list-item
+				prepend-avatar="/logo.svg"
+				title="Toomas633's Dungeon"
+				:subtitle="APP_VERSION"
+				value="home"
+				to="/" />
+		</v-list>
+		<v-divider />
+		<v-list
+			v-model:selected="navSelection"
+			color="primary"
+			density="compact"
+			nav>
+			<v-list-item
+				prepend-icon="mdi-toolbox"
+				title="Projects"
+				value="projects" />
+			<v-list-item
+				prepend-icon="mdi-controller"
+				title="Game servers"
+				value="servers" />
+			<v-list-item prepend-icon="mdi-archive" title="Archive" value="archive" />
+			<v-list-item
+				prepend-icon="mdi-card-account-mail"
+				title="Contact"
+				value="contact"
+				to="/contact" />
+			<v-list-item
+				prepend-icon="mdi-hand-coin"
+				title="Donate"
+				value="donate"
+				to="/donate" />
+		</v-list>
+		<v-divider />
+		<template #append>
+			<div v-if="fullyExpanded" class="text-center">
+				<div class="d-flex justify-center mb-4">
+					<v-tooltip :text="`Vue ${VUE_VERSION}`" location="right">
+						<template #activator="{ props }">
+							<v-img
+								v-bind="props"
+								:src="Vue"
+								class="mx-1 vue"
+								alt="Vue icon"
+								max-height="32"
+								max-width="32" />
+						</template>
+					</v-tooltip>
+					<v-tooltip :text="`Vuetify ${VUETIFY_VERSION}`" location="right">
+						<template #activator="{ props }">
+							<v-img
+								v-bind="props"
+								:src="Vuetify"
+								class="mx-1 vuetify"
+								alt="Vuetify icon"
+								max-height="32"
+								max-width="32" />
+						</template>
+					</v-tooltip>
+				</div>
+			</div>
+			<v-divider v-if="fullyExpanded" />
+			<v-list density="compact" nav>
+				<v-list-item
+					:title="isDark ? 'Switch to light theme' : 'Switch to dark theme'"
+					:prepend-icon="
+						!isDark ? 'mdi-white-balance-sunny' : 'mdi-weather-night'
+					"
+					@click="changeTheme" />
 			</v-list>
-		</v-menu>
-	</v-app-bar>
+			<v-divider v-if="fullyExpanded" />
+			<v-list
+				v-if="fullyExpanded"
+				v-model:selected="navSelection"
+				color="primary"
+				density="compact"
+				nav>
+				<v-list-item subtitle="Privacy Policy" value="privacy" to="/privacy" />
+				<v-list-item subtitle="Terms of Service" value="tos" to="/tos" />
+			</v-list>
+			<div v-if="fullyExpanded" class="text-center mb-6">
+				<v-btn
+					icon="mdi-rocket-launch"
+					href="https://thingiverse.com/toomas633"
+					class="mx-2"
+					color="blue"
+					size="medium"
+					variant="plain"
+					aria-label="Thingiverse link" />
+				<v-btn
+					icon="mdi-twitter"
+					href="https://x.com/Toomas633"
+					class="mx-2"
+					color="light-blue"
+					size="medium"
+					variant="plain"
+					aria-label="Twitter link" />
+				<v-btn
+					icon="mdi-reddit"
+					href="https://reddit.com/u/toomas633"
+					class="mx-2"
+					color="deep-orange"
+					size="medium"
+					variant="plain"
+					aria-label="Reddit link" />
+				<v-btn
+					icon="mdi-github"
+					href="https://github.com/Toomas633/"
+					class="mx-2"
+					color="grey"
+					size="medium"
+					variant="plain"
+					aria-label="GitHub link" />
+				<v-btn
+					icon="mdi-email-edit"
+					href="mailto:mailto:info@toomas633.com"
+					color="red"
+					class="mx-2"
+					size="medium"
+					variant="plain"
+					aria-label="Email link" />
+				<PayPalBtn />
+			</div>
+		</template>
+	</v-navigation-drawer>
+	<v-navigation-drawer
+		v-model="secondDrawer"
+		data-secondary-drawer
+		temporary
+		floating
+		class="bg-black"
+		:scrim="false"
+		touchless>
+		<v-list
+			v-model:selected="secondSelection"
+			color="primary"
+			density="compact"
+			nav>
+			<v-list-item
+				v-for="item in drawerItems"
+				:key="item.title"
+				:value="item.href?.split('/')[2]"
+				:to="item.href"
+				:title="item.title"
+				:subtitle="item.subtitle"
+				:prepend-icon="item.icon"
+				@click="handleSecondClick(item.href?.split('/')[2])" />
+		</v-list>
+	</v-navigation-drawer>
 </template>
-
 <script setup lang="ts">
-const menuItems = [
-	{
-		type: 'menu',
-		icon: 'mdi-toolbox',
-		label: 'Projects',
-		options: [
-			{
-				label: 'T6 Drone',
-				href: '/projects/t6-drone',
-				icon: 'mdi-quadcopter',
-			},
-			{
-				label: 'Robotic Arm',
-				href: '/projects/robotic-arm',
-				icon: 'mdi-robot-industrial',
-			},
-			{
-				label: 'FileShare',
-				href: '/projects/fileshare',
-				icon: 'mdi-share-variant',
-			},
-			{
-				label: 'Plex Organizer',
-				href: '/projects/plex-organizer',
-				icon: 'mdi-file-document-arrow-right',
-			},
-		],
+import { APP_VERSION, VUE_VERSION, VUETIFY_VERSION } from '@/constants/env'
+import router from '@/router'
+import { MenuItem } from '@/types/menuItem'
+import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
+import Vue from '@/assets/icons/brands/vue.svg'
+import Vuetify from '@/assets/icons/brands/vuetify.svg'
+import useThemeMixin from '@/helpers/themeMixin'
+import { isMobile } from '@basitcodeenv/vue3-device-detect'
+
+const isRail = ref(true)
+const fullyExpanded = ref(false)
+const secondDrawer = ref(false)
+const navSelection = ref<string[]>([])
+const secondSelection = ref<string[]>([])
+const drawerItems = ref<MenuItem[]>([])
+
+let expandTimer: ReturnType<typeof setTimeout> | undefined
+
+const expanded = computed(() => !isRail.value)
+
+const { isDark, toggleTheme } = useThemeMixin()
+
+watch(expanded, (val) => {
+	if (val) {
+		if (expandTimer) clearTimeout(expandTimer)
+		expandTimer = setTimeout(() => {
+			fullyExpanded.value = true
+		}, 200)
+	} else {
+		if (expandTimer) clearTimeout(expandTimer)
+		fullyExpanded.value = false
+	}
+})
+
+watch(secondDrawer, (isOpen) => {
+	if (isOpen) {
+		isRail.value = true
+	}
+})
+
+watch(
+	router.currentRoute,
+	(route) => {
+		const parts = route.path.split('/')
+		navSelection.value = parts[1] ? [parts[1]] : ['home']
+		secondSelection.value = parts[2] ? [parts[2]] : []
 	},
-	{
-		type: 'menu',
-		icon: 'mdi-controller',
-		label: 'Game servers',
-		options: [
-			{
-				label: 'Vanilla Minecraft',
-				href: '/servers/minecraft',
-				icon: 'mdi-minecraft',
-			},
-		],
-	},
-	{
-		type: 'menu',
-		label: 'Archive',
-		icon: 'mdi-archive',
-		options: [
-			{
-				label: 'File Organizer',
-				href: '/archive/file-organizer',
-				icon: 'mdi-file-document-arrow-right',
-			},
-		],
-	},
-	{
-		type: 'button',
-		icon: 'mdi-card-account-mail',
-		label: 'Contact',
-		href: '/contact',
-	},
-	{
-		type: 'button',
-		icon: 'mdi-hand-coin',
-		label: 'Donate',
-		href: '/donate',
-	},
-]
+	{ immediate: true }
+)
+
+watch(secondSelection, (newVal, oldVal) => {
+	if (oldVal[0] === newVal[0]) {
+		secondDrawer.value = false
+	}
+})
+
+watch(navSelection, (val, oldVal) => {
+	const selected = val[0]
+
+	if (oldVal[0] && !selected) {
+		navSelection.value = oldVal
+		return
+	}
+
+	const expandableSections = ['projects', 'servers', 'archive']
+
+	if (!selected || !expandableSections.includes(selected)) {
+		secondDrawer.value = false
+		drawerItems.value = []
+		return
+	}
+
+	switch (selected) {
+		case 'projects':
+			drawerItems.value = [
+				{
+					title: 'T6 Drone',
+					href: '/projects/t6-drone',
+					icon: 'mdi-quadcopter',
+				},
+				{
+					title: 'Robotic Arm',
+					href: '/projects/robotic-arm',
+					icon: 'mdi-robot-industrial',
+				},
+				{
+					title: 'FileShare',
+					href: '/projects/fileshare',
+					icon: 'mdi-share-variant',
+				},
+				{
+					title: 'Plex Organizer',
+					href: '/projects/plex-organizer',
+					icon: 'mdi-file-document-arrow-right',
+				},
+			]
+			break
+		case 'servers':
+			drawerItems.value = [
+				{
+					title: 'Vanilla Minecraft',
+					href: '/servers/minecraft',
+					icon: 'mdi-minecraft',
+				},
+			]
+			break
+		case 'archive':
+			drawerItems.value = [
+				{
+					title: 'File Organizer',
+					href: '/archive/file-organizer',
+					icon: 'mdi-file-document-arrow-right',
+				},
+			]
+			break
+	}
+
+	secondDrawer.value = drawerItems.value.length > 0
+})
+
+onMounted(() => {
+	document.addEventListener('click', handleGlobalClick, { passive: true })
+	document.addEventListener('touchstart', handleGlobalClick, { passive: true })
+})
+
+function handleMouseEnter() {
+	isRail.value = false
+
+	if (secondDrawer.value) {
+		secondDrawer.value = false
+	}
+}
+
+function handleMouseLeave() {
+	isRail.value = true
+}
+
+function handleSecondClick(val?: string) {
+	secondSelection.value = [val ?? '']
+}
+
+function changeTheme() {
+	toggleTheme()
+	if (isMobile && !fullyExpanded.value) {
+		isRail.value = true
+	}
+}
+
+function eventTargetElement(e: MouseEvent | TouchEvent): Element | null {
+	const t = (e.target as Node) ?? null
+	if (!t) return null
+	return t instanceof Element ? t : t.parentElement
+}
+
+function handleGlobalClick(e: MouseEvent | TouchEvent) {
+	const el = eventTargetElement(e)
+	const insidePrimary = !!(el && el.closest('[data-primary-drawer]'))
+	const insideSecondary = !!(el && el.closest('[data-secondary-drawer]'))
+
+	if (!insidePrimary && !insideSecondary && secondDrawer.value) {
+		secondDrawer.value = false
+	}
+
+	if (!insidePrimary && !insideSecondary) {
+		const parts = router.currentRoute.value.path.split('/')
+		navSelection.value = parts[1] ? [parts[1]] : ['home']
+		secondSelection.value = parts[2] ? [parts[2]] : []
+	}
+}
+
+onBeforeUnmount(() => {
+	document.removeEventListener('click', handleGlobalClick)
+	document.removeEventListener('touchstart', handleGlobalClick)
+})
 </script>
 <style scoped lang="scss">
-.logo-and-title {
-	color: inherit;
-	text-decoration: none;
-	width: 16.563rem;
+.vuetify:hover {
+	filter: drop-shadow(0 0 0.5rem #1697f6);
+}
+
+.vue:hover {
+	filter: drop-shadow(0 0 0.5rem #41b883);
 }
 </style>

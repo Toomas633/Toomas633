@@ -2,6 +2,7 @@
 	<v-row justify="center" class="d-block d-sm-flex">
 		<v-col md="6" lg="5" class="pb-0">
 			<v-carousel
+				color="primary"
 				hide-delimiter-background
 				class="mt-3"
 				style="cursor: zoom-in">
@@ -21,7 +22,7 @@
 		</v-col>
 		<v-col class="pl-0 pr-0">
 			<v-col class="align-content-space-around pl-0">
-				<v-card class="bg-black text-center pa-4">
+				<v-card elevation="4" class="text-center pa-4">
 					<h1>V1</h1>
 					<v-card-text>
 						I recently salvaged a broken controller for joysticks and decided to
@@ -64,8 +65,8 @@
 	</v-row>
 </template>
 <script setup lang="ts">
-import list from '@/assets/images/RoboticArm/V1/list.webp'
-import wiring from '@/assets/images/RoboticArm/V1/wiring.webp'
+import list from '@/assets/images/robotic-arm/v1/list.webp'
+import wiring from '@/assets/images/robotic-arm/v1/wiring.webp'
 import useImageMixin from '@/helpers/imageMixin'
 import { Image } from '@/types/image'
 
