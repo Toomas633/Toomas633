@@ -24,6 +24,8 @@
 		
 	},
 	"include": [
+		"components.d.ts",
+		"typed-router.d.ts",
 		"src/**/*.ts",
 		"src/**/*.d.ts",
 		"src/**/*.vue",
