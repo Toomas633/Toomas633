@@ -53,9 +53,7 @@ const alertEvent = EventType.SHOW_ALERT_MESSAGE
 
 const { timer } = useTimerMixin()
 
-onMounted(() => {
-	EventBus.on(alertEvent, onAlertMessage)
-})
+onMounted(() => EventBus.on(alertEvent, onAlertMessage))
 
 const toggleStackTrace = () => {
 	showStack.value = !showStack.value
@@ -132,9 +130,7 @@ function onAlertMessage(event: PopupMessage) {
 	}
 }
 
-onUnmounted(() => {
-	EventBus.off(alertEvent, onAlertMessage)
-})
+onUnmounted(() => EventBus.off(alertEvent, onAlertMessage))
 </script>
 <style scoped lang="scss">
 .message-popup-desktop {

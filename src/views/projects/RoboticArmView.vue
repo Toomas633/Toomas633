@@ -1,8 +1,8 @@
 <template>
-	<v-container class="px-4 py-1">
+	<v-container>
 		<h1 class="text-center">Robotic Arm</h1>
 		<StatsAndChips :hide-langs="true" repo="arduino-robotic-arm" />
-		<p class="text-center mb-2">
+		<p class="mb-2" :class="!isMobile ? 'text-center' : ''">
 			This is Arduino Uno robotic arm using joystick input. It's my first
 			Arduino project that I have coded completely by myself from the beginning.
 			The arm needs some spare metal or weight in the base for extra heft so it
@@ -37,6 +37,7 @@ import arm from '@/assets/images/robotic-arm/arm.webp'
 import { Image } from '@/types/image'
 import ArmV1 from './RoboticArm/ArmV1.vue'
 import ArmV2 from './RoboticArm/ArmV2.vue'
+import { isMobile } from '@basitcodeenv/vue3-device-detect'
 
 const tab = ref<Tabs>(Tabs.V1)
 const armImage = ref<Image>({

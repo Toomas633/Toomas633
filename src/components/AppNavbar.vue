@@ -13,9 +13,10 @@
 				title="Toomas633's Dungeon"
 				:subtitle="APP_VERSION"
 				value="home"
+				:active="false"
 				to="/" />
 		</v-list>
-		<v-divider />
+		<v-divider class="border-opacity-50" />
 		<v-list
 			v-model:selected="navSelection"
 			color="primary"
@@ -41,7 +42,7 @@
 				value="donate"
 				to="/donate" />
 		</v-list>
-		<v-divider />
+		<v-divider class="border-opacity-50" />
 		<template #append>
 			<div v-if="fullyExpanded" class="text-center">
 				<div class="d-flex justify-center mb-4">
@@ -69,7 +70,7 @@
 					</v-tooltip>
 				</div>
 			</div>
-			<v-divider v-if="fullyExpanded" />
+			<v-divider v-if="fullyExpanded" class="border-opacity-50" />
 			<v-list density="compact" nav>
 				<v-list-item
 					:title="isDark ? 'Switch to light theme' : 'Switch to dark theme'"
@@ -78,7 +79,7 @@
 					"
 					@click="changeTheme" />
 			</v-list>
-			<v-divider v-if="fullyExpanded" />
+			<v-divider v-if="fullyExpanded" class="border-opacity-50" />
 			<v-list
 				v-if="fullyExpanded"
 				v-model:selected="navSelection"
@@ -162,7 +163,7 @@
 import { APP_VERSION, VUE_VERSION, VUETIFY_VERSION } from '@/constants/env'
 import router from '@/router'
 import { MenuItem } from '@/types/menuItem'
-import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import Vue from '@/assets/icons/brands/vue.svg'
 import Vuetify from '@/assets/icons/brands/vuetify.svg'
 import useThemeMixin from '@/helpers/themeMixin'
@@ -177,18 +178,17 @@ const drawerItems = ref<MenuItem[]>([])
 
 let expandTimer: ReturnType<typeof setTimeout> | undefined
 
-const expanded = computed(() => !isRail.value)
-
 const { isDark, toggleTheme } = useThemeMixin()
 
-watch(expanded, (val) => {
-	if (val) {
+watch(isRail, (val) => {
+	if (!val) {
 		if (expandTimer) clearTimeout(expandTimer)
 		expandTimer = setTimeout(() => {
 			fullyExpanded.value = true
 		}, 200)
 	} else {
 		if (expandTimer) clearTimeout(expandTimer)
+		if (!secondDrawer.value) resetSelection()
 		fullyExpanded.value = false
 	}
 })
@@ -226,6 +226,7 @@ watch(navSelection, (val, oldVal) => {
 	const expandableSections = ['projects', 'servers', 'archive']
 
 	if (!selected || !expandableSections.includes(selected)) {
+		isRail.value = true
 		secondDrawer.value = false
 		drawerItems.value = []
 		return
@@ -323,10 +324,14 @@ function handleGlobalClick(e: MouseEvent | TouchEvent) {
 	}
 
 	if (!insidePrimary && !insideSecondary) {
-		const parts = router.currentRoute.value.path.split('/')
-		navSelection.value = parts[1] ? [parts[1]] : ['home']
-		secondSelection.value = parts[2] ? [parts[2]] : []
+		resetSelection()
 	}
+}
+
+function resetSelection() {
+	const parts = router.currentRoute.value.path.split('/')
+	navSelection.value = parts[1] ? [parts[1]] : ['home']
+	secondSelection.value = parts[2] ? [parts[2]] : []
 }
 
 onBeforeUnmount(() => {

@@ -61,15 +61,11 @@ let interval: ReturnType<typeof setInterval>
 const totalSlides = props.images.length
 const sectionWidth = 100 / totalSlides
 
-onMounted(() => {
-	startProgress()
-})
+watch(currentSlide, startProgress)
 
-onUnmounted(() => {
-	if (interval) clearInterval(interval)
-})
+onMounted(startProgress)
 
-const startProgress = () => {
+function startProgress() {
 	if (interval) clearInterval(interval)
 
 	progress.value = currentSlide.value * sectionWidth
@@ -81,9 +77,7 @@ const startProgress = () => {
 	}, 100)
 }
 
-watch(currentSlide, startProgress)
-
-const navigateToImage = (event: MouseEvent) => {
+function navigateToImage(event: MouseEvent) {
 	const element = event?.currentTarget as HTMLElement
 	const rect = element.getBoundingClientRect()
 	const clickX = event.clientX - rect.left
@@ -91,6 +85,10 @@ const navigateToImage = (event: MouseEvent) => {
 	const section = Math.floor((percentage / 100) * props.images.length)
 	currentSlide.value = section
 }
+
+onUnmounted(() => {
+	if (interval) clearInterval(interval)
+})
 </script>
 <style scoped lang="scss">
 .progress-bar-segments {

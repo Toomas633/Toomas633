@@ -45,17 +45,10 @@ h1 {
 /* stylelint-enable selector-class-pattern */
 
 .v-main {
+	height: 100vh;
 	position: relative;
 	overflow: auto;
 	padding-left: 3.438rem;
-}
-
-.desktop {
-	height: calc(100dvh - var(--footer-height) - var(--v-layout-top));
-}
-
-.mobile {
-	height: calc(100dvh - var(--v-layout-top));
 }
 
 .green {
@@ -82,10 +75,18 @@ h1 {
 	flex-wrap: wrap;
 }
 
-pre {
-	background-color: rgb(var(--v-theme-secondary));
+pre,
+mark {
+	background-color: rgb(var(--v-theme-code));
+	color: rgb(var(--v-theme-on-code));
 	overflow-wrap: break-word;
 	white-space: pre-line;
+}
+
+mark {
+	padding-left: 0.25rem;
+	padding-right: 0.25rem;
+	cursor: pointer;
 }
 
 .v-treeview-group {

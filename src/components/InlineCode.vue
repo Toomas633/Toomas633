@@ -33,13 +33,3 @@ const copyCode = async (code: string) => {
 	}
 }
 </script>
-<style scoped lang="scss">
-mark {
-	background-color: rgb(var(--v-theme-secondary));
-	overflow-wrap: break-word;
-	white-space: pre-line;
-	padding-left: 0.25rem;
-	padding-right: 0.25rem;
-	cursor: pointer;
-}
-</style>

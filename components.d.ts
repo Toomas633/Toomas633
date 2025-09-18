@@ -21,7 +21,6 @@ declare module 'vue' {
     LatestReleaseChip: typeof import('./src/components/LatestReleaseChip.vue')['default']
     LicenseChip: typeof import('./src/components/LicenseChip.vue')['default']
     LinkComponent: typeof import('./src/components/LinkComponent.vue')['default']
-    LinkImage: typeof import('./src/components/LinkImage.vue')['default']
     MapComponent: typeof import('./src/components/MapComponent.vue')['default']
     MessagePopup: typeof import('./src/components/MessagePopup.vue')['default']
     PayPalBtn: typeof import('./src/components/PayPalBtn.vue')['default']

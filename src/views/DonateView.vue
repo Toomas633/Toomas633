@@ -1,9 +1,8 @@
 <template>
-	<v-container class="px-4 py-1">
+	<v-container>
 		<h1 class="text-center">For those who wish to help</h1>
 		<p class="text-center">
 			Here are links to support my projects, for any amount you feel like.
-			Everything helps as I am a student who is doing projects on the side.
 		</p>
 		<v-row class="pt-4" justify="center">
 			<v-col xl="3" lg="4" md="5" sm="6">

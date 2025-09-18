@@ -1,10 +1,10 @@
 <template>
-	<v-container class="px-4 py-1">
-		<v-row class="pa-4 d-block d-md-flex" justify="center">
+	<v-container>
+		<v-row class="d-block d-md-flex" justify="center">
 			<v-col class="align-content-space-around" md="12" lg="7">
 				<h1 class="text-center">T6 Drone</h1>
 				<StatsAndChips repo="t6-drone" :hide-langs="true" />
-				<p class="text-center">
+				<p :class="!isMobile ? 'text-center' : ''">
 					This is my first try at building a drone. It started as a schools
 					practical work project for graduation. It is built around DJI F450
 					frame. All the 3D files, including project files and printing files,
@@ -46,7 +46,7 @@
 				</v-row>
 			</v-col>
 		</v-row>
-		<ImageCarosel :images="images" :cover="true" />
+		<ImageCarosel class="my-4" :images="images" :cover="true" />
 	</v-container>
 </template>
 <script setup lang="ts">
@@ -55,6 +55,7 @@ import electronics from '@/assets/images/t6-drone/electronics.webp'
 import model from '@/assets/images/t6-drone/model.webp'
 import complete from '@/assets/images/t6-drone/complete.webp'
 import type { Image } from '@/types/image'
+import { isMobile } from '@basitcodeenv/vue3-device-detect'
 
 const images: Image[] = [
 	{

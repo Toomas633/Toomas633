@@ -1,12 +1,12 @@
 <template>
-	<v-container class="px-4 py-1">
+	<v-container>
 		<h1 class="text-center">File Organizer</h1>
 		<StatsAndChips
 			:hide-langs="true"
 			repo="file-organizer"
 			new-page="Plex Organizer"
 			new-link="/projects/plex-organizer" />
-		<p class="text-center pa-4">
+		<p :class="!isMobile ? 'text-center' : ''">
 			General use file organizer for removing all but the wanted file
 			extensions, moving files out of subfolders and deleting empty folders.
 			Default file is set up for using with Plex for cleaning up torrent
@@ -14,7 +14,7 @@
 			the python script. PS! The code needs a command line argument for the
 			working directory.
 		</p>
-		<p class="text-center">
+		<p :class="!isMobile ? 'text-center' : ''">
 			<b>
 				<i>
 					I AM NOT RESPONSIBLE FOR ANY DATA LOSS UPON WRONG CONFIGURATION OR
@@ -22,7 +22,7 @@
 				</i>
 			</b>
 		</p>
-		<v-row class="pa-4 d-block d-sm-flex" justify="center">
+		<v-row class="d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around mt-3">
 				<StatsAndChips :hide-chips="true" repo="file-organizer" />
 			</v-col>
@@ -34,59 +34,60 @@
 					icon="mdi-github" />
 			</v-col>
 		</v-row>
-		<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
-			<v-col>
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Organizer features</h1>
-					<ul class="ml-4">
-						<li>
-							Log file in the same dir that gets organized called organizer.log
-							(time stamp and operation) (editable in code)
-						</li>
-						<li>
-							Location to the directory containing desired folders for
-							organizing asked as command line argument
-						</li>
-						<li>Removes unwanted files</li>
-						<li>Moves certain files out of subfolders</li>
-						<li>Deletes empty folders</li>
-						<li>
-							Default config for torrenting uses the .!qB extention for not
-							deleting mid download files (check qbittorrent settings for
-							enabling it)
-						</li>
-					</ul>
-				</v-card>
-			</v-col>
-			<v-col>
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Running</h1>
-					<ul class="ml-4">
-						<li>
-							Download with
-							<InlineCode
-								code="sudo wget
+		<v-divider
+			class="mt-4 mb-2 border-opacity-100"
+			thickness="2"
+			color="primary" />
+		<h1 class="text-center mt-4">Organizer features</h1>
+		<ul class="ml-4">
+			<li>
+				Log file in the same dir that gets organized called organizer.log (time
+				stamp and operation) (editable in code)
+			</li>
+			<li>
+				Location to the directory containing desired folders for organizing
+				asked as command line argument
+			</li>
+			<li>Removes unwanted files</li>
+			<li>Moves certain files out of subfolders</li>
+			<li>Deletes empty folders</li>
+			<li>
+				Default config for torrenting uses the .!qB extention for not deleting
+				mid download files (check qbittorrent settings for enabling it)
+			</li>
+		</ul>
+		<v-divider
+			class="mt-4 mb-2 border-opacity-100"
+			thickness="2"
+			color="primary" />
+		<h1 class="text-center">Running</h1>
+		<ul class="ml-4">
+			<li>
+				Download with
+				<InlineCode
+					code="sudo wget
 									https://raw.githubusercontent.com/Toomas633/File-organizer/main/organizer.py" />
-							and place it into the folder you want it to search through (see
-							example below)
-						</li>
-						<li>
-							Run it in the backround while being in the same folder with
-							<InlineCode code="nohup python3 organizer.py <path_to_folder>" />
-						</li>
-						<li>
-							Or run it always after reboot with cron job by adding
-							<InlineCode
-								code="0 * * * * python3 /<path_to_script>/organizer.py
+				and place it into the folder you want it to search through (see example
+				below)
+			</li>
+			<li>
+				Run it in the backround while being in the same folder with
+				<InlineCode code="nohup python3 organizer.py <path_to_folder>" />
+			</li>
+			<li>
+				Or run it always after reboot with cron job by adding
+				<InlineCode
+					code="0 * * * * python3 /<path_to_script>/organizer.py
 									<path_to_folder>" />
-							using <InlineCode code="sudo crontab -e" /> and adding it to the
-							end of the file
-						</li>
-					</ul>
-				</v-card>
-			</v-col>
-		</v-row>
-		<v-row class="pa-4 pt-0 d-block d-sm-flex" justify="center">
+				using <InlineCode code="sudo crontab -e" /> and adding it to the end of
+				the file
+			</li>
+		</ul>
+		<v-divider
+			class="mt-4 mb-2 border-opacity-100"
+			thickness="2"
+			color="primary" />
+		<v-row class="mt-4 d-block d-sm-flex" justify="center">
 			<v-col>
 				<v-card class="pa-4" elevation="4">
 					<h1 class="text-center pb-2">Takes in</h1>
@@ -136,4 +137,5 @@
 <script setup lang="ts">
 import { inputItems, outputItems, fileIcons } from '@/constants/fileOrganizer'
 import { FileType } from '@/enums/fileType'
+import { isMobile } from '@basitcodeenv/vue3-device-detect'
 </script>
