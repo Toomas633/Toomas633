@@ -1,5 +1,26 @@
+###############
+# robots.txt for https://toomas633.com
+# Last updated: 2025-09-23
+# Purpose: Provide clear crawl directives and sitemap location.
+###############
+
+# Default rules for all user agents
 User-agent: *
-Disallow: 
-Crawl-delay: 60
+Allow: /
+
+# (Optional) Explicitly prevent indexing of error page variants
+Disallow: /404.html
+Disallow: /404
+
+# Legacy /cgi-bin path (not used, kept as precaution)
 Disallow: /cgi-bin/
+
+# Crawl-delay is ignored by Google & Bing; omit unless truly needed. Removed to let search engines self-throttle.
+# If you experience server strain from specific bots, add targeted rules like:
+# User-agent: BadBotName
+# Crawl-delay: 10
+
+# Sitemap location
 Sitemap: https://toomas633.com/sitemap.xml
+
+# End of file
