@@ -4,10 +4,12 @@ import MinecraftView from '@/views/servers/MinecraftView.vue'
 import { useHead } from '@vueuse/head'
 import { projectRoutes } from './projects'
 import { mainRoutes } from './main'
+import { demoRoutes } from './demos'
 
 const routes: Array<RouteRecordRaw> = [
 	...mainRoutes,
 	...projectRoutes,
+	...demoRoutes,
 	{
 		path: '/servers/minecraft',
 		component: MinecraftView,

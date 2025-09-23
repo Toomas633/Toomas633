@@ -29,6 +29,10 @@
 				prepend-icon="mdi-controller"
 				title="Game servers"
 				value="servers" />
+			<v-list-item
+				prepend-icon="mdi-play-box-multiple"
+				title="Demos"
+				value="demos" />
 			<v-list-item prepend-icon="mdi-archive" title="Archive" value="archive" />
 			<v-list-item
 				prepend-icon="mdi-card-account-mail"
@@ -219,7 +223,7 @@ watch(navSelection, (val, oldVal) => {
 		return
 	}
 
-	const expandableSections = ['projects', 'servers', 'archive']
+	const expandableSections = ['projects', 'servers', 'demos', 'archive']
 
 	if (!selected || !expandableSections.includes(selected)) {
 		isRail.value = true
@@ -264,6 +268,15 @@ watch(navSelection, (val, oldVal) => {
 					title: 'Vanilla Minecraft',
 					href: '/servers/minecraft',
 					icon: 'mdi-minecraft',
+				},
+			]
+			break
+		case 'demos':
+			drawerItems.value = [
+				{
+					title: 'Student API',
+					href: '/demos/student-api',
+					icon: 'mdi-account-school',
 				},
 			]
 			break
