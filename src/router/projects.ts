@@ -3,6 +3,7 @@ import T6DroneView from '@/views/projects/T6DroneView.vue'
 import RoboticArmView from '@/views/projects/RoboticArmView.vue'
 import FileShareView from '@/views/projects/FileShareView.vue'
 import PlexOrganizerView from '@/views/projects/PlexOrganizerView.vue'
+import XMrigProxyView from '@/views/projects/XMrigProxyView.vue'
 
 export const projectRoutes: Array<RouteRecordRaw> = [
 	{
@@ -38,6 +39,14 @@ export const projectRoutes: Array<RouteRecordRaw> = [
 		meta: {
 			title: 'Plex Organizer',
 			description: 'Plex Organizer.',
+		},
+	},
+	{
+		path: '/projects/xmrig-proxy',
+		component: XMrigProxyView,
+		meta: {
+			title: 'XMRig Proxy',
+			description: 'XMRig Proxy.',
 		},
 	},
 ]

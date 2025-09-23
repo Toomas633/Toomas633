@@ -16,7 +16,6 @@
 				:active="false"
 				to="/" />
 		</v-list>
-		<v-divider class="border-opacity-50" />
 		<v-list
 			v-model:selected="navSelection"
 			color="primary"
@@ -42,7 +41,6 @@
 				value="donate"
 				to="/donate" />
 		</v-list>
-		<v-divider class="border-opacity-50" />
 		<template #append>
 			<div v-if="fullyExpanded" class="text-center">
 				<div class="d-flex justify-center mb-4">
@@ -70,7 +68,6 @@
 					</v-tooltip>
 				</div>
 			</div>
-			<v-divider v-if="fullyExpanded" class="border-opacity-50" />
 			<v-list density="compact" nav>
 				<v-list-item
 					:title="isDark ? 'Switch to light theme' : 'Switch to dark theme'"
@@ -79,7 +76,6 @@
 					"
 					@click="changeTheme" />
 			</v-list>
-			<v-divider v-if="fullyExpanded" class="border-opacity-50" />
 			<v-list
 				v-if="fullyExpanded"
 				v-model:selected="navSelection"
@@ -254,6 +250,11 @@ watch(navSelection, (val, oldVal) => {
 					title: 'Plex Organizer',
 					href: '/projects/plex-organizer',
 					icon: 'mdi-file-document-arrow-right',
+				},
+				{
+					title: 'XMrig Proxy',
+					href: '/projects/xmrig-proxy',
+					icon: 'mdi-currency-btc',
 				},
 			]
 			break

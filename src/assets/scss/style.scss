@@ -13,11 +13,6 @@ h1 {
 }
 
 /* stylelint-disable selector-class-pattern */
-[data-theme='lightTheme'],
-.v-theme--lightTheme {
-	@include meta.load-css('./light');
-}
-
 [data-theme='darkTheme'],
 .v-theme--darkTheme {
 	@include meta.load-css('./dark');
@@ -91,4 +86,12 @@ mark {
 
 .v-treeview-group {
 	margin-left: 0.375rem;
+}
+
+.v-divider {
+	color: black;
+}
+
+.v-table {
+	background: background;
 }

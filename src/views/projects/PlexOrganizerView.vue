@@ -125,10 +125,7 @@ git clean -fd" />
 			To run manually just go to the Plex-Organizer cloned or downloaded folder
 			and run:
 			<InlineCode code="./run.sh <start_directory>" />
-			<v-divider
-				thickness="2"
-				class="border-opacity-100 mt-6 mb-6"
-				color="white" />
+			<v-divider thickness="2" class="border-opacity-100 mt-6 mb-6" />
 			<h2>Automated running</h2>
 			Add this command to qBittorrent options under "Run external program on
 			torrent finished":
@@ -155,7 +152,6 @@ git clean -fd" />
 			thickness="2"
 			class="border-opacity-100 mt-6 mb-6"
 			color="primary" />
-
 		<h1 class="text-center">Configuration</h1>
 		Config.ini is updated and created on run automatically if missing or if
 		updated options added. Will not clear user changes.
