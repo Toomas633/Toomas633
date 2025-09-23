@@ -42,7 +42,7 @@
 			color="primary" />
 
 		<h1 class="text-center">Features</h1>
-		<ul class="ml-4 features-list">
+		<ul class="ml-4 multicolumn">
 			<li>Single file upload</li>
 			<li>Random name toggle</li>
 			<li>Status popups</li>
@@ -275,29 +275,3 @@ const images: Image[] = [
 	},
 ]
 </script>
-
-<style scoped lang="scss">
-.features-list {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(13.125rem, 1fr));
-	gap: 0.25rem 1.125rem;
-	padding-left: 0;
-	list-style: disc outside;
-}
-
-.features-list > li {
-	margin-left: 1rem;
-}
-
-.features-list > li > ul {
-	display: block;
-	padding-left: 1.25rem;
-	margin-top: 0.25rem;
-}
-
-@media (width <= 26.25rem) {
-	.features-list {
-		grid-template-columns: 1fr;
-	}
-}
-</style>

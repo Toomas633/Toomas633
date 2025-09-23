@@ -93,7 +93,7 @@
 					<h1 class="text-center pb-2">Takes in</h1>
 					<v-treeview
 						:items="inputItems"
-						item-key="name"
+						item-key="title"
 						class="bg-secondary"
 						expand-icon="mdi-folder"
 						collapse-icon="mdi-folder-open"
@@ -114,7 +114,7 @@
 					<h1 class="text-center pb-2">Returns</h1>
 					<v-treeview
 						:items="outputItems"
-						item-key="name"
+						item-key="title"
 						class="bg-secondary"
 						expand-icon="mdi-folder"
 						collapse-icon="mdi-folder-open"
@@ -135,7 +135,8 @@
 </template>
 
 <script setup lang="ts">
-import { inputItems, outputItems, fileIcons } from '@/constants/fileOrganizer'
+import { fileIcons } from '@/constants/fileIcons'
+import { inputItems, outputItems } from '@/constants/fileOrganizer'
 import { FileType } from '@/enums/fileType'
 import { isMobile } from '@basitcodeenv/vue3-device-detect'
 </script>

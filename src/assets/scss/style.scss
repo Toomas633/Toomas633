@@ -95,3 +95,27 @@ mark {
 .v-table {
 	background: background;
 }
+
+.multicolumn {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(13.125rem, 1fr));
+	gap: 0.25rem 1.125rem;
+	padding-left: 0;
+	list-style: disc outside;
+}
+
+.multicolumn > li {
+	margin-left: 1rem;
+}
+
+.multicolumn > li > ul {
+	display: block;
+	padding-left: 1.25rem;
+	margin-top: 0.25rem;
+}
+
+@media (width <= 26.25rem) {
+	.multicolumn {
+		grid-template-columns: 1fr;
+	}
+}

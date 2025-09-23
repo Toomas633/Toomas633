@@ -5,7 +5,7 @@
 			v-if="newPage && newLink"
 			:new-page="newPage"
 			:new-link="newLink" />
-		<LatestReleaseChip :repo="repo" />
+		<LatestReleaseChip v-if="!hideVersion" :repo="repo" />
 	</div>
 	<LangGraph v-if="!hideLangs" :repo="repo" />
 </template>
@@ -16,6 +16,7 @@ defineProps<{
 	newLink?: string
 	hideLangs?: boolean
 	hideChips?: boolean
+	hideVersion?: boolean
 }>()
 </script>
 <style scoped lang="scss">

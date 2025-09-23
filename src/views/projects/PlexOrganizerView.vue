@@ -204,7 +204,7 @@ git clean -fd" />
 					<h1 class="text-center pb-2">Takes in</h1>
 					<v-treeview
 						:items="inputItems"
-						item-key="name"
+						item-key="title"
 						class="bg-secondary"
 						expand-icon="mdi-folder"
 						collapse-icon="mdi-folder-open"
@@ -225,7 +225,7 @@ git clean -fd" />
 					<h1 class="text-center pb-2">Returns</h1>
 					<v-treeview
 						:items="outputItems"
-						item-key="name"
+						item-key="title"
 						class="bg-secondary"
 						expand-icon="mdi-folder"
 						collapse-icon="mdi-folder-open"
@@ -246,11 +246,12 @@ git clean -fd" />
 </template>
 
 <script setup lang="ts">
-import { inputItems, outputItems, fileIcons } from '@/constants/plexOrganizer'
+import { inputItems, outputItems } from '@/constants/plexOrganizer'
 import { FileType } from '@/enums/fileType'
 import Example from '@/assets/images/plex-organizer/example.png'
 import useImageMixin from '@/helpers/imageMixin'
 import { isMobile } from '@basitcodeenv/vue3-device-detect'
+import { fileIcons } from '@/constants/fileIcons'
 
 const { openImageInNewTab } = useImageMixin()
 

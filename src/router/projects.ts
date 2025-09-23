@@ -38,7 +38,8 @@ export const projectRoutes: Array<RouteRecordRaw> = [
 		component: PlexOrganizerView,
 		meta: {
 			title: 'Plex Organizer',
-			description: 'Plex Organizer.',
+			description:
+				'Python-based utility designed to help manage and organize media files for Plex Media Server. It automates tasks such as renaming files, deleting unwanted files, moving directories, and cleaning up empty folders.',
 		},
 	},
 	{
@@ -46,7 +47,7 @@ export const projectRoutes: Array<RouteRecordRaw> = [
 		component: XMrigProxyView,
 		meta: {
 			title: 'XMRig Proxy',
-			description: 'XMRig Proxy.',
+			description: 'XMRig Proxy with web server for statistics.',
 		},
 	},
 ]
