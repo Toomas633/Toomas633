@@ -28,8 +28,8 @@
 				<CodeBlock
 					class="overflow-auto height-100"
 					:code="formattedStack"
-					:disable-copy="true"
-					:top-margin="true"
+					disable-copy
+					top-margin
 					style="max-height: 12.688rem" />
 			</v-card-text>
 		</div>

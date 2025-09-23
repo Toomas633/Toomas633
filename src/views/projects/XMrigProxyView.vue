@@ -1,7 +1,7 @@
 <template>
 	<v-container>
 		<h1 class="text-center">XMrig Proxy</h1>
-		<StatsAndChips repo="xmrig-proxy" :hide-langs="true" />
+		<StatsAndChips repo="xmrig-proxy" hide-langs />
 		<p :class="!isMobile ? 'text-center' : ''">
 			Simple ubuntu docker image with the latest XMRig Proxy cloned from
 			<LinkComponent
@@ -11,7 +11,7 @@
 		</p>
 		<v-row class="d-block d-sm-flex my-1" justify="center">
 			<v-col>
-				<StatsAndChips repo="xmrig-proxy" :hide-chips="true" />
+				<StatsAndChips repo="xmrig-proxy" hide-chips />
 			</v-col>
 			<v-col sm="3" md="3" lg="2">
 				<ButtonCard

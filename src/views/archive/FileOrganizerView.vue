@@ -2,7 +2,7 @@
 	<v-container>
 		<h1 class="text-center">File Organizer</h1>
 		<StatsAndChips
-			:hide-langs="true"
+			hide-langs
 			repo="file-organizer"
 			new-page="Plex Organizer"
 			new-link="/projects/plex-organizer" />
@@ -24,7 +24,7 @@
 		</p>
 		<v-row class="d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around mt-3">
-				<StatsAndChips :hide-chips="true" repo="file-organizer" />
+				<StatsAndChips hide-chips repo="file-organizer" />
 			</v-col>
 			<v-col class="align-content-space-around" lg="2" md="3" sm="4" xl="1">
 				<ButtonCard

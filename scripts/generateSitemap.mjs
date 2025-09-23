@@ -3,6 +3,7 @@ import { SitemapStream, streamToPromise } from 'sitemap'
 
 const baseUrl = 'https://toomas633.com'
 const projectPages = ['t6-drone', 'robotic-arm', 'fileshare']
+const demoPages = ['student-api']
 const archivePages = ['file-organizer']
 const serverPages = ['minecraft']
 
@@ -11,6 +12,7 @@ const routes = [
 	...getProjects(),
 	...getServers(),
 	...getArchived(),
+	...getDemos(),
 	{
 		path: '/contact',
 		priority: 0.6,
@@ -78,6 +80,18 @@ function getServers() {
 		paths.push({
 			path: '/servers/' + page,
 			priority: 0.7,
+			lastmod: new Date(),
+		})
+	}
+	return paths
+}
+
+function getDemos() {
+	const paths = []
+	for (const page of demoPages) {
+		paths.push({
+			path: '/demos/' + page,
+			priority: 0.6,
 			lastmod: new Date(),
 		})
 	}

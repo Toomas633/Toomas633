@@ -3,7 +3,7 @@
 		<h1 class="text-center d-flex justify-center align-items-center">
 			Plex Organizer
 		</h1>
-		<StatsAndChips :hide-langs="true" repo="plex-organizer" />
+		<StatsAndChips hide-langs repo="plex-organizer" />
 		<p :class="!isMobile ? 'text-center' : ''">
 			Plex Organizer is a Python-based utility designed to help manage and
 			organize media files for Plex Media Server. It automates tasks such as
@@ -20,7 +20,7 @@
 		</p>
 		<v-row class="d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around mt-3">
-				<StatsAndChips :hide-chips="true" repo="plex-organizer" />
+				<StatsAndChips hide-chips repo="plex-organizer" />
 			</v-col>
 			<v-col class="align-content-space-around" lg="2" md="3" sm="4" xl="1">
 				<ButtonCard

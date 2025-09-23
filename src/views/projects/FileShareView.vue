@@ -1,14 +1,14 @@
 <template>
 	<v-container>
 		<h1 class="text-center">FileShare</h1>
-		<StatsAndChips :hide-langs="true" repo="fileshare" />
+		<StatsAndChips hide-langs repo="fileshare" />
 		<p class="text-center">
 			Easy file sharing website featuring (direct) link generation and delete
 			timer.
 		</p>
 		<v-row class="d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around pt-5">
-				<StatsAndChips :hide-chips="true" repo="fileshare" />
+				<StatsAndChips hide-chips repo="fileshare" />
 			</v-col>
 			<v-col
 				class="align-content-space-around pa-0"
@@ -35,7 +35,7 @@
 				</v-row>
 			</v-col>
 		</v-row>
-		<ImageCarosel class="mt-6" :images="images" :cover="false" />
+		<ImageCarosel class="mt-6" :images="images" />
 		<v-divider
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
@@ -248,7 +248,7 @@
 			download the .yml from
 			<InlineCode
 				code="https://raw.githubusercontent.com/Toomas633/FileShare/main/examples/docker-compose.yml" />
-			and edit it) <CodeBlock :top-margin="true" :code="dockerCompose" />
+			and edit it) <CodeBlock top-margin :code="dockerCompose" />
 		</p>
 	</v-container>
 </template>
