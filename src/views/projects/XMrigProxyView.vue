@@ -31,14 +31,14 @@
 			thickness="2"
 			class="border-opacity-100 mt-6 mb-4"
 			color="primary" />
-		<h1 class="text-center">Running</h1>
+		<LinkableTitle h1 title="Running" centered />
 		<p :class="!isMobile ? 'text-center' : ''">
 			Run the Docker container with the following command, passing the necessary
 			environment variables:
 		</p>
 		<CodeBlock :code="dockerCode" />
 		<v-divider thickness="2" class="border-opacity-100 mt-6 mb-4" />
-		<h2>Dockercompose</h2>
+		<LinkableTitle h2 title="Dockercompose" />
 		<p class="mb-2">Or with <InlineCode code="docker-compose.yml" />:</p>
 		<CodeBlock :code="dockerCompose" />
 		<p class="mt-2">
@@ -48,7 +48,7 @@
 			Port 8080 is optional if you want direct access to XMRig proxy http api.
 		</p>
 		<v-divider thickness="2" class="border-opacity-100 mt-6 mb-4" />
-		<h2>Env variables</h2>
+		<LinkableTitle h2 title="Env variables" />
 		<v-data-table :items="items" hide-default-footer class="rounded" />
 	</v-container>
 </template>

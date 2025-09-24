@@ -23,6 +23,7 @@ declare module 'vue' {
     LangGraph: typeof import('./src/components/LangGraph.vue')['default']
     LatestReleaseChip: typeof import('./src/components/LatestReleaseChip.vue')['default']
     LicenseChip: typeof import('./src/components/LicenseChip.vue')['default']
+    LinkableTitle: typeof import('./src/components/LinkableTitle.vue')['default']
     LinkComponent: typeof import('./src/components/LinkComponent.vue')['default']
     MapComponent: typeof import('./src/components/MapComponent.vue')['default']
     MessagePopup: typeof import('./src/components/MessagePopup.vue')['default']

@@ -33,11 +33,15 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
 	history: createWebHistory(),
 	routes,
+	scrollBehavior(_to, _from, savedPosition) {
+		if (savedPosition) return savedPosition
+		return false
+	},
 })
 
 const defaultTitle = "Toomas633's Dungeon"
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
 	if (!routes.some((route) => route.path === to.path)) {
 		const matchedRoute = routes.find(
 			(route) => route.path.split('/')[2] === to.path.split('/')[2]
@@ -68,6 +72,26 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach((to) => {
 	document.title = to.meta.title?.toString() ?? defaultTitle
+
+	requestAnimationFrame(() => {
+		const scroller = document.querySelector('.v-main') as HTMLElement | null
+
+		if (to.hash) {
+			const raw = to.hash.replace(/^#/, '')
+			const needle = decodeURIComponent(raw).trim().toLowerCase()
+			const target = document.getElementById(needle)
+			if (target) {
+				target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+				return
+			}
+		}
+
+		if (scroller && typeof scroller.scrollTo === 'function') {
+			scroller.scrollTo({ top: 0, left: 0 })
+		} else {
+			window.scrollTo({ top: 0, left: 0 })
+		}
+	})
 })
 
 export default router

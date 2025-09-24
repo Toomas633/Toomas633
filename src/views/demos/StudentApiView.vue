@@ -22,7 +22,7 @@
 			thickness="2"
 			class="border-opacity-100 mt-6 mb-4"
 			color="primary" />
-		<h1 class="text-center">Features</h1>
+		<LinkableTitle h1 title="Features" centered />
 		<ul class="ml-4 multicolumn">
 			<li>
 				<b>CRUD Operations:</b> Create, Read, Update, and Delete students.
@@ -40,8 +40,8 @@
 			thickness="2"
 			class="border-opacity-100 mt-6 mb-4"
 			color="primary" />
-		<h1 class="text-center">Running</h1>
-		<h2>Installation</h2>
+		<LinkableTitle h1 title="Running" centered />
+		<LinkableTitle h2 title="Installation" />
 		<p>
 			1. Clone the repository from GitHub:
 			<InlineCode
@@ -49,7 +49,7 @@
 			2. Install dependencies by running <InlineCode code="yarn install" />.
 		</p>
 		<v-divider thickness="2" class="border-opacity-100 mt-6 mb-4" />
-		<h2>Scripts</h2>
+		<LinkableTitle h2 title="Scripts" />
 		<p>
 			The following yarn scripts are available defined in
 			<InlineCode code="package.json" />:
@@ -81,8 +81,8 @@
 			thickness="2"
 			class="border-opacity-100 mt-6 mb-4"
 			color="primary" />
-		<h1 class="text-center">API Endpoints</h1>
-		<h3>Base URL: <LinkComponent href="http://localhost:3000" /></h3>
+		<LinkableTitle h1 title="API endpoints" centered />
+		<p><b>Base URL:</b> <LinkComponent href="http://localhost:3000" /></p>
 		<p><b>Students</b></p>
 		<ul class="ml-4 mb-4">
 			<li>
@@ -116,11 +116,11 @@
 			class="border-opacity-100 mt-6 mb-4"
 			color="primary" />
 		<v-card class="pa-4" elevation="4">
-			<h1 class="text-center pb-2">Project structure</h1>
+			<LinkableTitle h1 title="Project structure" centered />
 			<v-treeview
 				:items="structure"
 				item-value="title"
-				class="bg-secondary"
+				class="bg-secondary mt-2"
 				expand-icon="mdi-folder"
 				collapse-icon="mdi-folder-open"
 				density="compact"

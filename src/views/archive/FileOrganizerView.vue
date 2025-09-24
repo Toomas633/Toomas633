@@ -38,7 +38,7 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<h1 class="text-center mt-4">Organizer features</h1>
+		<LinkableTitle h1 title="Features" centered />
 		<ul class="ml-4">
 			<li>
 				Log file in the same dir that gets organized called organizer.log (time
@@ -60,7 +60,7 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<h1 class="text-center">Running</h1>
+		<LinkableTitle h1 title="Running" centered />
 		<ul class="ml-4">
 			<li>
 				Download with

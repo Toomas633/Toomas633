@@ -34,7 +34,7 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<h1 class="text-center">Features</h1>
+		<LinkableTitle h1 title="Features" centered />
 		<ul class="ml-4">
 			<li>
 				<b>Torrent Removal:</b>
@@ -74,7 +74,7 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<h1 class="text-center">Installation</h1>
+		<LinkableTitle h1 title="Installation" centered />
 		<ul class="ml-4">
 			<li>
 				Python 3.x and dependencies listed in
@@ -101,7 +101,7 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<h1 class="text-center">Update</h1>
+		<LinkableTitle h1 title="Update" centered />
 		<ul class="ml-4">
 			<li>
 				To update to the latest version just run
@@ -119,14 +119,14 @@ git clean -fd" />
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<h1 class="text-center">Usage</h1>
+		<LinkableTitle h1 title="Usage" centered />
 		<ul class="ml-4">
-			<h2>Manual running</h2>
+			<LinkableTitle h2 title="Manual running" />
 			To run manually just go to the Plex-Organizer cloned or downloaded folder
 			and run:
 			<InlineCode code="./run.sh <start_directory>" />
 			<v-divider thickness="2" class="border-opacity-100 mt-6 mb-6" />
-			<h2>Automated running</h2>
+			<LinkableTitle h2 title="Automated running" />
 			Add this command to qBittorrent options under "Run external program on
 			torrent finished":
 			<br />
@@ -152,7 +152,7 @@ git clean -fd" />
 			thickness="2"
 			class="border-opacity-100 mt-6 mb-6"
 			color="primary" />
-		<h1 class="text-center">Configuration</h1>
+		<LinkableTitle h1 title="Configuration" centered />
 		Config.ini is updated and created on run automatically if missing or if
 		updated options added. Will not clear user changes.
 		<ul class="ml-4 mb-4">

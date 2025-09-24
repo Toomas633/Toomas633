@@ -40,8 +40,7 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-
-		<h1 class="text-center">Features</h1>
+		<LinkableTitle h1 centered title="Features" />
 		<ul class="ml-4 multicolumn">
 			<li>Single file upload</li>
 			<li>Random name toggle</li>
@@ -73,7 +72,7 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<h1 class="text-center">Running instructions</h1>
+		<LinkableTitle h1 centered title="Running instructions" />
 		<ul class="ml-4">
 			<li>Install PHP and Python (and add to system path on windows)</li>
 			<li>
@@ -103,7 +102,7 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<h1 class="text-center">Requirements</h1>
+		<LinkableTitle h1 centered title="Requirements" />
 		<ul class="ml-4">
 			<li>
 				Make sure you have PHP installed on your local machine. You can check
@@ -154,7 +153,7 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<h1 class="text-center">Debian service</h1>
+		<LinkableTitle h1 centered title="Debian service" />
 		<ul class="ml-4">
 			<li>
 				Create a new systemd service file for your PHP website by running the
@@ -196,7 +195,7 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<h1 class="text-center">Windows</h1>
+		<LinkableTitle h1 centered title="Windows" />
 		<ul class="ml-4">
 			<li>
 				Enable running the website in the background (or just double click to
@@ -241,7 +240,7 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<h1 class="text-center">Docker</h1>
+		<LinkableTitle h1 centered title="Docker" />
 		<p class="text-center">
 			Create a <InlineCode code="docker-compose.yml" />, copy the contents under
 			here and run it with <InlineCode code="docker-compose up -d" /> (or
