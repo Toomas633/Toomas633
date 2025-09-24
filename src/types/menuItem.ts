@@ -3,4 +3,5 @@ export interface MenuItem {
 	subtitle?: string
 	href?: string
 	icon?: string
+	external?: boolean
 }

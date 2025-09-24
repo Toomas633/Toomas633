@@ -151,7 +151,8 @@
 				v-for="item in drawerItems"
 				:key="item.title"
 				:value="item.href?.split('/')[2]"
-				:to="item.href"
+				:to="!item.external ? item.href : undefined"
+				:href="item.external ? item.href : undefined"
 				:title="item.title"
 				:subtitle="item.subtitle"
 				:prepend-icon="item.icon"
@@ -277,6 +278,12 @@ watch(navSelection, (val, oldVal) => {
 					title: 'Student API',
 					href: '/demos/student-api',
 					icon: 'mdi-account-school',
+				},
+				{
+					title: 'TalTech',
+					href: 'https://github.com/Toomas633?tab=repositories&q=TalTech&type=&language=&sort=',
+					icon: 'mdi-school',
+					external: true,
 				},
 			]
 			break
