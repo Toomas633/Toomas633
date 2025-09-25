@@ -33,8 +33,8 @@ const buttonClass = computed(() => {
 </script>
 <style scoped lang="scss">
 .top-right {
-	top: 3rem;
-	right: 0.5rem;
+	top: 0.313rem;
+	right: 0.313rem;
 }
 
 .hover {

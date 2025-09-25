@@ -247,7 +247,7 @@
 			download the .yml from
 			<InlineCode
 				code="https://raw.githubusercontent.com/Toomas633/FileShare/main/examples/docker-compose.yml" />
-			and edit it) <CodeBlock top-margin :code="dockerCompose" />
+			and edit it) <CodeBlock :code="dockerCompose" />
 		</p>
 	</v-container>
 </template>
