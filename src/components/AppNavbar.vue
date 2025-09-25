@@ -169,6 +169,11 @@ import Vue from '@/assets/icons/brands/vue.svg'
 import Vuetify from '@/assets/icons/brands/vuetify.svg'
 import useThemeMixin from '@/helpers/themeMixin'
 import { isMobile } from '@basitcodeenv/vue3-device-detect'
+import { projectRoutes } from '@/router/projects'
+import { demoRoutes } from '@/router/demos'
+import { RouteRecord } from '@/types/route'
+import { archiveRoutes } from '@/router/archive'
+import { serversRoutes } from '@/router/servers'
 
 const isRail = ref(true)
 const fullyExpanded = ref(false)
@@ -235,60 +240,18 @@ watch(navSelection, (val, oldVal) => {
 
 	switch (selected) {
 		case 'projects':
-			drawerItems.value = [
-				{
-					title: 'T6 Drone',
-					href: '/projects/t6-drone',
-					icon: 'mdi-quadcopter',
-				},
-				{
-					title: 'Robotic Arm',
-					href: '/projects/robotic-arm',
-					icon: 'mdi-robot-industrial',
-				},
-				{
-					title: 'FileShare',
-					href: '/projects/fileshare',
-					icon: 'mdi-share-variant',
-				},
-				{
-					title: 'Plex Organizer',
-					href: '/projects/plex-organizer',
-					icon: 'mdi-file-document-arrow-right',
-				},
-				{
-					title: 'XMrig Proxy',
-					href: '/projects/xmrig-proxy',
-					icon: 'mdi-currency-btc',
-				},
-			]
+			drawerItems.value = projectRoutes.map((route) =>
+				mapRouteToMenuItem(route)
+			)
 			break
 		case 'servers':
-			drawerItems.value = [
-				{
-					title: 'Vanilla Minecraft',
-					href: '/servers/minecraft',
-					icon: 'mdi-minecraft',
-				},
-			]
+			drawerItems.value = serversRoutes.map((route) =>
+				mapRouteToMenuItem(route)
+			)
 			break
 		case 'demos':
 			drawerItems.value = [
-				{
-					title: 'Student API',
-					href: '/demos/student-api',
-					icon: 'mdi-account-school',
-				},
-				{
-					title: 'Contact API',
-					href: '/demos/contact-api',
-					icon: 'mdi-card-account-mail',
-				},
-				{
-					title: 'Click Counter',
-					href: '/demos/click-counter',
-					icon: 'mdi-cursor-pointer',
-				},
+				...demoRoutes.map((route) => mapRouteToMenuItem(route)),
 				{
 					title: 'TalTech',
 					href: 'https://github.com/Toomas633?tab=repositories&q=TalTech&type=&language=&sort=',
@@ -298,13 +261,9 @@ watch(navSelection, (val, oldVal) => {
 			]
 			break
 		case 'archive':
-			drawerItems.value = [
-				{
-					title: 'File Organizer',
-					href: '/archive/file-organizer',
-					icon: 'mdi-file-document-arrow-right',
-				},
-			]
+			drawerItems.value = archiveRoutes.map((route) =>
+				mapRouteToMenuItem(route)
+			)
 			break
 	}
 
@@ -363,6 +322,14 @@ function resetSelection() {
 	const parts = router.currentRoute.value.path.split('/')
 	navSelection.value = parts[1] ? [parts[1]] : ['home']
 	secondSelection.value = parts[2] ? [parts[2]] : []
+}
+
+function mapRouteToMenuItem(route: RouteRecord): MenuItem {
+	return {
+		title: route.meta.title,
+		href: route.path,
+		icon: route.meta.icon ?? 'mdi-folder',
+	} as MenuItem
 }
 
 onBeforeUnmount(() => {

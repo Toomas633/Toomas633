@@ -2,7 +2,13 @@ import { createWriteStream } from 'fs'
 import { SitemapStream, streamToPromise } from 'sitemap'
 
 const baseUrl = 'https://toomas633.com'
-const projectPages = ['t6-drone', 'robotic-arm', 'fileshare']
+const projectPages = [
+	't6-drone',
+	'robotic-arm',
+	'fileshare',
+	'plex-organizer',
+	'xmrig-proxy',
+]
 const demoPages = ['student-api', 'contact-api', 'click-counter']
 const archivePages = ['file-organizer']
 const serverPages = ['minecraft']

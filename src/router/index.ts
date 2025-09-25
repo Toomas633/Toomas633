@@ -1,38 +1,23 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import FileOrganizerView from '@/views/archive/FileOrganizerView.vue'
-import MinecraftView from '@/views/servers/MinecraftView.vue'
 import { useHead } from '@vueuse/head'
 import { projectRoutes } from './projects'
 import { mainRoutes } from './main'
 import { demoRoutes } from './demos'
+import { archiveRoutes } from './archive'
+import { RouteRecord } from '@/types/route'
+import { serversRoutes } from './servers'
 
-const routes: Array<RouteRecordRaw> = [
+const routes: Array<RouteRecord> = [
 	...mainRoutes,
 	...projectRoutes,
 	...demoRoutes,
-	{
-		path: '/servers/minecraft',
-		component: MinecraftView,
-		meta: {
-			title: 'Minecraft server',
-			description:
-				'Explore the detailed status and statistics of your Minecraft server with our interactive dashboard. View server status, player information, and server statistics, and check out real-time server maps and plugin lists. Stay updated with live data and intuitive UI features.',
-		},
-	},
-	{
-		path: '/archive/file-organizer',
-		component: FileOrganizerView,
-		meta: {
-			title: 'File Organizer',
-			description:
-				'Manage your files effortlessly with this versatile organizer script. Remove unwanted files, move specific files from subfolders, and delete empty folders. Ideal for Plex and torrent downloads, with customizable extensions. Find the code and setup instructions on GitHub.',
-		},
-	},
+	...archiveRoutes,
+	...serversRoutes,
 ]
 
 const router = createRouter({
 	history: createWebHistory(),
-	routes,
+	routes: routes as unknown as Array<RouteRecordRaw>,
 	scrollBehavior(_to, _from, savedPosition) {
 		if (savedPosition) return savedPosition
 		return false
