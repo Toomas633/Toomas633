@@ -3,7 +3,7 @@ import { SitemapStream, streamToPromise } from 'sitemap'
 
 const baseUrl = 'https://toomas633.com'
 const projectPages = ['t6-drone', 'robotic-arm', 'fileshare']
-const demoPages = ['student-api']
+const demoPages = ['student-api', 'contact-api']
 const archivePages = ['file-organizer']
 const serverPages = ['minecraft']
 

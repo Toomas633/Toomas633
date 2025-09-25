@@ -280,6 +280,11 @@ watch(navSelection, (val, oldVal) => {
 					icon: 'mdi-account-school',
 				},
 				{
+					title: 'Contact API',
+					href: '/demos/contact-api',
+					icon: 'mdi-card-account-mail',
+				},
+				{
 					title: 'TalTech',
 					href: 'https://github.com/Toomas633?tab=repositories&q=TalTech&type=&language=&sort=',
 					icon: 'mdi-school',
