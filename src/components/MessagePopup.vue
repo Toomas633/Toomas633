@@ -2,7 +2,7 @@
 	<v-card
 		v-show="showPopup"
 		:color="color"
-		class="position-fixed"
+		class="position-fixed z-top"
 		:class="isDesktop ? 'message-popup-desktop' : 'message-popup-mobile'">
 		<div class="d-flex" style="justify-content: space-between">
 			<v-card-title class="d-inline-block">
@@ -24,12 +24,11 @@
 				</v-icon>
 				<span>Stack Trace</span>
 			</v-btn>
-			<v-card-text v-if="showStack" class="pa-2 overflow-auto mt-n5">
+			<v-card-text v-if="showStack" class="pa-2 overflow-auto mt-n3">
 				<CodeBlock
 					class="overflow-auto height-100"
 					:code="formattedStack"
-					:disable-copy="true"
-					:top-margin="true"
+					disable-copy
 					style="max-height: 12.688rem" />
 			</v-card-text>
 		</div>
@@ -53,9 +52,7 @@ const alertEvent = EventType.SHOW_ALERT_MESSAGE
 
 const { timer } = useTimerMixin()
 
-onMounted(() => {
-	EventBus.on(alertEvent, onAlertMessage)
-})
+onMounted(() => EventBus.on(alertEvent, onAlertMessage))
 
 const toggleStackTrace = () => {
 	showStack.value = !showStack.value
@@ -132,14 +129,12 @@ function onAlertMessage(event: PopupMessage) {
 	}
 }
 
-onUnmounted(() => {
-	EventBus.off(alertEvent, onAlertMessage)
-})
+onUnmounted(() => EventBus.off(alertEvent, onAlertMessage))
 </script>
 <style scoped lang="scss">
 .message-popup-desktop {
 	right: calc(0.5rem + var(--scrollbar-offset)) !important;
-	bottom: calc(var(--footer-height) + 0.25rem) !important;
+	bottom: 0.5rem !important;
 	min-width: 20rem;
 	min-height: 5rem;
 	max-width: 37rem;
@@ -147,8 +142,8 @@ onUnmounted(() => {
 }
 
 .message-popup-mobile {
-	right: 0;
-	bottom: var(--footer-height);
-	max-width: 100%;
+	right: 0.25rem !important;
+	bottom: 0.25rem !important;
+	max-width: calc(100% - 0.5rem);
 }
 </style>

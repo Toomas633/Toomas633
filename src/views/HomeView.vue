@@ -1,26 +1,44 @@
 <template>
-	<v-container class="px-4 py-1">
-		<v-row class="pa-4 d-block d-sm-flex" justify="center">
+	<v-container>
+		<h1 class="text-center">About me</h1>
+		<p :class="!isMobile ? 'text-center' : ''">
+			I'm a hobbyist who loves robots, space, video games, tech, cars and 3D
+			printing. <br />
+			From early in my life, I was salvaging and repairing old electronics and
+			worked with LEGO Mindstorms and Technics, Arduinos and have thus started
+			making projects of my own.
+		</p>
+		<v-row class="mb-4 d-block d-sm-flex" justify="center">
 			<v-col class="align-content-space-around">
-				<h1 class="text-center">About me</h1>
-				<p class="text-center">
-					I'm a hobbyist who loves robots, space, video games, tech, cars and 3D
-					printing. Currently going to
-					<LinkComponent href="https://taltech.ee/en/" text="TalTech" />
-					university learning cyber-physical systems and working as a full time
-					dev (Vue, Angular).<br />From early in my life, I was salvaging and
-					repairing old electronics and worked with LEGO Mindstorms and
-					Technics. I recently picked up Arduinos and have started making
-					projects of my own. All my projects are licenced under
-					<LinkComponent
-						href="https://www.tldrlegal.com/license/gnu-general-public-license-v3-gpl-3"
-						text="GPL-3" />
-					or
-					<LinkComponent
-						href="https://choosealicense.com/licenses/cern-ohl-s-2.0/#"
-						text="CERN OHL v2" />
-					and are free to be used by anyone.
-				</p>
+				<v-list class="bg-transparent" density="compact">
+					<v-list-item
+						title="Bachelor of Science in Engineering"
+						subtitle="Smart Systems and Applied Information Technology (Cyber-Physical Systems)">
+						<template #prepend>
+							<v-icon>mdi-school</v-icon>
+						</template>
+					</v-list-item>
+					<v-list-item
+						title="Junior DevOps Engineer"
+						subtitle="Angular, Vue, Spring, k8s">
+						<template #prepend>
+							<v-icon>mdi-briefcase</v-icon>
+						</template>
+					</v-list-item>
+					<v-list-item subtitle="Software, Hardware (3D)">
+						<template #prepend>
+							<v-icon>mdi-license</v-icon>
+						</template>
+						<template #title>
+							<LinkComponent
+								href="https://www.tldrlegal.com/license/gnu-general-public-license-v3-gpl-3"
+								text="GPL-3" />,
+							<LinkComponent
+								href="https://choosealicense.com/licenses/cern-ohl-s-2.0/#"
+								text="CERN OHL v2" />
+						</template>
+					</v-list-item>
+				</v-list>
 			</v-col>
 			<v-col
 				class="align-content-space-around pa-0"
@@ -47,198 +65,26 @@
 				</v-row>
 			</v-col>
 		</v-row>
-		<v-row class="pa-4 d-block d-sm-flex">
-			<v-col sm="1" md="4">
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Programming</h1>
-					<div class="d-flex flex-wrap justify-center text-center">
-						<LinkImage href="https://www.cprogramming.com/" :src="C" alt="C" />
-						<LinkImage href="https://www.java.com/" :src="Java" alt="Java" />
-						<LinkImage
-							href="https://www.python.org/"
-							:src="Python"
-							alt="Python" />
-						<LinkImage href="https://www.php.net/" :src="PHP" alt="PHP" />
-						<LinkImage
-							href="https://www.javascript.com/"
-							:src="JS"
-							alt="JavaScript" />
-						<LinkImage
-							href="https://www.typescriptlang.org/"
-							:src="TS"
-							alt="TypeScript" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col sm="1" md="4">
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Backend</h1>
-					<div class="d-flex flex-wrap justify-center text-center">
-						<LinkImage
-							href="https://www.nginx.com/"
-							:src="Nginx"
-							:src-dark="NginxDark"
-							alt="Nginx"
-							width="152" />
-						<LinkImage href="https://spring.io/" :src="Spring" alt="Spring" />
-						<LinkImage
-							href="https://nodejs.org/"
-							:src="NodeJS"
-							alt="Node.js"
-							width="98" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col sm="1" md="4">
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Frontend</h1>
-					<div class="d-flex flex-wrap justify-center text-center">
-						<LinkImage href="https://vuejs.org/" :src="Vue" alt="Vue" />
-						<LinkImage
-							href="https://vuetifyjs.com/"
-							:src="Vuetify"
-							alt="Vuetify" />
-						<LinkImage
-							href="https://angular.io/"
-							:src="Angular"
-							alt="Angular" />
-						<LinkImage href="https://sass-lang.com/" :src="Sass" alt="Sass" />
-						<LinkImage
-							href="https://wordpress.com/"
-							:src="Wordpress"
-							alt="Wordpress" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col sm="1" md="4">
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Devops</h1>
-					<div class="d-flex flex-wrap justify-center text-center">
-						<LinkImage
-							href="https://www.gnu.org/software/bash/"
-							:src="Bash"
-							:src-dark="BashDark"
-							alt="Bash" />
-						<LinkImage
-							href="https://www.docker.com/"
-							:src="Docker"
-							alt="Docker" />
-						<LinkImage href="https://k3s.io/" :src="K3S" alt="K3S" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col sm="1" md="4">
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">3D</h1>
-					<div class="d-flex flex-wrap justify-center text-center">
-						<LinkImage
-							href="https://www.blender.org/"
-							:src="Blender"
-							alt="Blender" />
-						<LinkImage
-							href="https://www.sketchup.com/"
-							:src="SketchUp"
-							alt="SketchUp" />
-						<LinkImage
-							href="https://solidedge.siemens.com/en/"
-							:src="SolidEdge"
-							alt="Solid Edge" />
-						<LinkImage
-							href="https://ultimaker.com/software/ultimaker-cura"
-							:src="Cura"
-							alt="Cura" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col sm="1" md="4">
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Databases</h1>
-					<div class="d-flex flex-wrap justify-center text-center">
-						<LinkImage href="https://www.mysql.com/" :src="MySQL" alt="MySQL" />
-						<LinkImage
-							href="https://sqlite.org/index.html"
-							:src="SQLite"
-							alt="SQLite3" />
-						<LinkImage
-							href="https://www.postgresql.org/"
-							:src="PostgreSQL"
-							alt="PostgreSQL" />
-						<LinkImage
-							href="https://www.oracle.com/database/"
-							:src="Oracle"
-							alt="Oracle" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col sm="1" md="4">
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Cloud</h1>
-					<div class="d-flex flex-wrap justify-center text-center">
-						<LinkImage
-							href="https://aws.amazon.com/"
-							:src="AWS"
-							alt="AWS"
-							width="99" />
-						<LinkImage
-							href="https://www.oracle.com/cloud/"
-							:src="OracleCloud"
-							alt="Oracle Cloud"
-							width="115" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col sm="1" md="4">
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Visualization</h1>
-					<div class="d-flex flex-wrap justify-center text-center">
-						<LinkImage
-							href="https://grafana.com/"
-							:src="Grafana"
-							alt="Grafana" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col sm="1" md="4">
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Hardware</h1>
-					<div class="d-flex flex-wrap justify-center text-center">
-						<LinkImage
-							href="https://www.raspberrypi.org/"
-							:src="RPi"
-							alt="Raspberry Pi" />
-						<LinkImage
-							href="https://www.arduino.cc/"
-							:src="Arduino"
-							alt="Arduino" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col sm="1" md="6">
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Op systems</h1>
-					<div class="d-flex flex-wrap justify-center text-center">
-						<LinkImage
-							href="https://www.microsoft.com/en-us/windows"
-							:src="Windows"
-							alt="Windows" />
-						<LinkImage href="https://ubuntu.com/" :src="Ubuntu" alt="Ubuntu" />
-					</div>
-				</v-card>
-			</v-col>
-			<v-col sm="1" md="6">
-				<v-card class="pa-4 h-100" elevation="4">
-					<h1 class="text-center">Version control</h1>
-					<div class="d-flex flex-wrap justify-center text-center">
-						<LinkImage href="https://git-scm.com/" :src="Git" alt="Git" />
-						<LinkImage
-							href="https://maven.apache.org/"
-							:src="Maven"
-							alt="Maven" />
-						<LinkImage href="https://gradle.org/" :src="Gradle" alt="Gradle" />
-					</div>
-				</v-card>
-			</v-col>
-		</v-row>
+		<div
+			v-for="item in items"
+			:key="item.title"
+			class="d-flex flex-wrap align-center pa-1">
+			<h1 class="mr-2">{{ item.title }}:</h1>
+			<a
+				v-for="icon in item.icons"
+				:key="icon.alt"
+				:href="icon.href"
+				target="_blank"
+				rel="noopener">
+				<v-img
+					class="ma-2"
+					:src="isDark && icon.srcDark ? icon.srcDark : icon.src"
+					:alt="icon.alt"
+					:height="icon.height ?? 45"
+					:width="icon.width ?? 45" />
+			</a>
+			<v-divider color="primary" class="border-opacity-100" />
+		</div>
 	</v-container>
 </template>
 <script setup lang="ts">
@@ -252,6 +98,7 @@ import Nginx from '@icons/nginx.svg'
 import NginxDark from '@icons/nginx-dark.svg'
 import Spring from '@icons/spring.svg'
 import NodeJS from '@icons/nodejs.svg'
+import NodeJsDark from '@icons/nodejs-dark.svg'
 import Vue from '@icons/vue.svg'
 import Vuetify from '@icons/vuetify.svg'
 import Angular from '@icons/angular.svg'
@@ -279,4 +126,161 @@ import Ubuntu from '@icons/ubuntu.svg'
 import Git from '@icons/git.svg'
 import Maven from '@icons/maven.svg'
 import Gradle from '@icons/gradle.svg'
+import type { LinkImage } from '@/types/image'
+import useThemeMixin from '@/helpers/themeMixin'
+import { isMobile } from '@basitcodeenv/vue3-device-detect'
+
+const { isDark } = useThemeMixin()
+
+const items: { title: string; icons: LinkImage[] }[] = [
+	{
+		title: 'Programming',
+		icons: [
+			{ href: 'https://www.cprogramming.com/', src: C, alt: 'C' },
+			{ href: 'https://www.java.com/', src: Java, alt: 'Java' },
+			{ href: 'https://www.python.org/', src: Python, alt: 'Python' },
+			{ href: 'https://www.php.net/', src: PHP, alt: 'PHP' },
+			{ href: 'https://www.javascript.com/', src: JS, alt: 'JavaScript' },
+			{ href: 'https://www.typescriptlang.org/', src: TS, alt: 'TypeScript' },
+		],
+	},
+	{
+		title: 'Backend',
+		icons: [
+			{
+				href: 'https://www.nginx.com/',
+				src: Nginx,
+				srcDark: NginxDark,
+				alt: 'Nginx',
+				width: '113',
+			},
+			{ href: 'https://spring.io/', src: Spring, alt: 'Spring' },
+			{
+				href: 'https://nodejs.org/',
+				src: NodeJS,
+				srcDark: NodeJsDark,
+				alt: 'Node.js',
+				width: '73',
+			},
+		],
+	},
+	{
+		title: 'Frontend',
+		icons: [
+			{ href: 'https://vuejs.org/', src: Vue, alt: 'Vue' },
+			{ href: 'https://vuetifyjs.com/', src: Vuetify, alt: 'Vuetify' },
+			{ href: 'https://angular.io/', src: Angular, alt: 'Angular' },
+			{ href: 'https://sass-lang.com/', src: Sass, alt: 'Sass' },
+			{ href: 'https://wordpress.com/', src: Wordpress, alt: 'Wordpress' },
+		],
+	},
+	{
+		title: 'Devops',
+		icons: [
+			{
+				href: 'https://www.gnu.org/software/bash/',
+				src: Bash,
+				srcDark: BashDark,
+				alt: 'Bash',
+			},
+			{ href: 'https://www.docker.com/', src: Docker, alt: 'Docker' },
+			{ href: 'https://k3s.io/', src: K3S, alt: 'K3S' },
+		],
+	},
+	{
+		title: '3D',
+		icons: [
+			{ href: 'https://www.blender.org/', src: Blender, alt: 'Blender' },
+			{ href: 'https://www.sketchup.com/', src: SketchUp, alt: 'SketchUp' },
+			{
+				href: 'https://solidedge.siemens.com/en/',
+				src: SolidEdge,
+				alt: 'Solid Edge',
+			},
+			{
+				href: 'https://ultimaker.com/software/ultimaker-cura',
+				src: Cura,
+				alt: 'Cura',
+			},
+		],
+	},
+	{
+		title: 'Databases',
+		icons: [
+			{ href: 'https://www.mysql.com/', src: MySQL, alt: 'MySQL' },
+			{ href: 'https://sqlite.org/index.html', src: SQLite, alt: 'SQLite3' },
+			{
+				href: 'https://www.postgresql.org/',
+				src: PostgreSQL,
+				alt: 'PostgreSQL',
+			},
+			{ href: 'https://www.oracle.com/database/', src: Oracle, alt: 'Oracle' },
+		],
+	},
+	{
+		title: 'Cloud',
+		icons: [
+			{ href: 'https://aws.amazon.com/', src: AWS, alt: 'AWS', width: '74' },
+			{
+				href: 'https://www.oracle.com/cloud/',
+				src: OracleCloud,
+				alt: 'Oracle Cloud',
+				width: '85',
+			},
+		],
+	},
+	{
+		title: 'Visualization',
+		icons: [{ href: 'https://grafana.com/', src: Grafana, alt: 'Grafana' }],
+	},
+	{
+		title: 'Hardware',
+		icons: [
+			{
+				href: 'https://www.raspberrypi.org/',
+				src: RPi,
+				alt: 'Raspberry Pi',
+			},
+			{ href: 'https://www.arduino.cc/', src: Arduino, alt: 'Arduino' },
+		],
+	},
+	{
+		title: 'Op systems',
+		icons: [
+			{
+				href: 'https://www.microsoft.com/en-us/windows',
+				src: Windows,
+				alt: 'Windows',
+			},
+			{ href: 'https://ubuntu.com/', src: Ubuntu, alt: 'Ubuntu' },
+		],
+	},
+	{
+		title: 'Version control',
+		icons: [
+			{ href: 'https://git-scm.com/', src: Git, alt: 'Git' },
+			{ href: 'https://maven.apache.org/', src: Maven, alt: 'Maven' },
+			{ href: 'https://gradle.org/', src: Gradle, alt: 'Gradle' },
+		],
+	},
+]
 </script>
+<style scoped lang="scss">
+.mdi-school,
+.mdi-briefcase,
+.mdi-license {
+	opacity: 1;
+}
+
+.mdi-school {
+	color: sandybrown;
+}
+
+.mdi-briefcase {
+	color: darkcyan;
+}
+
+.mdi-license {
+	color: orange;
+}
+</style>

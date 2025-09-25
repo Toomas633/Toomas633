@@ -4,9 +4,10 @@ import vue from '@vitejs/plugin-vue'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import compression from 'vite-plugin-compression'
 import zlib from 'zlib'
-import viteImagemin from 'vite-plugin-imagemin'
+import imagemin from 'unplugin-imagemin/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import Components from 'unplugin-vue-components/vite'
+import { createSitemapPlugin } from './plugins/sitemap-plugin'
 import pkg from './package.json'
 
 interface PkgJson {
@@ -38,19 +39,20 @@ export default defineConfig((): import('vite').UserConfig => {
 					},
 				},
 			}),
-			viteImagemin({
-				gifsicle: { optimizationLevel: 7 },
-				svgo: {
-					plugins: [
-						{ name: 'removeViewBox', active: false },
-						{ name: 'removeEmptyAttrs', active: true },
-					],
+			imagemin({
+				compress: {
+					mozjpeg: { quality: 90, progressive: true },
+					webp: { quality: 100, lossless: 1 },
+					png: { quality: 95, lossless: 1 },
+					avif: { cqLevel: 12, speed: 6 },
 				},
-				webp: {
-					quality: 100,
-					lossless: true,
-				},
+				conversion: [
+				 	{ from: 'png', to: 'webp' },
+				 	{ from: 'jpg', to: 'webp' },
+					{ from: 'jpeg', to: 'webp' }
+				 ],
 			}),
+			createSitemapPlugin('https://toomas633.com'),
 		],
 		optimizeDeps: {
 			exclude: [

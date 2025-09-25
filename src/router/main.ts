@@ -1,12 +1,12 @@
-import { RouteRecordRaw } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import ContactView from '@/views/ContactView.vue'
 import DonateView from '@/views/DonateView.vue'
 import ToS from '@/views/ToS.vue'
 import PrivacyPolicy from '@/views/PrivacyPolicy.vue'
 import NotFound from '@/views/NotFound.vue'
+import { RouteRecord } from '@/types/route'
 
-export const mainRoutes: Array<RouteRecordRaw> = [
+export const mainRoutes: Array<RouteRecord> = [
 	{
 		path: '/',
 		component: HomeView,

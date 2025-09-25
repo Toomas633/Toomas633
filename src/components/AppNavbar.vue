@@ -13,9 +13,9 @@
 				title="Toomas633's Dungeon"
 				:subtitle="APP_VERSION"
 				value="home"
+				:active="false"
 				to="/" />
 		</v-list>
-		<v-divider />
 		<v-list
 			v-model:selected="navSelection"
 			color="primary"
@@ -29,6 +29,10 @@
 				prepend-icon="mdi-controller"
 				title="Game servers"
 				value="servers" />
+			<v-list-item
+				prepend-icon="mdi-play-box-multiple"
+				title="Demos"
+				value="demos" />
 			<v-list-item prepend-icon="mdi-archive" title="Archive" value="archive" />
 			<v-list-item
 				prepend-icon="mdi-card-account-mail"
@@ -41,7 +45,6 @@
 				value="donate"
 				to="/donate" />
 		</v-list>
-		<v-divider />
 		<template #append>
 			<div v-if="fullyExpanded" class="text-center">
 				<div class="d-flex justify-center mb-4">
@@ -69,7 +72,6 @@
 					</v-tooltip>
 				</div>
 			</div>
-			<v-divider v-if="fullyExpanded" />
 			<v-list density="compact" nav>
 				<v-list-item
 					:title="isDark ? 'Switch to light theme' : 'Switch to dark theme'"
@@ -78,7 +80,6 @@
 					"
 					@click="changeTheme" />
 			</v-list>
-			<v-divider v-if="fullyExpanded" />
 			<v-list
 				v-if="fullyExpanded"
 				v-model:selected="navSelection"
@@ -150,7 +151,8 @@
 				v-for="item in drawerItems"
 				:key="item.title"
 				:value="item.href?.split('/')[2]"
-				:to="item.href"
+				:to="!item.external ? item.href : undefined"
+				:href="item.external ? item.href : undefined"
 				:title="item.title"
 				:subtitle="item.subtitle"
 				:prepend-icon="item.icon"
@@ -162,11 +164,16 @@
 import { APP_VERSION, VUE_VERSION, VUETIFY_VERSION } from '@/constants/env'
 import router from '@/router'
 import { MenuItem } from '@/types/menuItem'
-import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import Vue from '@/assets/icons/brands/vue.svg'
 import Vuetify from '@/assets/icons/brands/vuetify.svg'
 import useThemeMixin from '@/helpers/themeMixin'
 import { isMobile } from '@basitcodeenv/vue3-device-detect'
+import { projectRoutes } from '@/router/projects'
+import { demoRoutes } from '@/router/demos'
+import { RouteRecord } from '@/types/route'
+import { archiveRoutes } from '@/router/archive'
+import { serversRoutes } from '@/router/servers'
 
 const isRail = ref(true)
 const fullyExpanded = ref(false)
@@ -177,18 +184,17 @@ const drawerItems = ref<MenuItem[]>([])
 
 let expandTimer: ReturnType<typeof setTimeout> | undefined
 
-const expanded = computed(() => !isRail.value)
-
 const { isDark, toggleTheme } = useThemeMixin()
 
-watch(expanded, (val) => {
-	if (val) {
+watch(isRail, (val) => {
+	if (!val) {
 		if (expandTimer) clearTimeout(expandTimer)
 		expandTimer = setTimeout(() => {
 			fullyExpanded.value = true
 		}, 200)
 	} else {
 		if (expandTimer) clearTimeout(expandTimer)
+		if (!secondDrawer.value) resetSelection()
 		fullyExpanded.value = false
 	}
 })
@@ -223,9 +229,10 @@ watch(navSelection, (val, oldVal) => {
 		return
 	}
 
-	const expandableSections = ['projects', 'servers', 'archive']
+	const expandableSections = ['projects', 'servers', 'demos', 'archive']
 
 	if (!selected || !expandableSections.includes(selected)) {
+		isRail.value = true
 		secondDrawer.value = false
 		drawerItems.value = []
 		return
@@ -233,46 +240,30 @@ watch(navSelection, (val, oldVal) => {
 
 	switch (selected) {
 		case 'projects':
-			drawerItems.value = [
-				{
-					title: 'T6 Drone',
-					href: '/projects/t6-drone',
-					icon: 'mdi-quadcopter',
-				},
-				{
-					title: 'Robotic Arm',
-					href: '/projects/robotic-arm',
-					icon: 'mdi-robot-industrial',
-				},
-				{
-					title: 'FileShare',
-					href: '/projects/fileshare',
-					icon: 'mdi-share-variant',
-				},
-				{
-					title: 'Plex Organizer',
-					href: '/projects/plex-organizer',
-					icon: 'mdi-file-document-arrow-right',
-				},
-			]
+			drawerItems.value = projectRoutes.map((route) =>
+				mapRouteToMenuItem(route)
+			)
 			break
 		case 'servers':
+			drawerItems.value = serversRoutes.map((route) =>
+				mapRouteToMenuItem(route)
+			)
+			break
+		case 'demos':
 			drawerItems.value = [
+				...demoRoutes.map((route) => mapRouteToMenuItem(route)),
 				{
-					title: 'Vanilla Minecraft',
-					href: '/servers/minecraft',
-					icon: 'mdi-minecraft',
+					title: 'TalTech',
+					href: 'https://github.com/Toomas633?tab=repositories&q=TalTech&type=&language=&sort=',
+					icon: 'mdi-school',
+					external: true,
 				},
 			]
 			break
 		case 'archive':
-			drawerItems.value = [
-				{
-					title: 'File Organizer',
-					href: '/archive/file-organizer',
-					icon: 'mdi-file-document-arrow-right',
-				},
-			]
+			drawerItems.value = archiveRoutes.map((route) =>
+				mapRouteToMenuItem(route)
+			)
 			break
 	}
 
@@ -323,10 +314,22 @@ function handleGlobalClick(e: MouseEvent | TouchEvent) {
 	}
 
 	if (!insidePrimary && !insideSecondary) {
-		const parts = router.currentRoute.value.path.split('/')
-		navSelection.value = parts[1] ? [parts[1]] : ['home']
-		secondSelection.value = parts[2] ? [parts[2]] : []
+		resetSelection()
 	}
+}
+
+function resetSelection() {
+	const parts = router.currentRoute.value.path.split('/')
+	navSelection.value = parts[1] ? [parts[1]] : ['home']
+	secondSelection.value = parts[2] ? [parts[2]] : []
+}
+
+function mapRouteToMenuItem(route: RouteRecord): MenuItem {
+	return {
+		title: route.meta.title,
+		href: route.path,
+		icon: route.meta.icon ?? 'mdi-folder',
+	} as MenuItem
 }
 
 onBeforeUnmount(() => {

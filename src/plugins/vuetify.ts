@@ -25,10 +25,10 @@ const darkTheme = {
 		'activated-opacity': 0.12,
 		'pressed-opacity': 0.12,
 		'dragged-opacity': 0.08,
-		'theme-kbd': '#212529',
+		'theme-kbd': '#575757ff',
 		'theme-on-kbd': '#FFFFFF',
-		'theme-code': '#F5F5F5',
-		'theme-on-code': '#000000',
+		'theme-code': '#575757ff',
+		'theme-on-code': '#FFFFFF',
 	},
 }
 
@@ -53,10 +53,10 @@ const lightTheme = {
 		'activated-opacity': 0.12,
 		'pressed-opacity': 0.12,
 		'dragged-opacity': 0.08,
-		'theme-kbd': '#212529',
-		'theme-on-kbd': '#FFFFFF',
-		'theme-code': '#1E1E1E',
-		'theme-on-code': '#FFFFFF',
+		'theme-kbd': '#e2e2e2ff',
+		'theme-on-kbd': '#000000',
+		'theme-code': '#e2e2e2ff',
+		'theme-on-code': '#000000',
 	},
 }
 

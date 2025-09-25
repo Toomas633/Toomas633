@@ -1,11 +1,5 @@
 import { FileType } from '@/enums/fileType'
 
-export const fileIcons: Record<FileType, string> = {
-	[FileType.Txt]: 'mdi-file-document-outline',
-	[FileType.Folder]: 'mdi-folder',
-	[FileType.Video]: 'mdi-movie-outline',
-}
-
 export const inputItems = [
 	{
 		title: 'your files',

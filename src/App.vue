@@ -1,7 +1,7 @@
 <template>
 	<v-app :style="rootStyle">
 		<AppNavbar />
-		<v-main ref="mainElement" :class="isDesktop ? 'desktop' : 'mobile'">
+		<v-main ref="mainElement">
 			<router-view />
 			<CookieConsent />
 			<MessagePopup />
@@ -11,7 +11,6 @@
 
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 import useThemeMixin from './helpers/themeMixin'
 
 const mainElement = ref<HTMLElement>()

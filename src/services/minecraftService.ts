@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { MinecraftStatusResponse } from '@/types/minecraftStatus'
+import { MinecraftStatusResponse } from '@/types/minecraft'
 
 export function queryMinecraftStatus(
 	serverIp: string

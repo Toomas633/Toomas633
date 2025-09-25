@@ -13,11 +13,6 @@ h1 {
 }
 
 /* stylelint-disable selector-class-pattern */
-[data-theme='lightTheme'],
-.v-theme--lightTheme {
-	@include meta.load-css('./light');
-}
-
 [data-theme='darkTheme'],
 .v-theme--darkTheme {
 	@include meta.load-css('./dark');
@@ -45,17 +40,10 @@ h1 {
 /* stylelint-enable selector-class-pattern */
 
 .v-main {
+	height: 100vh;
 	position: relative;
 	overflow: auto;
 	padding-left: 3.438rem;
-}
-
-.desktop {
-	height: calc(100dvh - var(--footer-height) - var(--v-layout-top));
-}
-
-.mobile {
-	height: calc(100dvh - var(--v-layout-top));
 }
 
 .green {
@@ -82,12 +70,56 @@ h1 {
 	flex-wrap: wrap;
 }
 
-pre {
-	background-color: rgb(var(--v-theme-secondary));
+pre,
+mark {
+	background-color: rgb(var(--v-theme-code));
+	color: rgb(var(--v-theme-on-code));
 	overflow-wrap: break-word;
 	white-space: pre-line;
 }
 
+mark {
+	padding-left: 0.25rem;
+	padding-right: 0.25rem;
+	cursor: pointer;
+}
+
 .v-treeview-group {
 	margin-left: 0.375rem;
+}
+
+.v-divider {
+	color: black;
+}
+
+.v-table {
+	background: background;
+}
+
+.multicolumn {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(13.125rem, 1fr));
+	gap: 0.25rem 1.125rem;
+	padding-left: 0;
+	list-style: disc outside;
+}
+
+.multicolumn > li {
+	margin-left: 1rem;
+}
+
+.multicolumn > li > ul {
+	display: block;
+	padding-left: 1.25rem;
+	margin-top: 0.25rem;
+}
+
+@media (width <= 26.25rem) {
+	.multicolumn {
+		grid-template-columns: 1fr;
+	}
+}
+
+.z-top {
+	z-index: 2000;
 }
