@@ -132,6 +132,7 @@
 			</v-col>
 		</v-row>
 	</v-container>
+	<TableOfContents />
 </template>
 
 <script setup lang="ts">

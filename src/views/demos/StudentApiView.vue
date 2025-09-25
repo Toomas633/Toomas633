@@ -142,6 +142,7 @@
 			</v-treeview>
 		</v-card>
 	</v-container>
+	<TableOfContents />
 </template>
 <script setup lang="ts">
 import { fileIcons } from '@/constants/fileIcons'

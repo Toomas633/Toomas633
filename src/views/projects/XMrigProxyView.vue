@@ -51,6 +51,7 @@
 		<LinkableTitle h2 title="Env variables" />
 		<v-data-table :items="items" hide-default-footer class="rounded" />
 	</v-container>
+	<TableOfContents />
 </template>
 <script setup lang="ts">
 import { isMobile } from '@basitcodeenv/vue3-device-detect'
