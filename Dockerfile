@@ -8,8 +8,7 @@ RUN npm ci --ignore-scripts
 
 COPY . .
 
-RUN node ./scripts/generateSitemap.mjs \
-    && npm run build
+RUN npm run build
 
 FROM node:24.8-slim AS production-stage
 

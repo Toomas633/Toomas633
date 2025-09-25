@@ -7,6 +7,7 @@ import zlib from 'zlib'
 import imagemin from 'unplugin-imagemin/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import Components from 'unplugin-vue-components/vite'
+import { createSitemapPlugin } from './plugins/sitemap-plugin'
 import pkg from './package.json'
 
 interface PkgJson {
@@ -51,6 +52,7 @@ export default defineConfig((): import('vite').UserConfig => {
 					{ from: 'jpeg', to: 'webp' }
 				 ],
 			}),
+			createSitemapPlugin('https://toomas633.com'),
 		],
 		optimizeDeps: {
 			exclude: [
