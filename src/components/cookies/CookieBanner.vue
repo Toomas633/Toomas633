@@ -57,8 +57,4 @@ function close() {
 .actions {
 	margin-left: calc(calc(100vw - 56px) * -1);
 }
-
-.z-top {
-	z-index: 2000;
-}
 </style>
