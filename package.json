@@ -1,7 +1,7 @@
 {
 	"name": "toomas633s-dungeon",
 	"description": "Toomas633's projects homepage",
-	"version": "4.6.0",
+	"version": "4.7.0",
 	"private": true,
 	"license": "GPL-3.0-only",
 	"type": "module",
@@ -23,12 +23,12 @@
 		"leaflet": "^1.9.4",
 		"mitt": "^3.0.1",
 		"nodemailer": "^7.0.6",
-		"vue": "^3.5.21",
+		"vue": "^3.5.22",
 		"vue-cookie-law": "^1.13.3",
 		"vue-cookies": "^1.8.6",
 		"vue-leaflet": "^0.1.0",
 		"vue-router": "^4.5.1",
-		"vuetify": "^3.10.2"
+		"vuetify": "^3.10.3"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.1",

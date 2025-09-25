@@ -285,6 +285,11 @@ watch(navSelection, (val, oldVal) => {
 					icon: 'mdi-card-account-mail',
 				},
 				{
+					title: 'Click Counter',
+					href: '/demos/click-counter',
+					icon: 'mdi-cursor-pointer',
+				},
+				{
 					title: 'TalTech',
 					href: 'https://github.com/Toomas633?tab=repositories&q=TalTech&type=&language=&sort=',
 					icon: 'mdi-school',
