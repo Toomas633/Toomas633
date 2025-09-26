@@ -59,7 +59,7 @@ router.afterEach((to) => {
 	document.title = to.meta.title?.toString() ?? defaultTitle
 
 	requestAnimationFrame(() => {
-		const scroller = document.querySelector('.v-main') as HTMLElement | null
+		const scroller = document.querySelector('.v-main')
 
 		if (to.hash) {
 			const raw = to.hash.replace(/^#/, '')

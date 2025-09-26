@@ -1,5 +1,5 @@
 <template>
-	<v-dialog v-model="show" persistent max-width="720" role="dialog">
+	<v-dialog v-model="show" persistent max-width="720">
 		<v-card class="bg-background" elevation="8">
 			<v-card-title class="text-h6 d-flex align-center bg-black">
 				<v-icon icon="mdi-cookie" class="mr-2" />
@@ -78,9 +78,7 @@ const props = defineProps<{
 	visible: boolean
 }>()
 
-const emit = defineEmits<{
-	(e: 'update:visible', value: boolean): void
-}>()
+const emit = defineEmits<(e: 'update:visible', value: boolean) => void>()
 
 const {
 	DEFAULT_CONSENT,

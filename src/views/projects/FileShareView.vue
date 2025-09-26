@@ -250,6 +250,7 @@
 			and edit it) <CodeBlock :code="dockerCompose" />
 		</p>
 	</v-container>
+	<TableOfContents />
 </template>
 
 <script setup lang="ts">

@@ -87,10 +87,11 @@
 			class="mt-4 mb-2 border-opacity-100"
 			thickness="2"
 			color="primary" />
-		<v-row class="mt-4 d-block d-sm-flex" justify="center">
+		<LinkableTitle h1 title="Example file structure" centered />
+		<v-row class="d-block d-sm-flex" justify="center">
 			<v-col>
 				<v-card class="pa-4" elevation="4">
-					<h1 class="text-center pb-2">Takes in</h1>
+					<h2 class="text-center pb-4">Takes in</h2>
 					<v-treeview
 						:items="inputItems"
 						item-key="title"
@@ -111,7 +112,7 @@
 			</v-col>
 			<v-col>
 				<v-card class="pa-4" elevation="4">
-					<h1 class="text-center pb-2">Returns</h1>
+					<h2 class="text-center pb-4">Returns</h2>
 					<v-treeview
 						:items="outputItems"
 						item-key="title"
@@ -132,6 +133,7 @@
 			</v-col>
 		</v-row>
 	</v-container>
+	<TableOfContents />
 </template>
 
 <script setup lang="ts">

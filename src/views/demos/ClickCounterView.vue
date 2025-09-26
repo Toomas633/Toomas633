@@ -88,6 +88,7 @@
 			</li>
 		</ul>
 	</v-container>
+	<TableOfContents />
 </template>
 <script setup lang="ts">
 import Preview from '@/assets/images/click-counter/preview.gif'

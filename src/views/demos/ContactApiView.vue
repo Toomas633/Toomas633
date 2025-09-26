@@ -144,4 +144,5 @@
 			<CodeBlock code="java -jar target/test-0.1.jar" />
 		</p>
 	</v-container>
+	<TableOfContents />
 </template>

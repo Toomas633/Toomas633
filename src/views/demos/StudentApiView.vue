@@ -115,8 +115,8 @@
 			thickness="2"
 			class="border-opacity-100 mt-6 mb-4"
 			color="primary" />
+		<LinkableTitle h1 title="Project structure" centered />
 		<v-card class="pa-4" elevation="4">
-			<LinkableTitle h1 title="Project structure" centered />
 			<v-treeview
 				:items="structure"
 				item-value="title"
@@ -142,6 +142,7 @@
 			</v-treeview>
 		</v-card>
 	</v-container>
+	<TableOfContents />
 </template>
 <script setup lang="ts">
 import { fileIcons } from '@/constants/fileIcons'

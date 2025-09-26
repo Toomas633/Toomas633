@@ -11,9 +11,7 @@
 <script setup lang="ts">
 import { isDesktop } from '@basitcodeenv/vue3-device-detect'
 
-const emit = defineEmits<{
-	(reopenSelection: 'reopenSelection'): void
-}>()
+const emit = defineEmits<(event: 'reopenSelection') => void>()
 </script>
 <style scoped lang="scss">
 .cookie-button-desktop {
