@@ -12,18 +12,24 @@ interface SitemapRoute {
 function prettifyXml(xmlString: string): string {
 	const PADDING = '  '
 
-	const urlMatches = xmlString.match(/<url>.*?<\/url>/g) || []
-	const sortedUrls = urlMatches.sort((a, b) => {
-		const locA = a.match(/<loc>(.*?)<\/loc>/)?.[1] || ''
-		const locB = b.match(/<loc>(.*?)<\/loc>/)?.[1] || ''
+	const urlRegex = /<url>.*?<\/url>/g
+	const urlMatches: string[] = []
+	let urlExec: RegExpExecArray | null
+	while ((urlExec = urlRegex.exec(xmlString)) !== null) {
+		urlMatches.push(urlExec[0])
+	}
+
+	const sortedUrls = urlMatches.toSorted((a, b) => {
+		const locA = /<loc>(.*?)<\/loc>/.exec(a)?.[1] || ''
+		const locB = /<loc>(.*?)<\/loc>/.exec(b)?.[1] || ''
 		return locA.localeCompare(locB)
 	})
 
 	const formattedUrls = sortedUrls
 		.map((url) => {
-			const loc = url.match(/<loc>(.*?)<\/loc>/)?.[1] || ''
-			const lastmod = url.match(/<lastmod>(.*?)<\/lastmod>/)?.[1] || ''
-			const priority = url.match(/<priority>(.*?)<\/priority>/)?.[1] || ''
+			const loc = /<loc>(.*?)<\/loc>/.exec(url)?.[1] || ''
+			const lastmod = /<lastmod>(.*?)<\/lastmod>/.exec(url)?.[1] || ''
+			const priority = /<priority>(.*?)<\/priority>/.exec(url)?.[1] || ''
 
 			return `${PADDING}<url>
 ${PADDING}${PADDING}<loc>${loc}</loc>
@@ -33,8 +39,8 @@ ${PADDING}</url>`
 		})
 		.join('\n')
 
-	const xmlDeclaration = xmlString.match(/<\?xml.*?\?>/)?.[0] || ''
-	const urlsetStart = xmlString.match(/<urlset[^>]*>/)?.[0] || ''
+	const xmlDeclaration = /<\?xml.*?\?>/.exec(xmlString)?.[0] || ''
+	const urlsetStart = /<urlset[^>]*>/.exec(xmlString)?.[0] || ''
 	const urlsetEnd = '</urlset>'
 
 	return `${xmlDeclaration}
@@ -54,25 +60,20 @@ export function createSitemapPlugin(hostname: string): Plugin {
 					const content = readFileSync(filePath, 'utf-8')
 					const routes: Array<{ path: string; priority: number }> = []
 
-					const pathMatches = content.match(/path:\s*['"`]([^'"`]+)['"`]/g)
-					if (pathMatches) {
-						pathMatches.forEach((match) => {
-							const path = match.replace(/path:\s*['"`]([^'"`]+)['"`]/, '$1')
+					const pathRegex = /path:\s*['"`]([^'"`]+)['"`]/g
+					let match: RegExpExecArray | null
+					while ((match = pathRegex.exec(content)) !== null) {
+						const path = match[1]
 
-							let priority = 0.5
-							if (path === '/') priority = 1.0
-							else if (path.startsWith('/projects/')) priority = 0.8
-							else if (path.startsWith('/servers/')) priority = 0.7
-							else if (path.startsWith('/demos/')) priority = 0.6
-							else if (
-								path.startsWith('/contact') ||
-								path.startsWith('/donate')
-							)
-								priority = 0.6
-							else if (path.startsWith('/archive/')) priority = 0.5
+						let priority = 0.5
+						if (path === '/') priority = 1.0
+						else if (path.startsWith('/projects/')) priority = 0.8
+						else if (path.startsWith('/servers/')) priority = 0.7
+						else if (path.startsWith('/demos/')) priority = 0.6
+						else if (path.startsWith('/contact') || path.startsWith('/donate'))
+							priority = 0.6
 
-							routes.push({ path, priority })
-						})
+						routes.push({ path, priority })
 					}
 
 					return routes
