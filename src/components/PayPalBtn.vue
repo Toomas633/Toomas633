@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import qr from '@/assets/icons/donate/paypal-qr.svg'
 
 withDefaults(
@@ -34,16 +34,40 @@ withDefaults(
 	}
 )
 
+let consoleLogSilenced = false
+let originalConsoleLog: typeof console.log | null = null
+
+function silenceConsoleLog() {
+	if (consoleLogSilenced) return
+	consoleLogSilenced = true
+	// eslint-disable-next-line no-console
+	originalConsoleLog = console.log
+	// eslint-disable-next-line no-console
+	console.log = () => {}
+}
+
+function restoreConsoleLog() {
+	if (!consoleLogSilenced) return
+	// eslint-disable-next-line no-console
+	if (originalConsoleLog) console.log = originalConsoleLog
+	originalConsoleLog = null
+	consoleLogSilenced = false
+}
+
 function loadPayPalScript(): Promise<void> {
 	return new Promise((resolve) => {
 		if (document.getElementById('paypal-donate-sdk')) {
+			silenceConsoleLog()
 			resolve()
 			return
 		}
 		const script = document.createElement('script')
 		script.id = 'paypal-donate-sdk'
 		script.src = 'https://www.paypalobjects.com/donate/sdk/donate-sdk.js'
-		script.onload = () => resolve()
+		script.onload = () => {
+			silenceConsoleLog()
+			resolve()
+		}
 		document.body.appendChild(script)
 	})
 }
@@ -83,5 +107,9 @@ async function showPayPal() {
 onMounted(async () => {
 	await loadPayPalScript()
 	renderPayPalButton()
+})
+
+onUnmounted(() => {
+	restoreConsoleLog()
 })
 </script>
