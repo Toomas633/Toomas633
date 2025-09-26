@@ -1,7 +1,7 @@
 <template>
 	<v-app :style="rootStyle">
 		<AppNavbar />
-		<v-main ref="mainElement">
+		<v-main ref="mainElement" class="pb-12">
 			<router-view />
 			<CookieConsent />
 			<MessagePopup />
