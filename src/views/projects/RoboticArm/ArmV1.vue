@@ -1,24 +1,7 @@
 <template>
 	<v-row justify="center" class="d-block d-sm-flex">
-		<v-col md="6" lg="5" class="pb-0">
-			<v-carousel
-				color="primary"
-				hide-delimiter-background
-				class="mt-3"
-				style="cursor: zoom-in">
-				<v-carousel-item
-					:src="armImage.src"
-					:alt="armImage.alt"
-					@click="openImageInNewTab(armImage.src)" />
-				<v-carousel-item
-					:src="wiring"
-					alt="Wiring"
-					@click="openImageInNewTab(wiring)" />
-				<v-carousel-item
-					:src="list"
-					alt="List"
-					@click="openImageInNewTab(list)" />
-			</v-carousel>
+		<v-col md="6" lg="5" class="pb-0" style="max-height: 26.75rem">
+			<ImageCarousel class="mt-3" :images="images" />
 		</v-col>
 		<v-col class="pl-0">
 			<h1 class="text-center mt-4">V1</h1>
@@ -58,15 +41,26 @@
 	</v-row>
 </template>
 <script setup lang="ts">
+import arm from '@/assets/images/robotic-arm/arm.webp'
 import list from '@/assets/images/robotic-arm/v1/list.webp'
 import wiring from '@/assets/images/robotic-arm/v1/wiring.webp'
-import useImageMixin from '@/helpers/imageMixin'
-import { Image } from '@/types/image'
 import { isMobile } from '@basitcodeenv/vue3-device-detect'
 
-defineProps<{
-	armImage: Image
-}>()
-
-const { openImageInNewTab } = useImageMixin()
+const images = [
+	{
+		src: arm,
+		alt: 'Arm V1',
+		title: 'Robotic Arm V1',
+	},
+	{
+		src: wiring,
+		alt: 'Wiring',
+		title: 'Wiring Diagram',
+	},
+	{
+		src: list,
+		alt: 'List',
+		title: 'Parts List',
+	},
+]
 </script>

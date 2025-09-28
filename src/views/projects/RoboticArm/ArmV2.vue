@@ -1,24 +1,7 @@
 <template>
 	<v-row justify="center" class="d-block d-sm-flex">
-		<v-col md="6" lg="5" class="pb-0">
-			<v-carousel
-				color="primary"
-				hide-delimiter-background
-				class="mt-3"
-				style="cursor: zoom-in">
-				<v-carousel-item
-					:src="armImage.src"
-					:alt="armImage.alt"
-					@click="openImageInNewTab(armImage.src)" />
-				<v-carousel-item
-					:src="wiring"
-					alt="Wiring"
-					@click="openImageInNewTab(wiring)" />
-				<v-carousel-item
-					:src="list"
-					alt="List"
-					@click="openImageInNewTab(list)" />
-			</v-carousel>
+		<v-col md="6" lg="5" class="pb-0" style="max-height: 45.5rem">
+			<ImageCarousel class="mt-3" :images="images" />
 		</v-col>
 		<v-col class="pl-0">
 			<h1 class="text-center mt-4">V2</h1>
@@ -61,7 +44,7 @@
 						icon-color="blue" />
 				</v-col>
 			</v-row>
-			<v-card elevation="4" class="pa-4 my-6">
+			<v-card elevation="4" class="pa-4 mt-6">
 				<h1 class="text-center mb-2">Contol scheme</h1>
 				<div class="d-flex justify-center">
 					<div class="d-block mr-2">
@@ -156,21 +139,32 @@
 	</v-row>
 </template>
 <script setup lang="ts">
+import arm from '@/assets/images/robotic-arm/arm.webp'
 import wiring from '@/assets/images/robotic-arm/v2/wiring.webp'
 import list from '@/assets/images/robotic-arm/v2/list.webp'
-import useImageMixin from '@/helpers/imageMixin'
 import A from '@/assets/icons/controller/a.svg'
 import B from '@/assets/icons/controller/b.svg'
 import RightStickX from '@/assets/icons/controller/right-stick-x.svg'
 import RightStickY from '@/assets/icons/controller/right-stick-y.svg'
 import LeftStickX from '@/assets/icons/controller/left-stick-x.svg'
 import LeftStickY from '@/assets/icons/controller/left-stick-y.svg'
-import { Image } from '@/types/image'
 import { isMobile } from '@basitcodeenv/vue3-device-detect'
 
-defineProps<{
-	armImage: Image
-}>()
-
-const { openImageInNewTab } = useImageMixin()
+const images = [
+	{
+		src: arm,
+		alt: 'Arm V2',
+		title: 'Robotic Arm V2',
+	},
+	{
+		src: wiring,
+		alt: 'Wiring',
+		title: 'Wiring Diagram',
+	},
+	{
+		src: list,
+		alt: 'List',
+		title: 'Parts List',
+	},
+]
 </script>

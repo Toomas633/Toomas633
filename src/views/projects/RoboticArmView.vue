@@ -21,10 +21,10 @@
 		</v-tabs>
 		<v-tabs-window v-model="tab" class="v-tabs-wrapper">
 			<v-tabs-window-item :value="Tabs.V1">
-				<ArmV1 :arm-image="armImage" />
+				<ArmV1 />
 			</v-tabs-window-item>
 			<v-tabs-window-item :value="Tabs.V2">
-				<ArmV2 :arm-image="armImage" />
+				<ArmV2 />
 			</v-tabs-window-item>
 		</v-tabs-window>
 	</v-container>
@@ -33,17 +33,11 @@
 <script setup lang="ts">
 import { Tabs } from '@/enums/roboticArm'
 import { ref } from 'vue'
-import arm from '@/assets/images/robotic-arm/arm.webp'
-import { Image } from '@/types/image'
 import ArmV1 from './RoboticArm/ArmV1.vue'
 import ArmV2 from './RoboticArm/ArmV2.vue'
 import { isMobile } from '@basitcodeenv/vue3-device-detect'
 
 const tab = ref<Tabs>(Tabs.V1)
-const armImage = ref<Image>({
-	src: arm,
-	alt: 'Arm',
-})
 </script>
 <style scoped lang="scss">
 .v-slide-group {
