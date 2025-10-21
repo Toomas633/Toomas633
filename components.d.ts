@@ -17,7 +17,7 @@ declare module 'vue' {
     CookieConsent: typeof import('./src/components/CookieConsent.vue')['default']
     CookieDialog: typeof import('./src/components/cookies/CookieDialog.vue')['default']
     CopyButton: typeof import('./src/components/CopyButton.vue')['default']
-    ImageCarosel: typeof import('./src/components/ImageCarosel.vue')['default']
+    ImageCarousel: typeof import('./src/components/ImageCarousel.vue')['default']
     InlineCode: typeof import('./src/components/InlineCode.vue')['default']
     InlineTextCopy: typeof import('./src/components/InlineTextCopy.vue')['default']
     LangGraph: typeof import('./src/components/LangGraph.vue')['default']

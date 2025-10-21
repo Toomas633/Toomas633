@@ -14,12 +14,11 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"jsx": "preserve",
-		"baseUrl": ".",
 		"types": ["vuetify", "node"],
 		"paths": {
-			"@/*": ["src/*"],
-			"@icons/*": ["icons/*"],
-			"@public/*": ["public/*"]
+			"@/*": ["./src/*"],
+			"@icons/*": ["./icons/*"],
+			"@public/*": ["./public/*"]
 		},
 		
 	},

@@ -46,7 +46,7 @@
 				</v-row>
 			</v-col>
 		</v-row>
-		<ImageCarosel class="my-4" :images="images" cover />
+		<ImageCarousel class="my-4" :images="images" auto-scroll />
 	</v-container>
 </template>
 <script setup lang="ts">
