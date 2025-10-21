@@ -31,4 +31,4 @@ RUN apt-get update && apt-get --no-install-recommends install nginx -y \
 
 EXPOSE 80
 
-CMD ["pm2-runtime", "start", "ecosystem.config.js"]
+CMD ["pm2-runtime", "start", "ecosystem.config.cjs"]
