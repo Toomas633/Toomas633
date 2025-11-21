@@ -1,5 +1,85 @@
+# Auto detect text files and normalize line endings to CRLF on Windows
 * text=auto eol=crlf
+
+# Shell scripts should always use LF
 *.sh text eol=lf
+*.bash text eol=lf
+
+# PowerShell scripts should use CRLF
+*.ps1 text eol=crlf
+
+# Docker files should use LF
+Dockerfile text eol=lf
+*.dockerfile text eol=lf
+docker-compose*.yml text eol=lf
+
+# Config files
+*.json text eol=crlf
+*.yml text eol=crlf
+*.yaml text eol=lf
+*.toml text eol=crlf
+*.xml text eol=crlf
+*.conf text eol=lf
+nginx.conf text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.editorconfig text eol=lf
+
+# Source code
+*.ts text eol=crlf
+*.tsx text eol=crlf
+*.js text eol=crlf
+*.jsx text eol=crlf
+*.mjs text eol=crlf
+*.cjs text eol=crlf
+*.vue text eol=crlf
+*.css text eol=crlf
+*.scss text eol=crlf
+*.sass text eol=crlf
+*.less text eol=crlf
+*.html text eol=crlf
+*.htm text eol=crlf
+*.md text eol=crlf
+
+# Documentation
+*.txt text eol=crlf
+*.pdf binary
+*.doc binary
+*.docx binary
+
+# Binary files
 *.png binary
 *.jpg binary
 *.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.webp binary
+*.avif binary
+
+# Fonts
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.otf binary
+
+# Archives
+*.zip binary
+*.tar binary
+*.gz binary
+*.7z binary
+*.rar binary
+
+# Media
+*.mp4 binary
+*.mp3 binary
+*.wav binary
+*.mov binary
+*.avi binary
+
+# Other
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary

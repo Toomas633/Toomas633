@@ -67,8 +67,12 @@ This is a multi-folder VS Code workspace with three main directories:
 
 - **Frontend dev:** `npm run dev` (Vite, hot reload) — See frontend instructions for detailed setup
 - **Frontend build:** `npm run build` (outputs to `dist/`) — Uses Vite with optimization plugins
+- **Frontend test:** `npm run test` (Vitest in watch mode)
+- **Frontend coverage:** `npm run test:coverage` (generates coverage reports)
 - **Backend dev:** `npm run dev` (tsx watch, hot reload) — See backend instructions for TypeScript patterns
 - **Backend build:** `npm run build` (TypeScript compilation to `dist/`) — Compiles TS to JS
+- **Backend test:** `npm run test` (Vitest in watch mode)
+- **Backend coverage:** `npm run test:coverage` (generates coverage reports)
 - **Backend prod:** `node backend/dist/server.js` (or use `ecosystem.config.js` for PM2)
 - **Docker:** Use `Dockerfile` for containerized build/deploy with TypeScript compilation
 - **Lint:** `npm run lint` (uses TypeScript ESLint) — Module-specific configurations
@@ -78,7 +82,18 @@ This is a multi-folder VS Code workspace with three main directories:
 
 ## Testing
 
-- No explicit test framework or test files detected. If adding tests, follow Vue/Vite conventions and place in `src/` alongside components or in a `tests/` folder.
+- **Framework:** Vitest for both frontend and backend
+- **Frontend:** Vue component testing with `@vue/test-utils`, happy-dom environment
+- **Backend:** API/route testing with `supertest`, Node.js environment
+- **Test location:** Test files (`*.spec.ts`, `*.test.ts`) are placed alongside source files
+- **Coverage:** V8 coverage provider with LCOV reports for SonarCloud integration
+- **Configuration:** 
+  - `frontend/vitest.config.ts` — Frontend test config with Vue support
+  - `backend/vitest.config.ts` — Backend test config with Node.js environment
+  - `frontend/src/test/setup.ts` — Global test setup with Vuetify stubs
+  - `backend/src/test/setup.ts` — Global test setup for backend
+- **CI Integration:** Tests run automatically in GitHub Actions SonarCloud workflow
+- **See:** `TESTING.md` for comprehensive testing guide and examples
 
 ## Patterns & Conventions
 
@@ -105,17 +120,20 @@ This is a multi-folder VS Code workspace with three main directories:
 
 ## Special Notes
 
-- **No test or CI config detected.**
-- **No monorepo tools (e.g., Lerna, Turborepo) in use.**
-- **No custom AI agent rules found in repo.**
+- **Multi-workspace setup:** Frontend and backend are separate npm projects with their own dependencies
+- **Testing:** Vitest configured for both modules with coverage reporting
+- **CI/CD:** GitHub Actions workflows updated for multi-workspace structure
+- **No monorepo tools** (e.g., Lerna, Turborepo) in use - each module is independent
+- **SonarCloud:** Integrated with coverage reporting from both modules
 
 ## Examples
 
 ### Frontend Development (detailed patterns in `frontend/.github-copilot-instructions.md`)
 - To add a new Vue component: place `.vue` file in `src/components/`, register in parent or router as needed
-- To add a new API service: add to `src/services/`, use TypeScript types from `src/types/`
+- To add a new API service: add to `src/services/` (see `emailService.ts`, `githubService.ts`, `minecraftService.ts`), use TypeScript types from `src/types/`
 - To update environment/config: edit `src/constants/env.ts`
-- For cookie-related components: use `src/components/cookies/` (CookieBanner, CookieButton, CookieDialog)
+- For cookie consent: main component is `src/components/CookieConsent.vue` with supporting components in `src/components/cookies/`
+- To add tests: create `*.spec.ts` file alongside the component/helper, use `@vue/test-utils` for component tests
 
 ### Backend Development (detailed patterns in `backend/.github-copilot-instructions.md`)
 - To add a new API route: create in `src/routes/` with TypeScript types and Router pattern, import to `src/app.ts`
@@ -123,7 +141,8 @@ This is a multi-folder VS Code workspace with three main directories:
 - To add business logic: create service in `src/services/` with TypeScript interfaces and proper error handling
 - To add utilities: create helpers in `src/utils/` with TypeScript types and named exports
 - To add types: define interfaces in `src/types/index.ts` for shared type definitions
+- To add tests: create `*.spec.ts` file alongside the route/service/util, use `supertest` for API tests
 
 ---
 
-For more context, see `README.md`, `vite.config.ts`, and `src/` structure.
+For more context, see `README.md`, `TESTING.md`, `vite.config.ts`, and `src/` structure.

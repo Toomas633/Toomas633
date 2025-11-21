@@ -77,11 +77,85 @@ npm run dev
 | `npm run dev`            | Start development server on port 5173   |
 | `npm run build`          | Build for production                    |
 | `npm run serve`          | Preview production build                |
+| `npm run test`           | Run tests in watch mode                 |
+| `npm run test:ui`        | Run tests with visual UI                |
+| `npm run test:coverage`  | Run tests with coverage report          |
 | `npm run lint`           | Run ESLint for code quality             |
 | `npm run stylelint`      | Run Stylelint for CSS/SCSS              |
 | `npm run prettier`       | Format code with Prettier               |
 | `npm run scan:lint`      | Generate ESLint report for SonarQube    |
 | `npm run scan:stylelint` | Generate Stylelint report for SonarQube |
+
+## 🧪 Testing
+
+The frontend uses [Vitest](https://vitest.dev/) with Vue Test Utils for component and unit testing.
+
+### Running Tests
+
+```bash
+# Run tests in watch mode (interactive)
+npm run test
+
+# Run tests with UI (visual test runner)
+npm run test:ui
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+### Test Structure
+
+- **Test files**: Place `*.spec.ts` or `*.test.ts` files alongside source files
+- **Setup**: `src/test/setup.ts` - Global test configuration with Vuetify stubs
+- **Config**: `vitest.config.ts` - Vitest configuration with Vue and CSS support
+- **Environment**: `happy-dom` for fast DOM testing
+
+### Writing Tests
+
+**Component Test Example:**
+
+```typescript
+import { describe, it, expect } from 'vitest'
+import { mount } from '@vue/test-utils'
+import MyComponent from './MyComponent.vue'
+
+describe('MyComponent', () => {
+	it('renders properly', () => {
+		const wrapper = mount(MyComponent, {
+			props: { title: 'Hello' },
+		})
+		expect(wrapper.text()).toContain('Hello')
+	})
+})
+```
+
+**Helper/Utility Test Example:**
+
+```typescript
+import { describe, it, expect } from 'vitest'
+import { myUtilityFunction } from './myUtility'
+
+describe('myUtilityFunction', () => {
+	it('should return expected result', () => {
+		expect(myUtilityFunction('input')).toBe('expected output')
+	})
+})
+```
+
+### Coverage Reports
+
+Coverage reports are generated in `coverage/` directory:
+
+- **HTML**: Open `coverage/index.html` in a browser
+- **LCOV**: `coverage/lcov.info` for SonarCloud integration
+- **Console**: Summary displayed after running tests
+
+### Example Test Files
+
+- `src/helpers/isBot.spec.ts` - Bot detection utility tests
+- `src/components/InlineCode.spec.ts` - Component testing example
+
+For more detailed testing information, see [DEVELOPMENT.md](../DEVELOPMENT.md#-testing).
 
 ### Development Workflow
 

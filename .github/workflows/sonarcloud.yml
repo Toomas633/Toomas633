@@ -27,26 +27,52 @@ jobs:
           path: |
             ~/.npm
             ~/.cache
-            node_modules
+            frontend/node_modules
+            backend/node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/package.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Install dependencies
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm i --ignore-scripts
+
+      - name: Install backend dependencies
+        working-directory: backend
         run: npm i --ignore-scripts
 
       - name: Make reports dir
         run: mkdir .reports
 
-      - name: Set .env values
+      - name: Set backend .env values
+        working-directory: backend
         run: echo "node_env='local'" >> .env
 
-      - name: ESlint
+      - name: Frontend ESLint
+        working-directory: frontend
         run: npm run scan:lint
         continue-on-error: true
 
+      - name: Backend ESLint
+        working-directory: backend
+        run: |
+          mkdir -p ../.reports
+          npx eslint src/**/*.ts --format json --output-file ../.reports/eslint-backend-report.json --no-fix
+        continue-on-error: true
+
       - name: Stylelint
+        working-directory: frontend
         run: npm run scan:stylelint
+        continue-on-error: true
+
+      - name: Frontend Tests with Coverage
+        working-directory: frontend
+        run: npm run test:coverage
+        continue-on-error: true
+
+      - name: Backend Tests with Coverage
+        working-directory: backend
+        run: npm run test:coverage
         continue-on-error: true
 
       - name: Update paths

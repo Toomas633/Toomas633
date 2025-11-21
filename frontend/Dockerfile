@@ -6,16 +6,11 @@ COPY package*.json ./
 
 RUN npm ci --only=production=false --ignore-scripts
 
-# Copy environment files
 COPY .env* ./
 
 COPY . .
 
-# Build arguments for environment variables
-# Note: GitHub token should be provided at build time via --build-arg
 ARG VITE_API_URL=http://localhost:3000/api
-
-# Set environment variables for build (non-sensitive only)
 ENV VITE_API_URL=$VITE_API_URL
 
 RUN npm run build
@@ -29,14 +24,12 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
 RUN addgroup -g 1001 -S nodejs && \
-    adduser -S nextjs -u 1001
-
-RUN chown -R nextjs:nodejs /usr/share/nginx/html && \
+    adduser -S nextjs -u 1001 && \
+    chown -R nextjs:nodejs /usr/share/nginx/html && \
     chown -R nextjs:nodejs /var/cache/nginx && \
     chown -R nextjs:nodejs /var/log/nginx && \
-    chown -R nextjs:nodejs /etc/nginx/conf.d
-
-RUN mkdir -p /var/run/nginx && \
+    chown -R nextjs:nodejs /etc/nginx/conf.d && \
+    mkdir -p /var/run/nginx && \
     chown -R nextjs:nodejs /var/run/nginx
 
 USER nextjs

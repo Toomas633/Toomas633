@@ -109,22 +109,99 @@ ALLOWED_ORIGINS=http://localhost:5173,https://yourdomain.com
 
 ## 🔧 Available Scripts
 
-| Command                | Description                              |
-| :--------------------- | :--------------------------------------- |
-| `npm run build`        | Compile TypeScript to JavaScript         |
-| `npm run build:watch`  | Compile TypeScript in watch mode         |
-| `npm run clean`        | Remove compiled dist directory           |
-| `npm start`            | Start production server (requires build) |
-| `npm run dev`          | Start with hot reload (tsx watch mode)   |
-| `npm run dev:build`    | Build and start with Node.js watch       |
-| `npm run lint`         | Check code style and errors              |
-| `npm run lint:fix`     | Auto-fix linting issues                  |
-| `npm run format`       | Format TypeScript files with Prettier    |
-| `npm run type-check`   | TypeScript type checking (no emit)       |
-| `npm run docker:build` | Build Docker image                       |
-| `npm run docker:run`   | Run Docker container with .env           |
-| `npm run docker:up`    | Start with docker-compose                |
-| `npm run docker:down`  | Stop docker-compose services             |
+| Command                 | Description                              |
+| :---------------------- | :--------------------------------------- |
+| `npm run build`         | Compile TypeScript to JavaScript         |
+| `npm run build:watch`   | Compile TypeScript in watch mode         |
+| `npm run clean`         | Remove compiled dist directory           |
+| `npm start`             | Start production server (requires build) |
+| `npm run dev`           | Start with hot reload (tsx watch mode)   |
+| `npm run dev:build`     | Build and start with Node.js watch       |
+| `npm run test`          | Run tests in watch mode                  |
+| `npm run test:ui`       | Run tests with visual UI                 |
+| `npm run test:coverage` | Run tests with coverage report           |
+| `npm run lint`          | Check code style and errors              |
+| `npm run lint:fix`      | Auto-fix linting issues                  |
+| `npm run format`        | Format TypeScript files with Prettier    |
+| `npm run type-check`    | TypeScript type checking (no emit)       |
+| `npm run docker:build`  | Build Docker image                       |
+| `npm run docker:run`    | Run Docker container with .env           |
+| `npm run docker:up`     | Start with docker-compose                |
+| `npm run docker:down`   | Stop docker-compose services             |
+
+## 🧪 Testing
+
+The backend uses [Vitest](https://vitest.dev/) with [Supertest](https://github.com/visionmedia/supertest) for API and unit testing.
+
+### Running Tests
+
+```bash
+# Run tests in watch mode (interactive)
+npm run test
+
+# Run tests with UI (visual test runner)
+npm run test:ui
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+### Test Structure
+
+- **Test files**: Place `*.spec.ts` or `*.test.ts` files alongside source files
+- **Setup**: `src/test/setup.ts` - Global test configuration
+- **Config**: `vitest.config.ts` - Vitest configuration for Node.js environment
+- **Environment**: `node` for server-side testing
+
+### Writing Tests
+
+**API Route Test Example:**
+
+```typescript
+import { describe, it, expect } from 'vitest'
+import request from 'supertest'
+import express from 'express'
+import myRouter from './myRouter'
+
+describe('My Route', () => {
+	it('should return success', async () => {
+		const app = express()
+		app.use('/api', myRouter)
+
+		const response = await request(app).get('/api/endpoint')
+		expect(response.status).toBe(200)
+	})
+})
+```
+
+**Utility Function Test Example:**
+
+```typescript
+import { describe, it, expect, vi } from 'vitest'
+import { myFunction } from './myFunction'
+
+describe('myFunction', () => {
+	it('should process data correctly', () => {
+		const result = myFunction({ key: 'value' })
+		expect(result).toBe('expected output')
+	})
+})
+```
+
+### Coverage Reports
+
+Coverage reports are generated in `coverage/` directory:
+
+- **HTML**: Open `coverage/index.html` in a browser
+- **LCOV**: `coverage/lcov.info` for SonarCloud integration
+- **Console**: Summary displayed after running tests
+
+### Example Test Files
+
+- `src/utils/helpers.spec.ts` - Utility function tests
+- `src/routes/health.spec.ts` - API route testing with supertest
+
+For more detailed testing information, see [DEVELOPMENT.md](../DEVELOPMENT.md#-testing).
 
 ## 🌐 API Endpoints
 
