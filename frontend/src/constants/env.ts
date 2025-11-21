@@ -7,6 +7,7 @@ function readEnv(key: string): string | undefined {
 }
 
 export const GITHUB_TOKEN = readEnv('VITE_GITHUB_TOKEN') || ''
+export const API_URL = readEnv('VITE_API_URL') || '/api'
 
 export const APP_VERSION =
 	typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : ''

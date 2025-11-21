@@ -2,25 +2,26 @@
 	"compilerOptions": {
 		"target": "ESNext",
 		"module": "ESNext",
-		"lib": ["ESNext", "dom", "scripthost"],
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
 		"allowJs": false,
 		"strict": true,
 		"noImplicitAny": true,
 		"moduleResolution": "bundler",
 		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
 		"sourceMap": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
+		"noEmit": true,
 		"jsx": "preserve",
-		"types": ["vuetify", "node"],
+		"types": ["vite/client", "node"],
 		"paths": {
 			"@/*": ["./src/*"],
 			"@icons/*": ["./icons/*"],
 			"@public/*": ["./public/*"]
-		},
-		
+		}
 	},
 	"include": [
 		"components.d.ts",
@@ -28,10 +29,14 @@
 		"src/**/*.ts",
 		"src/**/*.d.ts",
 		"src/**/*.vue",
-		"backend/**/*.mjs",
-		"scripts/**/*.mjs",
-		"public/**/*.html",
+		"plugins/**/*.ts",
 		"vite.config.*"
 	],
-	"exclude": ["node_modules", "dist"]
+	"exclude": [
+		"node_modules",
+		"dist",
+		"public",
+		"**/*.spec.ts",
+		"**/*.test.ts"
+	]
 }

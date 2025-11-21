@@ -1,10 +1,10 @@
 ### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
+!*/.vscode/settings.json
+!*/.vscode/tasks.json
+!*/.vscode/launch.json
+!*/.vscode/extensions.json
+!*/.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
 .history/
@@ -19,7 +19,7 @@
 
 .DS_Store
 node_modules
-/dist
+dist
 
 
 # local env files
@@ -33,7 +33,6 @@ pnpm-debug.log*
 
 # Editor directories and files
 .idea
-.vscode
 *.suo
 *.ntvs*
 *.njsproj

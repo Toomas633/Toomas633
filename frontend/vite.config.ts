@@ -1,23 +1,21 @@
 import { fileURLToPath, URL } from 'node:url'
-import { defineConfig } from 'vite'
+import { defineConfig, type UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import compression from 'vite-plugin-compression'
-import zlib from 'zlib'
+import { constants } from 'zlib'
 import imagemin from 'unplugin-imagemin/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import Components from 'unplugin-vue-components/vite'
 import { createSitemapPlugin } from './plugins/sitemap-plugin'
 import pkg from './package.json'
 
-interface PkgJson {
-	version?: string
-}
-
-export default defineConfig((): import('vite').UserConfig => {
-	const version = (pkg as PkgJson).version || '0.0.0'
+export default defineConfig(({ command, mode }): UserConfig => {
+	const version = pkg.version || '0.0.0'
 	const vueVersion = (pkg.dependencies?.vue ?? '').replace('^', '')
 	const vuetifyVersion = (pkg.dependencies?.vuetify ?? '').replace('^', '')
+	const isDev = mode === 'development'
+	const isProd = command === 'build'
 	return {
 		define: {
 			__VUE_VERSION__: JSON.stringify(vueVersion),
@@ -35,7 +33,7 @@ export default defineConfig((): import('vite').UserConfig => {
 				threshold: 10240,
 				compressionOptions: {
 					params: {
-						[zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+						[constants.BROTLI_PARAM_QUALITY]: 11,
 					},
 				},
 			}),
@@ -60,16 +58,40 @@ export default defineConfig((): import('vite').UserConfig => {
 				'vue-router',
 			],
 		},
+		server: {
+			host: true,
+			port: 5173,
+			strictPort: true,
+			open: false
+		},
+		preview: {
+			port: 4173,
+			host: true
+		},
 		build: {
-			sourcemap: true,
+			sourcemap: mode === 'development',
 			chunkSizeWarningLimit: 1500,
-			minify: 'terser',
+			minify: command === 'build' ? 'terser' : false,
+			target: 'esnext',
 			terserOptions: {
-				compress: { drop_console: true, drop_debugger: true, passes: 2 },
-				output: { comments: false },
+				compress: {
+					drop_console: command === 'build',
+					drop_debugger: true,
+					passes: 2
+				},
+				format: { 
+					comments: false 
+				},
 			},
 			rollupOptions: {
 				treeshake: true,
+				output: {
+					manualChunks: {
+						vue: ['vue', 'vue-router'],
+						vuetify: ['vuetify'],
+						vendor: ['@vueuse/head', 'vue-cookies']
+					}
+				}
 			},
 		},
 		resolve: {

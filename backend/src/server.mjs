@@ -52,6 +52,13 @@ const emailRateLimiter = rateLimit({
 app.use(bodyParser.json())
 app.use(cors(corsOptions))
 
+// Health check endpoint for Docker
+app.get('/health', (req, res) => {
+	res
+		.status(200)
+		.json({ status: 'healthy', timestamp: new Date().toISOString() })
+})
+
 const createTransporter = () =>
 	nodemailer.createTransport({
 		host: EMAIL_HOST,

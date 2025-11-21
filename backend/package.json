@@ -1,0 +1,38 @@
+{
+	"name": "toomas633s-dungeon-backend",
+	"description": "Backend server for Toomas633's projects homepage",
+	"version": "4.2.1",
+	"private": true,
+	"license": "GPL-3.0-only",
+	"type": "module",
+	"main": "src/server.mjs",
+	"scripts": {
+		"start": "node src/server.mjs",
+		"dev": "node --watch src/server.mjs",
+		"lint": "eslint src/**/*.mjs",
+		"lint:fix": "eslint src/**/*.mjs --fix",
+		"prettier": "prettier --write 'src/**/*.{js,mjs}' '*.json'",
+		"docker:build": "docker build -t toomas633-backend .",
+		"docker:run": "docker run -p 3000:3000 --env-file .env toomas633-backend",
+		"docker:up": "docker-compose up -d",
+		"docker:down": "docker-compose down"
+	},
+	"dependencies": {
+		"body-parser": "^2.2.0",
+		"cors": "^2.8.5",
+		"dotenv": "^17.2.3",
+		"express": "^5.1.0",
+		"express-rate-limit": "^8.2.1",
+		"nodemailer": "^7.0.10"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.39.1",
+		"@types/cors": "^2.8.19",
+		"@types/node": "^24.10.1",
+		"@types/nodemailer": "^7.0.4",
+		"eslint": "^9.39.1",
+		"eslint-plugin-prettier": "^5.5.4",
+		"globals": "^16.5.0",
+		"prettier": "^3.6.2"
+	}
+}

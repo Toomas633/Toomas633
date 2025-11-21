@@ -1,0 +1,36 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch Backend (Watch + Inspector)",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceFolder}/src/server.mjs",
+			"cwd": "${workspaceFolder}",
+			"env": {
+				"NODE_ENV": "development"
+			},
+			"envFile": "${workspaceFolder}/.env",
+			"console": "integratedTerminal",
+			"restart": true,
+			"runtimeArgs": ["--watch", "--inspect=9229", "--enable-source-maps"],
+			"skipFiles": ["<node_internals>/**"]
+		},
+		{
+			"name": "Debug Backend Tests",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceFolder}/node_modules/.bin/jest",
+			"cwd": "${workspaceFolder}",
+			"args": ["--runInBand", "--no-cache"],
+			"env": {
+				"NODE_ENV": "test"
+			},
+			"envFile": "${workspaceFolder}/.env.test",
+			"console": "integratedTerminal",
+			"restart": false,
+			"runtimeArgs": ["--enable-source-maps"],
+			"skipFiles": ["<node_internals>/**"]
+		}
+	]
+}
