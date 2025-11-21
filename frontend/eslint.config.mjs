@@ -11,7 +11,7 @@ export default [
 	js.configs.recommended,
 	...vue.configs['flat/recommended'],
 	{
-		files: ['**/*.{js,mjs,ts,vue}'],
+		files: ['**/*.{js,mjs,ts,vue}', 'tests/**/*.{ts,vue}'],
 		languageOptions: {
 			globals: {
 				...globals.browser,

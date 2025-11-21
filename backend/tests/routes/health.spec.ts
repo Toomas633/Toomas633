@@ -1,8 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import request from 'supertest'
 import express from 'express'
-import healthRouter from './health'
-import * as emailService from '../services/emailService'
+import healthRouter from '../../src/routes/health'
+import * as emailService from '../../src/services/emailService'
 
 describe('Health Route', () => {
 	let app: express.Application

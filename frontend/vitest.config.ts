@@ -7,7 +7,8 @@ export default defineConfig({
 	test: {
 		globals: true,
 		environment: 'happy-dom',
-		setupFiles: ['./src/test/setup.ts'],
+		setupFiles: ['./tests/setup.ts'],
+		include: ['tests/**/*.spec.ts', 'tests/**/*.test.ts'],
 		css: {
 			include: /.+/,
 		},
@@ -17,7 +18,7 @@ export default defineConfig({
 			exclude: [
 				'node_modules/',
 				'dist/',
-				'src/test/',
+				'tests/',
 				'**/*.spec.ts',
 				'**/*.test.ts',
 				'**/*.d.ts',

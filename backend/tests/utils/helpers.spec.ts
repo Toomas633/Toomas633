@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
-import { objectToString, logWithTimestamp } from './helpers'
+import { objectToString, logWithTimestamp } from '../../src/utils/helpers'
 
 describe('helpers', () => {
 	describe('objectToString', () => {

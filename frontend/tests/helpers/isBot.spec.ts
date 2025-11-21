@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { isBotUserAgent } from './isBot'
+import { isBotUserAgent } from '../../src/helpers/isBot'
 
 describe('isBot', () => {
 	describe('isBotUserAgent', () => {

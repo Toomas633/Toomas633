@@ -4,7 +4,8 @@ export default defineConfig({
 	test: {
 		globals: true,
 		environment: 'node',
-		setupFiles: ['./src/test/setup.ts'],
+		setupFiles: ['./tests/setup.ts'],
+		include: ['tests/**/*.spec.ts', 'tests/**/*.test.ts'],
 		env: {
 			NODE_ENV: 'test',
 		},
@@ -14,7 +15,7 @@ export default defineConfig({
 			exclude: [
 				'node_modules/',
 				'dist/',
-				'src/test/',
+				'tests/',
 				'**/*.spec.ts',
 				'**/*.test.ts',
 				'**/*.d.ts',

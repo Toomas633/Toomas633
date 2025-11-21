@@ -12,11 +12,11 @@
 		"test": "vitest",
 		"test:ui": "vitest --ui",
 		"test:coverage": "vitest run --coverage",
-		"lint": "eslint src/**/* plugins/**/*",
-		"stylelint": "stylelint 'src/**/*.{css,scss,vue}'",
+		"lint": "eslint src/**/* tests/**/* plugins/**/*",
+		"stylelint": "stylelint 'src/**/*.{css,scss,vue}' 'tests/**/*.{css,scss,vue}'",
 		"prettier": "prettier --write '**/*.{ts,js,jsx,json,css,scss,vue,html}'",
-		"scan:lint": "eslint src/**/* plugins/**/* --format json --output-file .reports/eslint-report.json --no-fix",
-		"scan:stylelint": "stylelint 'src/**/*.{css,scss,vue}' --f json -o .reports/stylelint-report.json"
+		"scan:lint": "eslint src/**/* tests/**/* plugins/**/* --format json --output-file .reports/eslint-report.json --no-fix",
+		"scan:stylelint": "stylelint 'src/**/*.{css,scss,vue}' 'tests/**/*.{css,scss,vue}' --f json -o .reports/stylelint-report.json"
 	},
 	"dependencies": {
 		"@basitcodeenv/vue3-device-detect": "^1.0.3",
