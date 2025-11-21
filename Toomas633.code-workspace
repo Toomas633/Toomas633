@@ -10,5 +10,16 @@
 		"path": "frontend"
 	}
 ],
-  "settings": {}
+  "settings": {
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": true,
+		"scminput": false
+	},
+	"github.copilot.advanced": {
+		"length": 500,
+		"temperature": 0.1
+	}
+  }
 }

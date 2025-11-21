@@ -47,9 +47,14 @@ Backend API server for Toomas633's projects homepage. A Node.js Express server t
 3. **Start development server**:
 
    ```bash
-   npm run dev    # Hot reload enabled
-   # or
-   npm start      # Standard start
+   npm run dev    # Development with hot reload (tsx)
+   ```
+
+   **For production**:
+
+   ```bash
+   npm run build  # Compile TypeScript
+   npm start      # Run compiled JavaScript
    ```
 
 4. **Verify health**:
@@ -104,17 +109,22 @@ ALLOWED_ORIGINS=http://localhost:5173,https://yourdomain.com
 
 ## 🔧 Available Scripts
 
-| Command                | Description                         |
-| :--------------------- | :---------------------------------- |
-| `npm start`            | Start production server             |
-| `npm run dev`          | Start with hot reload (development) |
-| `npm run lint`         | Check code style and errors         |
-| `npm run lint:fix`     | Auto-fix linting issues             |
-| `npm run prettier`     | Format code files                   |
-| `npm run docker:build` | Build Docker image                  |
-| `npm run docker:run`   | Run Docker container with .env      |
-| `npm run docker:up`    | Start with docker-compose           |
-| `npm run docker:down`  | Stop docker-compose services        |
+| Command                | Description                              |
+| :--------------------- | :--------------------------------------- |
+| `npm run build`        | Compile TypeScript to JavaScript         |
+| `npm run build:watch`  | Compile TypeScript in watch mode         |
+| `npm run clean`        | Remove compiled dist directory           |
+| `npm start`            | Start production server (requires build) |
+| `npm run dev`          | Start with hot reload (tsx watch mode)   |
+| `npm run dev:build`    | Build and start with Node.js watch       |
+| `npm run lint`         | Check code style and errors              |
+| `npm run lint:fix`     | Auto-fix linting issues                  |
+| `npm run format`       | Format TypeScript files with Prettier    |
+| `npm run type-check`   | TypeScript type checking (no emit)       |
+| `npm run docker:build` | Build Docker image                       |
+| `npm run docker:run`   | Run Docker container with .env           |
+| `npm run docker:up`    | Start with docker-compose                |
+| `npm run docker:down`  | Stop docker-compose services             |
 
 ## 🌐 API Endpoints
 
@@ -124,14 +134,18 @@ ALLOWED_ORIGINS=http://localhost:5173,https://yourdomain.com
 GET /health
 ```
 
-Returns server health status and timestamp.
+Returns server health status, timestamp, and email service verification.
 
 **Response:**
 
 ```json
 {
 	"status": "healthy",
-	"timestamp": "2025-11-21T12:00:00.000Z"
+	"timestamp": "2025-11-21T12:00:00.000Z",
+	"email": {
+		"status": "connected",
+		"responseTime": "150ms"
+	}
 }
 ```
 
@@ -170,7 +184,7 @@ Send contact form email. Rate limited to 10 requests per 15 minutes per IP.
 {
 	"success": false,
 	"message": "Error sending email",
-	"stack": "error details"
+	"error": "error details"
 }
 ```
 
@@ -178,12 +192,30 @@ Send contact form email. Rate limited to 10 requests per 15 minutes per IP.
 
 ```
 backend/
-├── src/
-│   └── server.mjs          # Main application server
+├── src/                      # TypeScript source files
+│   ├── app.ts               # Express app configuration and middleware
+│   ├── server.ts            # Server startup and graceful shutdown
+│   ├── config/
+│   │   └── env.ts          # Environment validation and configuration
+│   ├── middleware/
+│   │   ├── cors.ts         # CORS configuration
+│   │   └── rateLimiter.ts  # Rate limiting setup
+│   ├── routes/
+│   │   ├── health.ts       # Health check endpoint
+│   │   └── email.ts        # Email sending endpoint
+│   ├── services/
+│   │   └── emailService.ts # Nodemailer email operations
+│   ├── types/
+│   │   └── index.ts        # TypeScript type definitions
+│   └── utils/
+│       └── helpers.ts      # Utility functions
+├── dist/                    # Compiled JavaScript (gitignored)
 ├── .env.example            # Environment template
 ├── .env                    # Environment variables (gitignored)
 ├── docker-compose.yml      # Docker compose configuration
-├── Dockerfile              # Container build instructions
+├── Dockerfile              # Multi-stage container build
+├── tsconfig.json           # TypeScript compiler configuration
+├── eslint.config.js        # ESLint configuration
 ├── package.json            # Dependencies and scripts
 └── README.md              # This file
 ```

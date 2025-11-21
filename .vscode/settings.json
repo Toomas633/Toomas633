@@ -3,6 +3,16 @@
 		"connectionId": "toomas633",
 		"projectKey": "Toomas633_Toomas633"
 	},
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": true,
+		"scminput": false
+	},
+	"github.copilot.advanced": {
+		"length": 500,
+		"temperature": 0.1
+	},
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[javascript]": {
@@ -50,5 +60,8 @@
 	},
 	"[xml]": {
 		"editor.defaultFormatter": "redhat.vscode-xml"
+	},
+	"files.associations": {
+		".github-copilot-instructions.md": "markdown"
 	}
 }
