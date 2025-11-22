@@ -36,15 +36,29 @@ WORKDIR /app
 COPY --from=frontend-build /app/frontend /app/frontend
 COPY --from=backend-build /app/backend /app/backend
 COPY sonar-project.properties /app/
+COPY .git /app/.git
 
 ARG SONAR_TOKEN
 ARG GITHUB_REF_NAME=main
+ARG GITHUB_PR_NUMBER=""
+ARG GITHUB_BASE_REF=""
+ARG GITHUB_HEAD_REF=""
 
-RUN sonar-scanner \
-    -Dsonar.token=${SONAR_TOKEN} \
-    -Dsonar.projectKey=Toomas633_Toomas633 \
-    -Dsonar.organization=toomas633 \
-    -Dsonar.branch.name=${GITHUB_REF_NAME}
+RUN if [ -n "$GITHUB_PR_NUMBER" ]; then \
+      sonar-scanner \
+        -Dsonar.token=${SONAR_TOKEN} \
+        -Dsonar.projectKey=Toomas633_Toomas633 \
+        -Dsonar.organization=toomas633 \
+        -Dsonar.pullrequest.key=${GITHUB_PR_NUMBER} \
+        -Dsonar.pullrequest.branch=${GITHUB_HEAD_REF} \
+        -Dsonar.pullrequest.base=${GITHUB_BASE_REF}; \
+    else \
+      sonar-scanner \
+        -Dsonar.token=${SONAR_TOKEN} \
+        -Dsonar.projectKey=Toomas633_Toomas633 \
+        -Dsonar.organization=toomas633 \
+        -Dsonar.branch.name=${GITHUB_REF_NAME}; \
+    fi
 
 FROM node:slim AS production-stage
 
