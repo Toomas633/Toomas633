@@ -1,0 +1,188 @@
+name: Epic Manager
+
+on:
+  issues:
+    types:
+      - closed
+      - reopened
+      - edited
+      - labeled
+      - unlabeled
+  workflow_dispatch:
+
+jobs:
+  manage-epics:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Manage Epic Issues
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const triggeredIssue = context.payload.issue;
+
+            if (!triggeredIssue) {
+              console.log('No issue in context, skipping');
+              return;
+            }
+
+            console.log(`Triggered by issue #${triggeredIssue.number}: ${triggeredIssue.title}`);
+
+            // Find the parent epic for this issue
+            const body = triggeredIssue.body || '';
+            let epicNumber = null;
+
+            // Check if the triggered issue itself is an epic
+            const isEpic = triggeredIssue.labels.some(label => label.name === 'epic');
+
+            if (isEpic) {
+              // If the triggered issue is an epic, check that epic
+              epicNumber = triggeredIssue.number;
+              console.log(`Issue is an epic itself`);
+            } else {
+              // Extract parent epic number from the issue body
+              const parentPatterns = [
+                /(?:Parent|Epic|Relates to|Part of):\s*#(\d+)/i,
+                /(?:Parent|Epic|Relates to|Part of):\s*\w+\/\w+#(\d+)/i,
+                /(?:Parent|Epic|Relates to|Part of):\s*https:\/\/github\.com\/\w+\/\w+\/issues\/(\d+)/i
+              ];
+
+              for (const pattern of parentPatterns) {
+                const match = body.match(pattern);
+                if (match) {
+                  epicNumber = parseInt(match[1]);
+                  break;
+                }
+              }
+
+              if (!epicNumber) {
+                console.log('No parent epic found for this issue, skipping');
+                return;
+              }
+
+              console.log(`Found parent epic #${epicNumber}`);
+            }
+
+            // Get the epic issue
+            const epic = await github.rest.issues.get({
+              owner,
+              repo,
+              issue_number: epicNumber
+            });
+
+            // Verify it has the epic label
+            const hasEpicLabel = epic.data.labels.some(label => label.name === 'epic');
+            if (!hasEpicLabel) {
+              console.log(`Issue #${epicNumber} does not have the 'epic' label, skipping`);
+              return;
+            }
+
+            console.log(`Processing epic #${epic.data.number}: ${epic.data.title}`);
+
+            // Get all issues in the repository
+            const allIssues = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'all',
+              per_page: 100
+            });
+
+            // Find child issues (issues that have this epic as parent)
+            const linkedIssues = [];
+
+            for (const issue of allIssues.data) {
+              if (issue.number === epic.data.number) continue;
+
+              try {
+                const issueBody = issue.body || '';
+
+                // Check for parent references in various formats
+                const parentPatterns = [
+                  new RegExp(`(?:Parent|Epic|Relates to|Part of):\\s*#${epic.data.number}\\b`, 'i'),
+                  new RegExp(`(?:Parent|Epic|Relates to|Part of):\\s*${owner}/${repo}#${epic.data.number}\\b`, 'i'),
+                  new RegExp(`(?:Parent|Epic|Relates to|Part of):\\s*https://github\\.com/${owner}/${repo}/issues/${epic.data.number}\\b`, 'i')
+                ];
+
+                const hasParentReference = parentPatterns.some(pattern => pattern.test(issueBody));
+
+                if (hasParentReference) {
+                  linkedIssues.push(issue);
+                }
+              } catch (error) {
+                console.log(`  Error checking issue #${issue.number}: ${error.message}`);
+              }
+            }
+
+            console.log(`Found ${linkedIssues.length} linked issue(s) for epic #${epic.data.number}`);
+
+            if (linkedIssues.length === 0) {
+              console.log(`No linked issues found for epic #${epic.data.number}`);
+              return;
+            }
+
+            // Count open linked issues
+            const openLinkedIssues = linkedIssues.filter(issue => issue.state === 'open');
+            const closedLinkedIssues = linkedIssues.filter(issue => issue.state === 'closed');
+
+            console.log(`  Open: ${openLinkedIssues.length}, Closed: ${closedLinkedIssues.length}`);
+
+            // Determine if epic should be open or closed
+            const shouldBeOpen = openLinkedIssues.length > 0;
+            const isCurrentlyOpen = epic.data.state === 'open';
+
+            if (shouldBeOpen && !isCurrentlyOpen) {
+              // Reopen the epic
+              console.log(`Reopening epic #${epic.data.number} (has ${openLinkedIssues.length} open linked issue(s))`);
+
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: epic.data.number,
+                state: 'open'
+              });
+
+              // Add a comment explaining why it was reopened
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: epic.data.number,
+                body: `🔄 This epic was automatically reopened because it has ${openLinkedIssues.length} open linked issue(s):\n\n${openLinkedIssues.map(i => `- #${i.number} ${i.title}`).join('\n')}`
+              });
+
+            } else if (!shouldBeOpen && isCurrentlyOpen) {
+              // Close the epic
+              console.log(`Closing epic #${epic.data.number} (all ${linkedIssues.length} linked issue(s) are closed)`);
+
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: epic.data.number,
+                state: 'closed'
+              });
+
+              // Add a comment explaining why it was closed
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: epic.data.number,
+                body: `✅ This epic was automatically closed because all ${linkedIssues.length} linked issue(s) are now closed.`
+              });
+
+            } else {
+              console.log(`Epic #${epic.data.number} state is correct (should be ${shouldBeOpen ? 'open' : 'closed'}, is ${isCurrentlyOpen ? 'open' : 'closed'})`);
+            }
+
+            console.log('\n✨ Epic management complete');
