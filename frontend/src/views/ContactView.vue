@@ -104,7 +104,7 @@ const message = ref('')
 
 const { showErrorMessage, showSuccessMessage } = useAlertMixin()
 
-const knownDomains = [
+const knownDomains = new Set([
 	'gmail.com',
 	'yahoo.com',
 	'outlook.com',
@@ -116,7 +116,7 @@ const knownDomains = [
 	'yandex.com',
 	'zoho.com',
 	'toomas633.com',
-]
+])
 const projects = [
 	{ title: 'T6 Drone', icon: 'mdi-quadcopter' },
 	{ title: 'Robotic Arm', icon: 'mdi-robot-industrial' },
@@ -175,6 +175,6 @@ function validateEmail(v: string) {
 
 function isKnownDomain(email: string) {
 	const domain = email.split('@')[1]
-	return knownDomains.includes(domain) || domain
+	return knownDomains.has(domain) || domain
 }
 </script>

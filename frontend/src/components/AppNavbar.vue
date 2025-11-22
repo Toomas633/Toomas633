@@ -76,7 +76,7 @@
 				<v-list-item
 					:title="isDark ? 'Switch to light theme' : 'Switch to dark theme'"
 					:prepend-icon="
-						!isDark ? 'mdi-white-balance-sunny' : 'mdi-weather-night'
+						isDark ? 'mdi-weather-night' : 'mdi-white-balance-sunny'
 					"
 					@click="changeTheme" />
 			</v-list>
@@ -187,15 +187,15 @@ let expandTimer: ReturnType<typeof setTimeout> | undefined
 const { isDark, toggleTheme } = useThemeMixin()
 
 watch(isRail, (val) => {
-	if (!val) {
+	if (val) {
+		if (expandTimer) clearTimeout(expandTimer)
+		if (!secondDrawer.value) resetSelection()
+		fullyExpanded.value = false
+	} else {
 		if (expandTimer) clearTimeout(expandTimer)
 		expandTimer = setTimeout(() => {
 			fullyExpanded.value = true
 		}, 200)
-	} else {
-		if (expandTimer) clearTimeout(expandTimer)
-		if (!secondDrawer.value) resetSelection()
-		fullyExpanded.value = false
 	}
 })
 

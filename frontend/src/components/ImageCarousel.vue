@@ -67,7 +67,7 @@ const progress = ref(0)
 const containerRef = ref<HTMLElement | null>(null)
 const containerWidth = ref(0)
 const parentHeight = ref<number | undefined>(undefined)
-const aspectRatios = ref<number[]>([NaN])
+const aspectRatios = ref<number[]>([Number.NaN])
 
 let resizeObserver: ResizeObserver | null = null
 let parentResizeObserver: ResizeObserver | null = null

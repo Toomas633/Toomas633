@@ -21,7 +21,7 @@
 		async
 		src="https://www.googletagmanager.com/gtag/js?id=G-NXQTF484K2"></script>
 	<script>
-		window.dataLayer = window.dataLayer || []
+		globalThis.dataLayer = globalThis.dataLayer || []
 		function gtag() {
 			dataLayer.push(arguments)
 		}
@@ -57,7 +57,7 @@
 			}
 		}
 
-		window.updateConsent = updateConsent
+		globalThis.updateConsent = updateConsent
 	</script>
 
 	<body>

@@ -17,12 +17,12 @@ const props = defineProps<{
 	h3?: boolean
 }>()
 
-const tag = computed(() => props.title.toLowerCase().replace(/ /g, '-'))
+const tag = computed(() => props.title.toLowerCase().replaceAll(' ', '-'))
 
 const setTag = () => {
 	const hash = `#${tag.value}`
-	if (window.location.hash !== hash) {
-		window.location.hash = tag.value
+	if (globalThis.location.hash !== hash) {
+		globalThis.location.hash = tag.value
 	}
 }
 </script>

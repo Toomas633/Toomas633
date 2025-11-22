@@ -74,11 +74,11 @@ function loadPayPalScript(): Promise<void> {
 
 function renderPayPalButton() {
 	// @ts-expect-error PayPal script
-	if (window.PayPal && window.PayPal.Donation) {
+	if (globalThis.PayPal && globalThis.PayPal.Donation) {
 		const container = document.getElementById('donate-button')
 		if (container) container.innerHTML = ''
 		// @ts-expect-error PayPal script
-		window.PayPal.Donation.Button({
+		globalThis.PayPal.Donation.Button({
 			env: 'production',
 			hosted_button_id: 'ND263DM2ZUV8J',
 			image: {

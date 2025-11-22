@@ -48,10 +48,10 @@ const showDialog = ref(false)
 const { isDark } = useThemeMixin()
 
 function handleClick() {
-	if (!isDesktop) {
-		showDialog.value = true
-	} else {
+	if (isDesktop) {
 		router.push(props.newLink)
+	} else {
+		showDialog.value = true
 	}
 }
 </script>

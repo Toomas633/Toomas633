@@ -3,7 +3,7 @@ import { defineConfig, type UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import compression from 'vite-plugin-compression'
-import { constants } from 'zlib'
+import { constants } from 'node:zlib'
 import imagemin from 'unplugin-imagemin/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import Components from 'unplugin-vue-components/vite'
@@ -14,8 +14,6 @@ export default defineConfig(({ command, mode }): UserConfig => {
 	const version = pkg.version || '0.0.0'
 	const vueVersion = (pkg.dependencies?.vue ?? '').replace('^', '')
 	const vuetifyVersion = (pkg.dependencies?.vuetify ?? '').replace('^', '')
-	const isDev = mode === 'development'
-	const isProd = command === 'build'
 	return {
 		define: {
 			__VUE_VERSION__: JSON.stringify(vueVersion),

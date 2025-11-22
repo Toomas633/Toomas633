@@ -24,7 +24,7 @@ export default function useCookieMixin() {
 		}
 		setConsentCookie('acceptedAll')
 		consent.value = all
-		window.updateConsent(all)
+		globalThis.updateConsent(all)
 	}
 
 	function declineCookies() {
@@ -36,7 +36,7 @@ export default function useCookieMixin() {
 		}
 		setConsentCookie('declined')
 		consent.value = declined
-		window.updateConsent(declined)
+		globalThis.updateConsent(declined)
 	}
 
 	function setConsentCookie(value: Consent | 'acceptedAll' | 'declined') {

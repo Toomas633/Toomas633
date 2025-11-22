@@ -70,7 +70,7 @@ function checkConsent() {
 	if (stored && isConsent(stored)) {
 		const { ads, analytics, userData } = stored
 		consent.value = { necessary: true, ads, analytics, userData }
-		window.updateConsent(consent.value)
+		globalThis.updateConsent(consent.value)
 	} else {
 		removeAllCookies()
 		dialogVisible.value = true

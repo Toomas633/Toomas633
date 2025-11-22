@@ -7,7 +7,7 @@ const BOT_REGEX =
 	/(bot|crawler|spider|crawling|curl|python-requests|Go-http-client|wget|facebookexternalhit|Discordbot|Slackbot|TelegramBot|LinkedInBot|Twitterbot|bingpreview)/i
 
 export function isBotUserAgent(ua?: string): boolean {
-	if (typeof window === 'undefined') return true // Assume bot in non-browser contexts (defensive)
+	if (globalThis.window === undefined) return true // Assume bot in non-browser contexts (defensive)
 	const agent = ua || navigator.userAgent || ''
 	return BOT_REGEX.test(agent)
 }

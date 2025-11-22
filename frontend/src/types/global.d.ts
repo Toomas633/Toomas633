@@ -8,6 +8,9 @@ declare global {
 		updateConsent: (consent: Consent) => void
 	}
 
+	// Extend globalThis to include the updateConsent function
+	var updateConsent: (consent: Consent) => void
+
 	interface ImportMetaEnv {
 		VITE_GITHUB_TOKEN?: string
 		VITE_APP_VERSION?: string

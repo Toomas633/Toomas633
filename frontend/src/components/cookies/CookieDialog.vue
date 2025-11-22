@@ -130,7 +130,7 @@ function acceptSome() {
 	const partial: Consent = { ...consent.value, necessary: true }
 	setConsentCookie(partial)
 	consent.value = partial
-	window.updateConsent(partial)
+	globalThis.updateConsent(partial)
 	close()
 }
 

@@ -3,10 +3,10 @@ import { onMounted, onUnmounted, ref } from 'vue'
 export default function useLoadingMixin(icons: string[]) {
 	const loadingIcon = ref(icons[0])
 	let iconIndex = 0
-	let intervalId: number
+	let intervalId: ReturnType<typeof globalThis.setInterval>
 
 	onMounted(() => {
-		intervalId = window.setInterval(changeLoadingIcon, 100)
+		intervalId = globalThis.setInterval(changeLoadingIcon, 100)
 	})
 
 	function changeLoadingIcon() {

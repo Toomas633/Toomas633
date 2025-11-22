@@ -29,7 +29,7 @@ RUN npm run type-check
 RUN npm run test:coverage
 RUN npm run build
 
-FROM --platform=linux/amd64 sonarsource/sonar-scanner-cli:11 AS sonar-scan
+FROM --platform=linux/amd64 sonarsource/sonar-scanner-cli:latest AS sonar-scan
 
 WORKDIR /app
 

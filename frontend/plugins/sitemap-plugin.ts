@@ -1,4 +1,4 @@
-import { writeFileSync, readFileSync } from 'fs'
+import { writeFileSync, readFileSync } from 'node:fs'
 import { SitemapStream, streamToPromise } from 'sitemap'
 import { glob } from 'glob'
 import type { Plugin } from 'vite'
@@ -66,7 +66,7 @@ export function createSitemapPlugin(hostname: string): Plugin {
 						const path = match[1]
 
 						let priority = 0.5
-						if (path === '/') priority = 1.0
+						if (path === '/') priority = 1
 						else if (path.startsWith('/projects/')) priority = 0.8
 						else if (path.startsWith('/servers/')) priority = 0.7
 						else if (path.startsWith('/demos/')) priority = 0.6
