@@ -49,8 +49,9 @@ jobs:
         with:
           context: .
           push: true
+          secrets: |
+            sonar_token=${{ secrets.SONAR_TOKEN }}
           build-args: |
-            SONAR_TOKEN=${{ secrets.SONAR_TOKEN }}
             GITHUB_REF_NAME=${{ github.ref_name }}
           tags: |
             ghcr.io/toomas633/toomas633:latest

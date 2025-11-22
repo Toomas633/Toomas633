@@ -29,7 +29,8 @@ RUN npm run type-check
 RUN npm run test:coverage
 RUN npm run build
 
-FROM --platform=linux/amd64 sonarsource/sonar-scanner-cli:latest AS sonar-scan
+ARG TARGETPLATFORM
+FROM --platform=${TARGETPLATFORM:-linux/amd64} sonarsource/sonar-scanner-cli:11 AS sonar-scan
 
 WORKDIR /app
 
@@ -38,13 +39,14 @@ COPY --from=backend-build /app/backend /app/backend
 COPY sonar-project.properties /app/
 COPY .git /app/.git
 
-ARG SONAR_TOKEN
 ARG GITHUB_REF_NAME=main
 ARG GITHUB_PR_NUMBER=""
 ARG GITHUB_BASE_REF=""
 ARG GITHUB_HEAD_REF=""
 
-RUN if [ -n "$GITHUB_PR_NUMBER" ]; then \
+RUN --mount=type=secret,id=sonar_token,mode=0444 \
+    SONAR_TOKEN=$(cat /run/secrets/sonar_token) && \
+    if [ -n "$GITHUB_PR_NUMBER" ]; then \
       sonar-scanner \
         -Dsonar.token=${SONAR_TOKEN} \
         -Dsonar.projectKey=Toomas633_Toomas633 \
@@ -82,7 +84,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && rm -f /etc/nginx/sites-enabled/default \
-    && npm install -g pm2
+    && npm install -g pm2 \
+    && sed -i 's/^user /#user /' /etc/nginx/nginx.conf
 
 COPY nginx.conf /etc/nginx/sites-available/default
 RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
@@ -96,12 +99,14 @@ COPY --from=backend-build /app/backend/package.json /app/backend/package.json
 COPY ecosystem.config.cjs /app/ecosystem.config.cjs
 
 RUN mkdir -p /app/logs \
-    && groupadd -r appuser && useradd -r -g appuser appuser \
+    && groupadd -r appuser && useradd -r -g appuser -m appuser \
     && chown -R appuser:appuser /app \
     && chown -R appuser:appuser /var/log/nginx \
     && chown -R appuser:appuser /var/lib/nginx \
     && touch /run/nginx.pid \
-    && chown -R appuser:appuser /run/nginx.pid
+    && chown -R appuser:appuser /run/nginx.pid \
+    && mkdir -p /home/appuser/.pm2 \
+    && chown -R appuser:appuser /home/appuser
 
 USER appuser
 
