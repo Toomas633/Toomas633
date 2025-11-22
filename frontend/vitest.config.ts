@@ -23,7 +23,6 @@ export default defineConfig({
 				'**/*.test.ts',
 				'**/*.d.ts',
 				'src/constants/',
-				'plugins/',
 				'vite.config.ts',
 				'vitest.config.ts',
 			],

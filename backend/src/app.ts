@@ -1,10 +1,17 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import type { Application, Request, Response, NextFunction } from 'express'
+import type { Server } from 'node:http'
 import { corsMiddleware } from './middleware/cors.js'
 import healthRoutes from './routes/health.js'
 import emailRoutes from './routes/email.js'
 import type { ErrorResponse } from './types/index.js'
+import { config } from './config/env.js'
+import {
+	createTransporter,
+	verifyEmailConnection,
+} from './services/emailService.js'
+import { logWithTimestamp, objectToString } from './utils/helpers.js'
 
 const app: Application = express().disable('x-powered-by')
 
@@ -14,7 +21,7 @@ app.use(corsMiddleware)
 app.use('/', healthRoutes)
 app.use('/', emailRoutes)
 
-app.use('*', (req: Request, res: Response<ErrorResponse>) => {
+app.use((req: Request, res: Response<ErrorResponse>) => {
 	res.status(404).json({
 		error: 'Not Found',
 		message: `Cannot ${req.method} ${req.originalUrl}`,
@@ -35,5 +42,52 @@ app.use(
 		})
 	}
 )
+
+export const startServer = async (): Promise<void> => {
+	try {
+		logWithTimestamp('info', 'Verifying email server connection...')
+		const transporter = createTransporter()
+		const duration = await verifyEmailConnection(transporter)
+		logWithTimestamp('info', 'Email server connection verified', duration)
+
+		const server: Server = app.listen(config.server.port, () => {
+			logWithTimestamp(
+				'info',
+				`Backend listening on port ${config.server.port}`
+			)
+		})
+
+		const gracefulShutdown = (signal: string): void => {
+			logWithTimestamp('info', `${signal} received, shutting down gracefully`)
+			server.close(() => {
+				logWithTimestamp('info', 'Server closed')
+				process.exit(0)
+			})
+		}
+
+		process.on('SIGTERM', () => gracefulShutdown('SIGTERM'))
+		process.on('SIGINT', () => gracefulShutdown('SIGINT'))
+	} catch (err) {
+		logWithTimestamp(
+			'error',
+			'Failed to verify email server connection at startup'
+		)
+		const errorInfo =
+			err instanceof Error
+				? objectToString({
+						name: err.name,
+						message: err.message,
+						stack: err.stack,
+					})
+				: 'Unknown error'
+		console.error(errorInfo)
+		process.exit(1)
+	}
+}
+
+// Only start server if this module is run directly (not imported in tests)
+if (process.env.NODE_ENV !== 'test') {
+	startServer()
+}
 
 export default app

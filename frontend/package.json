@@ -11,12 +11,12 @@
 		"build": "vite build",
 		"test": "vitest",
 		"test:coverage": "vitest run --coverage",
-		"lint": "eslint 'src/**/*.{ts,vue}' 'tests/**/*.{ts,vue}' 'plugins/**/*.{ts,mjs}'",
-		"stylelint": "stylelint 'src/**/*.{css,scss,vue}' 'tests/**/*.{css,scss,vue}'",
+		"lint": "eslint src/**/*.{ts,vue} tests/**/*.{ts,vue} plugins/**/*.{ts,mjs}",
+		"stylelint": "stylelint src/**/*.{css,scss,vue} tests/**/*.{css,scss,vue}",
 		"prettier": "prettier --write '**/*.{ts,js,jsx,json,css,scss,vue,html}'",
 		"type-check": "vue-tsc --noEmit",
-		"scan:lint": "eslint 'src/**/*.{ts,vue}' 'tests/**/*.{ts,vue}' 'plugins/**/*.{ts,mjs}' --format json --output-file .reports/eslint-report.json --no-fix",
-		"scan:stylelint": "stylelint 'src/**/*.{css,scss,vue}' 'tests/**/*.{css,scss,vue}' --f json -o .reports/stylelint-report.json"
+		"scan:lint": "eslint src/**/*.{ts,vue} tests/**/*.{ts,vue} plugins/**/*.{ts,mjs} --format json --output-file .reports/eslint-report.json --no-fix",
+		"scan:stylelint": "stylelint src/**/*.{css,scss,vue} tests/**/*.{css,scss,vue} --f json -o .reports/stylelint-report.json"
 	},
 	"dependencies": {
 		"@basitcodeenv/vue3-device-detect": "^1.0.3",

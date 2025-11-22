@@ -270,8 +270,7 @@ Send contact form email. Rate limited to 10 requests per 15 minutes per IP.
 ```
 backend/
 ├── src/                      # TypeScript source files
-│   ├── app.ts               # Express app configuration and middleware
-│   ├── server.ts            # Server startup and graceful shutdown
+│   ├── app.ts               # Express app configuration, middleware, and server startup
 │   ├── config/
 │   │   └── env.ts          # Environment validation and configuration
 │   ├── middleware/

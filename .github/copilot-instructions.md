@@ -54,8 +54,7 @@ This is a multi-folder VS Code workspace with three main directories:
 - **See `frontend/.github-copilot-instructions.md` for detailed frontend patterns**
 
 ### Backend (`backend/`)
-- `backend/src/app.ts` — Express application setup and configuration
-- `backend/src/server.ts` — Server entry point
+- `backend/src/app.ts` — Express application setup, configuration, and server entry point
 - `backend/src/routes/` — API route handlers (email, health)
 - `backend/src/middleware/` — CORS, rate limiting, etc.
 - `backend/src/services/` — Business logic services
@@ -73,7 +72,7 @@ This is a multi-folder VS Code workspace with three main directories:
 - **Backend build:** `npm run build` (TypeScript compilation to `dist/`) — Compiles TS to JS
 - **Backend test:** `npm run test` (Vitest in watch mode)
 - **Backend coverage:** `npm run test:coverage` (generates coverage reports)
-- **Backend prod:** `node backend/dist/server.js` (or use `ecosystem.config.js` for PM2)
+- **Backend prod:** `node backend/dist/app.js` (or use `ecosystem.config.js` for PM2)
 - **Docker:** Use `Dockerfile` for containerized build/deploy with TypeScript compilation
 - **Lint:** `npm run lint` (uses TypeScript ESLint) — Module-specific configurations
 - **Style lint:** `npm run stylelint` (CSS/SCSS/Vue styles) — Frontend only
