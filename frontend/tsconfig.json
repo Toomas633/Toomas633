@@ -1,0 +1,42 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
+		"allowJs": false,
+		"strict": true,
+		"noImplicitAny": true,
+		"moduleResolution": "bundler",
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "preserve",
+		"types": ["vite/client", "node"],
+		"paths": {
+			"@/*": ["./src/*"],
+			"@icons/*": ["./icons/*"],
+			"@public/*": ["./public/*"]
+		}
+	},
+	"include": [
+		"components.d.ts",
+		"typed-router.d.ts",
+		"src/**/*.ts",
+		"src/**/*.d.ts",
+		"src/**/*.vue",
+		"plugins/**/*.ts",
+		"vite.config.*"
+	],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"public",
+		"**/*.spec.ts",
+		"**/*.test.ts"
+	]
+}

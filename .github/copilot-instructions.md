@@ -2,52 +2,114 @@
 
 ## Project Overview
 
-- **Name:** "Toomas633's Dungeon" - Personal projects homepage (v4.1.0)
-- This is a full-stack project with a Vue 3 + TypeScript frontend (in `src/`) and a Node.js Express backend (in `backend/server.mjs`).
-- Uses Vite for frontend build and dev server (`vite.config.ts`).
-- Vuetify is the main UI framework (`src/plugins/vuetify.ts`).
-- Backend is an Express server with CORS, rate limiting, and email functionality.
-- Nginx config (`nginx.conf`) and Dockerfile are present for deployment.
-- SonarQube integration for code quality analysis (`sonar-project.properties`).
+- **Name:** "Toomas633's Dungeon" - Personal projects homepage (v4.2.1)
+- This is a full-stack project with separate frontend and backend modules
+- **Frontend:** Vue 3 + TypeScript + Vuetify 3 in `frontend/` directory
+- **Backend:** Node.js Express server in `backend/` directory
+- Multi-workspace VS Code setup with modular development
+- Docker support and Nginx configuration for deployment
+- SonarQube integration for code quality analysis
+
+## Module-Specific Instructions
+
+**CRITICAL:** Always consult the module-specific instruction files for detailed patterns, conventions, and implementation guidelines:
+
+### Frontend Module (`frontend/`)
+- **Detailed Instructions:** See `frontend/.github-copilot-instructions.md`
+- **Stack:** Vue 3 + TypeScript + Vuetify 3 + Vite
+- **Architecture:** Component-based with strict TypeScript typing
+- **Routing:** Modular Vue Router with service layer organization
+- **Build:** Modern Vite with extensive optimization plugins
+- **When working in `frontend/`:** Always follow the patterns and conventions specified in the frontend instructions
+
+### Backend Module (`backend/`)
+- **Detailed Instructions:** See `backend/.github-copilot-instructions.md`
+- **Stack:** Node.js 24+ with TypeScript and Express.js using ESM modules
+- **Architecture:** Modular structure with TypeScript types, middleware, routes, and services
+- **Features:** CORS protection, rate limiting, email service functionality
+- **Security:** Environment validation, non-root Docker user, health monitoring
+- **When working in `backend/`:** Always follow the patterns and conventions specified in the backend instructions
+
+## Workspace Structure
+
+This is a multi-folder VS Code workspace with three main directories:
+- **Root (`./`):** Project-wide configuration, Docker, Nginx, documentation
+- **Frontend (`frontend/`):** Vue 3 application with complete frontend stack
+- **Backend (`backend/`):** Express.js API server with modular architecture
 
 ## Key Directories & Files
 
-- `src/` — Main Vue app, components, assets, helpers, plugins, router, services, types, util, views.
-- `backend/server.mjs` — Express.js backend entry point with email, CORS, and rate limiting.
-- `public/` — Static assets (favicon, manifest, robots.txt, 404.html).
-- `icons/` — SVG icon assets for technologies and social links.
-- `plugins/sitemap-plugin.ts` — Custom Vite plugin for automatic sitemap generation.
-- `vite.config.ts` — Vite configuration (entry, plugins, aliases, etc).
-- `nginx.conf` — Nginx reverse proxy/static server config.
-- `sonar-project.properties` — SonarQube configuration for code quality analysis.
-- `ecosystem.config.js` — PM2 configuration for production deployment.
+### Root Level
+- `Toomas633.code-workspace` — Multi-folder workspace configuration
+- `nginx.conf` — Nginx reverse proxy/static server config
+- `ecosystem.config.cjs` — PM2 configuration for production deployment
+- `sonar-project.properties` — SonarQube configuration for code quality analysis
+- `Dockerfile` — Root-level container configuration
+
+### Frontend (`frontend/`)
+- `frontend/src/` — Vue 3 app source code (components, views, services, etc.)
+- `frontend/vite.config.ts` — Vite build configuration with plugins
+- `frontend/package.json` — Frontend dependencies and scripts
+- `frontend/plugins/sitemap-plugin.ts` — Custom Vite plugin for SEO
+- **See `frontend/.github-copilot-instructions.md` for detailed frontend patterns**
+
+### Backend (`backend/`)
+- `backend/src/app.ts` — Express application setup, configuration, and server entry point
+- `backend/src/routes/` — API route handlers (email, health)
+- `backend/src/middleware/` — CORS, rate limiting, etc.
+- `backend/src/services/` — Business logic services
+- `backend/src/types/` — TypeScript type definitions and interfaces
+- `backend/tsconfig.json` — TypeScript compiler configuration
+- **See `backend/.github-copilot-instructions.md` for detailed backend patterns**
 
 ## Build & Run
 
-- **Frontend dev:** `npm run dev` (Vite, hot reload)
-- **Frontend build:** `npm run build` (outputs to `dist/`)
-- **Backend:** Run `node backend/server.mjs` (or use `ecosystem.config.js` for PM2)
-- **Docker:** Use `Dockerfile` for containerized build/deploy
-- **Lint:** `npm run lint` (uses `eslint.config.mjs`)
-- **Style lint:** `npm run stylelint` (CSS/SCSS/Vue styles)
-- **Prettier:** `npm run prettier` (code formatting)
+- **Frontend dev:** `npm run dev` (Vite, hot reload) — See frontend instructions for detailed setup
+- **Frontend build:** `npm run build` (outputs to `dist/`) — Uses Vite with optimization plugins
+- **Frontend test:** `npm run test` (Vitest in watch mode)
+- **Frontend coverage:** `npm run test:coverage` (generates coverage reports)
+- **Backend dev:** `npm run dev` (tsx watch, hot reload) — See backend instructions for TypeScript patterns
+- **Backend build:** `npm run build` (TypeScript compilation to `dist/`) — Compiles TS to JS
+- **Backend test:** `npm run test` (Vitest in watch mode)
+- **Backend coverage:** `npm run test:coverage` (generates coverage reports)
+- **Backend prod:** `node backend/dist/app.js` (or use `ecosystem.config.js` for PM2)
+- **Docker:** Use `Dockerfile` for containerized build/deploy with TypeScript compilation
+- **Lint:** `npm run lint` (uses TypeScript ESLint) — Module-specific configurations
+- **Style lint:** `npm run stylelint` (CSS/SCSS/Vue styles) — Frontend only
+- **Format:** `npm run format` (code formatting) — Both modules configured
 - **Quality scans:** `npm run scan:lint` and `npm run scan:stylelint` (for SonarQube)
 
 ## Testing
 
-- No explicit test framework or test files detected. If adding tests, follow Vue/Vite conventions and place in `src/` alongside components or in a `tests/` folder.
+- **Framework:** Vitest for both frontend and backend
+- **Frontend:** Vue component testing with `@vue/test-utils`, happy-dom environment
+- **Backend:** API/route testing with `supertest`, Node.js environment
+- **Test location:** Test files (`*.spec.ts`, `*.test.ts`) are placed alongside source files
+- **Coverage:** V8 coverage provider with LCOV reports for SonarCloud integration
+- **Configuration:** 
+  - `frontend/vitest.config.ts` — Frontend test config with Vue support
+  - `backend/vitest.config.ts` — Backend test config with Node.js environment
+  - `frontend/src/test/setup.ts` — Global test setup with Vuetify stubs
+  - `backend/src/test/setup.ts` — Global test setup for backend
+- **CI Integration:** Tests run automatically in GitHub Actions SonarCloud workflow
+- **See:** `TESTING.md` for comprehensive testing guide and examples
 
 ## Patterns & Conventions
 
-- **Component structure:** Vue SFCs in `src/components/`, composables/helpers in `src/helpers/`, constants/enums in `src/constants/` and `src/enums/`.
-- **TypeScript:** All business logic and components use TypeScript. Types are in `src/types/`.
-- **Services:** API and utility services in `src/services/`.
-- **Routing:** Vue Router config in `src/router/` (modular: main.ts, projects.ts, servers.ts, demos.ts, archive.ts).
-- **Assets:** Images, icons, and SCSS in `src/assets/`.
-- **Utilities:** Event bus and other utilities in `src/util/`.
-- **Environment/config:** Use `src/constants/env.ts` for env/config values.
-- **Icons:** Use SVGs from `icons/` or `src/assets/icons/`.
-- **Cookie components:** Specialized cookie handling components in `src/components/cookies/`.
+**IMPORTANT:** The patterns below are high-level overviews. Always refer to the module-specific instruction files for detailed implementation patterns:
+
+### Frontend Patterns (see `frontend/.github-copilot-instructions.md`)
+- **Component structure:** Vue SFCs in `src/components/`, composables/helpers in `src/helpers/`
+- **TypeScript:** Strict typing with interfaces in `src/types/`
+- **Services:** API and utility services in `src/services/`
+- **Routing:** Modular Vue Router config in `src/router/`
+- **Styling:** SCSS with Vuetify 3 theming and custom styles
+
+### Backend Patterns (see `backend/.github-copilot-instructions.md`)
+- **TypeScript + ESM:** All files use `.ts` extension with TypeScript compilation and modern import/export
+- **Architecture:** Modular Express with TypeScript types, middleware, routes, services, utilities
+- **Configuration:** Environment validation with TypeScript interfaces and structured config exports
+- **Security:** CORS protection, rate limiting, non-root Docker deployment with TypeScript build process
 
 ## External Integrations
 
@@ -57,17 +119,29 @@
 
 ## Special Notes
 
-- **No test or CI config detected.**
-- **No monorepo tools (e.g., Lerna, Turborepo) in use.**
-- **No custom AI agent rules found in repo.**
+- **Multi-workspace setup:** Frontend and backend are separate npm projects with their own dependencies
+- **Testing:** Vitest configured for both modules with coverage reporting
+- **CI/CD:** GitHub Actions workflows updated for multi-workspace structure
+- **No monorepo tools** (e.g., Lerna, Turborepo) in use - each module is independent
+- **SonarCloud:** Integrated with coverage reporting from both modules
 
 ## Examples
 
-- To add a new Vue component: place `.vue` file in `src/components/`, register in parent or router as needed.
-- To add a new API service: add to `src/services/`, use TypeScript types from `src/types/`.
-- To update environment/config: edit `src/constants/env.ts`.
-- For cookie-related components: use `src/components/cookies/` (CookieBanner, CookieButton, CookieDialog).
+### Frontend Development (detailed patterns in `frontend/.github-copilot-instructions.md`)
+- To add a new Vue component: place `.vue` file in `src/components/`, register in parent or router as needed
+- To add a new API service: add to `src/services/` (see `emailService.ts`, `githubService.ts`, `minecraftService.ts`), use TypeScript types from `src/types/`
+- To update environment/config: edit `src/constants/env.ts`
+- For cookie consent: main component is `src/components/CookieConsent.vue` with supporting components in `src/components/cookies/`
+- To add tests: create `*.spec.ts` file alongside the component/helper, use `@vue/test-utils` for component tests
+
+### Backend Development (detailed patterns in `backend/.github-copilot-instructions.md`)
+- To add a new API route: create in `src/routes/` with TypeScript types and Router pattern, import to `src/app.ts`
+- To add middleware: create in `src/middleware/` with TypeScript types, export configured function
+- To add business logic: create service in `src/services/` with TypeScript interfaces and proper error handling
+- To add utilities: create helpers in `src/utils/` with TypeScript types and named exports
+- To add types: define interfaces in `src/types/index.ts` for shared type definitions
+- To add tests: create `*.spec.ts` file alongside the route/service/util, use `supertest` for API tests
 
 ---
 
-For more context, see `README.md`, `vite.config.ts`, and `src/` structure.
+For more context, see `README.md`, `TESTING.md`, `vite.config.ts`, and `src/` structure.

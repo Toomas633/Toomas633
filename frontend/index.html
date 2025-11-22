@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="theme-color" content="#f44336" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>Toomas633's Dungeon</title>
+		<meta
+			name="google-site-verification"
+			content="3mzfkHeHI79i5vZPIipQ5bCn0TflXUHfrzTDuzzuVOw" />
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8511585383372617"
+			crossorigin="anonymous"></script>
+	</head>
+	<!-- Google tag (gtag.js) -->
+	<script
+		async
+		src="https://www.googletagmanager.com/gtag/js?id=G-NXQTF484K2"></script>
+	<script>
+		globalThis.dataLayer = globalThis.dataLayer || []
+		function gtag() {
+			dataLayer.push(arguments)
+		}
+
+		gtag('js', new Date())
+		gtag('config', 'G-NXQTF484K2')
+		gtag('consent', 'default', {
+			ad_storage: 'denied',
+			analytics_storage: 'denied',
+			ad_user_data: 'denied',
+			ad_personalization: 'denied',
+			functionality_storage: 'denied',
+			personalization_storage: 'denied',
+			security_storage: 'granted',
+		})
+	</script>
+	<script>
+		function updateConsent(consent) {
+			gtag('consent', 'update', {
+				functionality_storage: consent.necessary ? 'granted' : 'denied',
+				personalization_storage: consent.necessary ? 'granted' : 'denied',
+				ad_storage: consent.ads ? 'granted' : 'denied',
+				ad_personalization: consent.ads ? 'granted' : 'denied',
+				analytics_storage: consent.analytics ? 'granted' : 'denied',
+				ad_user_data: consent.userData ? 'granted' : 'denied',
+			})
+
+			if (!consent.analytics) {
+				gtag('set', 'url_passthrough', true)
+			}
+			if (!consent.ads) {
+				gtag('set', 'ads_data_redaction', true)
+			}
+		}
+
+		globalThis.updateConsent = updateConsent
+	</script>
+
+	<body>
+		<noscript>
+			<strong>
+				We're sorry but Toomas633's Dungeon doesn't work properly without
+				JavaScript enabled. Please enable it to continue.
+			</strong>
+		</noscript>
+		<div id="app"></div>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
+</html>

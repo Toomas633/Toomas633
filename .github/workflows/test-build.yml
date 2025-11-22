@@ -17,10 +17,12 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Read version from package.json
         id: pkg
-        run: echo "package_version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
+        run: echo "package_version=$(jq -r .version frontend/package.json)" >> $GITHUB_OUTPUT
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -39,6 +41,12 @@ jobs:
         with:
           context: .
           push: true
+          build-args: |
+            SONAR_TOKEN=${{ secrets.SONAR_TOKEN }}
+            GITHUB_REF_NAME=${{ github.ref_name }}
+            GITHUB_PR_NUMBER=${{ github.event.pull_request.number }}
+            GITHUB_BASE_REF=${{ github.event.pull_request.base.ref }}
+            GITHUB_HEAD_REF=${{ github.event.pull_request.head.ref }}
           tags: |
             ghcr.io/toomas633/toomas633:dev
           labels: |

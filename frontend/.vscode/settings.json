@@ -1,0 +1,98 @@
+{
+	"sonarlint.connectedMode.project": {
+		"connectionId": "toomas633",
+		"projectKey": "Toomas633_Toomas633"
+	},
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.suggest.insertMode": "replace"
+	},
+	"vetur.format.defaultFormatter.html": "prettier",
+	"vetur.format.defaultFormatter.js": "prettier",
+	"vetur.format.defaultFormatter.ts": "prettier",
+	"vetur.format.defaultFormatterOptions": {
+		"prettier": {
+			"tabWidth": 2,
+			"useTabs": true,
+			"singleQuote": true,
+			"trailingComma": "es5",
+			"bracketSpacing": true,
+			"bracketSameLine": true,
+			"jsxSingleQuote": true,
+			"jsxBracketSameLine": true,
+			"semi": false,
+			"printWidth": 80,
+			"endOfLine": "crlf"
+		}
+	},
+	"prettier.useEditorConfig": false,
+	"prettier.requireConfig": true,
+	"prettier.configPath": ".prettierrc",
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"[xml]": {
+		"editor.defaultFormatter": "redhat.vscode-xml"
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.stylelint": "explicit"
+	},
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue"
+	],
+	"eslint.workingDirectories": ["frontend"],
+	"typescript.preferences.includePackageJsonAutoImports": "auto",
+	"typescript.suggest.autoImports": true,
+	"vue.inlayHints.missingProps": true,
+	"vue.inlayHints.optionsWrapper": true,
+	"vue.inlayHints.inlineHandlerLeading": true,
+	"vue.inlayHints.vBindShorthand": true,
+	"vue.format.initialIndent": {
+		"html": false
+	},
+	"vue.codeActions.enabled": true,
+	"files.associations": {
+		"*.vue": "vue"
+	},
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/dist": true,
+		"**/.nuxt": true,
+		"**/.output": true,
+		"**/.vscode": true
+	},
+	"files.exclude": {
+		"**/node_modules": true,
+		"**/dist": true
+	},
+	"emmet.includeLanguages": {
+		"vue": "html",
+		"vue-html": "html"
+	},
+	"css.validate": false,
+	"scss.validate": false,
+	"stylelint.validate": ["css", "scss", "vue"],
+	"html.format.templating": true
+}

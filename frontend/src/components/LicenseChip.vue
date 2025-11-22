@@ -1,0 +1,36 @@
+<template>
+	<v-chip
+		class="font-weight-bold"
+		prepend-icon="mdi-license"
+		:variant="isDark ? 'outlined' : 'elevated'"
+		elevation="4"
+		size="large"
+		color="orange">
+		<v-icon v-if="loading" icon="mdi-loading" class="mdi-spin" />
+		<p v-else>
+			{{ license?.spdx_id.replace(/-/g, ' ') }}
+		</p>
+	</v-chip>
+</template>
+<script setup lang="ts">
+import useThemeMixin from '@/helpers/themeMixin'
+import { getLicence } from '@/services/githubService'
+import { License } from '@/types/github'
+import { onMounted, ref } from 'vue'
+
+const porps = defineProps<{
+	repo: string
+}>()
+
+const loading = ref(true)
+const license = ref<License | undefined>(undefined)
+
+const { isDark } = useThemeMixin()
+
+onMounted(async () => {
+	license.value = await getLicence(porps.repo).then((resp) => {
+		loading.value = false
+		return resp
+	})
+})
+</script>
