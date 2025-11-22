@@ -11,7 +11,7 @@ export default [
 	js.configs.recommended,
 	...vue.configs['flat/recommended'],
 	{
-		files: ['**/*.{js,mjs,ts,vue}', 'tests/**/*.{ts,vue}'],
+		files: ['**/*.{ts,vue}', 'tests/**/*.{ts,vue}'],
 		languageOptions: {
 			globals: {
 				...globals.browser,
@@ -19,6 +19,7 @@ export default [
 				__VUE_VERSION__: 'readonly',
 				__VUETIFY_VERSION__: 'readonly',
 				__APP_VERSION__: 'readonly',
+				ImportMetaEnv: 'readonly',
 			},
 			ecmaVersion: 'latest',
 			sourceType: 'module',
@@ -63,21 +64,13 @@ export default [
 			'vue/no-v-html': 'warn',
 			'vue/require-default-prop': 'off',
 			'vue/require-explicit-emits': 'error',
-			'vue/html-indent': ['error', 'tab'],
-			'vue/max-attributes-per-line': [
-				'error',
-				{
-					singleline: { max: 3 },
-					multiline: { max: 1 },
-				},
-			],
-			'vue/html-closing-bracket-newline': [
-				'error',
-				{
-					singleline: 'never',
-					multiline: 'always',
-				},
-			],
+			'vue/singleline-html-element-content-newline': 'off',
+			'vue/first-attribute-linebreak': 'off',
+			'vue/html-closing-bracket-spacing': 'off',
+			'vue/html-self-closing': 'off',
+			'vue/html-indent': 'off', // Disabled - conflicts with prettier
+			'vue/max-attributes-per-line': 'off', // Disabled - conflicts with prettier
+			'vue/html-closing-bracket-newline': 'off', // Disabled due to conflicts with prettier
 
 			// Vuetify rules
 			'vuetify/no-deprecated-classes': 'warn',

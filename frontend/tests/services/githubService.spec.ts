@@ -17,9 +17,6 @@ vi.mock('axios', () => ({
 	},
 }))
 
-// Import after mocks
-import axios from 'axios'
-
 // Mock alertMixin
 vi.mock('@/helpers/alertMixin', () => ({
 	default: () => ({

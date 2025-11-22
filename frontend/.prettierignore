@@ -4,7 +4,9 @@ dist
 build
 *.min.js
 package*.json
-*.config.ts
+*.config.*
 .eslintrc.js
 tsconfig.json
 components.d.ts
+coverage
+.vscode

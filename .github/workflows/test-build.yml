@@ -17,6 +17,8 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Read version from package.json
         id: pkg
@@ -39,6 +41,9 @@ jobs:
         with:
           context: .
           push: true
+          build-args: |
+            SONAR_TOKEN=${{ secrets.SONAR_TOKEN }}
+            GITHUB_REF_NAME=${{ github.ref_name }}
           tags: |
             ghcr.io/toomas633/toomas633:dev
           labels: |

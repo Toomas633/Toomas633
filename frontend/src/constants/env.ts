@@ -1,5 +1,5 @@
 function readEnv(key: string): string | undefined {
-	const env = (import.meta as ImportMeta).env as ImportMetaEnv
+	const env = import.meta.env as ImportMetaEnv
 	const direct = env[key as keyof ImportMetaEnv] as string | undefined
 	const fromProcess =
 		typeof process !== 'undefined' ? process.env?.[key] : undefined

@@ -1,5 +1,5 @@
 <template>
-	<div :id="id" class="map-container"></div>
+	<div :id="id" class="map-container" />
 </template>
 <script setup lang="ts">
 import { onMounted } from 'vue'

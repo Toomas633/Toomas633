@@ -7,7 +7,9 @@
 		size="large"
 		color="orange">
 		<v-icon v-if="loading" icon="mdi-loading" class="mdi-spin" />
-		<p v-else>{{ license?.spdx_id.replace(/-/g, ' ') }}</p>
+		<p v-else>
+			{{ license?.spdx_id.replace(/-/g, ' ') }}
+		</p>
 	</v-chip>
 </template>
 <script setup lang="ts">

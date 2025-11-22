@@ -7,7 +7,10 @@ RUN npm ci
 
 COPY src/ ./src/
 COPY tsconfig.json ./
+COPY eslint.config.js ./
 
+RUN npm run lint
+RUN npm run type-check
 RUN npm run build
 
 FROM node:slim

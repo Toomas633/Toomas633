@@ -7,7 +7,9 @@
 		size="large"
 		color="light-green">
 		<v-icon v-if="loading" icon="mdi-loading" class="mdi-spin" />
-		<p v-else>{{ release }}</p>
+		<p v-else>
+			{{ release }}
+		</p>
 	</v-chip>
 </template>
 <script setup lang="ts">

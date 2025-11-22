@@ -23,7 +23,7 @@
 						<CopyButton class="ml-1" :text-to-copy="server" inline />
 					</div>
 					<!-- eslint-disable-next-line vue/no-v-html -->
-					<div v-html="motd"></div>
+					<div v-html="motd" />
 				</div>
 			</div>
 		</v-container>

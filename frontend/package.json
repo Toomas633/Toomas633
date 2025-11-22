@@ -10,12 +10,12 @@
 		"serve": "vite preview",
 		"build": "vite build",
 		"test": "vitest",
-		"test:ui": "vitest --ui",
 		"test:coverage": "vitest run --coverage",
-		"lint": "eslint src/**/* tests/**/* plugins/**/*",
+		"lint": "eslint 'src/**/*.{ts,vue}' 'tests/**/*.{ts,vue}' 'plugins/**/*.{ts,mjs}'",
 		"stylelint": "stylelint 'src/**/*.{css,scss,vue}' 'tests/**/*.{css,scss,vue}'",
 		"prettier": "prettier --write '**/*.{ts,js,jsx,json,css,scss,vue,html}'",
-		"scan:lint": "eslint src/**/* tests/**/* plugins/**/* --format json --output-file .reports/eslint-report.json --no-fix",
+		"type-check": "vue-tsc --noEmit",
+		"scan:lint": "eslint 'src/**/*.{ts,vue}' 'tests/**/*.{ts,vue}' 'plugins/**/*.{ts,mjs}' --format json --output-file .reports/eslint-report.json --no-fix",
 		"scan:stylelint": "stylelint 'src/**/*.{css,scss,vue}' 'tests/**/*.{css,scss,vue}' --f json -o .reports/stylelint-report.json"
 	},
 	"dependencies": {
@@ -38,14 +38,14 @@
 		"@typescript-eslint/eslint-plugin": "^8.47.0",
 		"@typescript-eslint/parser": "^8.47.0",
 		"@vitejs/plugin-vue": "^6.0.2",
-		"@vitest/coverage-v8": "^4.0.12",
-		"@vitest/ui": "^4.0.12",
+		"@vitest/coverage-v8": "^4.0.13",
+		"@vitest/ui": "^4.0.13",
 		"@vue/test-utils": "^2.4.6",
 		"@vueuse/head": "^2.0.0",
 		"eslint": "^9.39.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-prettier": "^5.5.4",
-		"eslint-plugin-vue": "^10.5.1",
+		"eslint-plugin-vue": "^10.6.0",
 		"eslint-plugin-vuetify": "^2.5.3",
 		"glob": "^13.0.0",
 		"globals": "^16.5.0",
@@ -54,7 +54,7 @@
 		"prettier": "^3.6.2",
 		"sass": "^1.94.2",
 		"sitemap": "^9.0.0",
-		"stylelint": "^16.25.0",
+		"stylelint": "^16.26.0",
 		"stylelint-config-recommended-scss": "^16.0.2",
 		"stylelint-config-recommended-vue": "^1.6.1",
 		"stylelint-config-standard": "^39.0.1",
@@ -68,7 +68,8 @@
 		"vite-plugin-compression": "^0.5.1",
 		"vite-plugin-vue-devtools": "^8.0.5",
 		"vite-plugin-vuetify": "^2.1.2",
-		"vitest": "^4.0.12",
-		"vue-eslint-parser": "^10.2.0"
+		"vitest": "^4.0.13",
+		"vue-eslint-parser": "^10.2.0",
+		"vue-tsc": "^3.1.4"
 	}
 }
